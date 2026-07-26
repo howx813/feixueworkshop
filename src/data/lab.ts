@@ -22,6 +22,15 @@ export type LabItem = {
 
 export const labItems: LabItem[] = [
   {
+    id: "graphic",
+    title: "图像小说",
+    summary: "五本中文传记各十页：真封面、真容、页下中文原文。",
+    href: "/lab/graphic/",
+    status: "实验中",
+    tags: ["图像小说"],
+    updated: "2026-07-26",
+  },
+  {
     id: "marble",
     title: "碎砖弹珠",
     summary:

@@ -1,0 +1,236 @@
+{
+  "welch": {
+    "id": "welch",
+    "title": "Winning（杰克·韦尔奇）",
+    "book": "Winning / 杰克·韦尔奇自传公开叙事",
+    "folder": "welch",
+    "pages": [
+      {
+        "page": 1,
+        "title": "封面",
+        "caption": "Jack Welch with Suzy Welch《Winning》。第 1 页为实体书封面；其后九页依据《杰克·韦尔奇自传》与《Winning》公开章节骨架。",
+        "beat": "cover",
+        "prompt": null
+      },
+      {
+        "page": 2,
+        "title": "建立自信",
+        "caption": "马萨诸塞塞勒姆。母亲 Grace 用近乎严苛的爱塑造他的竞争意识与自信——《杰克·韦尔奇自传》开篇核心。",
+        "beat": "mother salem",
+        "prompt": "Documentary graphic memoir page, adult male child with short hair and mother silhouette in 1940s-50s Massachusetts kitchen, soft gray Chinese ink wash multi-panel comic, Emmanuel Guibert style, MALE boy only no female protagonist, quiet observational"
+      },
+      {
+        "page": 3,
+        "title": "化学工程师",
+        "caption": "大学毕业后进入通用电气，从初级化学工程师做起，在塑料业务中逐步崭露头角。",
+        "beat": "ge engineer",
+        "prompt": "Young adult MAN engineer short hair lab coat at GE plastics plant 1960s, ink wash sequential comic, male only, documentary gray watercolor"
+      },
+      {
+        "page": 4,
+        "title": "掀掉屋顶",
+        "caption": "1963 年工厂爆炸事故。他学到：出了问题要立刻面对、承担责任——自传中反复被引用的教训。",
+        "beat": "explosion",
+        "prompt": "1960s factory aftermath smoke and managers in suits, adult MEN short hair, ink wash multi-panel memoir, no women leads, soft gray"
+      },
+      {
+        "page": 5,
+        "title": "逼近大联盟",
+        "caption": "1970 年代他在不同事业部间升迁，对官僚层级日益不满，开始形成自己的领导风格。",
+        "beat": "rising",
+        "prompt": "1970s corporate office long corridor adult MEN executives briefcases, ink wash graphic novel page male figures only"
+      },
+      {
+        "page": 6,
+        "title": "1981 上任",
+        "caption": "1981 年出任 GE 首席执行官。他面对的是层级臃肿、阳奉阴违的大公司现实。",
+        "beat": "ceo 1981",
+        "prompt": "1981 boardroom adult MAN balding executive at head of long table, ink wash sequential panels male only documentary"
+      },
+      {
+        "page": 7,
+        "title": "数一数二",
+        "caption": "《Winning》与自传都强调的战略：做不到行业第一或第二的业务，就整顿、出售或关闭。",
+        "beat": "number one two",
+        "prompt": "business portfolio chart on wall adult MAN pointing, ink wash comic multi-panel, male executive short hair, not photoreal"
+      },
+      {
+        "page": 8,
+        "title": "中子弹岁月",
+        "caption": "大规模裁员与重组使他被称为「中子弹杰克」。他坚持「面对现实」，不回避痛苦决策。",
+        "beat": "neutron",
+        "prompt": "empty office cubicles boxes packing adult MEN workers leaving, muted ink wash memoir page, male silhouettes only"
+      },
+      {
+        "page": 9,
+        "title": "人与无边界",
+        "caption": "重塑克罗顿维尔领导力中心；推动「无边界」组织，打破部门墙，强调人才与坦诚。",
+        "beat": "crotonville boundaryless",
+        "prompt": "executive classroom Crotonville adult MEN discussing, ink wash sequential comic male only soft gray"
+      },
+      {
+        "page": 10,
+        "title": "何谓 Winning",
+        "caption": "《Winning》收束：坦诚、差异化、人才、改变。自传落在经营哲学而非虚构故事。",
+        "beat": "winning close",
+        "prompt": "open management book on desk dawn window, contemplative ink wash last page, no wrong gender figures"
+      }
+    ]
+  },
+  "luoyonghao": {
+    "id": "luoyonghao",
+    "title": "我的奋斗（罗永浩）",
+    "book": "罗永浩《我的奋斗》云南人民出版社 2010",
+    "folder": "luoyonghao",
+    "pages": [
+      {
+        "page": 1,
+        "title": "封面",
+        "caption": "罗永浩《我的奋斗》（云南人民出版社，2010）。第 1 页为实体书封面；其后九页依据书中自序、「我的故事」与公开自述情节。",
+        "beat": "cover",
+        "prompt": null
+      },
+      {
+        "page": 2,
+        "title": "思想特别复杂",
+        "caption": "书中写他上幼儿园时，就被老师描述成「思想特别复杂的孩子」——《我的奋斗》反复出现的自我画像起点。",
+        "beat": "kindergarten",
+        "prompt": "1970s Chinese kindergarten classroom adult male narrator memory, small BOY short hair not girl, ink wash multi-panel memoir, male child only"
+      },
+      {
+        "page": 3,
+        "title": "对抗九年",
+        "caption": "校园生涯里几乎每次表达真情实感都被打击；他与自认愚蠢的制度对抗了九年。",
+        "beat": "school fight",
+        "prompt": "1980s Chinese middle school classroom teenage BOY short hair arguing with teacher silhouette, ink wash comic male only"
+      },
+      {
+        "page": 4,
+        "title": "高中辍学",
+        "caption": "高中没有毕业。书中写到他成为「小混混」式的青年，在延边与后来的浪荡里寻找出路。",
+        "beat": "dropout",
+        "prompt": "1990s small Chinese town street young MAN short hair restless, ink wash sequential memoir male only soft gray"
+      },
+      {
+        "page": 5,
+        "title": "摆摊与折腾",
+        "caption": "摆地摊、开羊肉串店、倒卖药材、做期货、销售电脑配件……书中罗列的早期谋生与「折腾」。",
+        "beat": "hustle jobs",
+        "prompt": "street stall night market young MAN short hair selling goods, ink wash multi-panel, adult male only not female"
+      },
+      {
+        "page": 6,
+        "title": "到北京",
+        "caption": "来到北京。灰蒙蒙的天、拥挤的马路——书中写他站在站外仍心潮澎湃。",
+        "beat": "beijing",
+        "prompt": "1990s Beijing railway station square young MAN short hair suitcase, ink wash graphic novel page male only"
+      },
+      {
+        "page": 7,
+        "title": "新东方讲台",
+        "caption": "2001–2006 在北京新东方任教。幽默、理想主义气质，使学生欢迎他——书中明确的教师阶段。",
+        "beat": "new oriental",
+        "prompt": "adult MAN short hair English teacher on podium classroom China early 2000s, ink wash sequential comic male teacher only"
+      },
+      {
+        "page": 8,
+        "title": "老罗语录",
+        "caption": "学生盗录讲课在网上流传，「老罗语录」成文化现象；「彪悍的人生不需要解释」写进一代人的口头禅。",
+        "beat": "quotes online",
+        "prompt": "early 2000s internet cafe screens adult MAN headphones silhouette, ink wash memoir multi-panel male only"
+      },
+      {
+        "page": 9,
+        "title": "离开与牛博",
+        "caption": "2006 年离开新东方，创办牛博网。书中写到他从教师转向更公共的表达与平台。",
+        "beat": "niubo",
+        "prompt": "adult MAN short hair at computer blog night lamp 2006, ink wash comic page male only documentary"
+      },
+      {
+        "page": 10,
+        "title": "像坏人一样勤奋",
+        "caption": "自序题为「像坏人一样勤奋」。本书止于演讲、成长自述与语录——不把尚未写入本书的锤子时代硬塞进来。",
+        "beat": "preface close",
+        "prompt": "closed Chinese paperback book on desk red black cover suggestion, contemplative ink wash last page"
+      }
+    ]
+  },
+  "kaifu": {
+    "id": "kaifu",
+    "title": "世界因你不同（李开复）",
+    "book": "李开复、范海涛《世界因你不同：李开复自传》",
+    "folder": "kaifu",
+    "pages": [
+      {
+        "page": 1,
+        "title": "封面",
+        "caption": "《世界因你不同：李开复自传》。第 1 页为实体书封面；其后九页依据该书公开章节中的生平节点。",
+        "beat": "cover",
+        "prompt": null
+      },
+      {
+        "page": 2,
+        "title": "小皇帝",
+        "caption": "书中写童年被家人宠成「小皇帝」式的捣蛋孩子——自传开篇的家庭画像。",
+        "beat": "childhood",
+        "prompt": "1970s Taiwan home BOY short hair mischievous not girl, ink wash multi-panel memoir male child only"
+      },
+      {
+        "page": 3,
+        "title": "十一岁留学生",
+        "caption": "十一岁赴美留学。书中详细写少年离家、适应异国学校与独立生活。",
+        "beat": "study abroad 11",
+        "prompt": "airport 1980s Asian BOY short hair small suitcase leaving family, ink wash sequential comic male only"
+      },
+      {
+        "page": 4,
+        "title": "大学与同学",
+        "caption": "美国大学阶段。书中写到求学、转向计算机与更广阔的视野（含与同窗时代的公开叙述）。",
+        "beat": "college",
+        "prompt": "university campus library adult young MAN short hair Asian male student, ink wash memoir page male only"
+      },
+      {
+        "page": 5,
+        "title": "语音识别",
+        "caption": "卡内基梅隆读博，研究语音识别——让机器听懂人。这是书中科学道路的关键节点。",
+        "beat": "phd speech",
+        "prompt": "1980s computer lab adult MAN short hair headphones microphone research, ink wash comic male scientist only"
+      },
+      {
+        "page": 6,
+        "title": "二十六岁副教授",
+        "caption": "书中写他二十六岁成为副教授，学术生涯加速。",
+        "beat": "professor 26",
+        "prompt": "young adult MAN professor short hair lecture hall chalk, ink wash multi-panel male only soft gray"
+      },
+      {
+        "page": 7,
+        "title": "苹果副总裁",
+        "caption": "三十三岁任苹果公司副总裁。书中写硅谷产品与管理的历练。",
+        "beat": "apple vp",
+        "prompt": "1990s Silicon Valley office adult MAN short hair turtleneck optional meeting, ink wash sequential male executive only"
+      },
+      {
+        "page": 8,
+        "title": "微软亚洲研究院",
+        "caption": "回国参与创建微软亚洲研究院。书中写把世界级研究实验室种在北京。",
+        "beat": "msra",
+        "prompt": "Beijing research lab adult MEN researchers computers 1990s-2000s, ink wash comic male figures dominant"
+      },
+      {
+        "page": 9,
+        "title": "谷歌中国",
+        "caption": "创建并领导谷歌中国。书中写搜索、本土化与后来的原则冲突。",
+        "beat": "google china",
+        "prompt": "early 2000s Beijing office adult MAN short hair at glass office, ink wash multi-panel male only documentary"
+      },
+      {
+        "page": 10,
+        "title": "世界因你不同",
+        "caption": "离开谷歌后的公开叙述与人生抉择。书名即主题：每一个生命来到世间，都注定改变世界。",
+        "beat": "title theme",
+        "prompt": "open Chinese autobiography on desk soft window light, contemplative ink wash last page no wrong gender"
+      }
+    ]
+  }
+}

@@ -26,6 +26,7 @@ const pages = [
   { file: "lab/index.html", mustInclude: ["手搓匣"] },
   { file: "lab/snowflake/index.html", mustInclude: ["雪花"] },
   { file: "lab/marble/index.html", mustInclude: ["弹珠"] },
+  { file: "lab/graphic/index.html", mustInclude: ["图像小说"] },
   { file: "tenders/index.html", mustInclude: ["每日标讯"] },
   { file: "data/tenders.json", mustInclude: ["items", "syncedAt"] },
 ];

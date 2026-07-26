@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>收款确认 · 图像小说</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 720px;
+        margin: 24px auto;
+        padding: 0 16px;
+        background: #111;
+        color: #eee;
+      }
+      input,
+      button {
+        font: inherit;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid #444;
+        background: #222;
+        color: #eee;
+      }
+      button {
+        cursor: pointer;
+        background: #2a6;
+        border-color: #2a6;
+      }
+      button.ghost {
+        background: #333;
+        border-color: #555;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+        align-items: center;
+      }
+      .card {
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 12px 14px;
+        margin-bottom: 10px;
+        background: #1a1a1a;
+      }
+      .muted {
+        color: #999;
+        font-size: 0.875rem;
+      }
+      code {
+        background: #222;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>微信收款确认台</h1>
+    <p class="muted">
+      手机收到「微信收款 ¥1」后，在此点确认。读者端轮询到 paid 才会解锁 10
+      页。密钥仅本机/你知道即可。
+    </p>
+    <div class="row">
+      <label
+        >API
+        <input id="api" style="width: 220px" value="http://127.0.0.1:8787"
+      /></label>
+      <label
+        >管理密钥
+        <input id="secret" type="password" style="width: 160px" placeholder="PAY_ADMIN_SECRET"
+      /></label>
+      <button type="button" id="refresh">刷新待确认</button>
+    </div>
+    <div id="list"></div>
+    <p class="muted">
+      命令行等价：<code>npm run pay:confirm -- 订单号</code>
+    </p>
+    <script>
+      const $ = (id) => document.getElementById(id);
+      function save() {
+        localStorage.setItem("pay-admin-api", $("api").value);
+        localStorage.setItem("pay-admin-secret", $("secret").value);
+      }
+      $("api").value = localStorage.getItem("pay-admin-api") || "http://127.0.0.1:8787";
+      $("secret").value = localStorage.getItem("pay-admin-secret") || "";
+
+      async function load() {
+        save();
+        const api = $("api").value.replace(/\/$/, "");
+        const secret = $("secret").value;
+        const res = await fetch(
+          api + "/v1/admin/orders?status=pending&secret=" + encodeURIComponent(secret),
+        );
+        const data = await res.json();
+        const box = $("list");
+        if (!data.ok) {
+          box.innerHTML = "<p style='color:#f66'>" + (data.message || "加载失败") + "</p>";
+          return;
+        }
+        if (!data.orders.length) {
+          box.innerHTML = "<p class='muted'>暂无待确认订单</p>";
+          return;
+        }
+        box.innerHTML = data.orders
+          .map(
+            (o) => `
+          <div class="card">
+            <div><strong>${o.id}</strong> · ¥${o.yuan} · ${o.novelId}</div>
+            <div class="muted">解锁第 ${o.from}–${o.to} 页 · ${o.createdAt}</div>
+            <div class="row" style="margin:10px 0 0">
+              <button type="button" data-id="${o.id}">确认已收款</button>
+              <button type="button" class="ghost" data-cancel="${o.id}">取消</button>
+            </div>
+          </div>`,
+          )
+          .join("");
+        box.querySelectorAll("[data-id]").forEach((btn) => {
+          btn.onclick = () => confirm(btn.getAttribute("data-id"));
+        });
+        box.querySelectorAll("[data-cancel]").forEach((btn) => {
+          btn.onclick = () => cancel(btn.getAttribute("data-cancel"));
+        });
+      }
+
+      async function confirm(id) {
+        save();
+        const api = $("api").value.replace(/\/$/, "");
+        const secret = $("secret").value;
+        const res = await fetch(api + "/v1/orders/" + id + "/confirm", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Pay-Secret": secret,
+          },
+          body: JSON.stringify({ secret }),
+        });
+        const data = await res.json();
+        alert(data.ok ? "已确认 " + id : data.message || "失败");
+        load();
+      }
+
+      async function cancel(id) {
+        save();
+        const api = $("api").value.replace(/\/$/, "");
+        const secret = $("secret").value;
+        await fetch(api + "/v1/orders/" + id + "/cancel", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Pay-Secret": secret,
+          },
+          body: JSON.stringify({ secret }),
+        });
+        load();
+      }
+
+      $("refresh").onclick = load;
+      load();
+      setInterval(load, 5000);
+    </script>
+  </body>
+</html>

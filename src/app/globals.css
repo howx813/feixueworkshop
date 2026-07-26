@@ -484,6 +484,353 @@ textarea {
   color: var(--text-2);
 }
 
+/* 图像小说工坊 */
+/* —— 图像小说：极简 —— */
+.page-gn {
+  min-height: min(72vh, 720px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gn-studio {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gn-minimal {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.gn-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  padding: 8px 0 24px;
+}
+
+.gn-hero-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--border-strong, var(--border));
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-0);
+  padding: 16px 2px;
+  font-size: 1.35rem;
+  font-weight: 450;
+  letter-spacing: 0.01em;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.gn-hero-input::placeholder {
+  color: var(--text-2);
+  font-weight: 400;
+}
+
+.gn-hero-input:focus {
+  border-bottom-color: var(--text-0);
+}
+
+.gn-hero-input:disabled {
+  opacity: 0.55;
+}
+
+.gn-hero-go {
+  align-self: flex-end;
+  border: none;
+  background: transparent;
+  color: var(--text-0);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 8px 2px;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.gn-hero-go:hover:not(:disabled) {
+  opacity: 1;
+}
+
+.gn-hero-go:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.gn-hero-progress {
+  height: 2px;
+  background: var(--border-soft, var(--border));
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.gn-hero-progress-bar {
+  height: 100%;
+  background: var(--text-0);
+  transition: width 0.35s ease;
+}
+
+.gn-hero-error {
+  margin: 0;
+  color: var(--rose);
+  font-size: 0.8125rem;
+}
+
+.gn-people {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gn-people-top {
+  margin: 0 0 8px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--border-soft, var(--border));
+}
+
+/* 首页：实体书封面网格 */
+.gn-covers {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0 0 22px;
+  border-bottom: 1px solid var(--border-soft, var(--border));
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px 10px;
+}
+
+@media (max-width: 640px) {
+  .gn-covers {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.gn-cover-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text-1);
+  text-align: center;
+}
+
+.gn-cover-card:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.gn-cover-img {
+  display: block;
+  width: 100%;
+  max-width: 104px;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  background: var(--bg-0, #f3f0e8);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gn-cover-card:hover:not(:disabled) .gn-cover-img {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+}
+
+.gn-cover-card:hover:not(:disabled) .gn-cover-name {
+  color: var(--text-0);
+}
+
+.gn-cover-name {
+  font-size: 0.75rem;
+  line-height: 1.35;
+  font-weight: 450;
+  letter-spacing: 0.01em;
+  max-width: 7.5em;
+}
+
+.gn-search {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  padding: 18px 0 8px;
+}
+
+.gn-gen-hint {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 0.8125rem;
+}
+
+.gn-people-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  color: var(--text-1);
+  font-size: 1.05rem;
+  font-weight: 450;
+  letter-spacing: 0.02em;
+  padding: 12px 2px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: color 0.15s ease, padding-left 0.15s ease;
+}
+
+.gn-people-item:hover:not(:disabled) {
+  color: var(--text-0);
+  padding-left: 6px;
+}
+
+.gn-people-item:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.gn-read {
+  gap: 12px;
+  padding-bottom: 32px;
+}
+
+.gn-read-top {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 28px;
+}
+
+.gn-text-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-1);
+  font-size: 1.15rem;
+  line-height: 1;
+  padding: 4px 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.gn-text-btn:hover {
+  color: var(--text-0);
+}
+
+.gn-read-count {
+  color: var(--text-2);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.gn-read-title {
+  color: var(--text-2);
+  font-size: 0.8125rem;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 46vw;
+}
+
+.gn-page-img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  border-radius: 4px;
+  border: none;
+  background: #f0eee8;
+}
+
+.gn-page-img-focus {
+  max-width: 100%;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+.gn-caption {
+  margin: 4px 0 0;
+  padding: 0;
+  border: none;
+  color: var(--text-1);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  font-style: normal;
+}
+
+.gn-caption-soft {
+  color: var(--text-2);
+  font-size: 0.875rem;
+  text-align: center;
+  max-width: 36em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gn-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+  justify-content: space-between;
+}
+
+.gn-nav-min {
+  margin-top: 4px;
+}
+
+.gn-paywall-min {
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 12px 0 40px;
+}
+
+.gn-paywall-min .gn-text-btn {
+  align-self: flex-start;
+}
+
+.gn-pay-line {
+  margin: 0;
+  color: var(--text-1);
+  font-size: 0.9375rem;
+}
+
+.gn-pay-line.muted {
+  color: var(--text-2);
+  font-size: 0.8125rem;
+}
+
+.gn-pay-code code {
+  font-size: 0.95em;
+  letter-spacing: 0.04em;
+  font-weight: 650;
+  color: var(--text-0);
+}
+
+.gn-qr {
+  width: min(200px, 56vw);
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 10px;
+  margin: 4px auto;
+}
+
 .section-meta {
   color: var(--text-2);
   font-size: 0.75rem;
