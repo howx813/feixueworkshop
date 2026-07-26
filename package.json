@@ -4,10 +4,22 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3456",
+    "dev:clean": "node scripts/dev-clean.mjs",
     "build": "EXPORT=1 next build",
+    "preview": "npm run build && npx --yes serve out -l 3457",
+    "preview:out": "npx --yes serve out -l 3457",
     "start": "next start",
     "lint": "next lint",
-    "music:sync": "node scripts/sync-music.mjs"
+    "lint:ci": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --max-warnings 0",
+    "music:sync": "node scripts/sync-music.mjs",
+    "snowflake:export": "node scripts/export-snowflake-svg.mjs",
+    "test": "npm run test:unit && npm run test:predeploy",
+    "test:unit": "node scripts/test-marble.mjs && node scripts/test-aihot.mjs",
+    "test:smoke": "node scripts/smoke-out.mjs",
+    "test:predeploy": "node scripts/predeploy-check.mjs",
+    "deploy": "node scripts/deploy.mjs",
+    "rollback": "node scripts/rollback.mjs",
+    "deploy:force": "echo '拒绝跳过测试。请用 npm run deploy' && exit 1"
   },
   "dependencies": {
     "next": "14.2.35",

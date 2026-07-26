@@ -11,7 +11,11 @@
 
 # next.js
 /.next/
+/.next-export/
 /out/
+
+# 部署快照（含线上回退包，体积大，不进 git）
+/.deploy-history/
 
 # production
 /build

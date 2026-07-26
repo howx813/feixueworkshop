@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AihotSelected } from "@/components/AihotSelected";
 import { ContactForm } from "@/components/ContactForm";
 import {
   capabilities,
@@ -7,6 +8,7 @@ import {
   showcases,
   site,
 } from "@/data/content";
+import { fetchAihotSelected, type AihotItem } from "@/lib/aihot";
 
 function todayLabel() {
   const d = new Date();
@@ -14,7 +16,20 @@ function todayLabel() {
   return `${d.getMonth() + 1}月${d.getDate()}日 · 周${week}`;
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  // 构建期预取，首屏 HTML 就有列表，避免客户端卡住一直 loading
+  let aihotItems: AihotItem[] = [];
+  try {
+    aihotItems = await fetchAihotSelected({
+      mode: "selected",
+      window: "7d",
+      limit: 8,
+      timeoutMs: 12000,
+    });
+  } catch {
+    aihotItems = [];
+  }
+
   return (
     <div className="page">
       <p className="page-kicker">Feixue Workshop · v0.1</p>
@@ -40,6 +55,8 @@ export default function HomePage() {
           </div>
         ))}
       </div>
+
+      <AihotSelected limit={8} initialItems={aihotItems} />
 
       <section className="section">
         <div className="section-head">

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="256" height="256">
+  <rect width="100" height="100" rx="22" fill="#10151c"/>
+  <line x1="50" y1="50" x2="50.00" y2="16.00" stroke="#6cb8c6" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="50" x2="79.44" y2="33.00" stroke="#6cb8c6" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="50" x2="79.44" y2="67.00" stroke="#6cb8c6" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="50" x2="50.00" y2="84.00" stroke="#6cb8c6" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="50" x2="20.56" y2="67.00" stroke="#6cb8c6" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="50" x2="20.56" y2="33.00" stroke="#6cb8c6" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 50.00 16.00 L 79.44 33.00 L 79.44 67.00 L 50.00 84.00 L 20.56 67.00 L 20.56 33.00 Z" fill="none" stroke="#6cb8c6" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="50" cy="50" r="3" fill="#6cb8c6"/>
+</svg>

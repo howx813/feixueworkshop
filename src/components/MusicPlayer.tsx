@@ -1,40 +1,52 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   favoriteTracks,
+  metingUrl,
   musicConfig,
-  outchainSongUrl,
   songPageUrl,
   type MusicTrack,
 } from "@/data/music";
 
 function pickRandom(list: MusicTrack[], excludeId?: number): MusicTrack {
   if (list.length === 0) {
-    return { id: 0, name: "暂无曲目", artist: "—" };
+    return {
+      id: 0,
+      name: "暂无曲目",
+      artist: "—",
+      access: "vip",
+    };
   }
-  if (list.length === 1) return list[0];
-  let next = list[Math.floor(Math.random() * list.length)];
+  const free = list.filter((t) => t.access === "free");
+  const pool = free.length > 0 ? free : list;
+  if (pool.length === 1) return pool[0];
+  let next = pool[Math.floor(Math.random() * pool.length)];
   let guard = 0;
-  while (excludeId != null && next.id === excludeId && guard < 8) {
-    next = list[Math.floor(Math.random() * list.length)];
+  while (excludeId != null && next.id === excludeId && guard < 10) {
+    next = pool[Math.floor(Math.random() * pool.length)];
     guard += 1;
   }
   return next;
 }
 
 type Generated = {
-  tracks?: MusicTrack[];
+  tracks?: Array<Partial<MusicTrack> & { id: number; name: string; artist: string }>;
   playlistName?: string;
-  trackCount?: number;
 };
 
+type Status = "idle" | "loading" | "playing" | "paused" | "error" | "vip";
+
 export function MusicPlayer() {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [tracks, setTracks] = useState<MusicTrack[]>(favoriteTracks);
   const [sourceNote, setSourceNote] = useState(musicConfig.sourceLabel);
   const [current, setCurrent] = useState<MusicTrack | null>(null);
-  const [auto, setAuto] = useState(true);
+  const [status, setStatus] = useState<Status>("idle");
+  const [message, setMessage] = useState("");
   const [ready, setReady] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -45,7 +57,16 @@ export function MusicPlayer() {
         };
         const gen = mod.default;
         if (!cancelled && Array.isArray(gen?.tracks) && gen.tracks.length > 0) {
-          setTracks(gen.tracks);
+          // 同步歌单默认按 vip 处理，避免错误预期；可在 music.ts 手改 access
+          const mapped: MusicTrack[] = gen.tracks.map((t) => ({
+            id: t.id,
+            name: t.name,
+            artist: t.artist,
+            album: t.album,
+            cover: t.cover,
+            access: t.access === "free" ? "free" : "vip",
+          }));
+          setTracks(mapped);
           setSourceNote(
             gen.playlistName
               ? `网易云 · ${gen.playlistName}`
@@ -53,7 +74,7 @@ export function MusicPlayer() {
           );
         }
       } catch {
-        /* use defaults */
+        /* defaults */
       } finally {
         if (!cancelled) setReady(true);
       }
@@ -66,17 +87,126 @@ export function MusicPlayer() {
   useEffect(() => {
     if (!ready) return;
     setCurrent(pickRandom(tracks));
+    setStatus("idle");
+    setMessage("");
+    setProgress(0);
+    setDuration(0);
   }, [ready, tracks]);
 
-  const next = useCallback(() => {
-    setCurrent((prev) => pickRandom(tracks, prev?.id));
-    setAuto(true);
-  }, [tracks]);
+  const stopAudio = useCallback(() => {
+    const a = audioRef.current;
+    if (!a) return;
+    a.pause();
+    a.removeAttribute("src");
+    a.load();
+  }, []);
 
-  const playerSrc = useMemo(() => {
-    if (!current?.id) return "";
-    return outchainSongUrl(current.id, auto);
-  }, [current, auto]);
+  const playTrack = useCallback(
+    async (track: MusicTrack) => {
+      setCurrent(track);
+      setProgress(0);
+      setDuration(0);
+      setMessage("");
+
+      if (track.access === "vip") {
+        stopAudio();
+        setStatus("vip");
+        setMessage(
+          "该曲有版权限制，第三方站点无法直接播放。请点「在网易云打开」登录后收听。",
+        );
+        return;
+      }
+
+      setStatus("loading");
+      stopAudio();
+
+      const audio = audioRef.current;
+      if (!audio) {
+        setStatus("error");
+        setMessage("播放器未就绪，请刷新页面重试。");
+        return;
+      }
+
+      // 用 meting 代理取可试听直链（URL 会过期，每次播放现取）
+      const src = metingUrl(track.id);
+      try {
+        audio.crossOrigin = "anonymous";
+        audio.src = src;
+        audio.load();
+        await audio.play();
+        setStatus("playing");
+        setMessage("正在播放（可试听源）");
+      } catch {
+        setStatus("error");
+        setMessage(
+          "自动播放被拦截或音源暂不可用。可再点「播放」，或去网易云打开。",
+        );
+      }
+    },
+    [stopAudio],
+  );
+
+  const onPlayClick = useCallback(() => {
+    if (!current) return;
+    void playTrack(current);
+  }, [current, playTrack]);
+
+  const onPauseToggle = useCallback(() => {
+    const a = audioRef.current;
+    if (!a || !current || current.access === "vip") return;
+    if (a.paused) {
+      void a.play().then(() => setStatus("playing")).catch(() => {
+        setStatus("error");
+        setMessage("继续播放失败，请重试或去网易云打开。");
+      });
+    } else {
+      a.pause();
+      setStatus("paused");
+    }
+  }, [current]);
+
+  const next = useCallback(() => {
+    const n = pickRandom(tracks, current?.id);
+    void playTrack(n);
+  }, [tracks, current, playTrack]);
+
+  useEffect(() => {
+    const a = audioRef.current;
+    if (!a) return;
+
+    const onTime = () => {
+      setProgress(a.currentTime || 0);
+      setDuration(a.duration || 0);
+    };
+    const onEnded = () => {
+      setStatus("idle");
+      setMessage("本首结束，可点「换一首」");
+    };
+    const onErr = () => {
+      setStatus("error");
+      setMessage("音源加载失败（可能版权或代理波动）。请换一首或去网易云。");
+    };
+
+    a.addEventListener("timeupdate", onTime);
+    a.addEventListener("loadedmetadata", onTime);
+    a.addEventListener("ended", onEnded);
+    a.addEventListener("error", onErr);
+    return () => {
+      a.removeEventListener("timeupdate", onTime);
+      a.removeEventListener("loadedmetadata", onTime);
+      a.removeEventListener("ended", onEnded);
+      a.removeEventListener("error", onErr);
+    };
+  }, []);
+
+  const fmt = (s: number) => {
+    if (!Number.isFinite(s) || s < 0) return "0:00";
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60)
+      .toString()
+      .padStart(2, "0");
+    return `${m}:${sec}`;
+  };
 
   if (!ready || !current) {
     return (
@@ -86,18 +216,27 @@ export function MusicPlayer() {
     );
   }
 
+  const isVip = current.access === "vip";
+  const isPlaying = status === "playing";
+
   return (
     <div className="list-stack">
+      <audio ref={audioRef} preload="none" playsInline />
+
       <div className="day-bar">
-        <strong>随机播放中</strong>
+        <strong>{isPlaying ? "播放中" : "工坊电台"}</strong>
         <span>
-          {sourceNote} · 共 {tracks.length} 首
+          {sourceNote} · 共 {tracks.length} 首 · 可试听{" "}
+          {tracks.filter((t) => t.access === "free").length} 首
         </span>
       </div>
 
       <article className="card card-pad music-now">
         <div className="meta-row">
           <span className="chip chip-accent">Now Playing</span>
+          <span className={`chip ${isVip ? "chip-rose" : "chip-amber"}`}>
+            {isVip ? "版权曲" : "可试听"}
+          </span>
           <span className="score-pill">#{current.id}</span>
         </div>
         <h2 className="item-title" style={{ fontSize: "1.25rem" }}>
@@ -108,21 +247,49 @@ export function MusicPlayer() {
           {current.album ? ` · ${current.album}` : ""}
         </p>
 
-        <div className="music-player-frame">
-          {playerSrc ? (
-            <iframe
-              key={playerSrc}
-              title={`${current.name} - 网易云播放器`}
-              src={playerSrc}
-              frameBorder={0}
-              allow="autoplay; encrypted-media"
-              scrolling="no"
+        <div className="music-progress">
+          <div className="music-progress-bar">
+            <div
+              className="music-progress-fill"
+              style={{
+                width:
+                  duration > 0
+                    ? `${Math.min(100, (progress / duration) * 100)}%`
+                    : "0%",
+              }}
             />
-          ) : null}
+          </div>
+          <div className="music-progress-time">
+            <span>{fmt(progress)}</span>
+            <span>{fmt(duration)}</span>
+          </div>
         </div>
 
         <div className="music-actions">
-          <button type="button" className="btn btn-primary" onClick={next}>
+          {isVip ? (
+            <a
+              className="btn btn-primary"
+              href={songPageUrl(current.id)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              在网易云打开
+            </a>
+          ) : status === "playing" || status === "paused" ? (
+            <button type="button" className="btn btn-primary" onClick={onPauseToggle}>
+              {isPlaying ? "暂停" : "继续"}
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={onPlayClick}
+              disabled={status === "loading"}
+            >
+              {status === "loading" ? "加载中…" : "播放"}
+            </button>
+          )}
+          <button type="button" className="btn btn-ghost" onClick={next}>
             换一首
           </button>
           <a
@@ -131,19 +298,29 @@ export function MusicPlayer() {
             target="_blank"
             rel="noreferrer"
           >
-            在网易云打开
+            网易云
           </a>
         </div>
 
-        <p className="music-hint">
-          浏览器可能拦截自动播放：若未出声，点播放器内播放键，或点「换一首」。
-        </p>
+        {(message || status === "vip") && (
+          <p className={`music-hint ${status === "error" || status === "vip" ? "is-warn" : ""}`}>
+            {message ||
+              (status === "vip"
+                ? "版权曲无法在本站直连播放，请使用网易云官方客户端/网页。"
+                : "")}
+          </p>
+        )}
+        {!message && status === "idle" && !isVip && (
+          <p className="music-hint">
+            点「播放」开始（浏览器需用户手势才能出声）。可试听曲本站直连；版权曲请去网易云。
+          </p>
+        )}
       </article>
 
       <section className="section" style={{ marginTop: 8 }}>
         <div className="section-head">
           <h2 className="section-title">曲库速览</h2>
-          <span className="section-meta">点击即播</span>
+          <span className="section-meta">点击切换</span>
         </div>
         <div className="list-stack">
           {tracks.slice(0, 12).map((t) => {
@@ -154,17 +331,20 @@ export function MusicPlayer() {
                 type="button"
                 className={`card card-pad music-track${active ? " is-active" : ""}`}
                 onClick={() => {
-                  setCurrent(t);
-                  setAuto(true);
+                  void playTrack(t);
                 }}
               >
                 <div className="meta-row">
                   {active ? (
-                    <span className="chip chip-accent">播放中</span>
+                    <span className="chip chip-accent">当前</span>
                   ) : (
                     <span className="chip">曲目</span>
                   )}
-                  <span className="score-pill">{t.id}</span>
+                  <span
+                    className={`chip ${t.access === "vip" ? "chip-rose" : "chip-amber"}`}
+                  >
+                    {t.access === "vip" ? "版权" : "可听"}
+                  </span>
                 </div>
                 <div className="item-title" style={{ fontSize: "0.9375rem" }}>
                   {t.name}
@@ -174,11 +354,6 @@ export function MusicPlayer() {
             );
           })}
         </div>
-        {tracks.length > 12 ? (
-          <p className="item-body" style={{ marginTop: 10 }}>
-            仅展示前 12 首；「换一首」会从全部 {tracks.length} 首中随机。
-          </p>
-        ) : null}
       </section>
     </div>
   );

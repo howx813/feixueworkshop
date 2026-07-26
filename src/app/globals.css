@@ -157,12 +157,15 @@ textarea {
   height: 28px;
   width: 28px;
   place-items: center;
+  flex-shrink: 0;
   border-radius: 8px;
   background: var(--accent-weak);
   color: var(--accent-fg);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  overflow: hidden;
+}
+
+.brand-mark svg {
+  display: block;
 }
 
 .brand-text {
@@ -745,19 +748,31 @@ textarea {
   overflow: hidden;
 }
 
-.music-player-frame {
+.music-progress {
   margin-top: 14px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--surface-0);
 }
 
-.music-player-frame iframe {
-  display: block;
-  width: 100%;
-  height: 86px;
-  border: 0;
+.music-progress-bar {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+
+.music-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--accent);
+  transition: width 200ms linear;
+}
+
+.music-progress-time {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  color: var(--text-2);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
 }
 
 .music-actions {
@@ -774,6 +789,10 @@ textarea {
   line-height: 1.5;
 }
 
+.music-hint.is-warn {
+  color: var(--amber);
+}
+
 .music-track {
   width: 100%;
   text-align: left;
@@ -785,4 +804,163 @@ textarea {
 .music-track.is-active {
   border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
   background: color-mix(in srgb, var(--accent-weak) 70%, var(--bg-1));
+}
+
+/* Changelog */
+.changelog-list {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.changelog-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--text-1);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.changelog-list li .chip {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.inline-code {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-2);
+  padding: 1px 6px;
+  color: var(--accent-fg);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.math-steps {
+  margin: 10px 0 0;
+  padding-left: 1.25rem;
+  color: var(--text-1);
+  font-size: 0.8125rem;
+  line-height: 1.75;
+}
+
+.snow-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.snow-control {
+  flex: 1;
+  min-width: 180px;
+}
+
+.snow-control input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.snow-canvas-wrap {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-0);
+  padding: 16px;
+}
+
+.snow-canvas {
+  width: min(100%, 320px);
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.code-block {
+  margin: 14px 0 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-0);
+  padding: 12px 14px;
+  color: var(--text-1);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.lab-card {
+  display: block;
+  color: inherit;
+  transition: border-color var(--dur), background var(--dur);
+}
+
+.lab-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+
+/* Marble game */
+.marble-wrap {
+  margin-top: 8px;
+}
+
+.marble-hud {
+  margin-bottom: 12px;
+}
+
+.marble-stage {
+  overflow: hidden;
+  padding: 0;
+  line-height: 0;
+}
+
+.marble-canvas {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  margin: 0 auto;
+  touch-action: none;
+  cursor: pointer;
+  background: #0c1117;
+}
+
+.marble-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.marble-drops-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.page-wide {
+  max-width: 920px;
+}
+
+/* AI HOT 精选 */
+.aihot-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.aihot-title-link:hover {
+  color: var(--accent-fg);
+}
+
+.aihot-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 10px;
 }

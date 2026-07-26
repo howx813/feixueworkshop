@@ -1,0 +1,193 @@
+export type ChangelogItem = {
+  text: string;
+  tag?: "新增" | "优化" | "修复" | "文档";
+};
+
+export type ChangelogEntry = {
+  version: string;
+  date: string;
+  title: string;
+  summary: string;
+  items: ChangelogItem[];
+};
+
+/**
+ * 站点更新日志（新在前）。
+ * 发版时在本文件顶部追加一条即可。
+ */
+export const changelog: ChangelogEntry[] = [
+  {
+    version: "0.2.4",
+    date: "2026-07-26",
+    title: "修复 AI 精选一直加载",
+    summary:
+      "构建期预取精选写入 HTML；客户端带超时刷新。避免 JS/网络异常时卡在「正在拉取」。",
+    items: [
+      { tag: "修复", text: "Home 改为 async 服务端预取 initialItems" },
+      { tag: "优化", text: "请求 10s 超时 + 重试按钮 + 有缓存时失败不白屏" },
+    ],
+  },
+  {
+    version: "0.2.3",
+    date: "2026-07-26",
+    title: "首页接入 AI HOT 精选",
+    summary:
+      "首页实时拉取 aihot.virxact.com 公开 API 的精选（mode=selected），展示标题、摘要与原文链接。",
+    items: [
+      { tag: "新增", text: "AihotSelected 组件 + /api/v1/items 客户端拉取" },
+      { tag: "新增", text: "预检包含 AI HOT 接口连通性" },
+      { tag: "文档", text: "注明数据来源与 attribution" },
+    ],
+  },
+  {
+    version: "0.2.2",
+    date: "2026-07-26",
+    title: "测试与缓存隔离",
+    summary:
+      "生产构建改用 .next-export，避免弄脏 dev；预检加入弹珠逻辑单测与 CSS 文件校验。",
+    items: [
+      { tag: "修复", text: "build/dev 分离 distDir，减少 948.js / CSS 失效" },
+      { tag: "新增", text: "scripts/test-marble.mjs + npm run test:unit" },
+      { tag: "优化", text: "预检 6 步：lint / 单测 / 构建 / 静态页+CSS / 音源 / 密钥" },
+    ],
+  },
+  {
+    version: "0.2.1",
+    date: "2026-07-26",
+    title: "碎砖弹珠",
+    summary: "手搓匣新游戏：弹珠打砖，打碎砖块掉落道具。",
+    items: [
+      { tag: "新增", text: "/lab/marble/ 碎砖弹珠（Canvas）" },
+      { tag: "新增", text: "道具：多球、加宽、粘板、慢速、火力、生命" },
+      { tag: "新增", text: "键盘 / 鼠标 / 触摸均可操作" },
+    ],
+  },
+  {
+    version: "0.2.0",
+    date: "2026-07-26",
+    title: "手搓匣栏目",
+    summary:
+      "新增「手搓匣」：收纳灵机一动的小软件；雪花函数迁入其中。",
+    items: [
+      { tag: "新增", text: "栏目名：手搓匣（Scratch Box）· /lab/" },
+      { tag: "优化", text: "雪花函数路径改为 /lab/snowflake/，旧地址自动跳转" },
+      { tag: "文档", text: "新玩具写入 src/data/lab.ts 即可挂上清单" },
+    ],
+  },
+  {
+    version: "0.1.9",
+    date: "2026-07-26",
+    title: "dev:clean 修复脏缓存",
+    summary: "build/dev 交替导致 CSS 丢失时，一键清 .next 并重启开发服务。",
+    items: [
+      { tag: "新增", text: "npm run dev:clean（杀端口 + 删 .next + next dev）" },
+      { tag: "文档", text: "README / AGENTS 写明无样式时的处理步骤" },
+    ],
+  },
+  {
+    version: "0.1.8",
+    date: "2026-07-26",
+    title: "固定研发上线流程",
+    summary: "约定：改代码 → 预检 → GitHub → 腾讯云；预检不过不推送、不部署。",
+    items: [
+      { tag: "文档", text: "AGENTS.md / README 写明五步流程" },
+      { tag: "文档", text: "npm run test:predeploy 与 npm run deploy 职责划分" },
+    ],
+  },
+  {
+    version: "0.1.7",
+    date: "2026-07-26",
+    title: "品牌标定为候选 C",
+    summary: "导航雪花采用经典三角 Koch（candidates/C-tri-koch-classic.svg）。",
+    items: [
+      { tag: "优化", text: "SnowflakeMark 默认 sides=3、depth=3" },
+      { tag: "文档", text: "选定方案写入 public/brand/logo.svg" },
+    ],
+  },
+  {
+    version: "0.1.6",
+    date: "2026-07-26",
+    title: "六角科赫雪花",
+    summary: "Koch 基底改为正六边形（6 边 / 六重对称），更像真雪花；演示页可调边数。",
+    items: [
+      { tag: "优化", text: "默认 sides=6，正六边形上做 Koch 迭代" },
+      { tag: "新增", text: "演示页可调基底边数 3–8（3=经典三角）" },
+      { tag: "优化", text: "导航 logo 使用六角版" },
+    ],
+  },
+  {
+    version: "0.1.5",
+    date: "2026-07-26",
+    title: "科赫雪花品牌标",
+    summary:
+      "导航「雪」字改为数学生成的科赫雪花（Koch snowflake），并增加可调深度的演示页。",
+    items: [
+      { tag: "新增", text: "src/lib/koch-snowflake.ts：Koch 递归与六重晶体" },
+      { tag: "新增", text: "导航 SnowflakeMark + /snowflake/ 演示页" },
+      { tag: "优化", text: "品牌标由函数迭代生成，非贴图" },
+    ],
+  },
+  {
+    version: "0.1.4",
+    date: "2026-07-26",
+    title: "部署前强制预检",
+    summary: "建立「先测后部署」流程：预检不通过禁止上云。",
+    items: [
+      { tag: "新增", text: "npm run test:predeploy（lint/构建/页面/音源/密钥扫描）" },
+      { tag: "新增", text: "npm run deploy 仅在预检通过后上传 CloudBase" },
+      { tag: "文档", text: "AGENTS.md 写明部署铁律，避免再跳过测试" },
+    ],
+  },
+  {
+    version: "0.1.3",
+    date: "2026-07-26",
+    title: "工坊电台可播修复",
+    summary:
+      "修复线上电台无声：版权曲无法在第三方站直连，改为可试听曲 HTML5 播放 + 版权曲跳转网易云。",
+    items: [
+      { tag: "修复", text: "多数热门曲 fee 版权限制导致外链/匿名拉流失败" },
+      { tag: "优化", text: "可试听曲用 HTML5 播放器 + 用户点击后播放" },
+      { tag: "优化", text: "版权曲明确标注，一键跳转网易云官方页" },
+      { tag: "优化", text: "默认曲库改为可出声的试听曲为主" },
+    ],
+  },
+  {
+    version: "0.1.2",
+    date: "2026-07-26",
+    title: "更新日志栏目",
+    summary: "导航新增更新日志，集中记录站点变更，方便对照版本。",
+    items: [
+      { tag: "新增", text: "侧栏与移动端导航增加「更新日志」入口" },
+      { tag: "新增", text: "独立页面 /changelog/，按版本展示变更说明" },
+      { tag: "文档", text: "变更条目集中维护于 src/data/changelog.ts" },
+    ],
+  },
+  {
+    version: "0.1.1",
+    date: "2026-07-26",
+    title: "工坊电台与曲库修正",
+    summary: "上线网易云随机播放，并修正默认曲目 ID 与实际歌曲不一致的问题。",
+    items: [
+      { tag: "新增", text: "工坊电台：打开随机播放喜欢曲库中的歌曲" },
+      { tag: "新增", text: "支持换一首、曲库点播、网易云官方外链播放器" },
+      { tag: "新增", text: "npm run music:sync：从公开歌单同步曲库" },
+      { tag: "修复", text: "纠正错误歌曲 ID（如平凡之路误播成 Pianoboy 等）" },
+      { tag: "文档", text: "密钥仅存 .env.local，不进入前端与 Git 仓库" },
+    ],
+  },
+  {
+    version: "0.1.0",
+    date: "2026-07-26",
+    title: "飞雪工坊首发",
+    summary: "个人 AI 能力展厅上线：首页、展厅、观点、日夜主题，代码托管 GitHub。",
+    items: [
+      { tag: "新增", text: "站点品牌：飞雪工坊 · 用 AI 重做工作流" },
+      { tag: "新增", text: "首页：能力速览、作品切片、原则、联系表单" },
+      { tag: "新增", text: "能力展厅、观点精选独立页面" },
+      { tag: "新增", text: "侧栏导航 + 日/夜主题切换（记忆本地偏好）" },
+      { tag: "新增", text: "视觉对齐工具型深色产品站风格（AI HOT 气质）" },
+      { tag: "新增", text: "静态导出配置，可部署腾讯云 CloudBase" },
+      { tag: "文档", text: "代码仓库：github.com/howx813/feixueworkshop" },
+    ],
+  },
+];
