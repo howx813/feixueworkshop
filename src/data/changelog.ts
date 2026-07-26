@@ -17,6 +17,17 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.11",
+    date: "2026-07-26",
+    title: "标讯匹配星级 + 5★ 深挖",
+    summary:
+      "综合软件相关度与标准关键词等打 1–5 星；5 星尝试下载公开招标附件并摘录资格要求。",
+    items: [
+      { tag: "新增", text: "匹配星级与分级理由" },
+      { tag: "新增", text: "5★ 附件下载与深挖摘要（本机 data/tender-docs）" },
+    ],
+  },
+  {
     version: "0.2.10",
     date: "2026-07-26",
     title: "站点文案去敏",

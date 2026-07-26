@@ -6,7 +6,9 @@ import {
   type TendersFile,
   fetchTendersPublic,
   formatDocFee,
+  formatStars,
   formatTenderMoney,
+  starClass,
   tenderScoreClass,
 } from "@/lib/tenders";
 
@@ -46,6 +48,7 @@ export function TenderBoard({ initial }: Props) {
   }, [refresh]);
 
   const items: TenderItem[] = data.items || [];
+  const fiveStar = items.filter((i) => (i.stars || 0) >= 5);
   const syncedLabel = data.syncedAt
     ? new Date(data.syncedAt).toLocaleString("zh-CN", { hour12: false })
     : "—";
@@ -54,6 +57,10 @@ export function TenderBoard({ initial }: Props) {
     <>
       <div className="day-bar">
         <strong>线索 {items.length} 条</strong>
+        <span>
+          5★ {data.fiveStarCount ?? fiveStar.length} · 深挖{" "}
+          {data.deepAnalyzed ?? fiveStar.filter((i) => i.deepAnalysis).length}
+        </span>
         <span>
           回溯自 {data.since || "—"} · 软件池 {data.softwareCount ?? "—"}
         </span>
@@ -76,16 +83,13 @@ export function TenderBoard({ initial }: Props) {
       ) : null}
 
       <div className="note" style={{ marginBottom: 20 }}>
+        <strong style={{ fontWeight: 650 }}>匹配星级：</strong>
+        1–5 星综合软件相关度、公开标准关键词重合、是否在投、规模与截止信息。
+        <strong> 5 星</strong>
+        会尝试下载公开招标附件并做资格摘录（本机目录，不进公开仓库）。
+        <br />
         <strong style={{ fontWeight: 650 }}>关注字段：</strong>
-        投标截止、文件资格要求摘录、项目规模（限价/预算）、是否收取标书/文件费。
-        由公开公告正文自动抽取，缺项显示「未写明」，使用前务必核对原文。
-        <br />
-        <strong style={{ fontWeight: 650 }}>关键词提示：</strong>
-        芯片为行业公开标准名称匹配，不等于文件已写明门槛，也不代表持证情况。
-        <br />
-        <strong style={{ fontWeight: 650 }}>更新：</strong>
-        <code style={{ fontSize: "0.9em" }}>npm run tenders:sync</code>{" "}
-        或定时任务写快照。
+        投标截止、文件资格摘录、规模、标书/文件费。自动抽取可能不全，务必核对原文。
       </div>
 
       <div className="list-stack">
@@ -106,8 +110,14 @@ export function TenderBoard({ initial }: Props) {
           items.map((item, index) => (
             <article key={item.id} className="card card-pad">
               <div className="meta-row">
+                <span
+                  className={`star-pill ${starClass(item.stars || 0)}`}
+                  title={`综合分 ${item.starScore ?? item.score}`}
+                >
+                  {formatStars(item.stars || 0)}
+                </span>
                 <span className={`score-pill ${tenderScoreClass(item.score)}`}>
-                  {item.score}
+                  {item.starScore ?? item.score}
                 </span>
                 <span className="chip chip-amber">
                   {item.tenderType || "标讯"}
@@ -122,6 +132,15 @@ export function TenderBoard({ initial }: Props) {
               <h2 className="item-title" style={{ fontSize: "1.0625rem" }}>
                 {item.title}
               </h2>
+
+              {item.starReasons?.length ? (
+                <p
+                  className="item-body"
+                  style={{ fontSize: "0.8125rem", opacity: 0.85, marginTop: 4 }}
+                >
+                  分级：{item.starReasons.slice(0, 4).join(" · ")}
+                </p>
+              ) : null}
 
               <p className="item-body" style={{ marginBottom: 10 }}>
                 <strong style={{ fontWeight: 650 }}>招标人：</strong>
@@ -170,10 +189,60 @@ export function TenderBoard({ initial }: Props) {
                 </div>
               </div>
 
+              {item.stars === 5 && item.deepAnalysis ? (
+                <div className="tender-deepbox">
+                  <div className="tender-keylabel" style={{ marginBottom: 6 }}>
+                    5★ 深度分析
+                  </div>
+                  <p className="item-body" style={{ margin: "0 0 8px" }}>
+                    {item.deepAnalysis.summary}
+                  </p>
+                  {item.deepAnalysis.matchedStandards?.length ? (
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: 6,
+                        marginBottom: 8,
+                      }}
+                    >
+                      {item.deepAnalysis.matchedStandards.map((s) => (
+                        <span key={`${item.id}-std-${s}`} className="chip">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
+                  {item.deepAnalysis.mustRequirements?.length ? (
+                    <ul className="tender-reqlist">
+                      {item.deepAnalysis.mustRequirements.slice(0, 6).map((r) => (
+                        <li key={`${item.id}-req-${r.slice(0, 24)}`}>{r}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  {item.deepAnalysis.files?.length ? (
+                    <p
+                      className="item-body"
+                      style={{ fontSize: "0.8125rem", margin: "8px 0 0" }}
+                    >
+                      附件：
+                      {item.deepAnalysis.files
+                        .map((f) =>
+                          f.error ? `${f.fileName}(失败)` : f.fileName,
+                        )
+                        .join("、")}
+                      {item.deepAnalysis.hasLocalDocs
+                        ? " · 已落盘本机 data/tender-docs/"
+                        : ""}
+                    </p>
+                  ) : null}
+                </div>
+              ) : null}
+
               {(item.qualHits?.length || item.qualSection) && (
                 <div className="tender-qualbox">
                   <div className="tender-keylabel" style={{ marginBottom: 6 }}>
-                    文件资质要求（摘录）
+                    文件资格要求（摘录）
                   </div>
                   {item.qualHits?.length ? (
                     <div

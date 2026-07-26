@@ -20,6 +20,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { execFileSync } from "node:child_process";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -54,23 +55,26 @@ const USERNAME = process.env.BXND_USERNAME || "";
 const PASSWORD = process.env.BXND_PASSWORD || "";
 let TOKEN = process.env.BXND_TOKEN || "";
 
-/** 与 src/data/software-quals.ts 对齐（脚本侧自包含） */
+/**
+ * keys = 硬门槛词（用于星级/重合判断）
+ * softKeys = 业态相关词（仅作列表提示，不单独抬升到 5 星）
+ */
 const QUALS = [
-  { id: "cmmi3", name: "CMMI（3级）", domain: "研发", keys: ["CMMI", "软件能力成熟度", "软件开发", "应用软件"] },
-  { id: "cmmi5", name: "CMMI5", domain: "研发", keys: ["CMMI", "CMMI5", "软件开发"] },
-  { id: "cs2", name: "CS / 信息系统建设服务", domain: "集成", keys: ["CS", "信息系统建设和服务", "系统集成", "信息化"] },
-  { id: "iso20000", name: "ISO20000", domain: "运维", keys: ["ISO20000", "ISO 20000", "信息技术服务管理", "IT服务", "运维"] },
-  { id: "iso27001", name: "ISO27001", domain: "安全", keys: ["ISO27001", "ISO 27001", "信息安全", "等保", "网络安全"] },
-  { id: "itss3", name: "ITSS", domain: "运维", keys: ["ITSS", "运行维护", "运维服务", "ITO", "信息运维"] },
-  { id: "sysint", name: "系统集成相关", domain: "集成", keys: ["系统集成", "运营商系统集成"] },
-  { id: "dcmm2", name: "DCMM", domain: "数据", keys: ["DCMM", "数据管理", "大数据", "数据治理"] },
-  { id: "dsmm2", name: "DSMM", domain: "数据", keys: ["DSMM", "数据安全"] },
-  { id: "ccrc", name: "CCRC 信息安全服务", domain: "安全", keys: ["CCRC", "信息安全服务", "安全集成", "风险评估"] },
-  { id: "secret", name: "涉密相关", domain: "安全", keys: ["涉密", "保密"] },
-  { id: "software-ent", name: "软件企业/软件产品", domain: "研发", keys: ["软件企业", "软件产品", "软著"] },
-  { id: "vas", name: "增值电信业务许可", domain: "通用", keys: ["增值电信", "云服务", "云计算"] },
-  { id: "ei-1", name: "电子与智能化", domain: "集成", keys: ["电子与智能化", "智能化", "弱电", "安防监控", "智慧安防"] },
-  { id: "iso9001", name: "质量管理体系", domain: "通用", keys: ["ISO9001", "质量管理体系"] },
+  { id: "cmmi3", name: "CMMI（3级）", domain: "研发", keys: ["CMMI", "软件能力成熟度"], softKeys: ["软件开发", "应用软件"] },
+  { id: "cmmi5", name: "CMMI5", domain: "研发", keys: ["CMMI5", "CMMI 5", "CMMI五级"] },
+  { id: "cs2", name: "CS / 信息系统建设服务", domain: "集成", keys: ["信息系统建设和服务", "CS2", "CS贰级", "CS 贰级"], softKeys: ["系统集成", "信息化"] },
+  { id: "iso20000", name: "ISO20000", domain: "运维", keys: ["ISO20000", "ISO 20000", "ISO/IEC 20000"], softKeys: ["信息技术服务管理", "IT服务"] },
+  { id: "iso27001", name: "ISO27001", domain: "安全", keys: ["ISO27001", "ISO 27001", "ISO/IEC 27001"], softKeys: ["信息安全", "等保"] },
+  { id: "itss3", name: "ITSS", domain: "运维", keys: ["ITSS"], softKeys: ["运行维护", "运维服务", "ITO", "信息运维"] },
+  { id: "sysint", name: "系统集成资质/等级", domain: "集成", keys: ["系统集成甲级", "系统集成乙级", "系统集成企业"], softKeys: ["系统集成", "运营商系统集成"] },
+  { id: "dcmm2", name: "DCMM", domain: "数据", keys: ["DCMM"], softKeys: ["数据管理", "数据治理"] },
+  { id: "dsmm2", name: "DSMM", domain: "数据", keys: ["DSMM"], softKeys: ["数据安全"] },
+  { id: "ccrc", name: "CCRC 信息安全服务", domain: "安全", keys: ["CCRC", "信息安全服务资质"], softKeys: ["安全集成", "风险评估"] },
+  { id: "secret", name: "涉密相关", domain: "安全", keys: ["涉密信息系统", "涉密资质"], softKeys: ["涉密", "保密"] },
+  { id: "software-ent", name: "软件企业/软件产品", domain: "研发", keys: ["软件企业", "软件产品证书"], softKeys: ["软著", "软件产品"] },
+  { id: "vas", name: "增值电信业务许可", domain: "通用", keys: ["增值电信业务经营许可证", "增值电信"], softKeys: ["云服务", "云计算"] },
+  { id: "ei-1", name: "电子与智能化", domain: "集成", keys: ["电子与智能化工程", "电子与智能化"], softKeys: ["智能化", "弱电", "安防监控"] },
+  { id: "iso9001", name: "质量管理体系", domain: "通用", keys: ["ISO9001", "ISO 9001", "质量管理体系认证"], softKeys: ["质量管理体系"] },
 ];
 
 const SEARCH_KEYWORDS = [
@@ -378,10 +382,14 @@ async function ensureToken() {
   return true;
 }
 
-function matchQuals(text) {
+/** soft=true 时合并 softKeys，仅用于列表提示 */
+function matchQuals(text, { soft = false } = {}) {
   const hit = [];
   for (const q of QUALS) {
-    if (q.keys.some((k) => text.includes(k))) {
+    const keys = soft
+      ? [...(q.keys || []), ...(q.softKeys || [])]
+      : q.keys || [];
+    if (keys.some((k) => k && text.includes(k))) {
       hit.push({ id: q.id, name: q.name, domain: q.domain });
     }
   }
@@ -402,6 +410,385 @@ function scoreItem(title, professions, quals, tenderType, money) {
   if (tenderType === "招采" || tenderType === "招标") score += 15;
   if (money && money > 0) score += Math.min(Math.log10(money + 1) * 5, 15);
   return Math.round(score);
+}
+
+/**
+ * 综合分级 1–5 星（内部对照软件能力清单 + 可投性因素）。
+ * 站点展示用「匹配星级」，不出现机构称谓。
+ */
+function rateStars(ctx) {
+  const {
+    title,
+    professions,
+    matchedQuals,
+    tenderType,
+    money,
+    keys,
+    detailText,
+  } = ctx;
+  const reasons = [];
+  let pts = 0;
+
+  const isZhao = ["招采", "招标"].includes(tenderType);
+  const isClosed = /中标|候选|成交|流标|废标|终止|异常/.test(title + tenderType);
+  if (isZhao && !isClosed) {
+    pts += 22;
+    reasons.push("在投/采购公告阶段");
+  } else if (isClosed) {
+    pts -= 25;
+    reasons.push("已结束或结果公示，参考价值低");
+  }
+
+  const softTitle = /软件开发|应用软件|信息系统|系统集成|信息化平台/.test(title);
+  if (softTitle) {
+    pts += 20;
+    reasons.push("标题强软件/信息化信号");
+  } else if (SOFTWARE_RE.test(title)) {
+    pts += 12;
+    reasons.push("标题含信息化相关词");
+  }
+  if ((professions || []).some((p) => /软件|系统集成|信息运维|信息化/.test(p))) {
+    pts += 10;
+    reasons.push("专业标签匹配");
+  }
+
+  // 硬门槛只看原文，避免用「已匹配名称」二次命中（如 CMMI 名称再触发 CMMI5）
+  const hardQuals = matchQuals(
+    `${keys.qualSection || ""} ${(keys.qualHits || []).join(" ")} ${detailText || ""} ${title}`,
+    { soft: false },
+  );
+  const nHard = hardQuals.length;
+  const nSoft = (matchedQuals || []).length;
+  if (nHard >= 3) {
+    pts += 30;
+    reasons.push(`硬门槛标准命中 ${nHard} 项（高度重合）`);
+  } else if (nHard >= 2) {
+    pts += 22;
+    reasons.push(`硬门槛标准命中 ${nHard} 项`);
+  } else if (nHard === 1) {
+    pts += 12;
+    reasons.push(`硬门槛标准命中：${hardQuals[0].name}`);
+  } else if (nSoft >= 2) {
+    pts += 8;
+    reasons.push("业态相关，但未见明确证书门槛词");
+  }
+
+  // 规模：软件类常见可投区间加权
+  if (money >= 50 && money <= 2000) {
+    pts += 12;
+    reasons.push(`规模适中（约 ${money.toFixed(0)} 万）`);
+  } else if (money > 2000 && money <= 8000) {
+    pts += 8;
+    reasons.push("规模偏大，需评估交付能力");
+  } else if (money > 0 && money < 50) {
+    pts += 4;
+    reasons.push("规模较小");
+  }
+
+  if (keys.bidDeadline) {
+    pts += 8;
+    reasons.push(`投标截止：${keys.bidDeadline}`);
+  }
+  if (keys.docFeeRequired === false) {
+    pts += 3;
+    reasons.push("不收取文件费");
+  } else if (keys.docFeeRequired === true) {
+    pts += 1;
+    reasons.push(keys.docFeeText || "需购文件");
+  }
+
+  // 扣分：明显非软件主业
+  if (/绿化|绿植|课桌|药品|校服|土建主体|道路施工/.test(title)) {
+    pts -= 30;
+    reasons.push("疑似非目标业态");
+  }
+
+  pts = Math.max(0, Math.min(100, Math.round(pts)));
+
+  let stars = 1;
+  const hasGateInfo = !!(keys.qualSection || (keys.qualHits && keys.qualHits.length));
+  const scaleOk = money >= 30 && money <= 5000;
+  const actionable = isZhao && !isClosed && softTitle;
+
+  // 5 星 = 高度可跟进：在投软件主业 + 高分 +（证书级硬命中 或 资格信息+规模/截止齐）
+  if (
+    actionable &&
+    pts >= 68 &&
+    (nHard >= 1 || (hasGateInfo && scaleOk && keys.bidDeadline))
+  ) {
+    stars = 5;
+  } else if (actionable && pts >= 58) {
+    stars = 4;
+  } else if (pts >= 48) {
+    stars = 3;
+  } else if (pts >= 34) {
+    stars = 2;
+  } else {
+    stars = 1;
+  }
+
+  // 硬命中加注
+  if (nHard >= 1) {
+    reasons.push(
+      `证书级重合：${hardQuals
+        .map((q) => q.name)
+        .slice(0, 4)
+        .join("、")}`,
+    );
+  }
+
+  return {
+    stars,
+    starScore: pts,
+    starReasons: reasons.slice(0, 8),
+    hardQuals,
+  };
+}
+
+function parseAttachments(detail) {
+  if (!detail) return [];
+  const out = [];
+  if (Array.isArray(detail.attachments) && detail.attachments.length) {
+    for (const a of detail.attachments) {
+      let fileUrl = a.fileUrl || a.url || a.path || "";
+      let fileName = a.fileName || a.name || "file";
+      // 有的条目 fileName 里塞了整段 URL
+      if (!fileUrl && /^https?:\/\//i.test(fileName)) {
+        fileUrl = fileName;
+        fileName = "附件";
+      }
+      if (!fileUrl && typeof a === "string" && a.includes("http")) {
+        const m = a.match(/(https?:\/\/\S+)/);
+        if (m) fileUrl = m[1];
+      }
+      if (fileUrl && /^https?:\/\//i.test(fileUrl)) {
+        out.push({ fileName, fileUrl });
+      }
+    }
+  }
+  // "name.pdf？https://..." 或 "name.pdf?https://..."
+  const raw = detail.attachment || "";
+  if (typeof raw === "string" && raw.includes("http")) {
+    for (const part of raw.split(",")) {
+      const m = part.match(/([^？?,]+\.(?:pdf|docx?|zip|rar))?[\s？?]*?(https?:\/\/[^\s,]+)/i);
+      if (!m) continue;
+      out.push({
+        fileName: (m[1] || "附件").trim(),
+        fileUrl: m[2].trim(),
+      });
+    }
+  }
+  // 去重
+  const seen = new Set();
+  return out.filter((a) => {
+    if (seen.has(a.fileUrl)) return false;
+    seen.add(a.fileUrl);
+    return true;
+  });
+}
+
+async function downloadFile(url, dest) {
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      Accept: "*/*",
+      "Accept-Language": "zh-CN,zh;q=0.9",
+      // 贵州公资附件 OSS 对缺 Referer 的请求常 403
+      Referer: "http://www.ccgp-guizhou.gov.cn/",
+    },
+    redirect: "follow",
+  });
+  if (!res.ok) throw new Error(`download ${res.status}`);
+  const buf = Buffer.from(await res.arrayBuffer());
+  if (buf.length < 1000) throw new Error(`download too small (${buf.length})`);
+  fs.writeFileSync(dest, buf);
+  return buf.length;
+}
+
+function extractPdfText(pdfPath) {
+  try {
+    const out = execFileSync("pdftotext", ["-layout", pdfPath, "-"], {
+      encoding: "utf8",
+      maxBuffer: 20 * 1024 * 1024,
+      timeout: 60000,
+    });
+    return out || "";
+  } catch {
+    return "";
+  }
+}
+
+/** 对 5 星项目：下附件 + 正文/PDF 深挖 */
+async function deepAnalyzeFiveStar(item, detail, keys) {
+  const docsRoot = path.join(root, "data/tender-docs", item.id);
+  fs.mkdirSync(docsRoot, { recursive: true });
+
+  const atts = parseAttachments(detail);
+  const saved = [];
+  let pdfText = "";
+
+  // 优先下「招标文件」类
+  const ordered = [...atts].sort((a, b) => {
+    const rank = (n) =>
+      /招标文件|采购文件|询比文件|磋商文件|谈判文件/.test(n) ? 0 : 1;
+    return rank(a.fileName) - rank(b.fileName);
+  });
+
+  for (const att of ordered.slice(0, 4)) {
+    try {
+      const safe = att.fileName.replace(/[^\w.\u4e00-\u9fff()-]+/g, "_");
+      const dest = path.join(docsRoot, safe || "file.bin");
+      const size = await downloadFile(att.fileUrl, dest);
+      saved.push({ fileName: att.fileName, size, local: dest });
+      if (/\.pdf$/i.test(att.fileName) && !pdfText) {
+        pdfText = extractPdfText(dest).slice(0, 80000);
+      }
+      await new Promise((r) => setTimeout(r, 200));
+    } catch (e) {
+      saved.push({
+        fileName: att.fileName,
+        error: e instanceof Error ? e.message : String(e),
+      });
+    }
+  }
+
+  // 无 PDF 时用公告正文深挖
+  const detailPlain = stripHtml(
+    (detail && (detail.contentText || detail.content)) || "",
+  );
+  const corpus = `${item.title}\n${keys.qualSection || ""}\n${detailPlain}\n${pdfText}`.replace(
+    /\s+/g,
+    " ",
+  );
+  const matchedStandards = matchQuals(corpus, { soft: false }).map((q) => q.name);
+
+  const mustRequirements = [];
+  const reqPatterns = [
+    /须具备[^。；;]{6,80}/g,
+    /应具备[^。；;]{6,80}/g,
+    /必须具有[^。；;]{6,80}/g,
+    /资格要求[：:]\s*[^。；;]{6,100}/g,
+    /特定资格要求[：:]\s*[^。；;]{6,120}/g,
+  ];
+  for (const re of reqPatterns) {
+    const ms = corpus.match(re) || [];
+    for (const m of ms) {
+      const t = m.trim();
+      if (t.length >= 8 && !mustRequirements.includes(t)) {
+        mustRequirements.push(t.slice(0, 120));
+      }
+      if (mustRequirements.length >= 10) break;
+    }
+  }
+
+  // 简单 gap：正文出现的标准词未命中清单
+  const mentioned = [];
+  for (const re of [
+    /CMMI\s*\d?/gi,
+    /ISO\s*27001/gi,
+    /ISO\s*20000/gi,
+    /ITSS/gi,
+    /CS[1-5一二三四五级]+/g,
+    /涉密/g,
+    /系统集成[甲乙]级/g,
+  ]) {
+    const ms = corpus.match(re) || [];
+    for (const m of ms) {
+      if (!mentioned.includes(m)) mentioned.push(m);
+    }
+  }
+  const gaps = mentioned.filter(
+    (m) => !matchedStandards.some((s) => s.toLowerCase().includes(m.toLowerCase().slice(0, 4))),
+  );
+
+  const summaryParts = [
+    `匹配星级 ${item.stars}（综合分 ${item.starScore}）`,
+    item.bidDeadline ? `截止 ${item.bidDeadline}` : "截止未从公告解析到",
+    item.scaleText || (item.moneyWan ? `规模约 ${item.moneyWan} 万` : "规模未披露"),
+    matchedStandards.length
+      ? `与能力清单重合：${matchedStandards.slice(0, 5).join("、")}`
+      : "与能力清单重合点较少，需人工看资格专章",
+    saved.filter((s) => s.local).length
+      ? `已下载附件 ${saved.filter((s) => s.local).length} 个`
+      : "未获取到可下载招标文件附件（可能仅有来源链接）",
+  ];
+
+  const analysis = {
+    analyzedAt: new Date().toISOString(),
+    id: item.id,
+    title: item.title,
+    stars: item.stars,
+    starScore: item.starScore,
+    starReasons: item.starReasons,
+    bidDeadline: item.bidDeadline || keys.bidDeadline || "",
+    scaleText: item.scaleText || "",
+    docFeeText: item.docFeeText || "",
+    matchedStandards,
+    mustRequirements: mustRequirements.slice(0, 10),
+    mentionedInDoc: mentioned.slice(0, 15),
+    gaps: gaps.slice(0, 8),
+    files: saved.map(({ fileName, size, error }) => ({
+      fileName,
+      size: size || 0,
+      error: error || null,
+    })),
+    sourceUrl: item.sourceUrl,
+    summary: summaryParts.join("；") + "。",
+    // 本地路径不写进公开 JSON
+  };
+
+  fs.writeFileSync(
+    path.join(docsRoot, "analysis.json"),
+    JSON.stringify({ ...analysis, localDir: docsRoot }, null, 2) + "\n",
+  );
+  fs.writeFileSync(
+    path.join(docsRoot, "analysis.md"),
+    [
+      `# ${item.title}`,
+      "",
+      `- 星级：${"★".repeat(item.stars)}${"☆".repeat(5 - item.stars)}（${item.starScore}）`,
+      `- 截止：${analysis.bidDeadline || "未解析"}`,
+      `- 规模：${analysis.scaleText || "未披露"}`,
+      `- 文件费：${analysis.docFeeText || "未写明"}`,
+      `- 来源：${item.sourceUrl || ""}`,
+      "",
+      "## 分级理由",
+      ...(item.starReasons || []).map((r) => `- ${r}`),
+      "",
+      "## 与能力清单重合",
+      ...(matchedStandards.length
+        ? matchedStandards.map((x) => `- ${x}`)
+        : ["- （较少，见资格专章）"]),
+      "",
+      "## 文件中的资格表述（摘录）",
+      ...(mustRequirements.length
+        ? mustRequirements.map((x) => `- ${x}`)
+        : ["- （未自动抽出，请打开 PDF）"]),
+      "",
+      "## 附件",
+      ...saved.map((f) =>
+        f.local
+          ? `- ${f.fileName}（${f.size} bytes）`
+          : `- ${f.fileName} 失败：${f.error}`,
+      ),
+      "",
+      analysis.summary,
+      "",
+    ].join("\n"),
+  );
+
+  // 返回可上公开展示的摘要（无本地路径、无机构称谓）
+  return {
+    analyzedAt: analysis.analyzedAt,
+    summary: analysis.summary,
+    matchedStandards: analysis.matchedStandards,
+    mustRequirements: analysis.mustRequirements,
+    mentionedInDoc: analysis.mentionedInDoc,
+    gaps: analysis.gaps,
+    files: analysis.files,
+    hasLocalDocs: saved.some((s) => s.local),
+  };
 }
 
 async function fetchKeyword(keyword) {
@@ -500,10 +887,13 @@ for (const it of ordered) {
     : "";
   const fullBlob = `${blob} ${detailText}`.slice(0, 12000);
   const keys = extractKeyFields(detailText || blob, it, detail || {});
-  const matchedQuals = matchQuals(`${fullBlob} ${keys.qualSection} ${keys.qualHits.join(" ")}`);
-  // 正文明确写的资质关键词，补进 matchedQuals 展示
+  // 列表提示用 soft；星级另算 hard
+  const matchedQuals = matchQuals(
+    `${fullBlob} ${keys.qualSection} ${keys.qualHits.join(" ")}`,
+    { soft: true },
+  );
   for (const hit of keys.qualHits) {
-    const extra = matchQuals(hit);
+    const extra = matchQuals(hit, { soft: true });
     for (const q of extra) {
       if (!matchedQuals.some((x) => x.id === q.id)) matchedQuals.push(q);
     }
@@ -512,19 +902,27 @@ for (const it of ordered) {
   const tenderType = it.tenderType || "";
   const money = keys.moneyWan || Number(it.zhaoBiaoMoney || 0) || 0;
   let score = scoreItem(title, professions, matchedQuals, tenderType, money);
-  // 关键字段完整度加分
   if (keys.bidDeadline) score += 8;
   if (keys.docFeeRequired !== null) score += 4;
   if (keys.qualHits.length || keys.qualSection) score += 6;
   if (money > 0) score += 4;
 
-  // 至少要有软件信号；有资质命中的排前面
   if (matchedQuals.length === 0 && score < 35) continue;
 
   const sourceUrl =
     detail?.sourceUrl ||
     it.sourceUrl ||
     `https://dgdata.bxnd.com.cn/project-lib/detail2/${it.id}`;
+
+  const rating = rateStars({
+    title,
+    professions,
+    matchedQuals,
+    tenderType,
+    money,
+    keys,
+    detailText,
+  });
 
   tenders.push({
     id: String(it.id),
@@ -539,11 +937,13 @@ for (const it of ordered) {
     professions,
     matchedQuals,
     score,
+    stars: rating.stars,
+    starScore: rating.starScore,
+    starReasons: rating.starReasons,
     sourceUrl,
     platformUrl: `https://dgdata.bxnd.com.cn/project-lib/detail2/${it.id}`,
     stageName: it.stageName || "",
     purchaseTypeName: it.purchaseTypeName || "",
-    // 关键四字段
     bidDeadline: keys.bidDeadline,
     fileGetDeadline: keys.fileGetDeadline,
     scaleText: keys.scaleText,
@@ -552,19 +952,96 @@ for (const it of ordered) {
     bondText: keys.bondText,
     qualSection: keys.qualSection,
     qualHits: keys.qualHits,
+    _detail: detail,
+    _keys: keys,
   });
 }
 console.log(`详情拉取 ${detailFetched} 条`);
 
 tenders.sort((a, b) => {
+  if ((b.stars || 0) !== (a.stars || 0)) return (b.stars || 0) - (a.stars || 0);
+  if ((b.starScore || 0) !== (a.starScore || 0)) {
+    return (b.starScore || 0) - (a.starScore || 0);
+  }
   if (b.score !== a.score) return b.score - a.score;
   return (b.date || "").localeCompare(a.date || "");
 });
 
-const top = tenders.slice(0, 80);
+// 深挖池：5 星优先；不足时用高分 4 星且有附件的补齐
+const deepLimit = Number(process.env.BXND_DEEP_LIMIT || 5);
+const attRank = (t) => {
+  const d = t._detail || {};
+  if (parseAttachments(d).length) return 2;
+  if (d.isAtt) return 1;
+  return 0;
+};
+const deepPool = [
+  ...tenders.filter((t) => t.stars === 5),
+  ...tenders.filter((t) => t.stars === 4 && attRank(t) > 0),
+]
+  .sort(
+    (a, b) =>
+      (b.stars || 0) - (a.stars || 0) ||
+      attRank(b) - attRank(a) ||
+      (b.starScore || 0) - (a.starScore || 0),
+  )
+  .filter((t, i, arr) => arr.findIndex((x) => x.id === t.id) === i);
+
+console.log(
+  `深挖池 ${deepPool.length}（5★ ${tenders.filter((t) => t.stars === 5).length}），上限 ${deepLimit}`,
+);
+let deepDone = 0;
+for (const t of deepPool) {
+  if (deepDone >= deepLimit) break;
+  try {
+    process.stdout.write(`  深挖 ${t.stars}★ ${t.id} ... `);
+    t.deepAnalysis = await deepAnalyzeFiveStar(t, t._detail, t._keys);
+    // PDF/正文若挖到硬门槛，可升为 5 星
+    const hardFromDeep = (t.deepAnalysis.matchedStandards || []).length;
+    if (t.stars < 5 && hardFromDeep >= 1 && ["招采", "招标"].includes(t.tenderType)) {
+      t.stars = 5;
+      t.starReasons = [
+        ...(t.starReasons || []),
+        `附件/正文硬门槛：${t.deepAnalysis.matchedStandards.slice(0, 3).join("、")}`,
+      ].slice(0, 8);
+      console.log("ok → 升为5★");
+    } else {
+      console.log("ok");
+    }
+    deepDone += 1;
+  } catch (e) {
+    console.log("fail", e instanceof Error ? e.message : e);
+    t.deepAnalysis = {
+      summary: `深挖失败：${e instanceof Error ? e.message : String(e)}`,
+      hasLocalDocs: false,
+      files: [],
+      matchedStandards: [],
+      mustRequirements: [],
+    };
+  }
+}
+// 深挖后按星级重排
+tenders.sort((a, b) => {
+  if ((b.stars || 0) !== (a.stars || 0)) return (b.stars || 0) - (a.stars || 0);
+  if ((b.starScore || 0) !== (a.starScore || 0)) {
+    return (b.starScore || 0) - (a.starScore || 0);
+  }
+  return (b.date || "").localeCompare(a.date || "");
+});
+
+const top = tenders.slice(0, 80).map((t) => {
+  const { _detail, _keys, ...pub } = t;
+  return pub;
+});
+
+const starDist = [1, 2, 3, 4, 5].map(
+  (s) => `${s}★:${top.filter((t) => t.stars === s).length}`,
+);
+console.log(`星级分布 ${starDist.join(" ")}；深挖完成 ${deepDone}`);
+
 const out = {
   syncedAt: new Date().toISOString(),
-  source: "dgdata-api.bxnd.com.cn / ProjectLibrary.ListByPage",
+  source: "public tender list + detail",
   authenticated: authed,
   provinceCodes: PROVINCE_CODES,
   since,
@@ -572,8 +1049,10 @@ const out = {
   rawCount: raw.length,
   softwareCount: cut.length,
   matchedCount: top.length,
+  fiveStarCount: top.filter((t) => t.stars === 5).length,
+  deepAnalyzed: deepDone,
   note:
-    "软件类项目 + 行业公开标准关键词提示；不等于招标文件明文要求，不代表任何主体持证。账号密码勿入库。",
+    "匹配星级综合「软件相关度 / 公开标准关键词 / 在投状态 / 规模 / 截止信息」。5 星会尝试下载公开附件并做资格摘录。不等于可中标判断。账号密码勿入库。",
   items: top,
 };
 

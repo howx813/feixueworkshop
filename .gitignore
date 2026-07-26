@@ -44,3 +44,6 @@ next-env.d.ts
 
 # local cron logs
 .logs/
+
+# 5★ 招标文件下载与本地深挖（勿提交，体积大且可能含敏感材料）
+/data/tender-docs/

@@ -19,7 +19,8 @@ export default function TendersPage() {
       <p className="page-kicker">Daily Bids</p>
       <h1 className="page-title">每日标讯</h1>
       <p className="page-desc">
-        静态站点 + 定时快照：汇总软件 / 信息化类招标线索，提炼截止时间、规模、文件费与资格要求摘录，便于快速扫读。
+        静态站点 + 定时快照：汇总软件 / 信息化类招标，按匹配星级排序；展示截止、规模、文件费与资格摘录。5
+        星项目会尝试深挖公开招标附件。
       </p>
 
       <TenderBoard initial={initial} />

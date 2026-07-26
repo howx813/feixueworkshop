@@ -2,8 +2,18 @@ export type MatchedQual = {
   id: string;
   name: string;
   domain?: string;
-  /** @deprecated 兼容旧快照字段，勿在站点展示机构称谓 */
   entity?: string;
+};
+
+export type DeepAnalysis = {
+  analyzedAt?: string;
+  summary: string;
+  matchedStandards?: string[];
+  mustRequirements?: string[];
+  mentionedInDoc?: string[];
+  gaps?: string[];
+  files?: { fileName: string; size?: number; error?: string | null }[];
+  hasLocalDocs?: boolean;
 };
 
 export type TenderItem = {
@@ -19,23 +29,22 @@ export type TenderItem = {
   professions: string[];
   matchedQuals: MatchedQual[];
   score: number;
+  /** 1–5，综合匹配星级 */
+  stars?: number;
+  starScore?: number;
+  starReasons?: string[];
+  deepAnalysis?: DeepAnalysis;
   sourceUrl: string;
   platformUrl: string;
   stageName?: string;
   purchaseTypeName?: string;
-  /** 投标/响应截止时间 */
   bidDeadline?: string;
-  /** 获取招标文件截止 */
   fileGetDeadline?: string;
-  /** 规模文案（限价/预算） */
   scaleText?: string;
-  /** 是否需购买标书：true/false/null=未写明 */
   docFeeRequired?: boolean | null;
   docFeeText?: string;
   bondText?: string;
-  /** 正文摘录的资格要求段落 */
   qualSection?: string;
-  /** 正文命中的资质关键词 */
   qualHits?: string[];
 };
 
@@ -44,12 +53,13 @@ export type TendersFile = {
   since: string;
   matchedCount: number;
   softwareCount: number;
+  fiveStarCount?: number;
+  deepAnalyzed?: number;
   authenticated?: boolean;
   note: string;
   items: TenderItem[];
 };
 
-/** 静态托管下的热更新路径（方案 C：sync 后写入 public/data） */
 export const TENDERS_PUBLIC_PATH = "/data/tenders.json";
 
 export function formatTenderMoney(wan: number) {
@@ -65,10 +75,22 @@ export function formatDocFee(item: TenderItem) {
   return "原文未写明";
 }
 
+export function formatStars(stars = 0) {
+  const n = Math.max(0, Math.min(5, Math.round(stars)));
+  return "★".repeat(n) + "☆".repeat(5 - n);
+}
+
 export function tenderScoreClass(score: number) {
   if (score >= 70) return "score-high";
   if (score >= 45) return "score-mid";
   return "";
+}
+
+export function starClass(stars = 0) {
+  if (stars >= 5) return "star-5";
+  if (stars >= 4) return "star-4";
+  if (stars >= 3) return "star-3";
+  return "star-low";
 }
 
 export async function fetchTendersPublic(
