@@ -17,6 +17,28 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.10",
+    date: "2026-07-26",
+    title: "站点文案去敏",
+    summary:
+      "移除站点中机构称谓与内部资质表述；标讯匹配改为行业公开标准关键词提示。",
+    items: [
+      { tag: "修复", text: "页面/快照/changelog 去掉敏感机构字样" },
+      { tag: "优化", text: "资质提示改为公开标准名称，不展示持证主体" },
+    ],
+  },
+  {
+    version: "0.2.9",
+    date: "2026-07-26",
+    title: "标讯关键四字段",
+    summary:
+      "每日标讯展示投标截止、文件资格摘录、项目规模、标书/文件费；从公告正文抽取并写入快照。",
+    items: [
+      { tag: "新增", text: "同步脚本抽取截止/资格/规模/文件费" },
+      { tag: "优化", text: "列表关键信息四宫格 + 资格摘录" },
+    ],
+  },
+  {
     version: "0.2.8",
     date: "2026-07-26",
     title: "标讯方案 C：定时快照",
@@ -33,11 +55,11 @@ export const changelog: ChangelogEntry[] = [
     date: "2026-07-26",
     title: "每日标讯",
     summary:
-      "新增「每日标讯」栏目：拉取贵州软件/信息化类招标，按通服软件相关资质关键词匹配排序。",
+      "新增「每日标讯」栏目：汇总软件/信息化类招标线索并按公开标准关键词提示排序。",
     items: [
       { tag: "新增", text: "导航栏目 /tenders/ 每日标讯" },
       { tag: "新增", text: "npm run tenders:sync 同步标讯快照" },
-      { tag: "新增", text: "通服软件相关资质摘要与匹配口径" },
+      { tag: "新增", text: "公开标准关键词匹配口径" },
     ],
   },
   {

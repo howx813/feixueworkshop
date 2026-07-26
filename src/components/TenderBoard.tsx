@@ -5,6 +5,7 @@ import {
   type TenderItem,
   type TendersFile,
   fetchTendersPublic,
+  formatDocFee,
   formatTenderMoney,
   tenderScoreClass,
 } from "@/lib/tenders";
@@ -75,13 +76,16 @@ export function TenderBoard({ initial }: Props) {
       ) : null}
 
       <div className="note" style={{ marginBottom: 20 }}>
-        <strong style={{ fontWeight: 650 }}>筛选口径：</strong>
-        先筛软件类项目，再标注通服侧可能相关的资质（CMMI、CS、ITSS、ISO27001/20000、系统集成等）。
-        标签表示「通服有对应能力」，不等于招标文件已写明该门槛。投标前须人工核验资格条件与证书有效期。
+        <strong style={{ fontWeight: 650 }}>关注字段：</strong>
+        投标截止、文件资格要求摘录、项目规模（限价/预算）、是否收取标书/文件费。
+        由公开公告正文自动抽取，缺项显示「未写明」，使用前务必核对原文。
         <br />
-        <strong style={{ fontWeight: 650 }}>更新方式（方案 C）：</strong>
-        定时跑 <code style={{ fontSize: "0.9em" }}>npm run tenders:sync</code>{" "}
-        写快照；站点保持静态，不跑后端。
+        <strong style={{ fontWeight: 650 }}>关键词提示：</strong>
+        芯片为行业公开标准名称匹配，不等于文件已写明门槛，也不代表持证情况。
+        <br />
+        <strong style={{ fontWeight: 650 }}>更新：</strong>
+        <code style={{ fontSize: "0.9em" }}>npm run tenders:sync</code>{" "}
+        或定时任务写快照。
       </div>
 
       <div className="list-stack">
@@ -122,9 +126,6 @@ export function TenderBoard({ initial }: Props) {
               <p className="item-body" style={{ marginBottom: 10 }}>
                 <strong style={{ fontWeight: 650 }}>招标人：</strong>
                 {item.buyer || "未披露"}
-                <span style={{ margin: "0 0.5rem", opacity: 0.4 }}>·</span>
-                <strong style={{ fontWeight: 650 }}>预算：</strong>
-                {formatTenderMoney(item.moneyWan)}
                 {item.purchaseTypeName ? (
                   <>
                     <span style={{ margin: "0 0.5rem", opacity: 0.4 }}>·</span>
@@ -133,6 +134,72 @@ export function TenderBoard({ initial }: Props) {
                 ) : null}
               </p>
 
+              <div className="tender-keygrid" aria-label="关键信息">
+                <div className="tender-keycell">
+                  <span className="tender-keylabel">投标截止</span>
+                  <span className="tender-keyvalue">
+                    {item.bidDeadline || "未写明"}
+                  </span>
+                </div>
+                <div className="tender-keycell">
+                  <span className="tender-keylabel">项目规模</span>
+                  <span className="tender-keyvalue">
+                    {item.scaleText || formatTenderMoney(item.moneyWan)}
+                    {item.bondText ? ` · ${item.bondText}` : ""}
+                  </span>
+                </div>
+                <div className="tender-keycell">
+                  <span className="tender-keylabel">标书/文件费</span>
+                  <span
+                    className={`tender-keyvalue${
+                      item.docFeeRequired === true
+                        ? " tender-fee-yes"
+                        : item.docFeeRequired === false
+                          ? " tender-fee-no"
+                          : ""
+                    }`}
+                  >
+                    {formatDocFee(item)}
+                  </span>
+                </div>
+                <div className="tender-keycell">
+                  <span className="tender-keylabel">获取文件截止</span>
+                  <span className="tender-keyvalue">
+                    {item.fileGetDeadline || "未写明"}
+                  </span>
+                </div>
+              </div>
+
+              {(item.qualHits?.length || item.qualSection) && (
+                <div className="tender-qualbox">
+                  <div className="tender-keylabel" style={{ marginBottom: 6 }}>
+                    文件资质要求（摘录）
+                  </div>
+                  {item.qualHits?.length ? (
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: 6,
+                        marginBottom: item.qualSection ? 8 : 0,
+                      }}
+                    >
+                      {item.qualHits.map((h) => (
+                        <span key={`${item.id}-qh-${h}`} className="chip chip-amber">
+                          {h}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
+                  {item.qualSection ? (
+                    <p className="item-body" style={{ margin: 0, fontSize: "0.875rem" }}>
+                      {item.qualSection}
+                      {item.qualSection.length >= 500 ? "…" : ""}
+                    </p>
+                  ) : null}
+                </div>
+              )}
+
               {item.matchedQuals?.length ? (
                 <div
                   style={{
@@ -140,12 +207,15 @@ export function TenderBoard({ initial }: Props) {
                     flexWrap: "wrap",
                     gap: 8,
                     marginBottom: 10,
+                    marginTop: 10,
                   }}
                 >
+                  <span className="tender-keylabel" style={{ width: "100%" }}>
+                    标准关键词提示
+                  </span>
                   {item.matchedQuals.map((q) => (
                     <span key={`${item.id}-${q.id}`} className="chip">
                       {q.name}
-                      {q.entity ? ` · ${q.entity}` : ""}
                     </span>
                   ))}
                 </div>

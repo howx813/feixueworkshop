@@ -1,7 +1,9 @@
 export type MatchedQual = {
   id: string;
   name: string;
-  entity: string;
+  domain?: string;
+  /** @deprecated 兼容旧快照字段，勿在站点展示机构称谓 */
+  entity?: string;
 };
 
 export type TenderItem = {
@@ -21,6 +23,20 @@ export type TenderItem = {
   platformUrl: string;
   stageName?: string;
   purchaseTypeName?: string;
+  /** 投标/响应截止时间 */
+  bidDeadline?: string;
+  /** 获取招标文件截止 */
+  fileGetDeadline?: string;
+  /** 规模文案（限价/预算） */
+  scaleText?: string;
+  /** 是否需购买标书：true/false/null=未写明 */
+  docFeeRequired?: boolean | null;
+  docFeeText?: string;
+  bondText?: string;
+  /** 正文摘录的资格要求段落 */
+  qualSection?: string;
+  /** 正文命中的资质关键词 */
+  qualHits?: string[];
 };
 
 export type TendersFile = {
@@ -40,6 +56,13 @@ export function formatTenderMoney(wan: number) {
   if (!wan || wan <= 0) return "金额未披露";
   if (wan >= 10000) return `${(wan / 10000).toFixed(2)} 亿元`;
   return `${wan.toFixed(wan >= 100 ? 0 : 2)} 万元`;
+}
+
+export function formatDocFee(item: TenderItem) {
+  if (item.docFeeText) return item.docFeeText;
+  if (item.docFeeRequired === false) return "不收取文件费用";
+  if (item.docFeeRequired === true) return "需购买文件（见原文）";
+  return "原文未写明";
 }
 
 export function tenderScoreClass(score: number) {

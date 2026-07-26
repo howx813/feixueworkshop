@@ -384,6 +384,63 @@ textarea {
   color: var(--text-0);
 }
 
+/* 每日标讯 · 关键四字段 */
+.tender-keygrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+  margin: 0 0 12px;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-soft);
+  background: var(--surface-0);
+}
+
+@media (max-width: 640px) {
+  .tender-keygrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tender-keycell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.tender-keylabel {
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--text-2);
+  font-weight: 600;
+}
+
+.tender-keyvalue {
+  font-size: 0.875rem;
+  color: var(--text-0);
+  font-weight: 550;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.tender-fee-yes {
+  color: var(--amber);
+}
+
+.tender-fee-no {
+  color: var(--emerald);
+}
+
+.tender-qualbox {
+  margin: 0 0 8px;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px dashed var(--border);
+  background: var(--note-bg);
+}
+
 .section-meta {
   color: var(--text-2);
   font-size: 0.75rem;

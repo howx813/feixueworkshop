@@ -1,23 +1,21 @@
 /**
- * 同步「每日标讯」：从市场态势感知平台公开列表接口拉取贵州软件类招标，
- * 按通服软件相关资质关键词匹配，写入 src/data/tenders.generated.json。
+ * 同步「每日标讯」：拉取公开软件/信息化类招标列表，按行业标准关键词做提示匹配，
+ * 写入 src/data/tenders.generated.json 与 public/data/tenders.json。
  *
  * 用法:
  *   npm run tenders:sync
  *
  * 可选环境变量（.env.local，勿提交）:
- *   BXND_API_BASE=https://dgdata-api.bxnd.com.cn
- *   BXND_USERNAME=...                   # 账号
- *   BXND_PASSWORD=...                   # 密码（优先自动登录拿 token）
- *   BXND_TOKEN=...                      # 可选；有则跳过登录
- *   BXND_PROVINCE_CODES=520000          # 默认贵州
- *   BXND_DAYS=14                        # 回溯天数
- *   BXND_MAX_PAGES=3                    # 每个关键词最多页数
+ *   BXND_API_BASE=...
+ *   BXND_USERNAME=...
+ *   BXND_PASSWORD=...
+ *   BXND_TOKEN=...
+ *   BXND_PROVINCE_CODES=520000
+ *   BXND_DAYS=14
+ *   BXND_MAX_PAGES=3
  *   BXND_PAGE_SIZE=30
  *
- * 说明:
- * - 列表接口可不登录；有账号密码时会自动 Login 取 Bearer，便于详情等接口。
- * - 勿把账号密码写入仓库。
+ * 说明: 账号密码勿写入仓库；页面/产物勿出现敏感机构称谓。
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -56,23 +54,23 @@ const USERNAME = process.env.BXND_USERNAME || "";
 const PASSWORD = process.env.BXND_PASSWORD || "";
 let TOKEN = process.env.BXND_TOKEN || "";
 
-/** 与 src/data/tongfu-software-quals.ts 保持同步（脚本侧自包含，避免 TS import） */
+/** 与 src/data/software-quals.ts 对齐（脚本侧自包含） */
 const QUALS = [
-  { id: "cmmi3", name: "CMMI（3级）", entity: "省公司", keys: ["CMMI", "软件能力成熟度", "软件开发", "应用软件"] },
-  { id: "cmmi5", name: "CMMI5", entity: "设计院", keys: ["CMMI", "CMMI5", "软件开发"] },
-  { id: "cs2", name: "CS 贰级 / CS2", entity: "省公司/设计院", keys: ["CS", "信息系统建设和服务", "系统集成", "信息化"] },
-  { id: "iso20000", name: "ISO20000", entity: "省公司", keys: ["ISO20000", "ISO 20000", "信息技术服务管理", "IT服务", "运维"] },
-  { id: "iso27001", name: "ISO27001", entity: "省公司", keys: ["ISO27001", "ISO 27001", "信息安全", "等保", "网络安全"] },
-  { id: "itss3", name: "ITSS 三级", entity: "省公司/设计院", keys: ["ITSS", "运行维护", "运维服务", "ITO", "信息运维"] },
-  { id: "sysint-aaa", name: "系统集成领域 AAA", entity: "省公司", keys: ["系统集成", "运营商系统集成"] },
-  { id: "dcmm2", name: "DCMM 2级", entity: "省公司", keys: ["DCMM", "数据管理", "大数据", "数据治理"] },
-  { id: "dsmm2", name: "DSMM 2级", entity: "省公司", keys: ["DSMM", "数据安全"] },
-  { id: "ccrc", name: "CCRC 信息安全服务", entity: "省公司", keys: ["CCRC", "信息安全服务", "安全集成", "风险评估"] },
-  { id: "secret", name: "涉密集成/软件开发", entity: "省公司/设计院", keys: ["涉密", "保密"] },
-  { id: "software-ent", name: "软件企业/软件产品", entity: "设计院", keys: ["软件企业", "软件产品", "软著"] },
-  { id: "vas", name: "增值电信业务经营许可证", entity: "省公司", keys: ["增值电信", "云服务", "云计算"] },
-  { id: "ei-1", name: "电子与智能化壹级", entity: "省公司", keys: ["电子与智能化", "智能化", "弱电", "安防监控", "智慧安防"] },
-  { id: "iso9001", name: "质量管理体系", entity: "省公司", keys: ["ISO9001", "质量管理体系"] },
+  { id: "cmmi3", name: "CMMI（3级）", domain: "研发", keys: ["CMMI", "软件能力成熟度", "软件开发", "应用软件"] },
+  { id: "cmmi5", name: "CMMI5", domain: "研发", keys: ["CMMI", "CMMI5", "软件开发"] },
+  { id: "cs2", name: "CS / 信息系统建设服务", domain: "集成", keys: ["CS", "信息系统建设和服务", "系统集成", "信息化"] },
+  { id: "iso20000", name: "ISO20000", domain: "运维", keys: ["ISO20000", "ISO 20000", "信息技术服务管理", "IT服务", "运维"] },
+  { id: "iso27001", name: "ISO27001", domain: "安全", keys: ["ISO27001", "ISO 27001", "信息安全", "等保", "网络安全"] },
+  { id: "itss3", name: "ITSS", domain: "运维", keys: ["ITSS", "运行维护", "运维服务", "ITO", "信息运维"] },
+  { id: "sysint", name: "系统集成相关", domain: "集成", keys: ["系统集成", "运营商系统集成"] },
+  { id: "dcmm2", name: "DCMM", domain: "数据", keys: ["DCMM", "数据管理", "大数据", "数据治理"] },
+  { id: "dsmm2", name: "DSMM", domain: "数据", keys: ["DSMM", "数据安全"] },
+  { id: "ccrc", name: "CCRC 信息安全服务", domain: "安全", keys: ["CCRC", "信息安全服务", "安全集成", "风险评估"] },
+  { id: "secret", name: "涉密相关", domain: "安全", keys: ["涉密", "保密"] },
+  { id: "software-ent", name: "软件企业/软件产品", domain: "研发", keys: ["软件企业", "软件产品", "软著"] },
+  { id: "vas", name: "增值电信业务许可", domain: "通用", keys: ["增值电信", "云服务", "云计算"] },
+  { id: "ei-1", name: "电子与智能化", domain: "集成", keys: ["电子与智能化", "智能化", "弱电", "安防监控", "智慧安防"] },
+  { id: "iso9001", name: "质量管理体系", domain: "通用", keys: ["ISO9001", "质量管理体系"] },
 ];
 
 const SEARCH_KEYWORDS = [
@@ -97,8 +95,9 @@ const EXCLUDE_RE =
 
 function stripHtml(s) {
   return String(s || "")
-    .replace(/<[^>]+>/g, "")
+    .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/g, " ")
+    .replace(/\$\{[^}]*\}/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -107,6 +106,231 @@ function daysAgoIso(n) {
   const d = new Date();
   d.setDate(d.getDate() - n);
   return d.toISOString().slice(0, 10);
+}
+
+/** 中文时间串 → 可读字符串（只保留日期时间，去掉后文杂质） */
+function normalizeCnDateTime(raw) {
+  if (!raw) return "";
+  let s = String(raw).replace(/\s+/g, " ").trim();
+  // 优先抠「2026年07月31日 09时30分00秒」整段
+  const cn = s.match(
+    /(\d{4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日(?:\s*(\d{1,2})\s*时\s*(\d{1,2})\s*分(?:\s*(\d{1,2})\s*秒)?)?/,
+  );
+  if (cn) {
+    const pad = (n) => String(n).padStart(2, "0");
+    const date = `${cn[1]}-${pad(cn[2])}-${pad(cn[3])}`;
+    if (cn[4] != null) {
+      return `${date} ${pad(cn[4])}:${pad(cn[5])}${cn[6] != null ? `:${pad(cn[6])}` : ""}`;
+    }
+    return date;
+  }
+  s = s
+    .replace(/年/g, "-")
+    .replace(/月/g, "-")
+    .replace(/日/g, " ")
+    .replace(/时/g, ":")
+    .replace(/分/g, ":")
+    .replace(/秒/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  const iso = s.match(
+    /(\d{4}-\d{1,2}-\d{1,2})(?:\s+(\d{1,2}:\d{1,2}(?::\d{1,2})?))?/,
+  );
+  if (iso) {
+    const pad = (n) => String(n).padStart(2, "0");
+    const [y, m, d] = iso[1].split("-");
+    const date = `${y}-${pad(m)}-${pad(d)}`;
+    if (iso[2]) {
+      const parts = iso[2].split(":").map((x) => pad(x));
+      return `${date} ${parts.join(":")}`;
+    }
+    return date;
+  }
+  return s.slice(0, 19);
+}
+
+/**
+ * 从正文/结构化字段抽取：截止时间、标书费、规模、资质要求。
+ * 平台结构化日期常为空，主要靠公告正文正则。
+ */
+function extractKeyFields(plain, listItem = {}, detail = {}) {
+  const text = plain || "";
+
+  // —— 投标/响应截止 ——
+  let bidDeadline = "";
+  const dateChunk =
+    "([0-9]{4}\\s*年\\s*[0-9]{1,2}\\s*月\\s*[0-9]{1,2}\\s*日(?:\\s*[0-9]{1,2}\\s*时\\s*[0-9]{1,2}\\s*分(?:\\s*[0-9]{1,2}\\s*秒)?)?)";
+  const ddlPatterns = [
+    new RegExp(`投标文件递交截止时间[^0-9]{0,24}${dateChunk}`),
+    new RegExp(`响应文件递交截止时间[^0-9]{0,24}${dateChunk}`),
+    new RegExp(`(?:投标|响应)截止时间[^0-9]{0,16}${dateChunk}`),
+    new RegExp(`递交截止时间[^0-9]{0,16}${dateChunk}`),
+    new RegExp(`开标时间[^0-9]{0,12}${dateChunk}`),
+    // 纯数字日期：2026-08-07 09:30
+    /(?:投标|响应|递交)截止时间[^0-9]{0,12}(\d{4}[-/.年]\d{1,2}[-/.月]\d{1,2}[日]?(?:\s+\d{1,2}:\d{2}(?::\d{2})?)?)/,
+  ];
+  for (const re of ddlPatterns) {
+    const m = text.match(re);
+    if (m) {
+      bidDeadline = normalizeCnDateTime(m[1]);
+      break;
+    }
+  }
+  if (!bidDeadline) {
+    bidDeadline =
+      listItem.endDate ||
+      detail.endDate ||
+      listItem.endEsDate ||
+      detail.endEsDate ||
+      listItem.applyEndDate ||
+      detail.applyEndDate ||
+      "";
+  }
+
+  // —— 获取招标/采购文件截止 ——
+  let fileGetDeadline = "";
+  const fileDdl = text.match(
+    /(?:获取|购买|下载)(?:招标|采购|询比|招标采购)?文件[^。；;\n]{0,20}截止[^：:0-9]{0,12}[：:]\s*([0-9]{4}\s*年\s*[0-9]{1,2}\s*月\s*[0-9]{1,2}\s*日[^。；;\n]{0,30})/,
+  );
+  if (fileDdl) fileGetDeadline = normalizeCnDateTime(fileDdl[1]);
+  if (!fileGetDeadline) {
+    fileGetDeadline =
+      listItem.getFileEndDate || detail.getFileEndDate || "";
+  }
+
+  // —— 标书/文件费用 ——
+  let docFeeRequired = null; // true | false | null
+  let docFeeText = "";
+  if (
+    /不收取\s*(?:招标|询比|采购)?文件(?:费用|费)|获取本(?:招标|询比|采购)?文件不收取|文件费用[：:]\s*本项目不收取|每套售价\s*0\s*元/.test(
+      text,
+    )
+  ) {
+    docFeeRequired = false;
+    docFeeText = "不收取文件费用";
+  } else {
+    const feeM = text.match(
+      /(?:招标|询比|采购)?文件(?:费用|费|售价)[^。；;\n]{0,40}?([0-9]+(?:\.[0-9]+)?)\s*元/,
+    );
+    const saleM = text.match(/每套售价\s*([0-9]+(?:\.[0-9]+)?)\s*元/);
+    const amt = feeM?.[1] || saleM?.[1];
+    if (amt && Number(amt) > 0) {
+      docFeeRequired = true;
+      docFeeText = `需购买，约 ${amt} 元/套`;
+    } else if (/收取\s*(?:招标|询比|采购)?文件(?:费用|费)|文件售价|购买(?:招标|采购)文件/.test(text)) {
+      docFeeRequired = true;
+      docFeeText = "需购买文件（金额见原文）";
+    }
+  }
+
+  // —— 规模 / 金额 ——
+  // 列表 zhaoBiaoMoney 多为「万元」；详情多为「元」
+  let moneyWan = Number(listItem.zhaoBiaoMoney || 0) || 0;
+  const detailMoney = Number(detail.zhaoBiaoMoney || 0) || 0;
+  if (detailMoney > 0) {
+    if (detailMoney >= 1000) {
+      // 元
+      const asWan = detailMoney / 10000;
+      if (!moneyWan || Math.abs(moneyWan - asWan) / asWan > 0.05) {
+        moneyWan = asWan;
+      }
+    } else if (!moneyWan) {
+      moneyWan = detailMoney;
+    }
+  }
+
+  let scaleText = "";
+  const capM = text.match(
+    /最高(?:响应|投标)?(?:总价)?限价\s*([0-9]+(?:,[0-9]{3})*(?:\.[0-9]+)?)\s*元/,
+  );
+  const budgetM = text.match(
+    /(?:采购预算|预算金额|项目预算|合同估算价|招标控制价)\s*[：:为]?\s*([0-9]+(?:,[0-9]{3})*(?:\.[0-9]+)?)\s*万元?/,
+  );
+  if (capM) {
+    const yuan = Number(capM[1].replace(/,/g, ""));
+    scaleText = `最高限价 ${(yuan / 10000).toFixed(2)} 万元`;
+    if (!moneyWan) moneyWan = yuan / 10000;
+  } else if (budgetM) {
+    const n = Number(budgetM[1].replace(/,/g, ""));
+    // 若原文带「万元」关键词
+    if (/万元/.test(budgetM[0]) || n < 10000) {
+      scaleText = `预算约 ${n} 万元`;
+      if (!moneyWan) moneyWan = n;
+    } else {
+      scaleText = `预算约 ${(n / 10000).toFixed(2)} 万元`;
+      if (!moneyWan) moneyWan = n / 10000;
+    }
+  } else if (moneyWan > 0) {
+    scaleText =
+      moneyWan >= 10000
+        ? `约 ${(moneyWan / 10000).toFixed(2)} 亿元`
+        : `约 ${moneyWan.toFixed(moneyWan >= 100 ? 0 : 2)} 万元`;
+  }
+
+  const bond =
+    Number(listItem.bondMoney || detail.bondMoney || 0) || 0;
+  let bondText = "";
+  if (bond > 0) {
+    bondText =
+      bond >= 1000
+        ? `保证金约 ${(bond / 10000).toFixed(2)} 万元`
+        : `保证金约 ${bond} 万元`;
+  }
+
+  // —— 资质要求（正文段落 + 关键词条） ——
+  let qualSection = "";
+  const sectionRes = [
+    /(?:供应商|投标人|申请人)(?:的)?资格要求(.{0,1200}?)(?=\d+\.\s*(?:获取|招标|采购|询比|响应|投标)文件|获取(?:招标|询比)文件|三[、.．]|3[、.．]\s*获取|$)/,
+    /资格要求[：:\s]*(.{0,800}?)(?=\d+\.\s*获取|获取文件|投标文件|$)/,
+    /资质要求[：:\s]*(.{0,800}?)(?=\d+\.\s*获取|获取文件|$)/,
+  ];
+  for (const re of sectionRes) {
+    const m = text.match(re);
+    if (m && m[1] && m[1].length > 20) {
+      qualSection = m[1].replace(/\s+/g, " ").trim().slice(0, 600);
+      break;
+    }
+  }
+
+  const qualHits = [];
+  const hitRes = [
+    /CMMI\s*[0-9一二三四五级]*/gi,
+    /信息系统建设和服务能力[^，,。；;\s]{0,12}/g,
+    /CS[一二三四五1-5级]+/g,
+    /ISO\s*\/?\s*IEC\s*27001|ISO\s*27001/gi,
+    /ISO\s*\/?\s*IEC\s*20000|ISO\s*20000/gi,
+    /ITSS[^，,。；;\s]{0,10}/g,
+    /DCMM[^，,。；;\s]{0,10}/g,
+    /DSMM[^，,。；;\s]{0,10}/g,
+    /CCRC[^，,。；;\s]{0,20}/g,
+    /软件企业[^，,。；;\s]{0,10}/g,
+    /系统集成(?:企业|资质|证书|甲级|乙级|一级|二级)/g,
+    /电子与智能化[^，,。；;\s]{0,12}/g,
+    /涉密[^，,。；;\s]{0,20}/g,
+    /注册资本[^。；;]{0,30}/g,
+    /近\s*[一二三3]\s*年[^。；;]{0,40}业绩/g,
+  ];
+  for (const re of hitRes) {
+    const all = text.match(re);
+    if (all) {
+      for (const x of all) {
+        const t = x.trim();
+        if (t && !qualHits.includes(t)) qualHits.push(t);
+      }
+    }
+  }
+
+  return {
+    bidDeadline: bidDeadline || "",
+    fileGetDeadline: fileGetDeadline || "",
+    docFeeRequired,
+    docFeeText: docFeeText || (docFeeRequired === null ? "原文未写明" : ""),
+    moneyWan: Number(moneyWan.toFixed(4)) || 0,
+    scaleText: scaleText || (moneyWan > 0 ? "" : "规模未披露"),
+    bondText,
+    qualSection,
+    qualHits: qualHits.slice(0, 12),
+  };
 }
 
 async function apiPost(pathname, body) {
@@ -150,9 +374,7 @@ async function ensureToken() {
     return false;
   }
   TOKEN = json.data.token;
-  console.log(
-    `已登录: ${json.data.userName || USERNAME}（${json.data.companyName || "—"}）`,
-  );
+  console.log("已登录标讯源（凭证未写入产物）");
   return true;
 }
 
@@ -160,7 +382,7 @@ function matchQuals(text) {
   const hit = [];
   for (const q of QUALS) {
     if (q.keys.some((k) => text.includes(k))) {
-      hit.push({ id: q.id, name: q.name, entity: q.entity });
+      hit.push({ id: q.id, name: q.name, domain: q.domain });
     }
   }
   return hit;
@@ -245,7 +467,15 @@ const cut = raw.filter((it) => {
 console.log(`去重 ${raw.length} → 软件类 ${cut.length}（${since} 起）`);
 
 const tenders = [];
-for (const it of cut) {
+let detailFetched = 0;
+// 招采优先拉详情（关键字段在正文）；中标/候选也拉前 N 条
+const preferZhao = cut.filter((it) =>
+  ["招采", "招标"].includes(it.tenderType || ""),
+);
+const rest = cut.filter((it) => !["招采", "招标"].includes(it.tenderType || ""));
+const ordered = [...preferZhao, ...rest];
+
+for (const it of ordered) {
   const title = stripHtml(it.name);
   const professions = it.professionNames || [];
   const blob = [
@@ -257,24 +487,36 @@ for (const it of cut) {
     it.classTypeName || "",
   ].join(" ");
 
+  // 为截取截止/资质/标书费，对入围池尽量拉详情（上限 100）
   let detail = null;
-  // 仅对分数潜力高的条目拉详情，控制请求量
-  if (
-    /软件开发|系统集成|信息化|信息系统|信息安全|CMMI|ITSS/.test(blob) ||
-    (it.zhaoBiaoMoney && it.zhaoBiaoMoney >= 50)
-  ) {
+  if (detailFetched < 100) {
     detail = await maybeDetail(it.id);
-    await new Promise((r) => setTimeout(r, 120));
+    detailFetched += 1;
+    await new Promise((r) => setTimeout(r, 100));
   }
 
   const detailText = detail
     ? stripHtml(detail.contentText || detail.content || "")
     : "";
-  const fullBlob = `${blob} ${detailText}`.slice(0, 8000);
-  const matchedQuals = matchQuals(fullBlob);
+  const fullBlob = `${blob} ${detailText}`.slice(0, 12000);
+  const keys = extractKeyFields(detailText || blob, it, detail || {});
+  const matchedQuals = matchQuals(`${fullBlob} ${keys.qualSection} ${keys.qualHits.join(" ")}`);
+  // 正文明确写的资质关键词，补进 matchedQuals 展示
+  for (const hit of keys.qualHits) {
+    const extra = matchQuals(hit);
+    for (const q of extra) {
+      if (!matchedQuals.some((x) => x.id === q.id)) matchedQuals.push(q);
+    }
+  }
+
   const tenderType = it.tenderType || "";
-  const money = Number(it.zhaoBiaoMoney || 0);
-  const score = scoreItem(title, professions, matchedQuals, tenderType, money);
+  const money = keys.moneyWan || Number(it.zhaoBiaoMoney || 0) || 0;
+  let score = scoreItem(title, professions, matchedQuals, tenderType, money);
+  // 关键字段完整度加分
+  if (keys.bidDeadline) score += 8;
+  if (keys.docFeeRequired !== null) score += 4;
+  if (keys.qualHits.length || keys.qualSection) score += 6;
+  if (money > 0) score += 4;
 
   // 至少要有软件信号；有资质命中的排前面
   if (matchedQuals.length === 0 && score < 35) continue;
@@ -301,8 +543,18 @@ for (const it of cut) {
     platformUrl: `https://dgdata.bxnd.com.cn/project-lib/detail2/${it.id}`,
     stageName: it.stageName || "",
     purchaseTypeName: it.purchaseTypeName || "",
+    // 关键四字段
+    bidDeadline: keys.bidDeadline,
+    fileGetDeadline: keys.fileGetDeadline,
+    scaleText: keys.scaleText,
+    docFeeRequired: keys.docFeeRequired,
+    docFeeText: keys.docFeeText,
+    bondText: keys.bondText,
+    qualSection: keys.qualSection,
+    qualHits: keys.qualHits,
   });
 }
+console.log(`详情拉取 ${detailFetched} 条`);
 
 tenders.sort((a, b) => {
   if (b.score !== a.score) return b.score - a.score;
@@ -321,7 +573,7 @@ const out = {
   softwareCount: cut.length,
   matchedCount: top.length,
   note:
-    "软件类项目 + 通服软件相关资质关键词提示；标签=通服侧相关能力，不等于招标文件明文要求。账号密码勿入库。",
+    "软件类项目 + 行业公开标准关键词提示；不等于招标文件明文要求，不代表任何主体持证。账号密码勿入库。",
   items: top,
 };
 
