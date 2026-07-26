@@ -51,21 +51,32 @@ npm run build
 
 产物在 `out/`（已在 `.gitignore` 中，不必提交）。
 
-## 标准开发流程
+## 标准开发 / 发版流程
 
 ```
-改代码 → npm run dev 手测 → npm run test:predeploy → git push → npm run deploy
+改代码（含 changelog 版本）→ 手测 → 预检 → git push → npm run deploy（上云 + 打 tag）
 ```
 
 | 顺序 | 动作 | 命令 |
 |------|------|------|
-| 1 | 改代码 | — |
-| 2 | 本地预览 | `npm run dev`（http://localhost:3456） |
-| 3 | 预检测试 | `npm run test:predeploy` |
-| 4 | 上传 GitHub | `git commit` + `git push` |
-| 5 | 部署腾讯云 | `npm run deploy` |
+| 1 | 改代码 + 写 `changelog.ts` 顶部版本 | — |
+| 2 | 本地预览 | `npm run dev`（:3456） |
+| 3 | 预检 | `npm run test:predeploy` |
+| 4 | 推 GitHub | `git commit` + `git push` |
+| 5 | 部署 | `npm run deploy`（备份线上 + 上传 + **git tag vX.Y.Z**） |
 
-**铁律：预检不过，不 push 上线、不部署腾讯云。**
+**铁律：预检不过，不部署。**
+
+### GitHub 发版 tag
+
+版本号以 `src/data/changelog.ts` 第一条为准。
+
+```bash
+npm run version:print          # 当前版本
+npm run release:tag            # 手动打 tag 并 push
+npm run release:from -- v0.2.5 # 从某 tag 重新构建并上线
+git tag -l 'v*'
+```
 
 ### 部署到腾讯云 CloudBase
 

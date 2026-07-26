@@ -19,6 +19,9 @@
     "test:predeploy": "node scripts/predeploy-check.mjs",
     "deploy": "node scripts/deploy.mjs",
     "rollback": "node scripts/rollback.mjs",
+    "version:print": "node scripts/version.mjs",
+    "release:tag": "node scripts/release-tag.mjs",
+    "release:from": "node scripts/release-from.mjs",
     "deploy:force": "echo '拒绝跳过测试。请用 npm run deploy' && exit 1"
   },
   "dependencies": {

@@ -1,7 +1,8 @@
 /**
- * 预检通过后部署到 CloudBase，并保留可回退快照。
+ * 预检通过后部署到 CloudBase，并保留可回退快照 + Git tag。
  *
- * 回退：npm run rollback
+ * 回退本地快照：npm run rollback
+ * 从 Git tag 上线：npm run release:from -- v0.2.4
  * 列表：npm run rollback -- --list
  */
 import { spawnSync } from "node:child_process";
@@ -158,11 +159,39 @@ if (allMeta.length >= 2) {
   console.log("  PREVIOUS 指向", prevId);
 }
 
-console.log("\n→ 4/4 上传 out/ 到 CloudBase …");
+console.log("\n→ 4/5 上传 out/ 到 CloudBase …");
 const code = runCode("tcb", ["hosting", "deploy", "out", "-e", envId]);
 if (code !== 0) {
   console.error("部署失败。可尝试：npm run rollback 回到 -live 快照（若下载成功）");
   process.exit(code);
+}
+
+console.log("\n→ 5/5 打 Git 发版 tag（与 changelog 版本对齐）…");
+const tagSkip = process.argv.includes("--no-tag");
+let releaseTag = "";
+if (tagSkip) {
+  console.log("  已跳过 tag（--no-tag）");
+} else {
+  const tagRun = run("node", ["scripts/release-tag.mjs"], true);
+  if ((tagRun.status ?? 1) !== 0) {
+    console.warn("  ⚠ 打 tag / 推送失败，线上已更新；请手动: npm run release:tag");
+  } else {
+    try {
+      const { readChangelogVersion, tagName } = await import("./version.mjs");
+      releaseTag = tagName(readChangelogVersion());
+      meta.gitTag = releaseTag;
+      fs.writeFileSync(
+        path.join(historyDir, `${id}.json`),
+        JSON.stringify(meta, null, 2) + "\n",
+      );
+      fs.writeFileSync(
+        path.join(historyDir, "LATEST.json"),
+        JSON.stringify(meta, null, 2) + "\n",
+      );
+    } catch {
+      /* ignore */
+    }
+  }
 }
 
 pruneHistory();
@@ -173,8 +202,11 @@ console.log(`
   线上: ${siteUrl}
   本次快照: ${id}
   代码: ${git.branch}@${git.sha}
-  回退: npm run rollback
-  列表: npm run rollback -- --list
+  Git tag: ${releaseTag || "(未打上)"}
+  本地快照回退: npm run rollback
+  从 tag 重新上线: npm run release:from -- ${releaseTag || "vX.Y.Z"}
+  列表快照: npm run rollback -- --list
+  列表 tags: git tag -l 'v*'
 ================================================
 `);
 process.exit(0);

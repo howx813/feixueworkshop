@@ -1,106 +1,108 @@
 # 飞雪工坊 · 协作约定
 
-## 标准开发流程（固定顺序）
+## 标准开发 / 发版流程（固定顺序）
 
 ```
-改代码 → 本地 dev 看效果 → 预检测试 → 通过后推 GitHub → 再部署腾讯云
+改代码 → 本地手测 → 预检 → 推 GitHub → 部署腾讯云（自动打 tag）
 ```
 
-**禁止跳步：**
+### 步骤表
 
-- 预检没过，不 push（除非用户明确只要备份草稿）
-- 预检没过，**绝不**部署腾讯云
-- 未 push 也可以部署，但不推荐；默认「先 GitHub 再上云」，保证线上与仓库一致
+| 步骤 | 动作 | 命令 |
+|------|------|------|
+| 1 | 改代码 | 含在 `src/data/changelog.ts` **顶部**追加新版本 |
+| 2 | 本地手测 | `npm run dev`（:3456） |
+| 3 | 预检 | `npm run test:predeploy` |
+| 4 | 提交并推 GitHub | `git commit` + `git push` |
+| 5 | 部署腾讯云 | `npm run deploy`（预检 + 备份线上 + 上传 + **打 `vX.Y.Z` tag 并 push**） |
 
-### 每一步做什么
+**禁止：** 预检不过就 push 上线 / 部署。
 
-| 步骤 | 命令 / 动作 | 通过标准 |
-|------|-------------|----------|
-| 1. 改代码 | 按需求改 `src/` 等 | 逻辑正确、不引入密钥 |
-| 2. 本地看 | `npm run dev` → http://localhost:3456 | 页面/交互手测 OK |
-| 3. 预检 | `npm run test:predeploy` | lint + build + 页面 + 电台音源 + 密钥扫描全 ✔ |
-| 4. GitHub | `git add` → `commit` → `git push` | 远端 `main` 更新；**不含** `.env.local` |
-| 5. 腾讯云 | `npm run deploy` | 内部再跑预检，通过才上传 `out/` |
+### 版本号从哪来？
 
-### 一键命令备忘
+- **唯一权威：** `src/data/changelog.ts` 第一条 `version: "x.y.z"`
+- 发版前先写 changelog，再 deploy
+- `npm run version:print` 查看当前版本
+- deploy 会同步 `package.json` 的 version，并创建 git tag **`v` + 版本号**（如 `v0.2.5`）
+
+### GitHub 的作用
+
+| 能力 | 说明 |
+|------|------|
+| 代码备份 | 源码与历史 |
+| **发版 tag** | `v0.2.5` = 可复现的一版代码 |
+| 协作 | 换机器 / 找人改 |
+
+腾讯云只存**构建产物**；GitHub 存**代码 + tag**。
+
+### 回退（两条线）
+
+**A. 快速回退线上（本地快照，不改代码）**
 
 ```bash
-cd /Users/xuhao/Projects/feixue-workshop
-
-# 开发（写代码时）
-npm run dev
-
-# 测试（部署前必跑，会跑 next build）
-npm run test:predeploy
-
-# 预检后的可靠预览（静态 out，不跑 next dev，无 948.js 问题）
-npm run preview:out
-# → http://localhost:3457
-
-# 若必须继续 next dev 且已损坏
-npm run dev:clean
-
-# 提交并推送（预检通过后）
-git add .
-git status   # 确认没有 .env.local
-git commit -m "说明改了什么"
-git push
-
-# 上线（内部会再预检）
-npm run deploy
+npm run rollback -- --list
+npm run rollback                 # 回到「上次部署前」的线上包
 ```
 
-### 本地缓存故障（必须正视）
+依赖本机 `.deploy-history/`（不进 git）。
 
-症状：`Cannot find module './948.js'`、`__webpack_modules__ is not a function`、CSS 500、Server Error。  
+**B. 从 Git tag 重新上线（可换机器，推荐中长期）**
 
-**根因（已实测）：**  
-`next build`（即使 distDir=.next-export）与正在跑的 `next dev` **并发时仍会弄坏** dev 的 `.next`。  
+```bash
+git tag -l 'v*'
+npm run release:from -- v0.2.5   # worktree 检出 → 预检 → 部署
+```
 
-**正确用法：**  
-1. 写代码 → `npm run dev`  
-2. 要测上线质量 → `npm run test:predeploy`（**可先停掉 dev**，更稳）  
-3. 看构建结果 → `npm run preview:out`（**不要**指望旧 dev 进程还健康）  
-4. 再开发 → `npm run dev:clean`  
+对应关系：
 
-助手侧（强制）：
-1. 改完必须 `npm run test:predeploy`，输出通过证据  
-2. 预检后验证用 **preview:out 或 curl out/**，不要只信「dev 还开着」  
-3. 用户报 948 / webpack / Server Error：立刻 `dev:clean` 或改用 preview:out  
-4. **禁止**未测或预检失败就部署  
-5. **禁止**在已知 dev 已损坏时让用户「刷新一下试试」
+```text
+changelog 0.2.5  ≈  git tag v0.2.5  ≈  某次成功 deploy 的代码状态
+```
 
-### 预检内容（test:predeploy）
+### 命令备忘
 
-1. eslint  
-2. 生产构建 `EXPORT=1 next build` → `out/`  
-3. 关键静态页存在且含关键文案  
-4. 电台 free 曲目音源抽样可达  
-5. 构建产物无密钥片段  
+```bash
+# 开发
+npm run dev
+npm run dev:clean          # 948.js / CSS 坏了
 
-预检失败 → 只修问题 → 重跑预检 → 全过再 push / deploy。
+# 测试
+npm run test:predeploy
+npm run preview:out        # :3457 看 out/，预检后推荐
 
-### 助手行为要求
+# 发版
+# 1) 改 changelog 顶部 version
+# 2) commit + push
+# 3)
+npm run deploy             # 上云 + 打 tag
+# 或只打 tag：
+npm run release:tag
 
-1. 改完功能：默认先本地验证思路，并跑 `npm run test:predeploy`  
-2. 用户说「推 GitHub / 提交」：预检通过后再 commit + push  
-3. 用户说「部署 / 上线」：预检通过后再 `npm run deploy`（建议确认 GitHub 已同步）  
-4. 预检失败：报告失败项，**不** push、**不**部署  
-5. 密钥永远只在 `.env.local`，不进仓库、不进 `out/`  
+# 回退
+npm run rollback
+npm run release:from -- v0.1.3   # 若历史上有该 tag
+```
 
-## 环境与地址
+### 本地缓存故障
+
+`next build` 与 `next dev` 并行会弄坏 `.next`（`948.js` 等）。
+
+- 预检后看站：用 **`npm run preview:out`**
+- dev 坏了：`npm run dev:clean`
+
+### 助手强制行为
+
+1. 改完跑 `test:predeploy`，通过再言完成  
+2. 发版提醒先写 changelog 版本号  
+3. deploy 后确认 tag 已推送（或说明失败）  
+4. 密钥不进仓库  
+
+## 环境
 
 | 项 | 值 |
 |----|-----|
-| 本地 | http://localhost:3456 |
+| 本地 dev | http://localhost:3456 |
+| 本地 preview | http://localhost:3457 |
 | GitHub | https://github.com/howx813/feixueworkshop |
-| CloudBase 环境 | `howx813-d7gx02spb2681185c` |
 | 线上 | https://howx813-d7gx02spb2681185c-1456523152.tcloudbaseapp.com |
-
-## 可选：一条龙（仅用户明确要求时）
-
-```bash
-npm run test:predeploy && git add . && git commit -m "..." && git push && npm run deploy
-```
-
-任一步失败即停止。
+| envId | `howx813-d7gx02spb2681185c` |

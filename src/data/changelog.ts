@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.5",
+    date: "2026-07-26",
+    title: "发版打 Git tag",
+    summary:
+      "发版流程：changelog 版本 → deploy 自动打 vX.Y.Z 并推 GitHub；可用 release:from 从 tag 重新上线。",
+    items: [
+      { tag: "新增", text: "npm run release:tag / release:from" },
+      { tag: "新增", text: "deploy 成功后自动打 tag（可用 --no-tag 跳过）" },
+      { tag: "文档", text: "AGENTS/README 写明 tag 与双轨回退（快照 + Git）" },
+    ],
+  },
+  {
     version: "0.2.4",
     date: "2026-07-26",
     title: "修复 AI 精选一直加载",
