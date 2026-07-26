@@ -29,7 +29,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          # 避免 Node 20 在 Actions 上的弃用警告（runner 已推 Node 24）
+          node-version: "22"
           cache: npm
 
       - name: Install deps
