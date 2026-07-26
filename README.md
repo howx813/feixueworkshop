@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 飞雪工坊 · Feixue Workshop
 
-## Getting Started
+用 AI 重做工作流。个人 AI 能力展厅网站。
 
-First, run the development server:
+## 本地开发
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+默认端口：[http://localhost:3456](http://localhost:3456)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 环境变量（可选）
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+复制示例文件后填写本地密钥（**不要提交真实密钥**）：
 
-## Learn More
+```bash
+cp .env.example .env.local
+```
 
-To learn more about Next.js, take a look at the following resources:
+| 变量 | 说明 |
+|------|------|
+| `NETEASE_*` | 网易云开放平台凭证（仅本机/服务端） |
+| `NETEASE_PLAYLIST_ID` | 可选，同步歌单用 |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+同步歌单曲库：
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run music:sync
+```
 
-## Deploy on Vercel
+## 构建（静态导出）
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+产物在 `out/`（已在 `.gitignore` 中，不必提交）。
+
+## 部署到腾讯云开发 CloudBase
+
+环境 ID：`howx813-d7gx02spb2681185c`
+
+```bash
+npm i -g @cloudbase/cli
+tcb login
+npm run build
+tcb hosting deploy out -e howx813-d7gx02spb2681185c
+```
+
+控制台：  
+https://tcb.cloud.tencent.com/dev?envId=howx813-d7gx02spb2681185c#/static-hosting
+
+## 页面结构
+
+| 路径 | 说明 |
+|------|------|
+| `/` | 首页 |
+| `/showcase/` | 能力展厅 |
+| `/insights/` | 观点精选 |
+| `/music/` | 工坊电台（网易云随机播放） |
+
+## 技术栈
+
+- Next.js 14 (App Router, SSG export)
+- TypeScript
+- Tailwind CSS

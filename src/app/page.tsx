@@ -1,100 +1,173 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ContactForm } from "@/components/ContactForm";
+import {
+  capabilities,
+  insights,
+  principles,
+  showcases,
+  site,
+} from "@/data/content";
 
-export default function Home() {
+function todayLabel() {
+  const d = new Date();
+  const week = ["日", "一", "二", "三", "四", "五", "六"][d.getDay()];
+  return `${d.getMonth() + 1}月${d.getDate()}日 · 周${week}`;
+}
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="page">
+      <p className="page-kicker">Feixue Workshop · v0.1</p>
+      <h1 className="page-title">{site.name}</h1>
+      <p className="page-desc">
+        {site.slogan}。把 AI、数据与办公链路做成可演示、可复用的工作流——不堆概念，只交付能看懂、用得上、讲得清的东西。
+      </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className="day-bar">
+        <strong>{todayLabel()}</strong>
+        <span>今日工坊速览</span>
+      </div>
+
+      <div className="grid-3">
+        {[
+          { k: "3", v: "核心能力" },
+          { k: String(showcases.length), v: "作品切片" },
+          { k: String(insights.length), v: "观点条目" },
+        ].map((s) => (
+          <div key={s.v} className="card card-pad">
+            <div className="stat-num">{s.k}</div>
+            <div className="stat-label">{s.v}</div>
+          </div>
+        ))}
+      </div>
+
+      <section className="section">
+        <div className="section-head">
+          <h2 className="section-title">核心能力 TOP {capabilities.length}</h2>
+          <Link href="/showcase/" className="link-accent">
+            全部展厅 →
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <div className="list-stack">
+          {capabilities.map((cap, i) => (
+            <article key={cap.id} className="card card-pad">
+              <div className="meta-row">
+                <span className="score-pill score-high">{90 - i * 4}</span>
+                <span className="chip chip-accent">{cap.status}</span>
+                <span>{cap.tags[0]}</span>
+              </div>
+              <h3 className="item-title">
+                {i + 1}. {cap.title}
+                <span style={{ color: "var(--text-2)", fontWeight: 500 }}>
+                  {" "}
+                  · {cap.subtitle}
+                </span>
+              </h3>
+              <p className="item-body">{cap.summary}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2 className="section-title">作品切片</h2>
+          <span className="section-meta">可讲解原型</span>
+        </div>
+        <div className="list-stack">
+          {showcases.map((item) => (
+            <article key={item.id} className="card card-pad">
+              <div className="meta-row">
+                <span className="chip">{item.role}</span>
+                <span>{item.stage}</span>
+              </div>
+              <h3 className="item-title">{item.title}</h3>
+              <p className="item-body">{item.summary}</p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 10 }}>
+                {item.stack.map((s) => (
+                  <span key={s} className="tag">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2 className="section-title">工坊原则</h2>
+        </div>
+        <div className="grid-3">
+          {principles.map((p) => (
+            <div key={p.title} className="card-quiet card-pad">
+              <h3 className="item-title" style={{ marginTop: 0, fontSize: "0.9375rem" }}>
+                {p.title}
+              </h3>
+              <p className="item-body">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2 className="section-title">观点精选</h2>
+          <Link href="/insights/" className="link-accent">
+            全部观点 →
+          </Link>
+        </div>
+        <div className="list-stack">
+          {insights.map((item, i) => (
+            <article key={item.id} className="card card-pad">
+              <div className="meta-row">
+                <span className={`score-pill ${i < 2 ? "score-high" : "score-mid"}`}>
+                  {88 - i * 3}
+                </span>
+                <span className="chip chip-amber">{item.category}</span>
+                <span>{item.date}</span>
+              </div>
+              <h3 className="item-title">{item.title}</h3>
+              <p className="item-body">{item.summary}</p>
+              <div className="note">
+                <strong style={{ fontWeight: 650 }}>推荐理由：</strong>
+                {item.takeaway}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section" id="contact">
+        <div className="section-head">
+          <h2 className="section-title">联系工坊</h2>
+          <span className="section-meta">人工回复 · 1–2 个工作日</span>
+        </div>
+        <div className="list-stack" style={{ marginBottom: 12 }}>
+          <div className="card-quiet card-pad">
+            <div className="bullet">适合：AI 提效咨询、数据看板原型、材料方法交流</div>
+            <div className="bullet" style={{ marginTop: 6 }}>
+              不适合：免费代写长篇公文、无边界驻场
+            </div>
+          </div>
+        </div>
+        <ContactForm />
+      </section>
+
+      <footer
+        style={{
+          marginTop: 40,
+          paddingTop: 16,
+          borderTop: "1px solid var(--border-soft)",
+          color: "var(--text-2)",
+          fontSize: "0.75rem",
+          lineHeight: 1.6,
+        }}
+      >
+        © {new Date().getFullYear()} {site.owner} · {site.nameEn}
+        <br />
+        个人作品与方法展厅，不代表任何机构官方立场。
       </footer>
     </div>
   );
