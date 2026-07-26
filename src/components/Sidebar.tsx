@@ -62,6 +62,18 @@ const nav = [
         ),
       },
       {
+        href: "/tenders/",
+        label: "每日标讯",
+        icon: (
+          <svg className="side-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4 4h16v16H4z" />
+            <path d="M8 9h8" />
+            <path d="M8 13h6" />
+            <path d="M8 17h4" />
+          </svg>
+        ),
+      },
+      {
         href: "/changelog/",
         label: "更新日志",
         icon: (
@@ -150,7 +162,7 @@ export function MobileNav() {
   const pathname = usePathname();
   const items = [
     { href: "/", label: "首页" },
-    { href: "/music/", label: "电台" },
+    { href: "/tenders/", label: "标讯" },
     { href: "/lab/", label: "手搓" },
     { href: "/changelog/", label: "日志" },
   ];

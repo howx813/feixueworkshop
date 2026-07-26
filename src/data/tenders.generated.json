@@ -1,0 +1,3562 @@
+{
+  "syncedAt": "2026-07-26T08:34:44.668Z",
+  "source": "dgdata-api.bxnd.com.cn / ProjectLibrary.ListByPage",
+  "authenticated": true,
+  "provinceCodes": [
+    520000
+  ],
+  "since": "2026-07-12",
+  "queryCount": 12,
+  "rawCount": 176,
+  "softwareCount": 150,
+  "matchedCount": 80,
+  "note": "软件类项目 + 通服软件相关资质关键词提示；标签=通服侧相关能力，不等于招标文件明文要求。账号密码勿入库。",
+  "items": [
+    {
+      "id": "70201251333000",
+      "title": "2026年中国电信贵州公司行业视频会议产品运营平台项目软件开发服务采购招标公告",
+      "tenderType": "招采",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 12:37:22",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国电信股份有限公司贵州分公司",
+      "moneyWan": 892.68,
+      "professions": [
+        "广播摄像系统",
+        "基础工程",
+        "软件开发",
+        "系统集成",
+        "通信运营支撑",
+        "其他",
+        "运营商视频监控",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "secret",
+          "name": "涉密集成/软件开发",
+          "entity": "省公司/设计院"
+        }
+      ],
+      "score": 116,
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=182458273686017&type=1&docTypeCode=TenderAnnouncement&securityViewCode=3d8b64311b5a0d656500443a1bfceb69",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70201251333000",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70207498523660",
+      "title": "体育彩票全业务管理平台集成及运维服务（二次）公开招标公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 16:01:47",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省体育彩票管理中心",
+      "moneyWan": 339.6,
+      "professions": [
+        "软件开发",
+        "信息运维",
+        "运营商ITO运维"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        }
+      ],
+      "score": 114,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=bEtGeyCvTliYGLlrkJbZrw==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70207498523660",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70206225447820",
+      "title": "体育彩票全业务管理平台集成及运维服务（二次）采购需求公示(采购需求公示)",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 10:26:52",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省体育彩票管理中心",
+      "moneyWan": 339.6,
+      "professions": [
+        "软件开发",
+        "信息运维",
+        "运营商ITO运维"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        },
+        {
+          "id": "dsmm2",
+          "name": "DSMM 2级",
+          "entity": "省公司"
+        },
+        {
+          "id": "secret",
+          "name": "涉密集成/软件开发",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "software-ent",
+          "name": "软件企业/软件产品",
+          "entity": "设计院"
+        }
+      ],
+      "score": 114,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=shvAwPZAFXVkLuzepnRq9w==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70206225447820",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70202212652688",
+      "title": "贵州电网有限责任公司服务类2026年第一批(生产业务信息系统建设、测试设备、仪器仪表定检校验服务等)公开招标招标公告",
+      "tenderType": "招采",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 17:03:07",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州电网有限责任公司",
+      "moneyWan": 487.29,
+      "professions": [
+        "仪表仪器",
+        "系统集成",
+        "批发服务",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dsmm2",
+          "name": "DSMM 2级",
+          "entity": "省公司"
+        },
+        {
+          "id": "ccrc",
+          "name": "CCRC 信息安全服务",
+          "entity": "省公司"
+        },
+        {
+          "id": "secret",
+          "name": "涉密集成/软件开发",
+          "entity": "省公司/设计院"
+        }
+      ],
+      "score": 114,
+      "sourceUrl": "https://www.ggzy.gov.cn/information/deal/html/a/0067/0101/20260723/00670d68557ffa7848f5ad387a447b095329.html",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70202212652688",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70201970921936",
+      "title": "贵州省智慧航空口岸项目运维服务公开招标公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 16:02:15",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省商务厅",
+      "moneyWan": 328,
+      "professions": [
+        "信息运维",
+        "运营商ITO运维",
+        "运营商系统集成",
+        "运营商低空经济"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        },
+        {
+          "id": "dsmm2",
+          "name": "DSMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 114,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=9yTU0I/7v+2zZhxkBanSTQ==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70201970921936",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70158467549460",
+      "title": "[中国联通采购与招标网]贵州数科N9226N04WS0217软件开发及云资源(灾备)服务项目询比采购公告",
+      "tenderType": "招采",
+      "date": "2026-07-15",
+      "publishTime": "2026-07-15 19:11:32",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "联通数字科技有限公司贵州省分公司",
+      "moneyWan": 423.69,
+      "professions": [
+        "通信管线",
+        "数据中心",
+        "软件开发",
+        "系统集成",
+        "其他",
+        "运营商IDC",
+        "运营商系统集成",
+        "运营商云计算",
+        "云服务"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务经营许可证",
+          "entity": "省公司"
+        }
+      ],
+      "score": 114,
+      "sourceUrl": "https://www.chinaunicombidding.cn/bidInformation/detail?id=2077313778665775104",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70158467549460",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70206628090712",
+      "title": "2026年天翼云科技有限公司贵州分公司国家紧急医学救援基地（贵州）软件开发服务采购询比公告",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 12:10:36",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "天翼云科技有限公司贵州分公司",
+      "moneyWan": 279.66,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "其他",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "secret",
+          "name": "涉密集成/软件开发",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务经营许可证",
+          "entity": "省公司"
+        }
+      ],
+      "score": 113,
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=182973764155376&type=3&docTypeCode=CompareSelect&securityViewCode=4f88d53cb1897964c89ef3c84c3ba3d7",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70206628090712",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70207499307664",
+      "title": "贵州省统一战线信息化工作平台项目（二期）（非密分册）工程建设公开招标公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 16:02:04",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中共贵州省委统一战线工作部",
+      "moneyWan": 303.06,
+      "professions": [
+        "基础工程",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 113,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=bXorkoIzyYRj49kx41WqIQ==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70207499307664",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70197321112988",
+      "title": "贵州电网有限责任公司服务类2026年第二批信息终端运维服务、信息系统技术服务等项目公开招标招标公告",
+      "tenderType": "招采",
+      "date": "2026-07-22",
+      "publishTime": "2026-07-22 19:22:09",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州电网有限责任公司",
+      "moneyWan": 289.34,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "信息运维",
+        "技术测试和分析",
+        "运营商ITO运维",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 113,
+      "sourceUrl": "https://ctbpsp.com/#/bulletinDetail?uuid=ab6d69a1-fb8b-41a1-afaa-bda009a2ad98&inpvalue=&dataSource=1&tenderAgency=",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70197321112988",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70207497119376",
+      "title": "贵州省人民医院云岩院区先期建设医用设备及信息化项目（七）（四次）需求公示(采购需求公示)",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 16:01:22",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省人民医院",
+      "moneyWan": 146.77,
+      "professions": [
+        "医用器械",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dsmm2",
+          "name": "DSMM 2级",
+          "entity": "省公司"
+        },
+        {
+          "id": "ccrc",
+          "name": "CCRC 信息安全服务",
+          "entity": "省公司"
+        },
+        {
+          "id": "secret",
+          "name": "涉密集成/软件开发",
+          "entity": "省公司/设计院"
+        }
+      ],
+      "score": 112,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=yfsOFOSArjjRa/JcGEgbXA==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70207497119376",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70208360307924",
+      "title": "[中国联通采购与招标网]贵州数科N9226N02WI0139智慧工厂项目包1询比采购公告",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 19:18:15",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "联通数字科技有限公司贵州省分公司",
+      "moneyWan": 145.55,
+      "professions": [
+        "生产用房",
+        "智慧园区",
+        "运营商系统集成",
+        "运营商工业互联网"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 112,
+      "sourceUrl": "https://www.chinaunicombidding.cn/bidInformation/detail?id=2080571353191198720",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70208360307924",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70208309411028",
+      "title": "贵州省烟草公司铜仁市公司2026年-2029年度智慧安防服务采购项目竞争谈判公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 19:08:52",
+      "province": "贵州省",
+      "city": "铜仁市",
+      "buyer": "贵州省烟草公司铜仁市公司",
+      "moneyWan": 159.32,
+      "professions": [
+        "安防监控",
+        "网络工程",
+        "运营商物联网",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化壹级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 112,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=912600",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70208309411028",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70209458475220",
+      "title": "[采购意向]“人工智能+制造”供需对接",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 23:27:13",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省工业和信息化厅",
+      "moneyWan": 157.8,
+      "professions": [
+        "图书",
+        "软件开发",
+        "系统集成",
+        "社会管理咨询",
+        "运营商大数据",
+        "运营商网络集成",
+        "运营商系统集成",
+        "运营商专线",
+        "运营商工业互联网"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 112,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=kV5UW+H/wPRPXfsBy2MJlQ==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70209458475220",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70148395940356",
+      "title": "贵州省高级人民法院2026年信息安全需求公示(采购需求公示)",
+      "tenderType": "招采",
+      "date": "2026-07-13",
+      "publishTime": "2026-07-13 23:27:49",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省高级人民法院",
+      "moneyWan": 136.21,
+      "professions": [
+        "网络安全"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        },
+        {
+          "id": "dsmm2",
+          "name": "DSMM 2级",
+          "entity": "省公司"
+        },
+        {
+          "id": "secret",
+          "name": "涉密集成/软件开发",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务经营许可证",
+          "entity": "省公司"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化壹级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 112,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=nOPidrS9gWMWwlgjMxlygg==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70148395940356",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70209458536212",
+      "title": "[采购意向]“模数共振”区域数字化赋能全省新型工业化",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 23:27:14",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省工业和信息化厅",
+      "moneyWan": 114,
+      "professions": [
+        "系统集成",
+        "运营商大数据",
+        "运营商系统集成",
+        "运营商低空经济"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 111,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=Zn2A2NqzdOLlBC1FaeAwrw==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70209458536212",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70207520844496",
+      "title": "贵州省烟草公司黔西南州公司2026年度数字化检测仪采购项目-公开招标公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 16:07:35",
+      "province": "贵州省",
+      "city": "黔西南布依族苗族自治州",
+      "buyer": "贵州省烟草公司",
+      "moneyWan": 80,
+      "professions": [
+        "机械设备",
+        "仪表仪器",
+        "专用仪器",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "secret",
+          "name": "涉密集成/软件开发",
+          "entity": "省公司/设计院"
+        }
+      ],
+      "score": 111,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=912299",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70207520844496",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70209339725012",
+      "title": "黔南民族师范学院智慧农业技术职业本科专业实验（训）室一期建设项目需求公示(采购需求公示)",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 23:27:39",
+      "province": "贵州省",
+      "city": "黔南布依族苗族自治州",
+      "buyer": "黔南民族师范学院",
+      "moneyWan": 98.92,
+      "professions": [
+        "事业单位用房",
+        "农业服务",
+        "智慧市政",
+        "农业产品",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化壹级",
+          "entity": "省公司"
+        },
+        {
+          "id": "iso9001",
+          "name": "质量管理体系",
+          "entity": "省公司"
+        }
+      ],
+      "score": 111,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=+6RqasuylCoiShbmzV9YFA==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70209339725012",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70203716910117",
+      "title": "贵州轻工职业大学轻工化工系实训基地基础保障与信息化升级建设项目公开招标公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 23:28:22",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州轻工职业大学",
+      "moneyWan": 86.78,
+      "professions": [
+        "事业单位用房",
+        "智能化安装工程",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化壹级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 111,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=cFPrYrX2P1Gbgo575l25SQ==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70203716910117",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70169611824600",
+      "title": "[中国联通采购与招标网]贵州数科N9226N08WO0189软件开发项目询比采购公告",
+      "tenderType": "招采",
+      "date": "2026-07-17",
+      "publishTime": "2026-07-17 19:28:32",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "联通数字科技有限公司贵州省分公司",
+      "moneyWan": 124.49,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 111,
+      "sourceUrl": "https://www.chinaunicombidding.cn/bidInformation/detail?id=2078007968299081728",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70169611824600",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70208422930440",
+      "title": "历史征收安置档案整理及数字化扫描加工服务（二次）竞争性磋商公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 19:10:12",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州贵安新区管理委员会城乡建设局",
+      "moneyWan": 49.84,
+      "professions": [
+        "档案",
+        "系统集成",
+        "其他",
+        "运营商系统集成",
+        "深智城业务相关"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "secret",
+          "name": "涉密集成/软件开发",
+          "entity": "省公司/设计院"
+        }
+      ],
+      "score": 110,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=912563",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70208422930440",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70208410701912",
+      "title": "[中国联通采购与招标网]贵州产互N9M26N06WE0137智慧楼宇建设项目询比采购公告",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 19:16:33",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "联通（贵州）产业互联网有限公司",
+      "moneyWan": 76.89,
+      "professions": [
+        "事业单位用房",
+        "智能化安装工程",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化壹级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 110,
+      "sourceUrl": "https://www.chinaunicombidding.cn/bidInformation/detail?id=2080575276660600832",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70208410701912",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70203462151636",
+      "title": "2026年中国电信贵州公司网络和信息安全演练及竞赛技术服务采购询比公告",
+      "tenderType": "招采",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 22:09:24",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国电信股份有限公司贵州分公司",
+      "moneyWan": 61.32,
+      "professions": [
+        "网络安全",
+        "技术测试和分析",
+        "运营商专线"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "dsmm2",
+          "name": "DSMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 110,
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=182973790369295&type=3&docTypeCode=CompareSelect&securityViewCode=967d185cbf790f4a87e51bc354a3075a",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70203462151636",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70157734887880",
+      "title": "贵州护理职业技术学院采购“大思政”虚拟仿真实践教学软硬件及软件开发服务公开招标公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-15",
+      "publishTime": "2026-07-15 16:02:26",
+      "province": "贵州省",
+      "city": "黔南布依族苗族自治州",
+      "buyer": "贵州护理职业技术学院",
+      "moneyWan": 76,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "其他",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 110,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=M6fdCcssODNUo4pmfw4qBA==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70157734887880",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70195569296460",
+      "title": "2026年多彩科技公司天翼高清大数据平台运营及技术支撑服务采购--询比公告",
+      "tenderType": "招采",
+      "date": "2026-07-22",
+      "publishTime": "2026-07-22 12:15:10",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "多彩贵州数字科技股份有限公司",
+      "moneyWan": 44,
+      "professions": [
+        "脚手架工程",
+        "软件开发",
+        "数据处理",
+        "运营商大数据",
+        "运营商视频监控"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 109,
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=182973658247865&type=3&docTypeCode=CompareSelect&securityViewCode=3c39f3a8da71037bfd51b89e79709741",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70195569296460",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70197165883528",
+      "title": "人工智能数据工厂数据采集场景搭建项目竞争性谈判公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-22",
+      "publishTime": "2026-07-22 19:10:57",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州电子科技职业学院",
+      "moneyWan": 42.57,
+      "professions": [
+        "生产用房",
+        "软件开发",
+        "系统集成",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 109,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=911024",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70197165883528",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70195612567568",
+      "title": "黔南民族师范学院计算思维与人工智能创新建设采购项目竞价公告",
+      "tenderType": "招采",
+      "date": "2026-07-22",
+      "publishTime": "2026-07-22 12:26:16",
+      "province": "贵州省",
+      "city": "黔南布依族苗族自治州",
+      "buyer": "黔南民族师范学院",
+      "moneyWan": 47.93,
+      "professions": [
+        "系统集成",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 109,
+      "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=1uxwSXgndM/C9beMuq3P8YTwhJI3yMqKEmeFXDD+K4I=&district=52",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70195612567568",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70190272945380",
+      "title": "贵阳市智慧教育大数据融合分析平台运维项目竞争性磋商公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-21",
+      "publishTime": "2026-07-21 13:05:55",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵阳市电化教育馆",
+      "moneyWan": 49,
+      "professions": [
+        "智慧教育",
+        "软件开发",
+        "数据处理",
+        "运营商大数据",
+        "运营商系统集成",
+        "运营商智算"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 109,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=909759",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70190272945380",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70209041879828",
+      "title": "2026年中国电信贵州公司臻驻智慧云酒店管理系统维保服务采购--询比公告",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 22:08:24",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国电信股份有限公司贵州分公司",
+      "moneyWan": 22.42,
+      "professions": [
+        "软件开发",
+        "信息运维",
+        "其他",
+        "运营商ITO运维",
+        "运营商系统集成",
+        "运营商云计算",
+        "云服务"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务经营许可证",
+          "entity": "省公司"
+        }
+      ],
+      "score": 108,
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=182458470830251&type=3&docTypeCode=CompareSelect&securityViewCode=4286ea8dd5fd0bbad727dbd2a0b7fc52",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70209041879828",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70208315307348",
+      "title": "中国邮政集团有限公司铜仁市分公司法院集约送达项目智慧法院电话录音管理系统设备租赁项目询比公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 19:09:09",
+      "province": "贵州省",
+      "city": "铜仁市",
+      "buyer": "中国邮政集团有限公司贵州省分公司",
+      "moneyWan": 20.86,
+      "professions": [
+        "电器设备",
+        "智慧政务",
+        "软件开发",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 108,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=912584",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70208315307348",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70212199910028",
+      "title": "档案数字化整理外包项目竞争性谈判公告",
+      "tenderType": "招采",
+      "date": "2026-07-25",
+      "publishTime": "2026-07-25 12:26:05",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省沙子哨监狱",
+      "moneyWan": 15,
+      "professions": [
+        "档案",
+        "智慧政务",
+        "系统集成",
+        "数据处理",
+        "职业中介",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "secret",
+          "name": "涉密集成/软件开发",
+          "entity": "省公司/设计院"
+        }
+      ],
+      "score": 107,
+      "sourceUrl": "http://jyglj.guizhou.gov.cn/szs/gzdt/tzgg/202607/t20260724_90659374.html",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70212199910028",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70208320626596",
+      "title": "罪犯档案数字化服务外包项目（二次）竞争性磋商公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 19:12:43",
+      "province": "贵州省",
+      "city": "黔南布依族苗族自治州",
+      "buyer": "贵州省未成年犯管教所",
+      "moneyWan": 12,
+      "professions": [
+        "档案",
+        "智慧政务",
+        "系统集成",
+        "数据处理",
+        "职业中介",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "secret",
+          "name": "涉密集成/软件开发",
+          "entity": "省公司/设计院"
+        }
+      ],
+      "score": 107,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=912527",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70208320626596",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70191599484108",
+      "title": "2026年信息系统网络安全等级保护测评服务采购公告（三次）",
+      "tenderType": "招采",
+      "date": "2026-07-21",
+      "publishTime": "2026-07-21 18:59:03",
+      "province": "贵州省",
+      "city": "遵义市",
+      "buyer": "道真自治县人民医院",
+      "moneyWan": 11.8,
+      "professions": [
+        "系统集成",
+        "网络安全",
+        "其他",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 107,
+      "sourceUrl": "https://www.zydzyy.org.cn/article/3250.html",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70191599484108",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70185381752400",
+      "title": "航空宇航科学与技术学科帮扶团队人工智能与计算流体力学仿真服务器采购项目竞价公告",
+      "tenderType": "招采",
+      "date": "2026-07-20",
+      "publishTime": "2026-07-20 16:01:18",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州理工学院",
+      "moneyWan": 11.82,
+      "professions": [
+        "电子计算机",
+        "公共设施",
+        "系统集成",
+        "运营商IDC",
+        "运营商大数据",
+        "运营商系统集成",
+        "运营商低空经济"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 107,
+      "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=HEhNG4GZYWKMVywjvclz8ITwhJI3yMqKEmeFXDD+K4I=&district=52",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70185381752400",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70185581685260",
+      "title": "2026年中国电信贵州公司新技术新业务信息安全常态化评估服务采购询比公告",
+      "tenderType": "招采",
+      "date": "2026-07-20",
+      "publishTime": "2026-07-20 16:53:58",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国电信股份有限公司贵州分公司",
+      "moneyWan": 15.9,
+      "professions": [
+        "网络安全",
+        "海洋服务",
+        "其他"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "ccrc",
+          "name": "CCRC 信息安全服务",
+          "entity": "省公司"
+        }
+      ],
+      "score": 107,
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=182457391788606&type=3&docTypeCode=CompareSelect&securityViewCode=c1fabebff160d306de0547317f11b5e0",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70185581685260",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70206692434696",
+      "title": "2025年度观山湖区医保局档案整理及数字化外包服务项目采购竞价公告",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 12:25:52",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵阳市观山湖区医疗保障局",
+      "moneyWan": 10,
+      "professions": [
+        "档案",
+        "系统集成",
+        "职业中介",
+        "其他",
+        "运营商系统集成",
+        "深智城业务相关"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "secret",
+          "name": "涉密集成/软件开发",
+          "entity": "省公司/设计院"
+        }
+      ],
+      "score": 106,
+      "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=3CYiN79+I8Wn59ZofjsTF4TwhJI3yMqKEmeFXDD+K4I=&district=52",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70206692434696",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70193307345092",
+      "title": "石阡县人民医院2026年度信息系统安全等级保护测评竞价公告",
+      "tenderType": "招采",
+      "date": "2026-07-22",
+      "publishTime": "2026-07-22 02:26:06",
+      "province": "贵州省",
+      "city": "铜仁市",
+      "buyer": "石阡县人民医院",
+      "moneyWan": 10,
+      "professions": [
+        "系统集成",
+        "网络安全",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "secret",
+          "name": "涉密集成/软件开发",
+          "entity": "省公司/设计院"
+        }
+      ],
+      "score": 106,
+      "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=h4edEmm7cNtFP9a/INec54TwhJI3yMqKEmeFXDD+K4I=&district=52",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70193307345092",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70192640033412",
+      "title": "[采购意向]石阡县人民医院2026年度信息系统安全等级保护测评",
+      "tenderType": "招采",
+      "date": "2026-07-21",
+      "publishTime": "2026-07-21 23:31:48",
+      "province": "贵州省",
+      "city": "铜仁市",
+      "buyer": "石阡县人民医院",
+      "moneyWan": 10,
+      "professions": [
+        "系统集成",
+        "网络安全",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 106,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=Mxuibt+GwxcQEG//9xN83g==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70192640033412",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70188084130632",
+      "title": "《人工智能时代师范生数字素养概论》专著出版单一来源采购公示",
+      "tenderType": "招采",
+      "date": "2026-07-16",
+      "publishTime": "2026-07-16 00:00:03",
+      "province": "贵州省",
+      "city": "黔东南苗族侗族自治州",
+      "buyer": "凯里学院",
+      "moneyWan": 11,
+      "professions": [
+        "系统集成",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 106,
+      "sourceUrl": "https://www.kluniv.edu.cn/info/1029/63417.htm",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70188084130632",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70214285672132",
+      "title": "黔南州应急管理局文书档案整理和数字化服务采购比选公告",
+      "tenderType": "招采",
+      "date": "2026-07-25",
+      "publishTime": "2026-07-25 21:29:16",
+      "province": "贵州省",
+      "city": "黔南布依族苗族自治州",
+      "buyer": "黔南州应急管理局",
+      "moneyWan": 6.5,
+      "professions": [
+        "档案",
+        "系统集成",
+        "运营商系统集成",
+        "深智城业务相关"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "secret",
+          "name": "涉密集成/软件开发",
+          "entity": "省公司/设计院"
+        }
+      ],
+      "score": 105,
+      "sourceUrl": "http://qnzyjj.qiannan.gov.cn/xwzx/tzgg/202607/t20260725_90660686.html",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70214285672132",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70203715751236",
+      "title": "2026年贵州省投资促进局政务信息化运维项目（二次）竞争性磋商公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 23:28:31",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省投资促进局",
+      "moneyWan": 5,
+      "professions": [
+        "智慧政务",
+        "系统集成",
+        "运营商ITO运维",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 105,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=3xBduTuJRUkYnRbmjKg2DA==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70203715751236",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70203420547412",
+      "title": "2026年中国电信黔南分公司黔南州政法大数据资源共享平台建设项目数据库中间件操作系统采购招标公告",
+      "tenderType": "招采",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 22:06:24",
+      "province": "贵州省",
+      "city": "黔南布依族苗族自治州",
+      "buyer": "中国电信股份有限公司黔南分公司",
+      "moneyWan": 6,
+      "professions": [
+        "事业单位用房",
+        "软件开发",
+        "数据处理",
+        "运营商大数据"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 105,
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=182458360718250&type=1&docTypeCode=TenderAnnouncement&securityViewCode=7d6d0eb206d5b4926ed44dbdc059a1f9",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70203420547412",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70195789193924",
+      "title": "贵阳市学校传染病症状监测和预警信息系统三级等级保护测评（二次）竞争性磋商公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-22",
+      "publishTime": "2026-07-22 13:10:00",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵阳市学生健康发展中心",
+      "moneyWan": 6,
+      "professions": [
+        "系统集成",
+        "网络安全",
+        "医疗卫生服务",
+        "网络工程",
+        "运营商物联网",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 105,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=910517",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70195789193924",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70202710109476",
+      "title": "[中国联通采购与招标网]贵州某某信息系统网络安全项目（包2）（第二次采购公告）",
+      "tenderType": "招采",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 19:05:13",
+      "province": "贵州省",
+      "city": "贵州省",
+      "buyer": "联通数字科技有限公司重庆市分公司",
+      "moneyWan": 2.17,
+      "professions": [
+        "系统集成",
+        "网络安全",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 104,
+      "sourceUrl": "https://www.chinaunicombidding.cn/bidInformation/detail?id=2080226683143630848",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70202710109476",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70203715962244",
+      "title": "贵州省人民医院云岩院区先期建设医用设备及信息化项目（四）检验设备及配套试剂（耗材）采购项目（二次）公开招标公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 23:28:41",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省人民医院",
+      "moneyWan": 623.4,
+      "professions": [
+        "仪表仪器",
+        "医用器械",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 103,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=/QKdiNq/UcOZI7keQ2r/QQ==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70203715962244",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70203767422212",
+      "title": "遵义市中医院关于遵义市中医院采购智慧医院信息化整体建设项目维保服务的公开招标公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 23:38:16",
+      "province": "贵州省",
+      "city": "遵义市",
+      "buyer": "遵义市中医院",
+      "moneyWan": 348,
+      "professions": [
+        "事业单位用房",
+        "智慧医疗",
+        "系统集成",
+        "其他",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 102,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=dFDLb2fgWYx8qQypdMH/2Q==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70203767422212",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70216768207944",
+      "title": "铜仁市第三人民医院智慧安防与消防融合综合管理平台建设项目询价公告",
+      "tenderType": "招采",
+      "date": "2026-07-26",
+      "publishTime": "2026-07-26 08:15:35",
+      "province": "贵州省",
+      "city": "铜仁市",
+      "buyer": "铜仁市第三人民医院",
+      "moneyWan": 0,
+      "professions": [
+        "事业单位用房",
+        "软件开发",
+        "安防监控",
+        "网络工程",
+        "运营商物联网",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化壹级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 101,
+      "sourceUrl": "https://www.trsdsrmyy.cn/Item/Show.asp?m=1&d=6844",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70216768207944",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70206846974744",
+      "title": "贵州银行应用软件开发服务采购项目（统一支付平台XC改造项目）(二次)流标公示(异常情况公告)",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 13:05:36",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州银行股份有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "其他",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 101,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=912048",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70206846974744",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70209458506196",
+      "title": "[采购意向]企业数字化转型诊断",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 23:27:05",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省工业和信息化厅",
+      "moneyWan": 279.9,
+      "professions": [
+        "图书",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 101,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=QYU9FiPP7OlKbuOjC1pWqA==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70209458506196",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70206409456728",
+      "title": "贵州中岭矿业有限责任公司-2026.07.23-2026年煤炭销售监测监控系统运维服务-询比采购(二次)询比采购公告",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 11:13:57",
+      "province": "贵州省",
+      "city": "毕节市",
+      "buyer": "贵州中岭矿业有限责任公司",
+      "moneyWan": 0,
+      "professions": [
+        "煤炭采选",
+        "信息运维",
+        "安防监控",
+        "网络工程",
+        "运营商ITO运维",
+        "运营商视频监控",
+        "运营商物联网",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化壹级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 101,
+      "sourceUrl": "https://gzny.e-qyzc.com/#/trade-info-detail?id=1530161181241704448&noticeType=1&publishStatus=1&systemStatus",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70206409456728",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70200299930116",
+      "title": "贵州凯里公共交通集团有限责任公司关于开展凯里公交AI大数据平台项目一期标前询价的公告",
+      "tenderType": "招采",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 08:47:03",
+      "province": "贵州省",
+      "city": "黔东南苗族侗族自治州",
+      "buyer": "贵州凯里公共交通集团有限责任公司",
+      "moneyWan": 0,
+      "professions": [
+        "基础工程",
+        "软件开发",
+        "数据处理",
+        "运营商大数据",
+        "运营商云计算",
+        "云服务"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务经营许可证",
+          "entity": "省公司"
+        }
+      ],
+      "score": 101,
+      "sourceUrl": "http://www.kaili.gov.cn/xwzx/tzgg/202607/t20260722_90651544.html",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70200299930116",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70197190082888",
+      "title": "中国建设银行贵州省分行贵安新区数据中心及大数据应用示范基地项目（一期）（ME-01-01地块一期）联合测绘服务采购项目供应商征集公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-22",
+      "publishTime": "2026-07-22 19:17:11",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国建设银行贵州省分行",
+      "moneyWan": 0,
+      "professions": [
+        "居住用房",
+        "通信管线",
+        "数据中心",
+        "软件开发",
+        "数据处理",
+        "测绘服务",
+        "工程勘探",
+        "其他",
+        "运营商IDC",
+        "运营商大数据"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 101,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=910880",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70197190082888",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70190934528216",
+      "title": "贵州大学人工智能脑机交互与材料表征测试能力提升项目中标(成交)结果公告(采购结果公告)-A包",
+      "tenderType": "中标",
+      "date": "2026-07-21",
+      "publishTime": "2026-07-21 16:03:33",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州大学",
+      "moneyWan": 800,
+      "professions": [
+        "系统集成",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 101,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=DBqsARy1idybCaFVYXaxVQ==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70190934528216",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70158623484744",
+      "title": "人工智能算力服务器（2026）采购项目招标公告[采购出让公告]",
+      "tenderType": "招采",
+      "date": "2026-07-15",
+      "publishTime": "2026-07-15 19:52:47",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州农村商业联合银行股份有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "电子计算机",
+        "软件开发",
+        "系统集成",
+        "运营商IDC",
+        "运营商大数据",
+        "运营商系统集成",
+        "运营商云计算",
+        "运营商智算"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务经营许可证",
+          "entity": "省公司"
+        }
+      ],
+      "score": 101,
+      "sourceUrl": "https://ggzy.guizhou.gov.cn/tradeInfo/detailHtml?metaId=1237296440385081344",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70158623484744",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70202658363556",
+      "title": "乌江流域水库地震监测台网一期、二期工程和洪家渡、构皮滩水电站大坝强震运维服务工程(生产服务类班车）乌江地震台网及水电站大坝强震运维服务批次评标结果公示",
+      "tenderType": "中标",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 18:59:13",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州乌江水电开发有限责任公司",
+      "moneyWan": 631.7,
+      "professions": [
+        "运输装备",
+        "电力",
+        "水利工程",
+        "信息运维",
+        "地震服务",
+        "网络工程",
+        "运营商ITO运维",
+        "运营商物联网",
+        "新能源"
+      ],
+      "matchedQuals": [
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 100,
+      "sourceUrl": "https://www.chdtp.com/webs/detailNewZbhxrgsZxzxAction.action?chkedId=86843DA0D4DCA78A0FA3BBAD8F7E7C51186843DA0D4DCA71&cminid=51",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70202658363556",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70192625781572",
+      "title": "贵州省高级人民法院2026年信息安全竞争性磋商公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-21",
+      "publishTime": "2026-07-21 23:28:22",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省高级人民法院",
+      "moneyWan": 136.21,
+      "professions": [
+        "网络安全"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        }
+      ],
+      "score": 100,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=8zkJvNpy9+jVj+5tgQBOIA==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70192625781572",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70208526267940",
+      "title": "南明区2026年度“贵阳市数字化二期城市综合管理系统二期视频监控系统”服务项目-南明区2026年度“贵阳市数字化二期城市综合管理系统二期视频监控系统”服务项目合同公示[合同公示]",
+      "tenderType": "中标",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 19:41:29",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵阳市公安局南明分局",
+      "moneyWan": 492,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "其他",
+        "安防监控",
+        "运营商视频监控",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化壹级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 99,
+      "sourceUrl": "https://ggzy.guizhou.gov.cn/tradeInfo/detailHtml?metaId=1240561525165527040",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70208526267940",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70209308222948",
+      "title": "铜仁市碧江区2026年智慧农业配套设施建设项目采购需求公示(采购需求公示)",
+      "tenderType": "招采",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 23:32:32",
+      "province": "贵州省",
+      "city": "铜仁市",
+      "buyer": "铜仁市碧江区气象防灾减灾中心",
+      "moneyWan": 58.5,
+      "professions": [
+        "事业单位用房",
+        "农业服务",
+        "智慧市政",
+        "农业产品",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 98,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=lsYeXokUlKgMvP3+hqVk4A==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70209308222948",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70192625787524",
+      "title": "2026科技管理支撑-云服务器与安全产品、等保测评、密码测评以及安全防护服务（二次）竞争性磋商公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-21",
+      "publishTime": "2026-07-21 23:28:22",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省科学技术情报研究所",
+      "moneyWan": 33,
+      "professions": [
+        "电子计算机",
+        "安全设备",
+        "医用器械",
+        "网络安全",
+        "通信运营支撑",
+        "运营商IDC",
+        "运营商云计算",
+        "云服务"
+      ],
+      "matchedQuals": [
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务经营许可证",
+          "entity": "省公司"
+        }
+      ],
+      "score": 97,
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70192625787524",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70192625787524",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70164157673732",
+      "title": "2026年中国电信黔东南分公司智能化管控平台系统集成服务采购（标包1）-直接采购公示",
+      "tenderType": "中标",
+      "date": "2026-07-16",
+      "publishTime": "2026-07-16 19:54:54",
+      "province": "贵州省",
+      "city": "黔东南苗族侗族自治州",
+      "buyer": "中国电信股份有限公司黔东南分公司",
+      "moneyWan": 187.92,
+      "professions": [
+        "智慧政务",
+        "智能化安装工程",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化壹级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 97,
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=182100296978049&type=2&docTypeCode=PurchaseAnnounceBasic&securityViewCode=dc1c123ae14bc6122d38597c3cb586e6",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70164157673732",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70208495323544",
+      "title": "[中国联通采购与招标网]贵州数科N9226N08WO0189软件开发项目采购中选候选人公示",
+      "tenderType": "中标",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 19:26:00",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "联通数字科技有限公司贵州省分公司",
+      "moneyWan": 117.05,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 96,
+      "sourceUrl": "https://www.chinaunicombidding.cn/bidInformation/detail?id=2080556638788431872",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70208495323544",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70203682254744",
+      "title": "视频汇聚驻场运维服务项目成交候选人公示(候选人公告)",
+      "tenderType": "中标",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 23:06:59",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州大数据产业集团有限公司",
+      "moneyWan": 81.9,
+      "professions": [
+        "信息运维",
+        "其他",
+        "运营商ITO运维"
+      ],
+      "matchedQuals": [
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 96,
+      "sourceUrl": "https://www.e-qyzc.com/#/trade-info-detail?id=1529886155481350144&noticeType=3&publishStatus=2",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70203682254744",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70197196460176",
+      "title": "贵州老年大学智慧校园信息系统商用密码应用改造项目（密码测评）的竞争性磋商公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-07-22",
+      "publishTime": "2026-07-22 19:18:49",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州老年大学",
+      "moneyWan": 24,
+      "professions": [
+        "智慧教育",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 96,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=910840",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70197196460176",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70164155738180",
+      "title": "2026年中国电信黔东南分公司智能化管控平台系统集成服务采购（标包2）-直接采购公示",
+      "tenderType": "中标",
+      "date": "2026-07-16",
+      "publishTime": "2026-07-16 19:54:20",
+      "province": "贵州省",
+      "city": "黔东南苗族侗族自治州",
+      "buyer": "中国电信股份有限公司黔东南分公司",
+      "moneyWan": 76.6,
+      "professions": [
+        "智慧政务",
+        "智能化安装工程",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化壹级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 95,
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=182100332638937&type=2&docTypeCode=PurchaseAnnounceBasic&securityViewCode=8b21c83b46007f7cb260b9cb9ee0eca1",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70164155738180",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70206727098084",
+      "title": "黔南民族师范学院计算思维与人工智能创新建设采购项目竞价成交公告（计算思维与人工智能创新建设采购项目）",
+      "tenderType": "中标",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 12:35:32",
+      "province": "贵州省",
+      "city": "黔南布依族苗族自治州",
+      "buyer": "黔南民族师范学院",
+      "moneyWan": 47.93,
+      "professions": [
+        "系统集成",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 94,
+      "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=P02xtuLdoX+2zVNYf2uH3oTwhJI3yMqKEmeFXDD+K4I=&district=52",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70206727098084",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70203621818388",
+      "title": "网络安全驻场运维服务项目成交候选人公示(候选人公告)",
+      "tenderType": "中标",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 23:05:02",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州大数据产业集团有限公司",
+      "moneyWan": 37.95,
+      "professions": [
+        "网络安全",
+        "信息运维",
+        "其他",
+        "运营商ITO运维"
+      ],
+      "matchedQuals": [
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 94,
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70203621818388",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70203621818388",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70202039932696",
+      "title": "正安县人民医院信息安全及软硬件维保等购置项目（二次）的中标(成交)结果公告(采购结果公告)",
+      "tenderType": "中标",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 16:17:02",
+      "province": "贵州省",
+      "city": "遵义市",
+      "buyer": "正安县人民医院",
+      "moneyWan": 38,
+      "professions": [
+        "系统集成",
+        "网络安全"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 94,
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=kAoWY2X/bYl1LPPn4/XuMw==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70202039932696",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70196469012168",
+      "title": "中国烟草总公司贵州省公司-省烟草科学研究院2026年-2028年度网络信息安全运维服务采购项目中选候选人公示(中标公示)",
+      "tenderType": "中标",
+      "date": "2026-07-22",
+      "publishTime": "2026-07-22 16:09:14",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国烟草总公司贵州省公司",
+      "moneyWan": 36.9,
+      "professions": [
+        "机械设备",
+        "烟草原料",
+        "网络安全",
+        "信息运维",
+        "其他",
+        "运营商ITO运维"
+      ],
+      "matchedQuals": [
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        }
+      ],
+      "score": 94,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=910719",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70196469012168",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70191681723160",
+      "title": "贵州电子科技职业学院“人工智能+”产教融合实训基地项目勘察成交公告(中标公示)",
+      "tenderType": "中标",
+      "date": "2026-07-21",
+      "publishTime": "2026-07-21 19:18:08",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州电子科技职业学院",
+      "moneyWan": 45.29,
+      "professions": [
+        "居住用房",
+        "系统集成",
+        "工程勘探",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 94,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=910143",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70191681723160",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70203621659412",
+      "title": "YSGZ212-2431-005（贵州省质量工作考核信息系统等两个系统）项目成交候选人公示(候选人公告)",
+      "tenderType": "中标",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 23:04:44",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州大数据产业集团有限公司",
+      "moneyWan": 19.1,
+      "professions": [
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 93,
+      "sourceUrl": "https://www.e-qyzc.com/#/trade-info-detail?id=1529886359009951745&noticeType=3&publishStatus=2",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70203621659412",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70191636031500",
+      "title": "信息系统等级保护测评和商用密码应用安全性评估中标（成交）公告(中标公示)-A包",
+      "tenderType": "中标",
+      "date": "2026-07-21",
+      "publishTime": "2026-07-21 19:09:30",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省市场监督管理局",
+      "moneyWan": 24,
+      "professions": [
+        "系统集成",
+        "网络安全",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 93,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=910375",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70191636031500",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70168909827596",
+      "title": "2026年中国电信贵阳分公司经开区校园智能门禁系统集成服务采购-成交候选人公示",
+      "tenderType": "中标",
+      "date": "2026-07-17",
+      "publishTime": "2026-07-17 16:32:36",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国电信股份有限公司贵阳分公司",
+      "moneyWan": 29.01,
+      "professions": [
+        "智慧教育",
+        "智能化安装工程",
+        "系统集成",
+        "安防监控",
+        "运营商物联网",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化壹级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 93,
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=4842474358150787072&type=7&docTypeCode=ResultAnnounc&securityViewCode=0c55aca3e7d508cd4ae12e27ae51c92c",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70168909827596",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70168907324496",
+      "title": "【2026年中国电信贵阳分公司南明区校园智能门禁系统集成服务采购】成交结果公示",
+      "tenderType": "中标",
+      "date": "2026-07-17",
+      "publishTime": "2026-07-17 16:32:02",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国电信股份有限公司贵阳分公司",
+      "moneyWan": 23.93,
+      "professions": [
+        "智慧教育",
+        "智能化安装工程",
+        "系统集成",
+        "安防监控",
+        "运营商物联网",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化壹级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 93,
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=4842474756680949760&type=7&docTypeCode=ResultAnnounc&securityViewCode=4ca2d8c380ef733ee06f7223c47bef5f",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70168907324496",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70161731131844",
+      "title": "2025-2026年中国电信贵州公司统一推送系统关于10000号系统全智能升级、服务提醒短信根据参数自动匹配短信模版需求改造项目软件开发服务采购直接采购公示",
+      "tenderType": "中标",
+      "date": "2026-07-16",
+      "publishTime": "2026-07-16 09:23:05",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国电信股份有限公司贵州分公司",
+      "moneyWan": 20.7,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "其他",
+        "网络工程",
+        "运营商系统集成",
+        "运营商移网",
+        "行业短信"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 93,
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=182100313772979&type=2&docTypeCode=PurchaseAnnounceBasic&securityViewCode=9e459e28e2d342e01e8e41361d501af7",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70161731131844",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70209313134932",
+      "title": "YSGZ212-2507-001（贵州省气瓶大数据应用平台）项目成交候选人公示(候选人公告)",
+      "tenderType": "中标",
+      "date": "2026-07-24",
+      "publishTime": "2026-07-24 23:09:20",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州大数据产业集团有限公司",
+      "moneyWan": 12.94,
+      "professions": [
+        "软件开发",
+        "数据处理",
+        "运营商大数据"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 92,
+      "sourceUrl": "https://www.e-qyzc.com/#/trade-info-detail?id=1530141197648068609&noticeType=3&publishStatus=2",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70209313134932",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70199265251588",
+      "title": "纳雍县人民医院信息系统等保测评服务竞价成交公告（纳雍县人民医院信息系统等保测评服务）",
+      "tenderType": "中标",
+      "date": "2026-07-23",
+      "publishTime": "2026-07-23 04:16:25",
+      "province": "贵州省",
+      "city": "毕节市",
+      "buyer": "纳雍县人民医院",
+      "moneyWan": 16.9,
+      "professions": [
+        "系统集成",
+        "网络安全",
+        "其他",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 92,
+      "sourceUrl": "https://zxxj.guizhou.zcygov.cn/bidding/detail?requisitionId=62026071423045207&type=BIDDING_COMPLETED",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70199265251588",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70193330030288",
+      "title": "航空宇航科学与技术学科帮扶团队人工智能与计算流体力学仿真服务器采购项目竞价成交公告",
+      "tenderType": "中标",
+      "date": "2026-07-22",
+      "publishTime": "2026-07-22 02:31:25",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州理工学院",
+      "moneyWan": 11.82,
+      "professions": [
+        "电子计算机",
+        "公共设施",
+        "系统集成",
+        "运营商IDC",
+        "运营商大数据",
+        "运营商系统集成",
+        "运营商低空经济"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        },
+        {
+          "id": "dcmm2",
+          "name": "DCMM 2级",
+          "entity": "省公司"
+        }
+      ],
+      "score": 92,
+      "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=uSeYdNLUH1XDjSqjRjqjqITwhJI3yMqKEmeFXDD+K4I=&district=52",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70193330030288",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70186893121860",
+      "title": "2026年中国电信贵阳分公司自用资源系统软件开发服务采购-成交候选人公示",
+      "tenderType": "中标",
+      "date": "2026-07-20",
+      "publishTime": "2026-07-20 22:06:50",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国电信股份有限公司贵阳分公司",
+      "moneyWan": 16.6,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "其他",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 92,
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=4843614642716778496&type=7&docTypeCode=ResultAnnounc&securityViewCode=5eb9192ac4eaf8e831f5785b9b394b36",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70186893121860",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70140342894216",
+      "title": "铜仁幼专心理健康服务平台采购项目竞价成交公告（应用软件）",
+      "tenderType": "中标",
+      "date": "2026-07-12",
+      "publishTime": "2026-07-12 12:31:00",
+      "province": "贵州省",
+      "city": "铜仁市",
+      "buyer": "铜仁幼儿师范高等专科学校",
+      "moneyWan": 17.5,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "医疗卫生服务",
+        "其他",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "entity": "省公司"
+        },
+        {
+          "id": "cmmi5",
+          "name": "CMMI5",
+          "entity": "设计院"
+        },
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 92,
+      "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=xzbF1PQnWXE0KugXSifwP4TwhJI3yMqKEmeFXDD+K4I=&district=52",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70140342894216",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "35097964316024",
+      "title": "信息系统等级保护测评和商用密码应用安全性评估中标（成交）公告(中标公示)-B包",
+      "tenderType": "中标",
+      "date": "2026-07-21",
+      "publishTime": "2026-07-21 19:09:30",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省市场监督管理局",
+      "moneyWan": 11,
+      "professions": [
+        "系统集成",
+        "网络安全",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS 贰级 / CS2",
+          "entity": "省公司/设计院"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "entity": "省公司"
+        },
+        {
+          "id": "sysint-aaa",
+          "name": "系统集成领域 AAA",
+          "entity": "省公司"
+        }
+      ],
+      "score": 91,
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=910375",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/35097964316024",
+      "stageName": "",
+      "purchaseTypeName": ""
+    },
+    {
+      "id": "70211142939288",
+      "title": "钢结构公司-工程-LNG站及工业气体站整改-（运维服务-运营类-安全管理-安全管理）-竞标式谈判-标准合同2026072259采购公告",
+      "tenderType": "招采",
+      "date": "2026-07-25",
+      "publishTime": "2026-07-25 07:47:49",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中车贵阳车辆有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "化学原料",
+        "商业和服务业用房",
+        "信息运维",
+        "运营商ITO运维"
+      ],
+      "matchedQuals": [
+        {
+          "id": "iso20000",
+          "name": "ISO20000",
+          "entity": "省公司"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS 三级",
+          "entity": "省公司/设计院"
+        }
+      ],
+      "score": 89,
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70211142939288",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70211142939288",
+      "stageName": "",
+      "purchaseTypeName": ""
+    }
+  ]
+}

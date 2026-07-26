@@ -1,0 +1,58 @@
+# 方案 C：定时同步标讯快照到仓库（静态站只读 JSON，无自有后端）
+# 密钥在 GitHub → Settings → Secrets and variables → Actions 配置：
+#   BXND_USERNAME
+#   BXND_PASSWORD
+#
+# 注意：GitHub 托管 runner 在境外，若标讯 API 拒连，请改用本机 launchd（见 scripts/tenders-daily.sh）
+
+name: tenders-sync
+
+on:
+  schedule:
+    # 每天 01:00 UTC ≈ 北京时间 09:00
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Sync tenders
+        env:
+          BXND_USERNAME: ${{ secrets.BXND_USERNAME }}
+          BXND_PASSWORD: ${{ secrets.BXND_PASSWORD }}
+          BXND_API_BASE: https://dgdata-api.bxnd.com.cn
+          BXND_PROVINCE_CODES: "520000"
+          BXND_DAYS: "14"
+        run: npm run tenders:sync
+
+      - name: Commit snapshot if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/tenders.generated.json public/data/tenders.json
+          if git diff --staged --quiet; then
+            echo "快照无变化，跳过提交"
+          else
+            git commit -m "chore(tenders): daily snapshot $(date -u +%Y-%m-%d)"
+            git push
+            echo "已推送标讯快照"
+          fi

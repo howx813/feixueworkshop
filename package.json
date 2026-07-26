@@ -1,6 +1,6 @@
 {
   "name": "feixue-workshop",
-  "version": "0.2.6",
+  "version": "0.2.8",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3456",
@@ -12,6 +12,9 @@
     "lint": "next lint",
     "lint:ci": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --max-warnings 0",
     "music:sync": "node scripts/sync-music.mjs",
+    "tenders:sync": "node scripts/sync-tenders.mjs",
+    "tenders:daily": "bash scripts/tenders-daily.sh",
+    "tenders:install-cron": "bash scripts/install-tenders-launchd.sh",
     "snowflake:export": "node scripts/export-snowflake-svg.mjs",
     "test": "npm run test:unit && npm run test:predeploy",
     "test:unit": "node scripts/test-marble.mjs && node scripts/test-aihot.mjs",

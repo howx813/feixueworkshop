@@ -17,6 +17,30 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.8",
+    date: "2026-07-26",
+    title: "标讯方案 C：定时快照",
+    summary:
+      "每日标讯走「静态站 + 定时同步」：双写 JSON、GitHub Actions / 本机 launchd，页面可热刷 /data/tenders.json。",
+    items: [
+      { tag: "新增", text: "public/data/tenders.json + 前端刷新快照" },
+      { tag: "新增", text: "GitHub Actions tenders-sync 定时任务" },
+      { tag: "新增", text: "本机 tenders-daily / install-tenders-launchd" },
+    ],
+  },
+  {
+    version: "0.2.7",
+    date: "2026-07-26",
+    title: "每日标讯",
+    summary:
+      "新增「每日标讯」栏目：拉取贵州软件/信息化类招标，按通服软件相关资质关键词匹配排序。",
+    items: [
+      { tag: "新增", text: "导航栏目 /tenders/ 每日标讯" },
+      { tag: "新增", text: "npm run tenders:sync 同步标讯快照" },
+      { tag: "新增", text: "通服软件相关资质摘要与匹配口径" },
+    ],
+  },
+  {
     version: "0.2.6",
     date: "2026-07-26",
     title: "隔离构建 + 弹珠去粘板",

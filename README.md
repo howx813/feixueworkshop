@@ -40,12 +40,41 @@ cp .env.example .env.local
 |------|------|
 | `NETEASE_*` | 网易云开放平台凭证（仅本机/服务端） |
 | `NETEASE_PLAYLIST_ID` | 可选，同步歌单用 |
+| `BXND_*` | 可选，每日标讯同步参数（见 `.env.example`） |
 
 同步歌单曲库：
 
 ```bash
 npm run music:sync
 ```
+
+### 每日标讯 · 方案 C（静态站 + 定时快照）
+
+**没有自有后端。** 定时脚本拉标 → 写 JSON → 静态页只读。
+
+```bash
+# 1) .env.local 配置 BXND_USERNAME / BXND_PASSWORD（勿提交）
+npm run tenders:sync
+
+# 2) 本机一日一跑（可选 commit/push）
+npm run tenders:daily
+./scripts/tenders-daily.sh --commit --push
+
+# 3) macOS 定时（默认每天 09:05 同步并 push）
+npm run tenders:install-cron
+# 卸载: ./scripts/install-tenders-launchd.sh --uninstall
+```
+
+| 产物 | 用途 |
+|------|------|
+| `src/data/tenders.generated.json` | 构建期首屏数据 |
+| `public/data/tenders.json` | 线上路径 `/data/tenders.json`，页面可热刷 |
+
+**GitHub Actions**：`.github/workflows/tenders-sync.yml`  
+在仓库 Secrets 配置 `BXND_USERNAME`、`BXND_PASSWORD` 后，每天 09:00（北京时间）自动同步并 commit。  
+若 runner 在境外访问不了标讯 API，改用本机 launchd。
+
+**上线注意**：同步进 git 后，线上 HTML 仍要 **`npm run deploy`** 才会带上新的 `public/data/tenders.json`（或至少部署包含该文件的构建产物）。页面打开时会请求 `/data/tenders.json` 尝试刷新。
 
 ## 构建（静态导出）
 
