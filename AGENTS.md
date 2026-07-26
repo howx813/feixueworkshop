@@ -83,9 +83,14 @@ npm run rollback
 npm run release:from -- v0.1.3   # 若历史上有该 tag
 ```
 
-### 本地缓存故障
+### 本地缓存故障（构建隔离，务必）
 
-`next build` 与 `next dev` 并行会弄坏 `.next`（`948.js` 等）。
+**历史：** 同目录 `next build` + `next dev` → `948.js` / `__webpack_modules__`。
+
+**现方案：** `npm run build` = `scripts/build-export.mjs`  
+在系统临时目录构建，只回写 `out/`，**不碰项目 `.next`**。
+
+若仍异常（旧进程）：`npm run dev:clean`
 
 - 预检后看站：用 **`npm run preview:out`**
 - dev 坏了：`npm run dev:clean`

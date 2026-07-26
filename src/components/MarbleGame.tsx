@@ -41,7 +41,6 @@ const DROP_CHANCE = 0.42;
 const DROP_LABEL: Record<DropKind, string> = {
   multi: "多球",
   wide: "加宽",
-  sticky: "粘板",
   slow: "慢速",
   fire: "火力",
   life: "生命",
@@ -50,7 +49,6 @@ const DROP_LABEL: Record<DropKind, string> = {
 const DROP_COLOR: Record<DropKind, string> = {
   multi: "#6cb8c6",
   wide: "#5fc79a",
-  sticky: "#d3b26a",
   slow: "#98a2b3",
   fire: "#d86a52",
   life: "#e8ebf2",
@@ -81,7 +79,6 @@ export function MarbleGame() {
   const state = useRef({
     paddleX: W / 2,
     paddleW: 88,
-    sticky: false,
     fireUntil: 0,
     balls: [] as Ball[],
     bricks: makeBricks(),
@@ -135,7 +132,6 @@ export function MarbleGame() {
       s.bricks = makeBricks();
       s.drops = [];
       s.paddleW = 88;
-      s.sticky = false;
       s.fireUntil = 0;
       if (!keepScore) {
         s.score = 0;
@@ -270,23 +266,12 @@ export function MarbleGame() {
             ball.x >= s.paddleX - s.paddleW / 2 - ball.r &&
             ball.x <= s.paddleX + s.paddleW / 2 + ball.r
           ) {
-            if (s.sticky) {
-              s.attached = true;
-              ball.vx = 0;
-              ball.vy = 0;
-              ball.y = py - ball.r;
-              s.message = "粘住了 · 空格再发射";
-              s.phase = "ready";
-              syncHud();
-            } else {
-              const hit =
-                (ball.x - s.paddleX) / (s.paddleW / 2);
-              const angle = (-90 + hit * 55) * (Math.PI / 180);
-              const sp = Math.hypot(ball.vx, ball.vy) || 320;
-              ball.vx = Math.cos(angle) * sp;
-              ball.vy = Math.sin(angle) * sp;
-              ball.y = py - ball.r - 0.5;
-            }
+            const hit = (ball.x - s.paddleX) / (s.paddleW / 2);
+            const angle = (-90 + hit * 55) * (Math.PI / 180);
+            const sp = Math.hypot(ball.vx, ball.vy) || 320;
+            ball.vx = Math.cos(angle) * sp;
+            ball.vy = Math.sin(angle) * sp;
+            ball.y = py - ball.r - 0.5;
           }
 
           // bricks
@@ -408,8 +393,6 @@ export function MarbleGame() {
         s.phase = "playing";
       } else if (kind === "wide") {
         s.paddleW = applyWide(s.paddleW);
-      } else if (kind === "sticky") {
-        s.sticky = true;
       } else if (kind === "slow") {
         for (const b of s.balls) {
           b.vx *= 0.7;
@@ -474,7 +457,7 @@ export function MarbleGame() {
       // paddle
       const px = s.paddleX - s.paddleW / 2;
       const py = H - 36;
-      c.fillStyle = s.sticky ? "#d3b26a" : "#6cb8c6";
+      c.fillStyle = "#6cb8c6";
       c.beginPath();
       roundRect(c, px, py, s.paddleW, PADDLE_H, 6);
       c.fill();

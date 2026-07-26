@@ -20,7 +20,7 @@ export default function MarblePage() {
       </p>
       <h1 className="page-title">碎砖弹珠</h1>
       <p className="page-desc">
-        把球弹出去，打掉上方砖块。砖块会掉道具：多球、加宽、粘板、慢速、火力。
+        把球弹出去，打掉上方砖块。砖块会掉道具：多球、加宽、慢速、火力、生命。
         键盘 ← → 或 A/D 移动，空格发射 / 暂停。
       </p>
       <MarbleGame />

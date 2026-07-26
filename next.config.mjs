@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
-const isExport = process.env.EXPORT === "1";
-
+// 注意：正式导出构建请走 `npm run build` → scripts/build-export.mjs（隔离目录）。
+// 本配置仅服务 next dev / 非 EXPORT 场景，避免与隔离构建抢同一套缓存。
 const nextConfig = {
-  // 生产导出与 dev 使用不同 distDir，避免 build 弄脏 dev 的 .next（948.js / CSS 失效）
-  distDir: isExport ? ".next-export" : ".next",
-  ...(isExport ? { output: "export" } : {}),
+  distDir: ".next",
   images: {
     unoptimized: true,
   },

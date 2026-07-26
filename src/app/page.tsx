@@ -10,6 +10,9 @@ import {
 } from "@/data/content";
 import { fetchAihotSelected, type AihotItem } from "@/lib/aihot";
 
+/** 静态导出：必须强制静态，否则隔离 build 不生成 out/index.html */
+export const dynamic = "force-static";
+
 function todayLabel() {
   const d = new Date();
   const week = ["日", "一", "二", "三", "四", "五", "六"][d.getDay()];

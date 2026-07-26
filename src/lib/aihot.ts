@@ -105,11 +105,14 @@ export async function fetchAihotSelected(
 
   const { signal, cleanup } = mergeSignals(options.signal, timeoutMs);
   try {
+    // 构建期必须可缓存，否则 / 变成 dynamic，静态导出没有 index.html
+    const isBuild =
+      process.env.EXPORT === "1" ||
+      process.env.NEXT_PHASE === "phase-production-build";
     const res = await fetch(url.toString(), {
       signal,
       headers: { Accept: "application/json" },
-      // 构建期 / 客户端都不走 Next 默认强制缓存误判
-      cache: "no-store",
+      cache: isBuild ? "force-cache" : "no-store",
     });
     if (!res.ok) {
       throw new Error(`AI HOT HTTP ${res.status}`);

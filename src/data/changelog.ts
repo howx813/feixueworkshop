@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.6",
+    date: "2026-07-26",
+    title: "隔离构建 + 弹珠去粘板",
+    summary:
+      "生产构建隔离到临时目录，修复 948.js；碎砖弹珠去掉粘板道具，挡板只反弹。",
+    items: [
+      { tag: "修复", text: "scripts/build-export.mjs 隔离构建，不碰项目 .next" },
+      { tag: "优化", text: "预检/deploy 不再打挂 next dev" },
+      { tag: "优化", text: "弹珠道具池移除粘板；接球一律弹开" },
+    ],
+  },
+  {
     version: "0.2.5",
     date: "2026-07-26",
     title: "发版打 Git tag",

@@ -18,12 +18,11 @@ export type Brick = {
   alive: boolean;
 };
 
-export type DropKind = "multi" | "wide" | "sticky" | "slow" | "fire" | "life";
+export type DropKind = "multi" | "wide" | "slow" | "fire" | "life";
 
 export const DROP_KINDS: DropKind[] = [
   "multi",
   "wide",
-  "sticky",
   "slow",
   "fire",
   "life",

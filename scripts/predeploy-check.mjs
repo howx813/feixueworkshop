@@ -94,17 +94,17 @@ section("2/7 单元测试");
   }
 }
 
-section("3/7 生产构建（.next-export，不污染 dev 的 .next）");
+section("3/7 隔离生产构建（临时目录 build，绝不碰项目 .next）");
 {
-  const r = run("npm", ["run", "build"], { env: { EXPORT: "1" } });
+  const r = run("node", ["scripts/build-export.mjs"]);
   if (r.status !== 0) {
-    fail("next build 失败");
+    fail("隔离构建失败");
     if (r.stdout) console.error(r.stdout.slice(-2000));
     if (r.stderr) console.error(r.stderr.slice(-2000));
   } else if (!fs.existsSync(outDir)) {
     fail("构建后缺少 out/ 目录");
   } else {
-    ok("EXPORT=1 next build 成功，out/ 已生成（distDir=.next-export）");
+    ok("隔离构建成功，out/ 已写回（dev 的 .next 未改动）");
   }
 }
 
@@ -284,6 +284,6 @@ if (failed > 0) {
 }
 console.log("预检全部通过。可以部署：npm run deploy");
 console.log(
-  "提示：预检已隔离 .next-export；若本机 dev 仍报 948.js，执行 npm run dev:clean",
+  "提示：生产构建已在系统临时目录完成，不应再弄坏 3456 的 next dev。",
 );
 process.exit(0);

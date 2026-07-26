@@ -13,16 +13,20 @@ npm run dev
 
 ### CSS 没了 / `948.js` / Server Error？
 
-**原因：** `next build`（预检会跑）和 `next dev` 不要长期并行，会弄坏 `.next`。
+**已修复（构建隔离）：** `npm run build` 在系统临时目录执行，不再改项目 `.next`。
+
+若仍遇到（例如旧进程残留）：
+
+```bash
+npm run dev:clean
+```
 
 | 场景 | 命令 |
 |------|------|
 | 写代码 | `npm run dev` → :3456 |
 | 预检 | `npm run test:predeploy` |
-| 看构建结果（推荐） | `npm run preview:out` → :3457 |
+| 看构建结果 | `npm run preview:out` → :3457 |
 | dev 已坏 | `npm run dev:clean` |
-
-预检后优先用 **3457 静态预览**，不要死磕旧的 3456 dev 进程。
 
 ## 环境变量（可选）
 
