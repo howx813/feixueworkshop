@@ -17,6 +17,17 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.22",
+    date: "2026-07-27",
+    title: "碎砖弹珠：签名公司爆炸效果",
+    summary:
+      "弹珠打穿砖块时，签名公司 logo 会炸开：切成多块向外飞散、旋转、受重力下坠并淡出，配合青色冲击波和碎屑粒子；普通命中也有小火花。",
+    items: [
+      { tag: "新增", text: "logo 碎片爆炸：按宽高比切 6~8 块，各自飞散旋转下坠" },
+      { tag: "新增", text: "冲击波光环 + 碎屑粒子 + 命中火花" },
+    ],
+  },
+  {
     version: "0.2.21",
     date: "2026-07-27",
     title: "碎砖弹珠：换上真签名墙",

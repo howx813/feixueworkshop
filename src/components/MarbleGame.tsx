@@ -33,6 +33,40 @@ type Drop = {
   alive: boolean;
 };
 
+/** 爆炸碎片：logo 被切成若干块，各自飞散旋转 */
+type Shard = {
+  sx: number;
+  sy: number;
+  sw: number;
+  sh: number;
+  scale: number;
+  ox: number;
+  oy: number;
+  vx: number;
+  vy: number;
+  vr: number;
+};
+
+type Boom = {
+  im: HTMLImageElement | null;
+  cx: number;
+  cy: number;
+  shards: Shard[];
+  t0: number;
+  ttl: number;
+};
+
+type Spark = {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  r: number;
+  color: string;
+  t0: number;
+  ttl: number;
+};
+
 type Phase = "ready" | "playing" | "paused" | "won" | "lost";
 
 const W = MARBLE_W;
@@ -94,6 +128,8 @@ export function MarbleGame() {
     balls: [] as Ball[],
     bricks: makeBricks(),
     drops: [] as Drop[],
+    booms: [] as Boom[],
+    sparks: [] as Spark[],
     attached: true,
     score: 0,
     lives: 3,
@@ -146,6 +182,8 @@ export function MarbleGame() {
       const s = state.current;
       s.bricks = makeBricks();
       s.drops = [];
+      s.booms = [];
+      s.sparks = [];
       s.paddleW = 88;
       s.fireUntil = 0;
       if (!keepScore) {
@@ -308,14 +346,19 @@ export function MarbleGame() {
 
             const hit = hitBrick(b, ball.fire);
             s.score += hit.scoreGain;
-            if (hit.destroyed && Math.random() < DROP_CHANCE) {
-              s.drops.push({
-                x: b.x + b.w / 2,
-                y: b.y + b.h / 2,
-                vy: 110 + Math.random() * 40,
-                kind: randPick(DROP_KINDS),
-                alive: true,
-              });
+            if (hit.destroyed) {
+              spawnBoom(b, ts);
+              if (Math.random() < DROP_CHANCE) {
+                s.drops.push({
+                  x: b.x + b.w / 2,
+                  y: b.y + b.h / 2,
+                  vy: 110 + Math.random() * 40,
+                  kind: randPick(DROP_KINDS),
+                  alive: true,
+                });
+              }
+            } else {
+              spawnSpark(ball.x, ball.y, ts);
             }
             syncHud();
             break;
@@ -375,9 +418,90 @@ export function MarbleGame() {
         }
       }
 
+      // cull finished explosions
+      s.booms = s.booms.filter((bo) => ts - bo.t0 < bo.ttl);
+      s.sparks = s.sparks.filter((sp) => ts - sp.t0 < sp.ttl);
+
       // draw
       draw(ctx, ts);
       raf = requestAnimationFrame(step);
+    };
+
+    /** 打穿砖块：logo 碎成多块，带初速度向外飞散 + 旋转 + 重力下坠 */
+    const spawnBoom = (b: Brick, ts: number) => {
+      const s = state.current;
+      const im = b.img ? getImg(b.img) : null;
+      const cx = b.x + b.w / 2;
+      const cy = b.y + b.h / 2;
+      const shards: Shard[] = [];
+      if (im) {
+        const pad = 3;
+        const scale = Math.min(
+          (b.w - pad * 2) / im.naturalWidth,
+          (b.h - pad * 2) / im.naturalHeight,
+        );
+        const cols = im.naturalWidth > im.naturalHeight * 1.6 ? 4 : 3;
+        const rows = 2;
+        const sw = im.naturalWidth / cols;
+        const sh = im.naturalHeight / rows;
+        const totalW = im.naturalWidth * scale;
+        const totalH = im.naturalHeight * scale;
+        for (let r = 0; r < rows; r++) {
+          for (let c = 0; c < cols; c++) {
+            const ox = (c + 0.5) * sw * scale - totalW / 2;
+            const oy = (r + 0.5) * sh * scale - totalH / 2;
+            const ang = Math.atan2(oy, ox) + (Math.random() - 0.5) * 1.2;
+            const sp = 70 + Math.random() * 110;
+            shards.push({
+              sx: c * sw,
+              sy: r * sh,
+              sw,
+              sh,
+              scale,
+              ox,
+              oy,
+              vx: Math.cos(ang) * sp,
+              vy: Math.sin(ang) * sp - 40,
+              vr: (Math.random() - 0.5) * 9,
+            });
+          }
+        }
+      }
+      s.booms.push({ im, cx, cy, shards, t0: ts, ttl: 700 });
+      // 碎屑粒子
+      for (let i = 0; i < 10; i++) {
+        const ang = Math.random() * Math.PI * 2;
+        const sp = 40 + Math.random() * 130;
+        s.sparks.push({
+          x: cx,
+          y: cy,
+          vx: Math.cos(ang) * sp,
+          vy: Math.sin(ang) * sp - 30,
+          r: 1 + Math.random() * 2.2,
+          color: i % 3 === 0 ? BALL_COLOR : "#3a4a5c",
+          t0: ts,
+          ttl: 350 + Math.random() * 250,
+        });
+      }
+    };
+
+    /** 普通命中（未打穿）：小型火花 */
+    const spawnSpark = (x: number, y: number, ts: number) => {
+      const s = state.current;
+      for (let i = 0; i < 5; i++) {
+        const ang = Math.random() * Math.PI * 2;
+        const sp = 30 + Math.random() * 70;
+        s.sparks.push({
+          x,
+          y,
+          vx: Math.cos(ang) * sp,
+          vy: Math.sin(ang) * sp,
+          r: 0.8 + Math.random() * 1.6,
+          color: "#98a2b3",
+          t0: ts,
+          ttl: 260 + Math.random() * 120,
+        });
+      }
     };
 
     const applyDrop = (kind: DropKind, ts: number) => {
@@ -474,6 +598,56 @@ export function MarbleGame() {
         if (!b.alive) continue;
         drawBrick(c, b);
       }
+
+      // explosions：冲击波 + logo 碎片 + 碎屑
+      for (const bo of s.booms) {
+        const el = ts - bo.t0;
+        const p = el / bo.ttl;
+        const sec = el / 1000;
+        c.strokeStyle = `rgba(34,184,240,${0.55 * (1 - p)})`;
+        c.lineWidth = 2;
+        c.beginPath();
+        c.arc(bo.cx, bo.cy, 6 + 34 * p, 0, Math.PI * 2);
+        c.stroke();
+        if (bo.im) {
+          for (const sh of bo.shards) {
+            const x = bo.cx + sh.ox + sh.vx * sec;
+            const y = bo.cy + sh.oy + sh.vy * sec + 140 * sec * sec;
+            c.save();
+            c.translate(x, y);
+            c.rotate(sh.vr * sec);
+            c.globalAlpha = Math.max(0, 1 - p);
+            c.drawImage(
+              bo.im,
+              sh.sx,
+              sh.sy,
+              sh.sw,
+              sh.sh,
+              (-sh.sw * sh.scale) / 2,
+              (-sh.sh * sh.scale) / 2,
+              sh.sw * sh.scale,
+              sh.sh * sh.scale,
+            );
+            c.restore();
+          }
+        }
+      }
+      for (const sp of s.sparks) {
+        const el = ts - sp.t0;
+        const sec = el / 1000;
+        c.globalAlpha = Math.max(0, 1 - el / sp.ttl);
+        c.fillStyle = sp.color;
+        c.beginPath();
+        c.arc(
+          sp.x + sp.vx * sec,
+          sp.y + sp.vy * sec + 140 * sec * sec,
+          sp.r,
+          0,
+          Math.PI * 2,
+        );
+        c.fill();
+      }
+      c.globalAlpha = 1;
 
       // drops
       for (const d of s.drops) {
