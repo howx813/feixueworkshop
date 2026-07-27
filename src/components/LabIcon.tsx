@@ -1,6 +1,7 @@
 "use client";
 
 export type LabIconKey =
+  | "gravity"
   | "fluid"
   | "particles"
   | "graphic"
@@ -34,6 +35,14 @@ export function LabIcon({ id, size = 20, className }: Props) {
   };
 
   switch (id) {
+    case "gravity":
+      return (
+        <svg {...svgProps}>
+          <circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none" />
+          <ellipse cx="12" cy="12" rx="9" ry="4.2" />
+          <circle cx="19.6" cy="9.4" r="1.2" fill="currentColor" stroke="none" />
+        </svg>
+      );
     case "fluid":
       return (
         <svg {...svgProps}>

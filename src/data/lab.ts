@@ -14,7 +14,7 @@ export type LabItem = {
   id: string;
   title: string;
   /** 应用名称前的 SVG 图标标识 */
-  icon: "fluid" | "particles" | "graphic" | "marble" | "snowflake";
+  icon: "gravity" | "fluid" | "particles" | "graphic" | "marble" | "snowflake";
   summary: string;
   href: string;
   status: "可玩" | "实验中" | "搁置";
@@ -23,6 +23,17 @@ export type LabItem = {
 };
 
 export const labItems: LabItem[] = [
+  {
+    id: "gravity",
+    title: "引力沙盘",
+    icon: "gravity",
+    summary:
+      "一道粒子风横穿屏幕，放下的质量点像引力透镜一样把流线掰弯；可切排斥。",
+    href: "/lab/gravity/",
+    status: "可玩",
+    tags: ["Canvas", "物理模拟", "引力"],
+    updated: "2026-07-27",
+  },
   {
     id: "fluid",
     title: "流体实验室",
