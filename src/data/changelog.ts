@@ -17,6 +17,17 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.18",
+    date: "2026-07-27",
+    title: "网站统计接线（51.la）",
+    summary:
+      "全站接入 51.la 统计（V6 异步模式）：在 src/data/analytics.ts 配置 id/ck 后自动加载 SDK 并统计前端路由切换；未配置时完全静默、零请求。",
+    items: [
+      { tag: "新增", text: "LaAnalytics 组件挂入根布局" },
+      { tag: "新增", text: "analytics.ts 配置位：留空即关闭统计" },
+    ],
+  },
+  {
     version: "0.2.17",
     date: "2026-07-27",
     title: "引力沙盘",

@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { LaAnalytics } from "@/components/LaAnalytics";
 import { MobileNav, Sidebar, Topbar } from "@/components/Sidebar";
 import { site } from "@/data/content";
 import { themeInitScript } from "@/lib/theme-init";
@@ -46,6 +47,7 @@ export default function RootLayout({
           </div>
           <MobileNav />
         </div>
+        <LaAnalytics />
       </body>
     </html>
   );
