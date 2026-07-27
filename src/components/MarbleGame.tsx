@@ -10,8 +10,8 @@ import {
   makeBricks,
   MARBLE_H,
   MARBLE_W,
+  PADDLE_IMG,
   PADDLE_LABEL,
-  SIGNER_COMPANIES,
   type Brick,
   clamp,
 } from "@/lib/marble-core";
@@ -53,18 +53,25 @@ const DROP_COLOR: Record<DropKind, string> = {
   wide: "#5fc79a",
   slow: "#98a2b3",
   fire: "#d86a52",
-  life: "#e8ebf2",
+  life: "#3a4a5c",
 };
+
+const BALL_COLOR = "#22b8f0";
 
 function randPick<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function brickColor(b: Brick): string {
-  const t = b.hp / b.maxHp;
-  if (t > 0.66) return "#4fa3b3";
-  if (t > 0.33) return "#d3b26a";
-  return "#d86a52";
+/** logo 图片缓存：rAF 每帧调用，加载完成后自然上屏 */
+const imgCache = new Map<string, HTMLImageElement>();
+function getImg(src: string): HTMLImageElement | null {
+  let im = imgCache.get(src);
+  if (!im) {
+    im = new Image();
+    im.src = src;
+    imgCache.set(src, im);
+  }
+  return im.complete && im.naturalWidth > 0 ? im : null;
 }
 
 type Hud = {
@@ -100,7 +107,7 @@ export function MarbleGame() {
     lives: 3,
     level: 1,
     cleared: 0,
-    total: SIGNER_COMPANIES.length,
+    total: state.current.bricks.length,
     phase: "ready",
     message: "空格发射 · ← → 移动",
   });
@@ -358,7 +365,7 @@ export function MarbleGame() {
           s.level += 1;
           s.score += 100;
           s.phase = "ready";
-          s.message = `第 ${s.level} 关 · 空格继续`;
+          s.message = `签名墙已清空 · 第 ${s.level} 关 · 空格继续`;
           s.bricks = makeBricks();
           // slightly harder bricks already via level speed on launch
           s.drops = [];
@@ -414,51 +421,58 @@ export function MarbleGame() {
       }
     };
 
+    const drawBrick = (c: CanvasRenderingContext2D, b: Brick) => {
+      const im = b.img ? getImg(b.img) : null;
+      // 掉血 = logo 变淡（3 血档：1 / 0.72 / 0.45）
+      const alpha = 0.3 + 0.7 * (b.hp / b.maxHp);
+      if (im) {
+        const pad = 3;
+        const scale = Math.min(
+          (b.w - pad * 2) / im.naturalWidth,
+          (b.h - pad * 2) / im.naturalHeight,
+        );
+        const dw = im.naturalWidth * scale;
+        const dh = im.naturalHeight * scale;
+        c.save();
+        c.globalAlpha = alpha;
+        c.drawImage(
+          im,
+          b.x + (b.w - dw) / 2,
+          b.y + (b.h - dh) / 2,
+          dw,
+          dh,
+        );
+        c.restore();
+      } else {
+        // 图片未加载时的占位
+        c.fillStyle = `rgba(60,72,88,${0.12 * alpha})`;
+        c.beginPath();
+        roundRect(c, b.x, b.y, b.w, b.h, 3);
+        c.fill();
+        if (b.label) {
+          c.fillStyle = `rgba(60,72,88,${alpha})`;
+          c.font = "bold 7px system-ui,sans-serif";
+          c.textAlign = "center";
+          c.textBaseline = "middle";
+          c.fillText(b.label, b.x + b.w / 2, b.y + b.h / 2 + 0.5);
+        }
+      }
+    };
+
     const draw = (c: CanvasRenderingContext2D, ts: number) => {
       const s = state.current;
       c.clearRect(0, 0, W, H);
 
-      // bg
-      c.fillStyle = "#0c1117";
+      // bg：签名墙同款白底
+      c.fillStyle = "#f7f8fa";
       c.fillRect(0, 0, W, H);
-      c.strokeStyle = "rgba(255,255,255,0.06)";
+      c.strokeStyle = "rgba(20,30,45,0.14)";
       c.strokeRect(0.5, 0.5, W - 1, H - 1);
-
-      // subtle grid
-      c.strokeStyle = "rgba(255,255,255,0.03)";
-      c.beginPath();
-      for (let x = 0; x < W; x += 24) {
-        c.moveTo(x, 0);
-        c.lineTo(x, H);
-      }
-      for (let y = 0; y < H; y += 24) {
-        c.moveTo(0, y);
-        c.lineTo(W, y);
-      }
-      c.stroke();
 
       // bricks
       for (const b of s.bricks) {
         if (!b.alive) continue;
-        c.fillStyle = brickColor(b);
-        c.beginPath();
-        roundRect(c, b.x, b.y, b.w, b.h, 3);
-        c.fill();
-        c.fillStyle = "rgba(255,255,255,0.12)";
-        c.fillRect(b.x + 2, b.y + 2, b.w - 4, 3);
-        if (b.label) {
-          let fontSize = 8;
-          c.textAlign = "center";
-          c.textBaseline = "middle";
-          c.font = `bold ${fontSize}px system-ui,sans-serif`;
-          const maxW = b.w - 6;
-          while (fontSize > 5 && c.measureText(b.label).width > maxW) {
-            fontSize -= 0.5;
-            c.font = `bold ${fontSize}px system-ui,sans-serif`;
-          }
-          c.fillStyle = "rgba(10,16,24,0.85)";
-          c.fillText(b.label, b.x + b.w / 2, b.y + b.h / 2 + 0.5);
-        }
+        drawBrick(c, b);
       }
 
       // drops
@@ -468,44 +482,46 @@ export function MarbleGame() {
         c.beginPath();
         roundRect(c, d.x - 14, d.y - 8, 28, 16, 4);
         c.fill();
-        c.fillStyle = "#10151c";
+        c.fillStyle = "#ffffff";
         c.font = "bold 9px system-ui,sans-serif";
         c.textAlign = "center";
         c.textBaseline = "middle";
         c.fillText(DROP_LABEL[d.kind], d.x, d.y + 0.5);
       }
 
-      // paddle
-      const px = s.paddleX - s.paddleW / 2;
+      // paddle：ANTHROPIC 字标（碰撞条不可见，与原梗一致）
       const py = H - 36;
-      c.fillStyle = "#6cb8c6";
-      c.beginPath();
-      roundRect(c, px, py, s.paddleW, PADDLE_H, 6);
-      c.fill();
+      const pim = getImg(PADDLE_IMG);
+      if (pim) {
+        const ph = PADDLE_H + 6;
+        const pw = (pim.naturalWidth / pim.naturalHeight) * ph;
+        c.drawImage(pim, s.paddleX - pw / 2, py - 3, pw, ph);
+      } else {
+        c.fillStyle = "#3a4a5c";
+        c.beginPath();
+        roundRect(c, s.paddleX - s.paddleW / 2, py, s.paddleW, PADDLE_H, 6);
+        c.fill();
+        c.fillStyle = "#ffffff";
+        c.font = "bold 8px system-ui,sans-serif";
+        c.textAlign = "center";
+        c.textBaseline = "middle";
+        c.fillText(PADDLE_LABEL, s.paddleX, py + PADDLE_H / 2 + 0.5);
+      }
       if (ts < s.fireUntil) {
         c.strokeStyle = "#d86a52";
         c.lineWidth = 2;
+        c.beginPath();
+        roundRect(c, s.paddleX - s.paddleW / 2, py - 3, s.paddleW, PADDLE_H + 6, 6);
         c.stroke();
       }
-      // 挡板 = 唯一没签名的那家
-      let pFont = 8;
-      c.textAlign = "center";
-      c.textBaseline = "middle";
-      c.font = `bold ${pFont}px system-ui,sans-serif`;
-      while (pFont > 5 && c.measureText(PADDLE_LABEL).width > s.paddleW - 8) {
-        pFont -= 0.5;
-        c.font = `bold ${pFont}px system-ui,sans-serif`;
-      }
-      c.fillStyle = "rgba(10,16,24,0.9)";
-      c.fillText(PADDLE_LABEL, s.paddleX, py + PADDLE_H / 2 + 0.5);
 
       // balls
       for (const ball of s.balls) {
         c.beginPath();
         c.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2);
-        c.fillStyle = ball.fire ? "#d86a52" : "#e8ebf2";
+        c.fillStyle = ball.fire ? "#d86a52" : BALL_COLOR;
         c.fill();
-        c.fillStyle = "rgba(255,255,255,0.35)";
+        c.fillStyle = "rgba(255,255,255,0.5)";
         c.beginPath();
         c.arc(ball.x - 2, ball.y - 2, ball.r * 0.35, 0, Math.PI * 2);
         c.fill();
@@ -513,11 +529,12 @@ export function MarbleGame() {
 
       // overlay message
       if (s.phase !== "playing" || s.message) {
-        c.fillStyle = "rgba(10,16,24,0.45)";
+        c.fillStyle = "rgba(247,248,250,0.72)";
         c.fillRect(0, H / 2 - 36, W, 72);
-        c.fillStyle = "#e8ebf2";
+        c.fillStyle = "#2c3848";
         c.font = "600 16px system-ui,sans-serif";
         c.textAlign = "center";
+        c.textBaseline = "middle";
         c.fillText(s.message || "空格发射", W / 2, H / 2);
       }
     };
@@ -607,6 +624,7 @@ export function MarbleGame() {
         </div>
         <p className="item-body" style={{ marginTop: 10, marginBottom: 0 }}>
           键盘 ← → / A D 移动挡板，空格发射或暂停，R 重开；也可用鼠标/触摸拖动挡板，点击画布发射。
+          砖块 logo 与 ANTHROPIC 挡板均裁自原签名墙梗图视频。
         </p>
       </div>
     </div>

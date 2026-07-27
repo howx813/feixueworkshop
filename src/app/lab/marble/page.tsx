@@ -20,9 +20,10 @@ export default function MarblePage() {
       </p>
       <h1 className="page-title">碎砖弹珠</h1>
       <p className="page-desc">
-        黄仁勋发起 AI 开源签名，48 家都签了——只有 Anthropic 没签。
-        现在你是那块写着 ANTHROPIC 的挡板：把球弹出去，打掉所有签了名的公司。
-        砖块会掉道具：多球、加宽、慢速、火力、生命。键盘 ← → 或 A/D 移动，空格发射 / 暂停。
+        黄仁勋发起 AI 开源签名，50 家都签了——只有 Anthropic 没签。
+        现在你是那枚 ANTHROPIC 字标挡板：把球弹出去，打掉整面签名墙。
+        砖块 logo 全部裁自原签名墙视频，会掉道具：多球、加宽、慢速、火力、生命。
+        键盘 ← → 或 A/D 移动，空格发射 / 暂停。
       </p>
       <MarbleGame />
       <div style={{ marginTop: 20 }}>

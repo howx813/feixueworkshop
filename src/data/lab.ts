@@ -69,7 +69,7 @@ export const labItems: LabItem[] = [
     title: "碎砖弹珠",
     icon: "marble",
     summary:
-      "Anthropic 打签名墙：你是唯一没响应黄仁勋 AI 开源签名的挡板，弹珠打掉 48 家签了名的公司。",
+      "Anthropic 打签名墙：你是唯一没响应黄仁勋 AI 开源签名的字标挡板，弹珠打掉 50 家签了名的公司 logo。",
     href: "/lab/marble/",
     status: "可玩",
     tags: ["游戏", "Canvas", "街机"],

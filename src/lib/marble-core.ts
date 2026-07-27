@@ -4,21 +4,22 @@
 
 export const MARBLE_W = 480;
 export const MARBLE_H = 640;
-export const BRICK_ROWS = 6;
-export const BRICK_COLS = 8;
-export const BRICK_GAP = 4;
+export const BRICK_GAP = 6;
+
+/** 签名墙每行砖数（与原梗图一致：6 行 × 8 + 末行 2 = 50） */
+export const BRICK_ROW_COLS = [8, 8, 8, 8, 8, 8, 2];
 
 /**
- * 黄仁勋「AI 开源签名」梗图里的签名方（按图中从左到右、从上到下）。
- * 最后一块「You?」是留给还没签名的你的位置。
+ * 黄仁勋「AI 开源签名」梗图里的 50 个签名方（按图中从左到右、从上到下）。
+ * logo 图片裁自 Ben Burtenshaw 的可玩版视频（见 changelog 0.2.21）。
  */
 export const SIGNER_COMPANIES: string[] = [
   // 第 1 行
   "AI21",
   "AMD",
-  "Am. Innovators",
+  "American Innovators",
   "Amp",
-  "a16z",
+  "Andreessen Horowitz",
   "Arcee",
   "Arena",
   "Baseten",
@@ -43,7 +44,7 @@ export const SIGNER_COMPANIES: string[] = [
   // 第 4 行
   "inferact",
   "Interconnects",
-  "Linux",
+  "Linux Foundation",
   "Mariana Minerals",
   "Meta",
   "Microsoft",
@@ -54,23 +55,31 @@ export const SIGNER_COMPANIES: string[] = [
   "Nebius",
   "Nous",
   "NVIDIA",
+  "Ollama",
   "OpenAI",
   "OpenClaw",
   "Palantir",
-  "Palo Alto",
   // 第 6 行
+  "Palo Alto",
   "Periodic Labs",
   "Perplexity",
+  "Prime Intellect",
+  "Reflection",
   "Replit",
   "ServiceNow",
   "Telnyx",
+  // 第 7 行
   "Trajectory",
   "Y Combinator",
-  "You?",
 ];
 
 /** 挡板：唯一没签名的那家 */
 export const PADDLE_LABEL = "ANTHROPIC";
+export const PADDLE_IMG = "/lab/marble/logos/anthropic.png";
+
+export function brickImg(index: number) {
+  return `/lab/marble/logos/${String(index).padStart(2, "0")}.png`;
+}
 
 export type Brick = {
   x: number;
@@ -81,6 +90,7 @@ export type Brick = {
   maxHp: number;
   alive: boolean;
   label?: string;
+  img?: string;
 };
 
 export type DropKind = "multi" | "wide" | "slow" | "fire" | "life";
@@ -99,19 +109,19 @@ export function clamp(n: number, a: number, b: number) {
 
 export function makeBricks(
   w = MARBLE_W,
-  rows = BRICK_ROWS,
-  cols = BRICK_COLS,
+  rowCols: number[] = BRICK_ROW_COLS,
   labels: string[] = SIGNER_COMPANIES,
 ): Brick[] {
   const marginX = 16;
-  const top = 72;
-  const totalGap = BRICK_GAP * (cols - 1);
-  const bw = (w - marginX * 2 - totalGap) / cols;
-  const bh = 16;
+  const top = 64;
+  const maxCols = Math.max(...rowCols);
+  const totalGap = BRICK_GAP * (maxCols - 1);
+  const bw = (w - marginX * 2 - totalGap) / maxCols;
+  const bh = 26;
   const list: Brick[] = [];
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      const i = r * cols + c;
+  let i = 0;
+  for (let r = 0; r < rowCols.length; r++) {
+    for (let c = 0; c < rowCols[r]; c++) {
       const hp = r < 2 ? 3 : r < 4 ? 2 : 1;
       list.push({
         x: marginX + c * (bw + BRICK_GAP),
@@ -122,7 +132,9 @@ export function makeBricks(
         maxHp: hp,
         alive: true,
         label: labels[i],
+        img: brickImg(i),
       });
+      i += 1;
     }
   }
   return list;

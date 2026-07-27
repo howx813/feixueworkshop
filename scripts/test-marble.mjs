@@ -4,40 +4,46 @@
 import assert from "node:assert/strict";
 
 // 内联精简版逻辑，避免 ts 编译依赖；与 marble-core 规则保持一致
+const BRICK_ROW_COLS = [8, 8, 8, 8, 8, 8, 2];
+const BRICK_GAP = 6;
+
+// 与 marble-core.ts 的 SIGNER_COMPANIES 保持一致
+const SIGNER_COMPANIES = [
+  "AI21", "AMD", "American Innovators", "Amp", "Andreessen Horowitz", "Arcee", "Arena", "Baseten",
+  "Black Forest Labs", "Block", "Box", "Cisco", "Cloudflare", "Cohere", "CrowdStrike", "Dell",
+  "DoorDash", "Emergence", "Fireworks AI", "Genspark", "GitHub", "Google", "Hugging Face", "IBM",
+  "inferact", "Interconnects", "Linux Foundation", "Mariana Minerals", "Meta", "Microsoft", "Mistral", "Morph",
+  "Mozilla", "Nebius", "Nous", "NVIDIA", "Ollama", "OpenAI", "OpenClaw", "Palantir",
+  "Palo Alto", "Periodic Labs", "Perplexity", "Prime Intellect", "Reflection", "Replit", "ServiceNow", "Telnyx",
+  "Trajectory", "Y Combinator",
+];
+
 function clamp(n, a, b) {
   return Math.max(a, Math.min(b, n));
 }
 
-// 与 marble-core.ts 的 SIGNER_COMPANIES 保持一致
-const SIGNER_COMPANIES = [
-  "AI21", "AMD", "Am. Innovators", "Amp", "a16z", "Arcee", "Arena", "Baseten",
-  "Black Forest Labs", "Block", "Box", "Cisco", "Cloudflare", "Cohere", "CrowdStrike", "Dell",
-  "DoorDash", "Emergence", "Fireworks AI", "Genspark", "GitHub", "Google", "Hugging Face", "IBM",
-  "inferact", "Interconnects", "Linux", "Mariana Minerals", "Meta", "Microsoft", "Mistral", "Morph",
-  "Mozilla", "Nebius", "Nous", "NVIDIA", "OpenAI", "OpenClaw", "Palantir", "Palo Alto",
-  "Periodic Labs", "Perplexity", "Replit", "ServiceNow", "Telnyx", "Trajectory", "Y Combinator", "You?",
-];
-
-function makeBricks(w = 480, rows = 6, cols = 8, labels = SIGNER_COMPANIES) {
-  const gap = 4;
+function makeBricks(w = 480, rowCols = BRICK_ROW_COLS, labels = SIGNER_COMPANIES) {
   const marginX = 16;
-  const top = 72;
-  const bw = (w - marginX * 2 - gap * (cols - 1)) / cols;
+  const top = 64;
+  const maxCols = Math.max(...rowCols);
+  const bw = (w - marginX * 2 - BRICK_GAP * (maxCols - 1)) / maxCols;
   const list = [];
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      const i = r * cols + c;
+  let i = 0;
+  for (let r = 0; r < rowCols.length; r++) {
+    for (let c = 0; c < rowCols[r]; c++) {
       const hp = r < 2 ? 3 : r < 4 ? 2 : 1;
       list.push({
-        x: marginX + c * (bw + gap),
-        y: top + r * (16 + gap),
+        x: marginX + c * (bw + BRICK_GAP),
+        y: top + r * (26 + BRICK_GAP),
         w: bw,
-        h: 16,
+        h: 26,
         hp,
         maxHp: hp,
         alive: true,
         label: labels[i],
+        img: `/lab/marble/logos/${String(i).padStart(2, "0")}.png`,
       });
+      i += 1;
     }
   }
   return list;
@@ -77,26 +83,43 @@ function test(name, fn) {
 
 console.log("\n▸ 碎砖弹珠逻辑单测");
 
-test("生成 6×8=48 块砖", () => {
+test("生成 6×8+2=50 块签名砖", () => {
   const bricks = makeBricks();
-  assert.equal(bricks.length, 48);
+  assert.equal(bricks.length, 50);
 });
 
-test("48 个签名方标签按顺序贴到砖上", () => {
-  assert.equal(SIGNER_COMPANIES.length, 48);
+test("50 个签名方标签按顺序贴到砖上", () => {
+  assert.equal(SIGNER_COMPANIES.length, 50);
   const bricks = makeBricks();
   assert.equal(bricks[0].label, "AI21");
   assert.equal(bricks[35].label, "NVIDIA");
-  assert.equal(bricks[47].label, "You?");
+  assert.equal(bricks[36].label, "Ollama");
+  assert.equal(bricks[44].label, "Reflection");
+  assert.equal(bricks[49].label, "Y Combinator");
   assert.ok(bricks.every((b) => typeof b.label === "string"));
+  assert.equal(bricks[0].img, "/lab/marble/logos/00.png");
+  assert.equal(bricks[49].img, "/lab/marble/logos/49.png");
 });
 
-test("前两排 3 血、中两排 2 血、后两排 1 血", () => {
+test("前两排 3 血、中两排 2 血、后三排 1 血", () => {
   const bricks = makeBricks();
-  const byRow = (r) => bricks.filter((_, i) => Math.floor(i / 8) === r);
-  assert.ok(byRow(0).every((b) => b.hp === 3));
-  assert.ok(byRow(3).every((b) => b.hp === 2));
-  assert.ok(byRow(5).every((b) => b.hp === 1));
+  // 行偏移：0,8,16,24,32,40,48
+  const rowAt = (r) => {
+    const start = BRICK_ROW_COLS.slice(0, r).reduce((a, n) => a + n, 0);
+    return bricks.slice(start, start + BRICK_ROW_COLS[r]);
+  };
+  assert.ok(rowAt(0).every((b) => b.hp === 3));
+  assert.ok(rowAt(3).every((b) => b.hp === 2));
+  assert.ok(rowAt(5).every((b) => b.hp === 1));
+  assert.ok(rowAt(6).every((b) => b.hp === 1));
+  assert.equal(rowAt(6).length, 2);
+});
+
+test("末行 2 块砖左对齐、砖宽与上行一致", () => {
+  const bricks = makeBricks();
+  assert.equal(bricks[48].x, bricks[0].x);
+  assert.equal(bricks[49].x, bricks[1].x);
+  assert.equal(bricks[48].w, bricks[0].w);
 });
 
 test("球心在砖内判定命中", () => {

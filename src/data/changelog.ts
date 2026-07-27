@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.21",
+    date: "2026-07-27",
+    title: "碎砖弹珠：换上真签名墙",
+    summary:
+      "砖块从文字标签换成真 logo：抓下 Ben Burtenshaw 可玩版梗图视频（1080p），逐帧裁出全部 50 个签名方 logo 和 ANTHROPIC 字标挡板；补齐小图里被挡住的 Ollama、Prime Intellect、Reflection，砖阵改为与梗图一致的 6×8+2=50，白底签名墙风格。",
+    items: [
+      { tag: "新增", text: "50 个签名方 logo 图片砖块 + ANTHROPIC 字标挡板（裁自原视频）" },
+      { tag: "新增", text: "补录 Ollama / Prime Intellect / Reflection，凑齐完整 50 签名方" },
+      { tag: "优化", text: "白底签名墙视觉，掉血 = logo 变淡，青色弹珠对齐原梗" },
+    ],
+  },
+  {
     version: "0.2.20",
     date: "2026-07-27",
     title: "碎砖弹珠：Anthropic 打签名墙",
