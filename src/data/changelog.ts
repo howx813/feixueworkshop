@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.20",
+    date: "2026-07-27",
+    title: "碎砖弹珠：Anthropic 打签名墙",
+    summary:
+      "碎砖弹珠换皮成黄仁勋 AI 开源签名梗图：挡板是唯一没签名的 Anthropic，48 块砖全是签了名的公司（按梗图逐格辨认录入），HUD 新增已清除计数。",
+    items: [
+      { tag: "新增", text: "48 块签名公司砖块（名字逐格辨认自梗图，含彩蛋砖 You?）" },
+      { tag: "新增", text: "挡板标注 ANTHROPIC，HUD 显示已清除 n/48" },
+      { tag: "优化", text: "砖阵由 6×10 调整为 6×8，砖面自适应字号" },
+    ],
+  },
+  {
     version: "0.2.19",
     date: "2026-07-27",
     title: "51.la 统计生效",

@@ -8,7 +8,17 @@ function clamp(n, a, b) {
   return Math.max(a, Math.min(b, n));
 }
 
-function makeBricks(w = 480, rows = 6, cols = 10) {
+// 与 marble-core.ts 的 SIGNER_COMPANIES 保持一致
+const SIGNER_COMPANIES = [
+  "AI21", "AMD", "Am. Innovators", "Amp", "a16z", "Arcee", "Arena", "Baseten",
+  "Black Forest Labs", "Block", "Box", "Cisco", "Cloudflare", "Cohere", "CrowdStrike", "Dell",
+  "DoorDash", "Emergence", "Fireworks AI", "Genspark", "GitHub", "Google", "Hugging Face", "IBM",
+  "inferact", "Interconnects", "Linux", "Mariana Minerals", "Meta", "Microsoft", "Mistral", "Morph",
+  "Mozilla", "Nebius", "Nous", "NVIDIA", "OpenAI", "OpenClaw", "Palantir", "Palo Alto",
+  "Periodic Labs", "Perplexity", "Replit", "ServiceNow", "Telnyx", "Trajectory", "Y Combinator", "You?",
+];
+
+function makeBricks(w = 480, rows = 6, cols = 8, labels = SIGNER_COMPANIES) {
   const gap = 4;
   const marginX = 16;
   const top = 72;
@@ -16,6 +26,7 @@ function makeBricks(w = 480, rows = 6, cols = 10) {
   const list = [];
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
+      const i = r * cols + c;
       const hp = r < 2 ? 3 : r < 4 ? 2 : 1;
       list.push({
         x: marginX + c * (bw + gap),
@@ -25,6 +36,7 @@ function makeBricks(w = 480, rows = 6, cols = 10) {
         hp,
         maxHp: hp,
         alive: true,
+        label: labels[i],
       });
     }
   }
@@ -65,14 +77,23 @@ function test(name, fn) {
 
 console.log("\n▸ 碎砖弹珠逻辑单测");
 
-test("生成 6×10=60 块砖", () => {
+test("生成 6×8=48 块砖", () => {
   const bricks = makeBricks();
-  assert.equal(bricks.length, 60);
+  assert.equal(bricks.length, 48);
+});
+
+test("48 个签名方标签按顺序贴到砖上", () => {
+  assert.equal(SIGNER_COMPANIES.length, 48);
+  const bricks = makeBricks();
+  assert.equal(bricks[0].label, "AI21");
+  assert.equal(bricks[35].label, "NVIDIA");
+  assert.equal(bricks[47].label, "You?");
+  assert.ok(bricks.every((b) => typeof b.label === "string"));
 });
 
 test("前两排 3 血、中两排 2 血、后两排 1 血", () => {
   const bricks = makeBricks();
-  const byRow = (r) => bricks.filter((_, i) => Math.floor(i / 10) === r);
+  const byRow = (r) => bricks.filter((_, i) => Math.floor(i / 8) === r);
   assert.ok(byRow(0).every((b) => b.hp === 3));
   assert.ok(byRow(3).every((b) => b.hp === 2));
   assert.ok(byRow(5).every((b) => b.hp === 1));

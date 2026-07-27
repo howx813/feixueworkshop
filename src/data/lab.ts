@@ -69,11 +69,11 @@ export const labItems: LabItem[] = [
     title: "碎砖弹珠",
     icon: "marble",
     summary:
-      "弹珠打砖：弹出去打碎上方砖块，砖块掉落多球、加宽、慢速、火力、生命等道具。",
+      "Anthropic 打签名墙：你是唯一没响应黄仁勋 AI 开源签名的挡板，弹珠打掉 48 家签了名的公司。",
     href: "/lab/marble/",
     status: "可玩",
     tags: ["游戏", "Canvas", "街机"],
-    updated: "2026-07-26",
+    updated: "2026-07-27",
   },
   {
     id: "snowflake",

@@ -10,6 +10,8 @@ import {
   makeBricks,
   MARBLE_H,
   MARBLE_W,
+  PADDLE_LABEL,
+  SIGNER_COMPANIES,
   type Brick,
   clamp,
 } from "@/lib/marble-core";
@@ -69,6 +71,8 @@ type Hud = {
   score: number;
   lives: number;
   level: number;
+  cleared: number;
+  total: number;
   phase: Phase;
   message: string;
 };
@@ -95,6 +99,8 @@ export function MarbleGame() {
     score: 0,
     lives: 3,
     level: 1,
+    cleared: 0,
+    total: SIGNER_COMPANIES.length,
     phase: "ready",
     message: "空格发射 · ← → 移动",
   });
@@ -105,6 +111,8 @@ export function MarbleGame() {
       score: s.score,
       lives: s.lives,
       level: s.level,
+      cleared: s.bricks.filter((b) => !b.alive).length,
+      total: s.bricks.length,
       phase: s.phase,
       message: s.message,
     });
@@ -438,6 +446,19 @@ export function MarbleGame() {
         c.fill();
         c.fillStyle = "rgba(255,255,255,0.12)";
         c.fillRect(b.x + 2, b.y + 2, b.w - 4, 3);
+        if (b.label) {
+          let fontSize = 8;
+          c.textAlign = "center";
+          c.textBaseline = "middle";
+          c.font = `bold ${fontSize}px system-ui,sans-serif`;
+          const maxW = b.w - 6;
+          while (fontSize > 5 && c.measureText(b.label).width > maxW) {
+            fontSize -= 0.5;
+            c.font = `bold ${fontSize}px system-ui,sans-serif`;
+          }
+          c.fillStyle = "rgba(10,16,24,0.85)";
+          c.fillText(b.label, b.x + b.w / 2, b.y + b.h / 2 + 0.5);
+        }
       }
 
       // drops
@@ -466,6 +487,17 @@ export function MarbleGame() {
         c.lineWidth = 2;
         c.stroke();
       }
+      // 挡板 = 唯一没签名的那家
+      let pFont = 8;
+      c.textAlign = "center";
+      c.textBaseline = "middle";
+      c.font = `bold ${pFont}px system-ui,sans-serif`;
+      while (pFont > 5 && c.measureText(PADDLE_LABEL).width > s.paddleW - 8) {
+        pFont -= 0.5;
+        c.font = `bold ${pFont}px system-ui,sans-serif`;
+      }
+      c.fillStyle = "rgba(10,16,24,0.9)";
+      c.fillText(PADDLE_LABEL, s.paddleX, py + PADDLE_H / 2 + 0.5);
 
       // balls
       for (const ball of s.balls) {
@@ -529,6 +561,9 @@ export function MarbleGame() {
           <span className="chip chip-accent">分数 {hud.score}</span>
           <span className="chip">生命 {hud.lives}</span>
           <span className="chip chip-amber">关卡 {hud.level}</span>
+          <span className="chip">
+            已清除 {hud.cleared}/{hud.total}
+          </span>
           <span className="chip">{phaseLabel(hud.phase)}</span>
         </div>
         <p className="item-body" style={{ marginTop: 8, marginBottom: 0 }}>
