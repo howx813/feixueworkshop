@@ -71,50 +71,79 @@ export type ShowcaseItem = {
   highlights: string[];
   stack: string[];
   stage: string;
+  /** 可演示地址（手搓宝匣实验页） */
+  href?: string;
 };
 
 export const showcases: ShowcaseItem[] = [
   {
-    id: "datav",
-    title: "产业数据看板原型",
-    role: "数据展示 / 决策辅助",
+    id: "marble",
+    title: "碎砖弹珠 · Anthropic 打签名墙",
+    role: "街机游戏 / 热点二创",
     summary:
-      "将产业与业务指标做成可讲解的可视化界面，服务汇报与快速摸底。强调口径清晰、页面克制、结论可读。",
+      "黄仁勋发起 AI 开源签名，50 家都签了——只有 Anthropic 没签。你是 ANTHROPIC 字标挡板，把弹珠发出去，炸开整面签名墙。砖块 logo 全部裁自原梗图视频。",
     highlights: [
-      "多面板指标总览",
-      "适合投屏讲解的信息密度",
-      "可演进为在线托管版本",
+      "50 个真签名方 logo 砖块，掉血变淡",
+      "爆炸特效：logo 碎块飞散 + 冲击波 + 粒子",
+      "道具系统：多球 / 加宽 / 慢速 / 火力 / 生命",
     ],
-    stack: ["Next.js", "TypeScript", "Tailwind"],
-    stage: "原型可演示",
+    stack: ["Next.js", "Canvas", "TypeScript"],
+    stage: "可玩",
+    href: "/lab/marble/",
   },
   {
-    id: "paper-agent",
-    title: "材料与论文助手",
-    role: "写作提效 / 结构生成",
+    id: "gravity",
+    title: "引力沙盘",
+    role: "物理模拟 / 交互",
     summary:
-      "围绕开题、报告、新闻稿等高频材料，先搭结构再填内容，减少空话与模板腔。",
-    highlights: [
-      "提纲生成与段落重组",
-      "事实 / 占位 / 待确认分层",
-      "适合公文与技术文档混合场景",
-    ],
-    stack: ["Python", "LLM", "结构化提示"],
-    stage: "方法可用",
+      "一道粒子风横穿屏幕，放下的质量点像引力透镜一样把流线掰弯；可切排斥，看流场实时重排。",
+    highlights: ["流场 + 引力透镜实时叠加", "吸引 / 排斥一键切换", "纯 Canvas，零依赖"],
+    stack: ["Canvas", "物理模拟", "TypeScript"],
+    stage: "可玩",
+    href: "/lab/gravity/",
   },
   {
-    id: "agent-bridge",
-    title: "办公 Agent 桥接",
-    role: "任务联动 / 消息协同",
+    id: "fluid",
+    title: "流体实验室",
+    role: "物理模拟 / 可视化",
     summary:
-      "把终端助手与即时通讯、任务系统打通，让“说一句要做的事”能落到可追踪任务。",
-    highlights: [
-      "任务创建与截止日抽取",
-      "日程与待办双轨",
-      "可扩展到群聊与审批提醒",
-    ],
-    stack: ["CLI", "飞书开放能力", "工作流"],
-    stage: "内测迭代",
+      "实时 Navier-Stokes 流体模拟：注入染料，看扩散、涡旋与对流在指尖成形。",
+    highlights: ["NS 方程实时求解", "染料注入与涡旋演化", "鼠标直接搅动流场"],
+    stack: ["Canvas", "NS 方程", "TypeScript"],
+    stage: "可玩",
+    href: "/lab/fluid/",
+  },
+  {
+    id: "particles",
+    title: "字由粒子",
+    role: "交互动画 / 粒子",
+    summary:
+      "汉字化作万千粒子，鼠标一扫散开，静止后自动聚回成字。",
+    highlights: ["汉字点阵化采样", "散开 / 聚合的弹性回归", "粒子级交互反馈"],
+    stack: ["Canvas", "粒子系统", "TypeScript"],
+    stage: "可玩",
+    href: "/lab/particles/",
+  },
+  {
+    id: "graphic",
+    title: "图像小说",
+    role: "内容实验 / 阅读",
+    summary: "五本中文传记各十页：真封面、真容、页下中文原文。",
+    highlights: ["五本中文传记", "每本十页图文", "封面与正文分离排版"],
+    stack: ["Next.js", "静态内容"],
+    stage: "实验中",
+    href: "/lab/graphic/",
+  },
+  {
+    id: "snowflake",
+    title: "雪花函数",
+    role: "数学玩具 / SVG",
+    summary:
+      "科赫雪花（Koch）：等边三角形上递归折尖角，本站导航 logo 也是它生成的。",
+    highlights: ["分形递归可视化", "迭代层级可调", "站点 logo 同源生成"],
+    stack: ["SVG", "分形", "TypeScript"],
+    stage: "可玩",
+    href: "/lab/snowflake/",
   },
 ];
 

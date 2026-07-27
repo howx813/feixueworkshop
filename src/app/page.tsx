@@ -66,7 +66,7 @@ export default async function HomePage() {
       <section className="section">
         <div className="section-head">
           <h2 className="section-title">作品切片</h2>
-          <span className="section-meta">可讲解原型</span>
+          <span className="section-meta">点开就能玩 · 手搓宝匣</span>
         </div>
         <div className="list-stack">
           {showcases.map((item) => (
@@ -75,7 +75,15 @@ export default async function HomePage() {
                 <span className="chip">{item.role}</span>
                 <span>{item.stage}</span>
               </div>
-              <h3 className="item-title">{item.title}</h3>
+              <h3 className="item-title">
+                {item.href ? (
+                  <Link href={item.href} className="link-accent">
+                    {item.title}
+                  </Link>
+                ) : (
+                  item.title
+                )}
+              </h3>
               <p className="item-body">{item.summary}</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 10 }}>
                 {item.stack.map((s) => (

@@ -58,7 +58,7 @@ export default function ShowcasePage() {
       <section className="section">
         <div className="section-head">
           <h2 className="section-title">作品切片</h2>
-          <span className="section-meta">原型 / 方法</span>
+          <span className="section-meta">手搓宝匣 · 点开就能玩</span>
         </div>
         <div className="list-stack">
           {showcases.map((item, i) => (
@@ -70,7 +70,15 @@ export default function ShowcasePage() {
                 <span className="chip">{item.role}</span>
                 <span>{item.stage}</span>
               </div>
-              <h3 className="item-title">{item.title}</h3>
+              <h3 className="item-title">
+                {item.href ? (
+                  <Link href={item.href} className="link-accent">
+                    {item.title}
+                  </Link>
+                ) : (
+                  item.title
+                )}
+              </h3>
               <p className="item-body">{item.summary}</p>
               <div style={{ display: "grid", gap: 6, marginTop: 12 }}>
                 {item.highlights.map((h) => (

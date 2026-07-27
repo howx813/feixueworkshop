@@ -17,6 +17,17 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.23",
+    date: "2026-07-27",
+    title: "展厅文案更新成「现在进行时」",
+    summary:
+      "首页与展厅页的「作品切片」不再写 v0.1 时代的三件原型，换成手搓宝匣 6 个真实可玩的实验（碎砖弹珠 / 引力沙盘 / 流体实验室 / 字由粒子 / 图像小说 / 雪花函数），卡片标题可直接点进实验页。",
+    items: [
+      { tag: "优化", text: "showcases 整体替换为 6 个可玩实验，附真实亮点与技术栈" },
+      { tag: "新增", text: "作品卡片标题链接直达对应实验页" },
+    ],
+  },
+  {
     version: "0.2.22",
     date: "2026-07-27",
     title: "碎砖弹珠：签名公司爆炸效果",
