@@ -28,6 +28,7 @@ const pages = [
   { file: "lab/marble/index.html", mustInclude: ["弹珠"] },
   { file: "lab/particles/index.html", mustInclude: ["字由粒子"] },
   { file: "lab/fluid/index.html", mustInclude: ["流体实验室"] },
+  { file: "lab/gravity/index.html", mustInclude: ["引力沙盘"] },
   { file: "lab/graphic/index.html", mustInclude: ["图像小说"] },
   { file: "tenders/index.html", mustInclude: ["每日标讯"] },
   { file: "data/tenders.json", mustInclude: ["items", "syncedAt"] },
