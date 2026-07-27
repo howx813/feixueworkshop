@@ -17,6 +17,20 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.16",
+    date: "2026-07-27",
+    title: "流体实验室与字由粒子",
+    summary:
+      "手搓宝匣新增两个可玩实验：实时 Navier-Stokes 流体模拟、汉字粒子聚散交互；宝匣列表配上专属 SVG 图标；首页进一步极简化。",
+    items: [
+      { tag: "新增", text: "/lab/fluid 流体实验室：注入染料看扩散、涡旋与对流" },
+      { tag: "新增", text: "/lab/particles 字由粒子：鼠标扫散、静止聚回成字" },
+      { tag: "新增", text: "宝匣条目专属 SVG 图标（LabIcon）" },
+      { tag: "优化", text: "首页去掉日期条与统计卡，更克制" },
+      { tag: "优化", text: "站点图标改用 icon.tsx 动态生成" },
+    ],
+  },
+  {
     version: "0.2.15",
     date: "2026-07-26",
     title: "图像小说搜索五页与支付模块",

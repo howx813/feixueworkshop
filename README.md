@@ -159,7 +159,7 @@ npm run rollback -- --id 时间戳  # 指定某次
 | `/showcase/` | 能力展厅 |
 | `/insights/` | 观点精选 |
 | `/music/` | 工坊电台（网易云随机播放） |
-| `/lab/` | 手搓匣（灵机一动的小玩意） |
+| `/lab/` | 手搓宝匣（灵机一动的小玩意） |
 | `/lab/marble/` | 碎砖弹珠 |
 | `/lab/snowflake/` | 雪花函数（科赫） |
 | `/changelog/` | 更新日志 |

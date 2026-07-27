@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { LabIcon } from "@/components/LabIcon";
 import { labItems, labMeta } from "@/data/lab";
 import { site } from "@/data/content";
 
@@ -34,7 +35,16 @@ export default function LabPage() {
               <span className={statusClass(item.status)}>{item.status}</span>
               <span>{item.updated}</span>
             </div>
-            <h2 className="item-title" style={{ fontSize: "1.0625rem" }}>
+            <h2
+              className="item-title"
+              style={{
+                fontSize: "1.0625rem",
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+              }}
+            >
+              <LabIcon id={item.icon} size={20} />
               {item.title}
             </h2>
             <p className="item-body">{item.summary}</p>

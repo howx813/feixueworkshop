@@ -8,56 +8,30 @@ import {
   showcases,
   site,
 } from "@/data/content";
-import { fetchAihotSelected, type AihotItem } from "@/lib/aihot";
+import { fetchAihotSelected } from "@/lib/aihot";
 
 /** 静态导出：必须强制静态，否则隔离 build 不生成 out/index.html */
 export const dynamic = "force-static";
 
-function todayLabel() {
-  const d = new Date();
-  const week = ["日", "一", "二", "三", "四", "五", "六"][d.getDay()];
-  return `${d.getMonth() + 1}月${d.getDate()}日 · 周${week}`;
-}
-
-export default async function HomePage() {
-  // 构建期预取，首屏 HTML 就有列表，避免客户端卡住一直 loading
-  let aihotItems: AihotItem[] = [];
+async function prefetchAihot() {
   try {
-    aihotItems = await fetchAihotSelected({
+    return await fetchAihotSelected({
       mode: "selected",
       window: "7d",
       limit: 8,
-      timeoutMs: 12000,
+      timeoutMs: 15000,
     });
   } catch {
-    aihotItems = [];
+    return [];
   }
+}
+
+export default async function HomePage() {
+  const aihotItems = await prefetchAihot();
 
   return (
     <div className="page">
-      <p className="page-kicker">Feixue Workshop · v0.1</p>
       <h1 className="page-title">{site.name}</h1>
-      <p className="page-desc">
-        {site.slogan}。把 AI、数据与办公链路做成可演示、可复用的工作流——不堆概念，只交付能看懂、用得上、讲得清的东西。
-      </p>
-
-      <div className="day-bar">
-        <strong>{todayLabel()}</strong>
-        <span>今日工坊速览</span>
-      </div>
-
-      <div className="grid-3">
-        {[
-          { k: "3", v: "核心能力" },
-          { k: String(showcases.length), v: "作品切片" },
-          { k: String(insights.length), v: "观点条目" },
-        ].map((s) => (
-          <div key={s.v} className="card card-pad">
-            <div className="stat-num">{s.k}</div>
-            <div className="stat-label">{s.v}</div>
-          </div>
-        ))}
-      </div>
 
       <AihotSelected limit={8} initialItems={aihotItems} />
 

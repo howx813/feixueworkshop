@@ -22,7 +22,7 @@ export function AihotSelected({ limit = 8, initialItems = [] }: Props) {
   const [status, setStatus] = useState<Status>(hasInitial ? "ok" : "loading");
   const [items, setItems] = useState<AihotItem[]>(initialItems);
   const [error, setError] = useState("");
-  const [refreshedAt, setRefreshedAt] = useState<string | null>(null);
+
 
   const load = useCallback(
     async (signal?: AbortSignal, isRefresh = false) => {
@@ -40,7 +40,6 @@ export function AihotSelected({ limit = 8, initialItems = [] }: Props) {
         if (signal?.aborted) return;
         setItems(list);
         setStatus("ok");
-        setRefreshedAt(new Date().toLocaleTimeString("zh-CN", { hour12: false }));
       } catch (e) {
         if (signal?.aborted) return;
         const msg =
@@ -85,22 +84,6 @@ export function AihotSelected({ limit = 8, initialItems = [] }: Props) {
           AI HOT →
         </a>
       </div>
-      <p className="item-body" style={{ marginTop: 0, marginBottom: 12 }}>
-        数据来自{" "}
-        <a
-          href={AIHOT_ORIGIN}
-          target="_blank"
-          rel="noreferrer"
-          className="link-accent"
-        >
-          aihot.virxact.com
-        </a>{" "}
-        精选接口（mode=selected）
-        {hasInitial ? " · 构建时已预取" : ""}
-        {refreshedAt ? ` · 浏览器刷新于 ${refreshedAt}` : ""}
-        {status === "refreshing" ? " · 刷新中…" : ""}
-      </p>
-
       {status === "loading" && items.length === 0 && (
         <div className="card card-pad">
           <div className="item-body">正在拉取 AI HOT 精选…</div>

@@ -12,7 +12,7 @@ const outDir = path.join(root, "out");
 
 const routes = [
   { path: "/", must: ["飞雪工坊", "精选"] },
-  { path: "/lab/", must: ["手搓匣"] },
+  { path: "/lab/", must: ["手搓宝匣"] },
   { path: "/lab/marble/", must: ["弹珠"] },
   { path: "/music/", must: ["工坊电台"] },
 ];

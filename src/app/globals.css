@@ -1411,3 +1411,160 @@ textarea {
   gap: 14px;
   margin-top: 10px;
 }
+
+/* 字由粒子 */
+.particle-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.particle-input {
+  width: 100%;
+  max-width: 360px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  color: var(--text-0);
+  background: var(--field-bg);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  outline: none;
+  transition: border-color 120ms, background 120ms;
+  align-self: center;
+}
+
+.particle-input:focus {
+  background: var(--field-bg-focus);
+  border-color: var(--accent);
+}
+
+.particle-lab {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: var(--bg-0);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.particle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.particle-hint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-2);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .particle-lab {
+    height: 420px;
+  }
+
+  .particle-input {
+    max-width: 100%;
+  }
+}
+
+/* 流体实验室 */
+.fluid-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.fluid-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+}
+
+.fluid-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fluid-control label {
+  font-size: 0.85rem;
+  color: var(--text-1);
+  min-width: 40px;
+}
+
+.fluid-control input[type="range"] {
+  width: 140px;
+  accent-color: var(--accent);
+}
+
+.fluid-reset {
+  margin-left: auto;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  color: var(--text-0);
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 120ms;
+}
+
+.fluid-reset:hover {
+  background: var(--surface-3);
+}
+
+.fluid-lab {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: var(--bg-0);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.fluid-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  image-rendering: pixelated;
+}
+
+.fluid-hint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-2);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .fluid-lab {
+    height: 420px;
+  }
+
+  .fluid-control input[type="range"] {
+    width: 100px;
+  }
+
+  .fluid-reset {
+    margin-left: 0;
+    width: 100%;
+  }
+}

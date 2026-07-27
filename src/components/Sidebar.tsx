@@ -52,7 +52,7 @@ const nav = [
       },
       {
         href: "/lab/",
-        label: "手搓匣",
+        label: "手搓宝匣",
         icon: (
           <svg className="side-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 8V21H3V8" />
