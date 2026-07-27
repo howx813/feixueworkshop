@@ -153,6 +153,13 @@ test("风场：wx 等于风速，|wy| 不超过 0.35 倍风速", () => {
 test("摩擦：无引力时漂移速度逐帧衰减", () => {
   const p = { x: 400, y: 300, vx: 100, vy: 0 };
   stepParticle(p, [], 4000, 0, 0, 1 / 60);
-  assert.ok(p.vx < 100);
-  assert.ok(p.vx > 0);
+  assert.ok(Math.abs(p.vx - 100 * FRICTION) < 1e-9);
 });
+
+test("限速：漂移速度超过 V_MAX 被钳制", () => {
+  const p = { x: 400, y: 300, vx: 1000, vy: 0 };
+  stepParticle(p, [], 4000, 0, 0, 1 / 60);
+  assert.ok(Math.hypot(p.vx, p.vy) <= V_MAX + 1e-9);
+});
+
+console.log(`  （${passed} 项通过）`);
