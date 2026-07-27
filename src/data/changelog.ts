@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.17",
+    date: "2026-07-27",
+    title: "引力沙盘",
+    summary:
+      "手搓宝匣新增引力沙盘：粒子风横穿屏幕，质量点如引力透镜掰弯流线，支持吸引/排斥双模式与参数滑杆。",
+    items: [
+      { tag: "新增", text: "/lab/gravity 引力沙盘：放质点弯曲粒子流" },
+      { tag: "新增", text: "吸引/排斥双模式、引力/风速/粒子数滑杆" },
+      { tag: "新增", text: "gravity-core 纯物理核心与单测" },
+    ],
+  },
+  {
     version: "0.2.16",
     date: "2026-07-27",
     title: "流体实验室与字由粒子",
