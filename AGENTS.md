@@ -95,6 +95,24 @@ npm run release:from -- v0.1.3   # 若历史上有该 tag
 - 预检后看站：用 **`npm run preview:out`**
 - dev 坏了：`npm run dev:clean`
 
+### 部署依赖：tcb CLI（故障排查）
+
+**依赖：** `npm run deploy` 底层调 `tcb hosting deploy`（`@cloudbase/cli`）。
+
+**案例（2026-07-27）：** 环境里 `tcb` 不存在 → 上传步骤静默失败，只报「部署失败」，
+线上可能只传了部分文件（如只有 `404.html`）。
+
+排查顺序：
+
+```bash
+tcb --version                                  # 不存在则：
+npm i -g @cloudbase/cli                        # 登录态共享，重装无需再 login
+tcb hosting list -e howx813-d7gx02spb2681185c  # 验证登录态 + 看线上文件时间戳
+npm run deploy                                 # 重跑，会完整覆盖上传
+```
+
+**注意：** 部分上传后无需手工清理，重跑 deploy 会全量覆盖。
+
 ### 助手强制行为
 
 1. 改完跑 `test:predeploy`，通过再言完成  
