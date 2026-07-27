@@ -8,7 +8,7 @@ const SDK_URL = "https://sdk.51.la/js-sdk-pro.min.js";
 declare global {
   interface Window {
     LA?: {
-      init: (opts: { id: string; ck: string; autoTrack?: boolean }) => void;
+      init: (opts: { id: string; ck: string; hashMode?: boolean }) => void;
     };
   }
 }
@@ -16,7 +16,8 @@ declare global {
 /**
  * 51.la 统计（V6 异步模式）。
  * 未在 src/data/analytics.ts 配置 id/ck 时完全静默：不加载任何脚本、
- * 不发起任何请求。autoTrack 让 App Router 的前端路由切换也计入 PV。
+ * 不发起任何请求。hashMode 是官方的 SPA 支持参数（App Router 前端路由
+ * 切换也计入 PV）；autoTrack 实为事件分析/热力图开关，不需要，不开。
  */
 export function LaAnalytics() {
   useEffect(() => {
@@ -31,7 +32,7 @@ export function LaAnalytics() {
       window.LA?.init({
         id: analytics.laId,
         ck: analytics.laCk,
-        autoTrack: true,
+        hashMode: true,
       });
     };
     document.head.appendChild(s);

@@ -17,6 +17,17 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.19",
+    date: "2026-07-27",
+    title: "51.la 统计生效",
+    summary:
+      "填入 51.la 应用 id/ck，全站统计正式上线；按官方文档改用 hashMode 支持 SPA 前端路由统计。",
+    items: [
+      { tag: "新增", text: "51.la 应用「飞雪工坊」创建并接线" },
+      { tag: "修复", text: "SPA 支持参数由 autoTrack 更正为 hashMode" },
+    ],
+  },
+  {
     version: "0.2.18",
     date: "2026-07-27",
     title: "网站统计接线（51.la）",

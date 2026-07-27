@@ -5,7 +5,7 @@
  */
 export const analytics = {
   /** 51.la 应用 id；留空则全站不加载统计脚本（完全静默） */
-  laId: "",
+  laId: "3Qh1rMRsxc3SqreW",
   /** 51.la 应用 ck；留空则全站不加载统计脚本（完全静默） */
-  laCk: "",
+  laCk: "3Qh1rMRsxc3SqreW",
 };
