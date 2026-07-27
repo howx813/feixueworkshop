@@ -20,6 +20,12 @@ const KIND_COLOR: Record<MassKind, string> = {
   repel: "#fb923c",
 };
 
+/** 速度 → 颜色查找表（t 0..1 映射 32 档），避免每帧 hsl 字符串分配 */
+const SPEED_COLORS = Array.from(
+  { length: 32 },
+  (_, i) => `hsl(${200 - (165 * i) / 31} 90% ${58 + (14 * i) / 31}%)`,
+);
+
 type Params = { g: number; wind: number; count: number };
 
 export default function GravitySandbox() {
@@ -106,6 +112,7 @@ export default function GravitySandbox() {
       );
 
     const onPointerDown = (e: PointerEvent) => {
+      if (e.button !== 0) return;
       e.preventDefault();
       canvas.setPointerCapture?.(e.pointerId);
       const { x, y } = posFromEvent(e);
@@ -171,9 +178,9 @@ export default function GravitySandbox() {
             continue;
           }
           // 按本帧实际速率变色：慢=青蓝 → 快=暖白（引力加速形成“透镜亮弧”）
-          const speed = Math.hypot(p.x - px, p.y - py) / dt;
+          const speed = dt > 0 ? Math.hypot(p.x - px, p.y - py) / dt : 0;
           const t = Math.min(Math.max((speed - 60) / 300, 0), 1);
-          ctx.strokeStyle = `hsl(${200 - 165 * t} 90% ${58 + 14 * t}%)`;
+          ctx.strokeStyle = SPEED_COLORS[(t * 31) | 0];
           ctx.beginPath();
           ctx.moveTo(px, py);
           ctx.lineTo(p.x, p.y);
