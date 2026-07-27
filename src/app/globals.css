@@ -1476,6 +1476,78 @@ textarea {
   }
 }
 
+/* 引力沙盘 */
+.gravity-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.gravity-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.gravity-modes {
+  display: flex;
+  gap: 6px;
+}
+
+.gravity-mode-on {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+.gravity-slider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.gravity-slider input[type="range"] {
+  width: 110px;
+  accent-color: var(--accent);
+}
+
+.gravity-lab {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: var(--bg-0);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.gravity-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.gravity-hint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-2);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .gravity-lab {
+    height: 420px;
+  }
+}
+
 /* 流体实验室 */
 .fluid-wrap {
   display: flex;
