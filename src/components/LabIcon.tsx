@@ -6,7 +6,8 @@ export type LabIconKey =
   | "particles"
   | "graphic"
   | "marble"
-  | "snowflake";
+  | "snowflake"
+  | "life";
 
 type Props = {
   id: LabIconKey;
@@ -92,6 +93,19 @@ export function LabIcon({ id, size = 20, className }: Props) {
           <path d="M12 18l2.5 1.5L12 21l-2.5-1.5L12 18z" />
           <path d="M6.3 12.8l-1.5 2.5-1.5-2.5 1.5-2.5 1.5 2.5z" />
           <path d="M17.7 12.8l1.5 2.5 1.5-2.5-1.5-2.5-1.5 2.5z" />
+        </svg>
+      );
+    case "life":
+      return (
+        <svg {...svgProps}>
+          <circle cx="12" cy="12" r="1.8" fill="currentColor" stroke="none" />
+          <circle cx="7" cy="8" r="1.2" fill="currentColor" stroke="none" />
+          <circle cx="17" cy="9" r="1.2" fill="currentColor" stroke="none" />
+          <circle cx="9" cy="17" r="1.2" fill="currentColor" stroke="none" />
+          <circle cx="15" cy="16" r="1.2" fill="currentColor" stroke="none" />
+          <path d="M8.2 9.2l2.8 2" strokeDasharray="1.5 1.5" />
+          <path d="M15.8 9.8l-2.8 1.5" strokeDasharray="1.5 1.5" />
+          <path d="M10 15.5l3 0.5" strokeDasharray="1.5 1.5" />
         </svg>
       );
     default:

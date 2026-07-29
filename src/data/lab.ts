@@ -14,7 +14,7 @@ export type LabItem = {
   id: string;
   title: string;
   /** 应用名称前的 SVG 图标标识 */
-  icon: "gravity" | "fluid" | "particles" | "graphic" | "marble" | "snowflake";
+  icon: "gravity" | "fluid" | "particles" | "graphic" | "marble" | "snowflake" | "life";
   summary: string;
   href: string;
   status: "可玩" | "实验中" | "搁置";
@@ -23,6 +23,16 @@ export type LabItem = {
 };
 
 export const labItems: LabItem[] = [
+  {
+    id: "life",
+    title: "生命游戏",
+    icon: "life",
+    summary: "康威生命游戏：元胞自动机的经典演示，播种、观察演化、加载经典图案。",
+    href: "/lab/life/",
+    status: "可玩",
+    tags: ["Canvas", "元胞自动机", "模拟"],
+    updated: "2026-07-28",
+  },
   {
     id: "gravity",
     title: "引力沙盘",
