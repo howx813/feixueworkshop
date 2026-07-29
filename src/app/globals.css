@@ -1640,3 +1640,83 @@ textarea {
     width: 100%;
   }
 }
+/* 生命游戏 */
+.life-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.life-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.life-patterns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.life-slider {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-1);
+  font-size: 0.8125rem;
+}
+
+.life-slider input[type="range"] {
+  width: 120px;
+}
+
+.life-gen {
+  margin-left: auto;
+  color: var(--text-2);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.life-lab {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: var(--bg-0);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.life-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  image-rendering: pixelated;
+}
+
+.life-hint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-2);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .life-lab {
+    height: 420px;
+  }
+
+  .life-slider input[type="range"] {
+    width: 100px;
+  }
+
+  .life-gen {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
