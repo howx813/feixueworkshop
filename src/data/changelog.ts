@@ -28,7 +28,7 @@ export const changelog: ChangelogEntry[] = [
       { tag: "新增", text: "速度滑杆、代数计数、点击拖拽绘制细胞" },
     ],
   },
-  {
+  
   {
     version: "0.2.23",
     date: "2026-07-27",
