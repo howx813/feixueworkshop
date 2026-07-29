@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import {
   clear,
   createBoard,
@@ -17,6 +17,8 @@ const GRID_H = 60;
 const CELL = 8;
 const GAP = 1;
 const LIVE_COLOR = "#4fa3b3";
+const BG_COLOR = "#10151c";
+const GRID_COLOR = "rgba(255,255,255,0.08)";
 
 interface MouseState {
   x: number;
@@ -29,6 +31,8 @@ export default function LifeGame() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const boardRef = useRef(createBoard(GRID_W, GRID_H));
+  const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
+  const dprRef = useRef(1);
   const rafRef = useRef(0);
   const runningRef = useRef(false);
   const speedRef = useRef(100);
@@ -42,12 +46,62 @@ export default function LifeGame() {
   useEffect(() => { speedRef.current = speed; }, [speed]);
   useEffect(() => { runningRef.current = running; }, [running]);
 
+  const draw = useCallback(() => {
+    const canvas = canvasRef.current;
+    const ctx = ctxRef.current;
+    if (!canvas || !ctx) return;
+
+    const dpr = dprRef.current;
+    const w = canvas.width / dpr;
+    const h = canvas.height / dpr;
+    const board = boardRef.current;
+
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = BG_COLOR;
+    ctx.fillRect(0, 0, w, h);
+
+    // 网格线
+    ctx.fillStyle = GRID_COLOR;
+    for (let x = 0; x <= GRID_W; x++) {
+      const px = x * (CELL + GAP);
+      ctx.fillRect(px, 0, GAP, GRID_H * (CELL + GAP));
+    }
+    for (let y = 0; y <= GRID_H; y++) {
+      const py = y * (CELL + GAP);
+      ctx.fillRect(0, py, GRID_W * (CELL + GAP), GAP);
+    }
+
+    // 细胞
+    ctx.fillStyle = LIVE_COLOR;
+    for (let y = 0; y < GRID_H; y++) {
+      for (let x = 0; x < GRID_W; x++) {
+        if (board.current[y * GRID_W + x]) {
+          const px = x * (CELL + GAP);
+          const py = y * (CELL + GAP);
+          ctx.fillRect(px, py, CELL, CELL);
+        }
+      }
+    }
+
+    // 鼠标悬停高亮
+    const { x: mx, y: my } = mouseRef.current;
+    if (mx >= 0 && mx < GRID_W && my >= 0 && my < GRID_H && !mouseRef.current.down) {
+      const px = mx * (CELL + GAP);
+      const py = my * (CELL + GAP);
+      ctx.strokeStyle = "#6cb8c6";
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(px - 0.5, py - 0.5, CELL + 1, CELL + 1);
+    }
+  }, []);
+
   useEffect(() => {
     const container = containerRef.current;
     const canvas = canvasRef.current;
     if (!container || !canvas) return;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+    ctxRef.current = ctx;
 
     const board = boardRef.current;
     randomize(board, 0.2);
@@ -58,9 +112,15 @@ export default function LifeGame() {
       const width = Math.max(1, Math.floor(rect.width));
       const height = Math.max(1, Math.floor(rect.height));
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      dprRef.current = dpr;
+
+      // 设置 Canvas 物理像素尺寸（会重置 context 状态）
       canvas.width = Math.floor(width * dpr);
       canvas.height = Math.floor(height * dpr);
+
+      // 重新设置变换矩阵
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
       draw();
     };
 
@@ -108,50 +168,14 @@ export default function LifeGame() {
         if (cx >= 0 && cx < GRID_W && cy >= 0 && cy < GRID_H) {
           handlePaint(cx, cy, paintTo);
         }
+      } else {
+        draw(); // 更新悬停高亮
       }
     };
 
     const onPointerUp = () => {
       mouseRef.current.down = false;
       mouseRef.current.paintTo = undefined;
-    };
-
-    const draw = () => {
-      const w = canvas.width / (window.devicePixelRatio || 1);
-      const h = canvas.height / (window.devicePixelRatio || 1);
-      ctx!.clearRect(0, 0, w, h);
-      ctx!.fillStyle = "var(--bg-0, #10151c)";
-      ctx!.fillRect(0, 0, w, h);
-
-      ctx!.fillStyle = "var(--border, rgba(255,255,255,0.08))";
-      for (let x = 0; x <= GRID_W; x++) {
-        const px = x * (CELL + GAP);
-        ctx!.fillRect(px, 0, GAP, GRID_H * (CELL + GAP));
-      }
-      for (let y = 0; y <= GRID_H; y++) {
-        const py = y * (CELL + GAP);
-        ctx!.fillRect(0, py, GRID_W * (CELL + GAP), GAP);
-      }
-
-      for (let y = 0; y < GRID_H; y++) {
-        for (let x = 0; x < GRID_W; x++) {
-          if (board.current[y * GRID_W + x]) {
-            const px = x * (CELL + GAP);
-            const py = y * (CELL + GAP);
-            ctx!.fillStyle = LIVE_COLOR;
-            ctx!.fillRect(px, py, CELL, CELL);
-          }
-        }
-      }
-
-      const { x: mx, y: my } = mouseRef.current;
-      if (mx >= 0 && mx < GRID_W && my >= 0 && my < GRID_H && !mouseRef.current.down) {
-        const px = mx * (CELL + GAP);
-        const py = my * (CELL + GAP);
-        ctx!.strokeStyle = "var(--accent-fg, #6cb8c6)";
-        ctx!.lineWidth = 1.5;
-        ctx!.strokeRect(px - 0.5, py - 0.5, CELL + 1, CELL + 1);
-      }
     };
 
     const animate = (ts: number) => {
@@ -189,53 +213,9 @@ export default function LifeGame() {
       canvas.removeEventListener("pointercancel", onPointerUp);
       window.removeEventListener("resize", updateSize);
       ro?.disconnect();
+      ctxRef.current = null;
     };
-  }, []);
-
-  const draw = () => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-    const dpr = window.devicePixelRatio || 1;
-    const w = canvas.width / dpr;
-    const h = canvas.height / dpr;
-    const board = boardRef.current;
-
-    ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = "var(--bg-0, #10151c)";
-    ctx.fillRect(0, 0, w, h);
-
-    ctx.fillStyle = "var(--border, rgba(255,255,255,0.08))";
-    for (let x = 0; x <= GRID_W; x++) {
-      const px = x * (CELL + GAP);
-      ctx.fillRect(px, 0, GAP, GRID_H * (CELL + GAP));
-    }
-    for (let y = 0; y <= GRID_H; y++) {
-      const py = y * (CELL + GAP);
-      ctx.fillRect(0, py, GRID_W * (CELL + GAP), GAP);
-    }
-
-    for (let y = 0; y < GRID_H; y++) {
-      for (let x = 0; x < GRID_W; x++) {
-        if (board.current[y * GRID_W + x]) {
-          const px = x * (CELL + GAP);
-          const py = y * (CELL + GAP);
-          ctx.fillStyle = LIVE_COLOR;
-          ctx.fillRect(px, py, CELL, CELL);
-        }
-      }
-    }
-
-    const { x: mx, y: my } = mouseRef.current;
-    if (mx >= 0 && mx < GRID_W && my >= 0 && my < GRID_H && !mouseRef.current.down) {
-      const px = mx * (CELL + GAP);
-      const py = my * (CELL + GAP);
-      ctx.strokeStyle = "var(--accent-fg, #6cb8c6)";
-      ctx.lineWidth = 1.5;
-      ctx.strokeRect(px - 0.5, py - 0.5, CELL + 1, CELL + 1);
-    }
-  };
+  }, [draw]);
 
   const resetRandom = () => {
     randomize(boardRef.current, 0.2);

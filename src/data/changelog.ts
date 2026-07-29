@@ -17,6 +17,19 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.24",
+    date: "2026-07-29",
+    title: "生命游戏上线",
+    summary:
+      "手搓宝匣新增康威生命游戏：可交互的元胞自动机演示，支持播放/暂停/步进、随机填充、三种经典图案（滑翔机/脉冲星/滑翔机枪）、点击拖拽绘制细胞。",
+    items: [
+      { tag: "新增", text: "/lab/life 康威生命游戏：B3/S23 规则、Canvas 实时渲染" },
+      { tag: "新增", text: "三种经典图案一键加载：滑翔机、脉冲星、高斯帕滑翔机枪" },
+      { tag: "新增", text: "速度滑杆、代数计数、点击拖拽绘制细胞" },
+    ],
+  },
+  {
+  {
     version: "0.2.23",
     date: "2026-07-27",
     title: "展厅文案更新成「现在进行时」",
