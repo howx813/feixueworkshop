@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.28",
+    date: "2026-08-01",
+    title: "/weekly 招标周报页（密码查看 + 一键复制）",
+    summary:
+      "新开 /weekly 页面：招标周报每周五 18:00 更新，简单明了版——解读、概览数字、5★ 值得盯、临近截止、异动升温、数据健康；输入密码查看，一键复制纯文本摘要方便粘贴飞书/微信。数据源 tenders:weekly-site 生成器（标讯 facts + AI 运行记账 + 可选模型解读合并）。",
+    items: [
+      { tag: "新增", text: "/weekly 周报页：密码门（软门禁）+ 会话内免重复输入 + robots noindex" },
+      { tag: "新增", text: "一键复制：copyText 纯文本摘要（概览/5★/临近截止/异动/健康），含剪贴板兜底" },
+      { tag: "新增", text: "tenders:weekly-site 生成器：facts + agent-activity + insight.md 三方合并，积累期自动隐藏异动虚高" },
+    ],
+  },
+  {
     version: "0.2.27",
     date: "2026-08-01",
     title: "周报底座生成器（商机雷达 M4 前置）",

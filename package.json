@@ -15,6 +15,7 @@
     "tenders:sync": "node scripts/sync-tenders.mjs",
     "tenders:aggregate": "node scripts/aggregate-tenders.mjs",
     "tenders:weekly": "node scripts/weekly-bid-report.mjs",
+    "tenders:weekly-site": "node scripts/weekly-site-report.mjs",
     "tenders:daily": "bash scripts/tenders-daily.sh",
     "tenders:install-cron": "bash scripts/install-tenders-launchd.sh",
     "snowflake:export": "node scripts/export-snowflake-svg.mjs",
