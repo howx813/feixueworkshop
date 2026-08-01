@@ -17,6 +17,19 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.26",
+    date: "2026-08-01",
+    title: "标讯趋势看板与 AI 日报（商机雷达 M2）",
+    summary:
+      "每日标讯页新增趋势区块：近 12 周新增/在途/出窗三态走势、地域/行业/金额分布、5★ 高星榜单，随每日同步热更新；页顶新增「工坊 AI 日报」卡片，展示标讯 agent 最近一次同步结果。",
+    items: [
+      { tag: "新增", text: "趋势聚合管线 tenders:aggregate：历史库 → 双写 src/data 与 public/data，页面首屏 + 运行时热刷" },
+      { tag: "新增", text: "/tenders 趋势区块（三态走势/地域/行业/金额/5★ 榜）与「工坊 AI 日报」卡片，零新增依赖" },
+      { tag: "新增", text: "预检 5/8：趋势产物双写一致性 + 防 stale 校验；聚合单测 9 组纳入 test:unit" },
+      { tag: "优化", text: "tenders:daily 链路挂上聚合，历史库与运行记账一并提交" },
+    ],
+  },
+  {
     version: "0.2.25",
     date: "2026-08-01",
     title: "标讯历史留痕（商机雷达 M1）",

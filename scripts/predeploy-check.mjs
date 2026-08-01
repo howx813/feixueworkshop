@@ -30,8 +30,10 @@ const pages = [
   { file: "lab/fluid/index.html", mustInclude: ["流体实验室"] },
   { file: "lab/gravity/index.html", mustInclude: ["引力沙盘"] },
   { file: "lab/graphic/index.html", mustInclude: ["图像小说"] },
-  { file: "tenders/index.html", mustInclude: ["每日标讯"] },
+  { file: "tenders/index.html", mustInclude: ["每日标讯", "标讯趋势", "工坊 AI 日报"] },
   { file: "data/tenders.json", mustInclude: ["items", "syncedAt"] },
+  { file: "data/tender-trends.json", mustInclude: ["weekly", "dataAsOf"] },
+  { file: "data/agent-activity.json", mustInclude: ["entries"] },
 ];
 
 let failed = 0;
@@ -59,7 +61,7 @@ function run(cmd, args, opts = {}) {
   return r;
 }
 
-section("1/7 Lint（eslint CLI，避免 next lint 写坏 dev 的 .next）");
+section("1/8 Lint（eslint CLI，避免 next lint 写坏 dev 的 .next）");
 {
   // 注意：不要用 `next lint`——它会碰 .next，与正在跑的 next dev 并发时
   // 会触发 Cannot find module './948.js' / __webpack_modules__ is not a function
@@ -78,7 +80,7 @@ section("1/7 Lint（eslint CLI，避免 next lint 写坏 dev 的 .next）");
   }
 }
 
-section("2/7 单元测试");
+section("2/8 单元测试");
 {
   const marble = run("node", ["scripts/test-marble.mjs"]);
   if (marble.status !== 0) {
@@ -100,7 +102,7 @@ section("2/7 单元测试");
   }
 }
 
-section("3/7 隔离生产构建（临时目录 build，绝不碰项目 .next）");
+section("3/8 隔离生产构建（临时目录 build，绝不碰项目 .next）");
 {
   const r = run("node", ["scripts/build-export.mjs"]);
   if (r.status !== 0) {
@@ -114,7 +116,7 @@ section("3/7 隔离生产构建（临时目录 build，绝不碰项目 .next）"
   }
 }
 
-section("4/7 静态页与 CSS 完整性");
+section("4/8 静态页与 CSS 完整性");
 {
   for (const p of pages) {
     const full = path.join(outDir, p.file);
@@ -185,7 +187,66 @@ section("4/7 静态页与 CSS 完整性");
   }
 }
 
-section("5/7 静态产物 HTTP 冒烟");
+section("5/8 标讯趋势产物（双写一致性 + 防 stale）");
+{
+  try {
+    const srcTrends = path.join(root, "src/data/tender-trends.generated.json");
+    const pubTrends = path.join(root, "public/data/tender-trends.json");
+    const pubActivity = path.join(root, "public/data/agent-activity.json");
+
+    const a = fs.readFileSync(srcTrends, "utf8");
+    const b = fs.readFileSync(pubTrends, "utf8");
+    if (a !== b) {
+      fail("趋势产物双写不一致：src/data 与 public/data 内容不同（跑 npm run tenders:aggregate）");
+    } else {
+      ok("趋势产物双写一致");
+    }
+
+    const trends = JSON.parse(b);
+    if (!trends.schemaVersion || !Array.isArray(trends.weekly)) {
+      fail("趋势产物结构异常（缺 schemaVersion/weekly）");
+    } else {
+      ok(
+        `趋势产物结构 OK（schemaVersion ${trends.schemaVersion}，周数 ${trends.weekly.length}）`,
+      );
+    }
+
+    const act = JSON.parse(fs.readFileSync(pubActivity, "utf8"));
+    if (!Array.isArray(act.entries)) {
+      fail("agent-activity.json 结构异常（缺 entries）");
+    } else {
+      ok(`agent-activity.json OK（${act.entries.length} 条）`);
+    }
+
+    // 防 stale：趋势 dataAsOf 不早于标讯快照日期（1 天时区容差）；空历史库跳过
+    const tendersSnap = JSON.parse(
+      fs.readFileSync(path.join(root, "public/data/tenders.json"), "utf8"),
+    );
+    const snapDate = String(tendersSnap.syncedAt || "").slice(0, 10);
+    if ((trends.totals?.tracked ?? 0) === 0) {
+      ok("历史库为空态，跳过新鲜度校验");
+    } else if (trends.dataAsOf && snapDate) {
+      const lagDays =
+        (new Date(snapDate).getTime() - new Date(trends.dataAsOf).getTime()) /
+        86400000;
+      if (lagDays > 1) {
+        fail(
+          `趋势产物 stale：dataAsOf ${trends.dataAsOf} 早于快照 ${snapDate} 超 1 天（跑 npm run tenders:aggregate）`,
+        );
+      } else {
+        ok(`趋势新鲜度 OK（dataAsOf ${trends.dataAsOf} / 快照 ${snapDate}）`);
+      }
+    } else {
+      fail("趋势产物缺 dataAsOf 或标讯快照缺 syncedAt");
+    }
+  } catch (e) {
+    fail(
+      `趋势产物校验异常: ${e.message || e}（缺文件请先跑 npm run tenders:aggregate）`,
+    );
+  }
+}
+
+section("6/8 静态产物 HTTP 冒烟");
 {
   const r = run("node", ["scripts/smoke-out.mjs"]);
   if (r.status !== 0) {
@@ -198,7 +259,7 @@ section("5/7 静态产物 HTTP 冒烟");
   }
 }
 
-section("6/7 电台可试听曲源（抽样）");
+section("7/8 电台可试听曲源（抽样）");
 {
   try {
     const musicPath = path.join(root, "src/data/music.ts");
@@ -250,7 +311,7 @@ section("6/7 电台可试听曲源（抽样）");
   }
 }
 
-section("7/7 产物敏感信息扫描");
+section("8/8 产物敏感信息扫描");
 {
   // 只扫「像密钥被写进产物」的模式，不写真实密钥值
   const secrets = [

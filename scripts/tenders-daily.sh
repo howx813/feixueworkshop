@@ -37,8 +37,13 @@ export PATH="/usr/bin:/bin:/opt/homebrew/bin:$PATH"
 echo "[tenders-daily] $(date '+%Y-%m-%d %H:%M:%S') sync…"
 npm run tenders:sync
 
+echo "[tenders-daily] $(date '+%Y-%m-%d %H:%M:%S') aggregate…"
+npm run tenders:aggregate
+
 if [[ "$DO_COMMIT" -eq 1 ]]; then
-  git add src/data/tenders.generated.json public/data/tenders.json
+  git add src/data/tenders.generated.json public/data/tenders.json \
+    src/data/tender-trends.generated.json public/data/tender-trends.json \
+    public/data/agent-activity.json data/tenders-history data/agent-activity.jsonl
   if git diff --staged --quiet; then
     echo "[tenders-daily] 快照无变化，不提交"
   else
