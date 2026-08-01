@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.25",
+    date: "2026-08-01",
+    title: "标讯历史留痕（商机雷达 M1）",
+    summary:
+      "每日标讯同步开始事件溯源留痕：精匹配明细 + 宽口径计数按月分片 JSONL 纯追加入库，同步成败均记账。历史库是后续趋势分析与 AI 工作日报的地基。",
+    items: [
+      { tag: "新增", text: "data/tenders-history/ 按月分片 JSONL 历史库（只追加不重写，派生字段聚合期计算）" },
+      { tag: "新增", text: "data/agent-activity.jsonl 同步记账：成功记条数，失败记错误摘要，中断也留痕" },
+      { tag: "新增", text: "tender-history 模块单测并纳入 test:unit（分片/纯追加/坏行容错/字段裁剪）" },
+    ],
+  },
+  {
     version: "0.2.24",
     date: "2026-07-29",
     title: "生命游戏上线",

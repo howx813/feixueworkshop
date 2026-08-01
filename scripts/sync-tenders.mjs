@@ -21,9 +21,54 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
+import {
+  appendActivity,
+  appendHistory,
+  loadKnownIds,
+} from "./lib/tender-history.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
+
+// —— M1 · 失败记账：同步中断也写 meta(syncOk:false) + activity，不吞退出码 ——
+let failureRecorded = false;
+function recordFailure(err) {
+  if (failureRecorded) return;
+  failureRecorded = true;
+  const message = err instanceof Error ? err.message : String(err);
+  try {
+    appendHistory(root, {
+      items: [],
+      meta: {
+        rawCount: 0,
+        softwareCount: 0,
+        matchedCount: 0,
+        fiveStarCount: 0,
+        syncOk: false,
+        error: message.slice(0, 200),
+      },
+    });
+    appendActivity(root, {
+      ok: false,
+      newCount: 0,
+      activeCount: 0,
+      artifacts: [],
+      note: message.slice(0, 200),
+    });
+  } catch (e) {
+    console.error("[tenders-history] 失败记账自身出错：", e);
+  }
+}
+process.on("uncaughtException", (err) => {
+  recordFailure(err);
+  console.error(err);
+  process.exit(1);
+});
+process.on("unhandledRejection", (err) => {
+  recordFailure(err);
+  console.error(err);
+  process.exit(1);
+});
 
 function loadEnvLocal() {
   const envPath = path.join(root, ".env.local");
@@ -1066,6 +1111,38 @@ fs.writeFileSync(publicPath, jsonText);
 console.log(
   `已写入 ${top.length} 条 → ${path.relative(root, outPath)} + ${path.relative(root, publicPath)}（最高分 ${top[0]?.score ?? 0}）`,
 );
+
+// —— M1 · 步骤 4/5：事件留痕 + activity 记账（失败不阻断快照主流程）——
+try {
+  const knownIds = loadKnownIds(root);
+  const newCount = top.filter((t) => !knownIds.has(String(t.id))).length;
+  const hist = appendHistory(root, {
+    items: top,
+    meta: {
+      rawCount: raw.length,
+      softwareCount: cut.length,
+      matchedCount: top.length,
+      fiveStarCount: out.fiveStarCount,
+      syncOk: true,
+    },
+  });
+  appendActivity(root, {
+    ok: true,
+    newCount,
+    activeCount: top.length,
+    artifacts: [path.relative(root, hist.file), "public/data/tenders.json"],
+    note: "",
+  });
+  console.log(
+    `历史留痕 +${hist.itemLines} 行（今日新增 ${newCount} 条）→ ${path.relative(root, hist.file)}`,
+  );
+} catch (e) {
+  console.error(
+    "[tenders-history] 留痕失败（不影响快照输出）：",
+    e instanceof Error ? e.message : e,
+  );
+}
+
 console.log(
   "方案 C：静态站读 /data/tenders.json；定时跑本脚本后 commit/部署即可更新线上。",
 );
