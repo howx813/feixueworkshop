@@ -17,6 +17,19 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.27",
+    date: "2026-08-01",
+    title: "周报底座生成器（商机雷达 M4 前置）",
+    summary:
+      "新增 tenders:weekly：标讯历史库 → 周报事实层（概览数字 / 值得盯清单 / 行业地域异动候选 / 数据健康），输出 facts.json + Markdown 骨架；「本周解读」占位由模型撰写。配套编排层切换：每日同步改由本机 cron 接管，GitHub Actions 每日抓取停用（保留手动备用）。",
+    items: [
+      { tag: "新增", text: "scripts/weekly-bid-report.mjs：默认报上一完整周，支持 --week=current / YYYY-Www" },
+      { tag: "新增", text: "周报事实层口径：环比满 5 天开启、行业仅精匹配口径、临近截止表截断前 15 条" },
+      { tag: "新增", text: "周报生成器单测 7 组纳入 test:unit" },
+      { tag: "优化", text: "每日标讯同步改由本机 cron 接管（GHA 每日抓取停用，launchd 退役），撞车窗口关闭" },
+    ],
+  },
+  {
     version: "0.2.26",
     date: "2026-08-01",
     title: "标讯趋势看板与 AI 日报（商机雷达 M2）",

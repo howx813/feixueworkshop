@@ -1,6 +1,6 @@
 # P0 技术设计：标讯从「快照」升级为「商机雷达」
 
-> 状态：v1.2（2026-08-01，通过 DeepSeek 终审，补两条终审意见后定稿，可进实现）
+> 状态：v1.2 定稿，**实现中**——M1 ✅（0.2.25）/ M2 ✅（0.2.26 已上线）/ M3 ✅（Hermes cron `ba656058867d` 接管，launchd 停，GHA 禁 schedule）/ M4 周报底座生成器已就绪（`npm run tenders:weekly`），首期时间待飞雪拍板（8/3 链路验证版 vs 8/10 有内容版，DeepSeek 倾向 8/10）。
 > 上游讨论：`docs/next-phase-brainstorm.md`（DeepSeek 头脑风暴）、`docs/review-p0-tenders-radar.md`（一审）
 > 范围：标讯历史库 + 构建期趋势聚合 + 趋势可视化 + AI 工作日报第一版（含周报）
 > 本方案刻意**不引入任何后端**，延续全站 SSG 单点部署架构。

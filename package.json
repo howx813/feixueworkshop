@@ -1,6 +1,6 @@
 {
   "name": "feixue-workshop",
-  "version": "0.2.24",
+  "version": "0.2.26",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3456",
@@ -14,11 +14,12 @@
     "music:sync": "node scripts/sync-music.mjs",
     "tenders:sync": "node scripts/sync-tenders.mjs",
     "tenders:aggregate": "node scripts/aggregate-tenders.mjs",
+    "tenders:weekly": "node scripts/weekly-bid-report.mjs",
     "tenders:daily": "bash scripts/tenders-daily.sh",
     "tenders:install-cron": "bash scripts/install-tenders-launchd.sh",
     "snowflake:export": "node scripts/export-snowflake-svg.mjs",
     "test": "npm run test:unit && npm run test:predeploy",
-    "test:unit": "node scripts/test-marble.mjs && node scripts/test-aihot.mjs && node scripts/test-gravity.mjs && node scripts/test-tender-history.mjs && node scripts/test-tender-aggregate.mjs",
+    "test:unit": "node scripts/test-marble.mjs && node scripts/test-aihot.mjs && node scripts/test-gravity.mjs && node scripts/test-tender-history.mjs && node scripts/test-tender-aggregate.mjs && node scripts/test-weekly-report.mjs",
     "test:smoke": "node scripts/smoke-out.mjs",
     "test:predeploy": "node scripts/predeploy-check.mjs",
     "deploy": "node scripts/deploy.mjs",
