@@ -34,7 +34,7 @@ const pages = [
   { file: "data/tenders.json", mustInclude: ["items", "syncedAt"] },
   { file: "data/tender-trends.json", mustInclude: ["weekly", "dataAsOf"] },
   { file: "data/agent-activity.json", mustInclude: ["entries"] },
-  { file: "weekly/index.html", mustInclude: ["招标周报", "密码"] },
+  { file: "weekly/index.html", mustInclude: ["工作周报", "密码"] },
   { file: "data/weekly-report.json", mustInclude: ["week", "copyText"] },
 ];
 

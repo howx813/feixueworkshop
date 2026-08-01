@@ -1,13 +1,12 @@
 /**
- * 站点周报生成器：历史库 → public/data/weekly-report.json（/weekly 页面数据源）
+ * 站点周报生成器：工作周报（/weekly 页面数据源）
  *
- * 需求（飞雪 2026-08-01）：每周五 18:00 更新；结合双方数据底座；
- * 页面密码门 + 一键复制；风格简单明了。
+ * 需求（飞雪 2026-08-01 v2）：周报 = 飞雪的一周工作，内容主体来自 Hermes
+ * （飞雪每周工作大量与 DeepSeek 在 Hermes 沟通）；标讯内容不进周报。
  *
- * 数据合并口：
- *   - K3 侧：标讯历史库（weeklyFacts）+ data/agent-activity.jsonl（运行记账）
- *   - DeepSeek / 模型侧（可选，存在才合并）：
- *       docs/weekly-bid-reports/<week>.insight.md   → 解读段落（模型撰写）
+ * 合并契约：
+ *   docs/weekly-hub/<week>.work.md   DeepSeek 撰写的工作周报正文（markdown-lite）★ 主体
+ *   data/agent-activity.jsonl        K3 侧运行记账（页脚数据健康一行）
  *
  * 用法:
  *   npm run tenders:weekly-site                 # 默认当前周（周五 18:00 跑）
@@ -16,8 +15,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { readHistoryRows } from "./aggregate-tenders.mjs";
-import { weeklyFacts } from "./lib/weekly-report-facts.mjs";
+import { isoWeek, weekStart } from "./lib/tender-aggregate.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -27,22 +25,17 @@ function localDateStr(d = new Date()) {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 }
 
-function fmtWan(wan) {
-  if (!wan || wan <= 0) return "未披露";
-  if (wan >= 10000) return `${(wan / 10000).toFixed(1).replace(/\.0$/, "")} 亿`;
-  return `${wan} 万`;
+function addDays(dateStr, n) {
+  const [y, m, d] = dateStr.split("-").map(Number);
+  return new Date(Date.UTC(y, m - 1, d + n)).toISOString().slice(0, 10);
 }
 
-function sign(n) {
-  return n > 0 ? `+${n}` : String(n);
-}
-
-function readInsight(week) {
+function readWorkText(week) {
   try {
-    const p = path.join(root, "docs", "weekly-bid-reports", `${week}.insight.md`);
+    const p = path.join(root, "docs", "weekly-hub", `${week}.work.md`);
     if (fs.existsSync(p)) return fs.readFileSync(p, "utf8").trim();
   } catch {
-    // 缺解读不阻断
+    // 缺正文不阻断
   }
   return "";
 }
@@ -68,104 +61,49 @@ function readActivityWeek(from, to) {
   }
 }
 
-function slim(it) {
-  return {
-    title: it.title,
-    city: it.city || "—",
-    moneyText: fmtWan(it.moneyWan),
-    bidDeadline: it.bidDeadline || "未写明",
-    firstSeenAt: it.firstSeenAt,
-    sourceUrl: it.sourceUrl || "",
-  };
-}
-
-/** 一键复制的纯文本摘要（简单明了，适配飞书/微信粘贴） */
-export function buildCopyText(r) {
-  const L = [];
-  L.push(`【招标周报 ${r.week}】${r.range.from} ~ ${r.range.to}`);
-  L.push("");
-  if (r.insight) {
-    L.push(r.insight);
-    L.push("");
-  }
-  const o = r.overview;
-  L.push(
-    `本周：新增 ${o.newCount} · 在途 ${o.activeCount} · 5★ ${o.fiveStarCount} · 披露金额 ${fmtWan(o.totalMoneyWan)}`,
-  );
-  if (!o.comparable) L.push(`（数据积累中，已 ${o.historyDays} 天，暂无环比）`);
-  L.push("");
-  if (r.fiveStar.length) {
-    L.push("◆ 5★ 项目");
-    for (const it of r.fiveStar) {
-      L.push(`· ${it.title}｜${it.city}｜${it.moneyText}｜截止 ${it.bidDeadline}`);
-    }
-    L.push("");
-  }
-  if (r.deadlineSoon.length) {
-    L.push("◆ 临近截止");
-    for (const it of r.deadlineSoon) {
-      L.push(`· ${it.title}｜${it.city}｜截止 ${it.bidDeadline}`);
-    }
-    L.push("");
-  }
-  if (r.moversUp.length) {
-    L.push(`◆ 异动升温：${r.moversUp.map((m) => `${m.name} ${sign(m.delta)}`).join("、")}`);
-    L.push("");
-  }
-  L.push(`数据健康：同步 ${r.health.days} 天，成功 ${r.health.ok} / 失败 ${r.health.fail}`);
-  L.push("—— 飞雪工坊 · 标讯雷达");
-  return L.join("\n");
-}
-
 export function runWeeklySite({ weekArg, quiet = false } = {}) {
   const weekDate = weekArg || localDateStr();
-  const { rows } = readHistoryRows();
-  const f = weeklyFacts(rows, { weekDate });
+  const monday = weekStart(weekDate);
+  const week = isoWeek(monday);
+  const range = { from: monday, to: addDays(monday, 6) };
 
-  const activities = readActivityWeek(f.range.from, f.range.to);
-  const okDays = activities.filter((a) => a.ok).length;
+  const workText = readWorkText(week);
+  const activities = readActivityWeek(range.from, range.to);
+  const okRuns = activities.filter((a) => a.ok).length;
+
+  const healthLine = activities.length
+    ? `工坊 AI 本周运行 ${activities.length} 次（成功 ${okRuns} / 失败 ${activities.length - okRuns}）`
+    : "";
+
+  const copyParts = [
+    `【工作周报 ${week}】${range.from} ~ ${range.to}`,
+    "",
+    workText || "（本周正文待补充）",
+  ];
+  if (healthLine) copyParts.push("", healthLine);
+  copyParts.push("", "—— 飞雪工坊");
 
   const report = {
-    schemaVersion: 1,
+    schemaVersion: 2,
     generatedAt: new Date().toISOString(),
-    week: f.week,
-    range: f.range,
-    insight: readInsight(f.week),
-    overview: {
-      newCount: f.overview.curr.newCount,
-      activeCount: f.overview.curr.activeCount,
-      expiredCount: f.overview.curr.expiredCount,
-      fiveStarCount: f.overview.curr.fiveStarCount,
-      totalMoneyWan: f.overview.curr.totalMoneyWan,
-      comparable: f.comparable,
-      historyDays: f.historyDays,
-    },
-    fiveStar: f.watch.fiveStar.slice(0, 3).map(slim),
-    deadlineSoon: f.watch.deadlineSoon.slice(0, 5).map(slim),
-    // 积累期（无环比基准）不展示异动，避免「+53」式虚高
-    moversUp: f.comparable
-      ? [
-          ...f.movers.professions.up.slice(0, 3),
-          ...f.movers.cities.up.slice(0, 2),
-        ].slice(0, 5)
-      : [],
+    week,
+    range,
+    hasWork: !!workText,
+    workText,
     health: {
-      days: new Set(f.health.map((h) => h.date)).size,
-      ok: new Set(f.health.filter((h) => h.ok).map((h) => h.date)).size,
-      fail: new Set(f.health.filter((h) => !h.ok).map((h) => h.date)).size,
       agentRuns: activities.length,
-      agentOk: okDays,
+      agentOk: okRuns,
+      line: healthLine,
     },
-    dataAsOf: f.dataAsOf,
+    copyText: copyParts.join("\n"),
   };
-  report.copyText = buildCopyText(report);
 
   const outPath = path.join(root, "public/data/weekly-report.json");
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(report, null, 2) + "\n");
   if (!quiet) {
     console.log(
-      `站点周报 ${report.week}：新增 ${report.overview.newCount} / 5★ ${report.overview.fiveStarCount} / 解读${report.insight ? "已合并" : "缺（可写 docs/weekly-bid-reports/" + report.week + ".insight.md）"}`,
+      `工作周报 ${week}（${range.from} ~ ${range.to}）：正文${workText ? `已合并（${workText.length} 字）` : `缺（等待 docs/weekly-hub/${week}.work.md）`} · AI 运行 ${activities.length} 次`,
     );
     console.log(`→ ${path.relative(root, outPath)}`);
   }

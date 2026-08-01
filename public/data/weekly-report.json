@@ -1,97 +1,17 @@
 {
-  "schemaVersion": 1,
-  "generatedAt": "2026-08-01T07:12:03.015Z",
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-01T07:21:30.446Z",
   "week": "2026-W31",
   "range": {
     "from": "2026-07-27",
     "to": "2026-08-02"
   },
-  "insight": "本周雷达开机首日，一次性纳入 80 条在窗标讯，披露金额合计约 2 亿，贵阳占绝对多数。三个 5★ 项目都值得立即评估：电信行业视频会议平台软件开发（892 万，下周五截止）、黔医 AI 智慧管理中台（317 万，8/12 截止）、黔东电力储备煤基地信息系统（下周一截止，时间最紧）。未来 10 天有 35 条集中截止，投标排期压力大，建议优先过一遍 5★ 和大额清单。本期为数据积累首周，趋势与环比下周起可见。",
-  "overview": {
-    "newCount": 80,
-    "activeCount": 80,
-    "expiredCount": 0,
-    "fiveStarCount": 3,
-    "totalMoneyWan": 20307.469999999998,
-    "comparable": false,
-    "historyDays": 1
-  },
-  "fiveStar": [
-    {
-      "title": "2026年中国电信贵州公司行业视频会议产品运营平台项目 软件开发 服务采购招标公告",
-      "city": "贵阳市",
-      "moneyText": "892.68 万",
-      "bidDeadline": "2026-08-07 09:30:00",
-      "firstSeenAt": "2026-08-01",
-      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=182458273686017&type=1&docTypeCode=TenderAnnouncement&securityViewCode=3d8b64311b5a0d656500443a1bfceb69"
-    },
-    {
-      "title": "2026年中国电信贵州公司县域公立医院黔医AI智慧管理中台协议级项目 软件开发 服务采购招标公告",
-      "city": "贵阳市",
-      "moneyText": "317.23 万",
-      "bidDeadline": "2026-08-12 11:00:00",
-      "firstSeenAt": "2026-08-01",
-      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184243616624748&type=1&docTypeCode=TenderAnnouncement&securityViewCode=44e17247b0e6a0e165a14139a07efaa3"
-    },
-    {
-      "title": "贵州黔东电力有限公司储备煤基地 信息系统 建设项目招标公告",
-      "city": "黔东南苗族侗族自治州",
-      "moneyText": "未披露",
-      "bidDeadline": "2026-08-03",
-      "firstSeenAt": "2026-08-01",
-      "sourceUrl": "http://www.dlztb.com/cpeinet/202607/124676.html"
-    }
-  ],
-  "deadlineSoon": [
-    {
-      "title": "贵州黔东电力有限公司储备煤基地 信息系统 建设项目招标公告",
-      "city": "黔东南苗族侗族自治州",
-      "moneyText": "未披露",
-      "bidDeadline": "2026-08-03",
-      "firstSeenAt": "2026-08-01",
-      "sourceUrl": "http://www.dlztb.com/cpeinet/202607/124676.html"
-    },
-    {
-      "title": "档案整理及 数字化 服务项目竞价公告",
-      "city": "贵阳市",
-      "moneyText": "3.5 万",
-      "bidDeadline": "2026-08-03",
-      "firstSeenAt": "2026-08-01",
-      "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=8AjmNComApsVEQYcfXoW+4TwhJI3yMqKEmeFXDD+K4I=&district=52"
-    },
-    {
-      "title": "贵州大数据集团 人工智能 数据工厂项目数采设备直接单源采购邀请函",
-      "city": "贵阳市",
-      "moneyText": "未披露",
-      "bidDeadline": "2026-08-03",
-      "firstSeenAt": "2026-08-01",
-      "sourceUrl": "https://www.e-qyzc.com/#/trade-info-detail?id=1531979418097799168&noticeType=15&publishStatus=1"
-    },
-    {
-      "title": "贵州大数据集团 人工智能 数据工厂项目SaaS服务直接单源采购邀请函",
-      "city": "贵阳市",
-      "moneyText": "未披露",
-      "bidDeadline": "2026-08-03",
-      "firstSeenAt": "2026-08-01",
-      "sourceUrl": "https://www.e-qyzc.com/#/trade-info-detail?id=1531979913768062976&noticeType=15&publishStatus=1"
-    },
-    {
-      "title": "政务 信息系统 建设项目A包虚谷数据库采购直接单源采购邀请函",
-      "city": "贵阳市",
-      "moneyText": "未披露",
-      "bidDeadline": "2026-08-04",
-      "firstSeenAt": "2026-08-01",
-      "sourceUrl": "https://www.e-qyzc.com/#/trade-info-detail?id=1532404004186607616&noticeType=15&publishStatus=1"
-    }
-  ],
-  "moversUp": [],
+  "hasWork": true,
+  "workText": "> 模板（2026-08-01 K3 建）：DeepSeek 周五 18:00 前用本周实际工作内容替换各节「（待填）」，\n> 然后跑 `npm run tenders:weekly-site` 合并上线。写完即删本行。\n\n## 本周重点\n\n- （待填：本周主要推进的 3-5 件事，一事一行）\n\n## 关键进展 / 决策\n\n- （待填：有结果的事、定下来的事）\n\n## 数据与交付\n\n- （待填：可量化的产出，如合同、方案、报告、系统上线等）\n\n## 下周计划\n\n- （待填：下周要盯的 3 件事）",
   "health": {
-    "days": 1,
-    "ok": 1,
-    "fail": 0,
     "agentRuns": 3,
-    "agentOk": 3
+    "agentOk": 3,
+    "line": "工坊 AI 本周运行 3 次（成功 3 / 失败 0）"
   },
-  "dataAsOf": "2026-08-01",
-  "copyText": "【招标周报 2026-W31】2026-07-27 ~ 2026-08-02\n\n本周雷达开机首日，一次性纳入 80 条在窗标讯，披露金额合计约 2 亿，贵阳占绝对多数。三个 5★ 项目都值得立即评估：电信行业视频会议平台软件开发（892 万，下周五截止）、黔医 AI 智慧管理中台（317 万，8/12 截止）、黔东电力储备煤基地信息系统（下周一截止，时间最紧）。未来 10 天有 35 条集中截止，投标排期压力大，建议优先过一遍 5★ 和大额清单。本期为数据积累首周，趋势与环比下周起可见。\n\n本周：新增 80 · 在途 80 · 5★ 3 · 披露金额 2 亿\n（数据积累中，已 1 天，暂无环比）\n\n◆ 5★ 项目\n· 2026年中国电信贵州公司行业视频会议产品运营平台项目 软件开发 服务采购招标公告｜贵阳市｜892.68 万｜截止 2026-08-07 09:30:00\n· 2026年中国电信贵州公司县域公立医院黔医AI智慧管理中台协议级项目 软件开发 服务采购招标公告｜贵阳市｜317.23 万｜截止 2026-08-12 11:00:00\n· 贵州黔东电力有限公司储备煤基地 信息系统 建设项目招标公告｜黔东南苗族侗族自治州｜未披露｜截止 2026-08-03\n\n◆ 临近截止\n· 贵州黔东电力有限公司储备煤基地 信息系统 建设项目招标公告｜黔东南苗族侗族自治州｜截止 2026-08-03\n· 档案整理及 数字化 服务项目竞价公告｜贵阳市｜截止 2026-08-03\n· 贵州大数据集团 人工智能 数据工厂项目数采设备直接单源采购邀请函｜贵阳市｜截止 2026-08-03\n· 贵州大数据集团 人工智能 数据工厂项目SaaS服务直接单源采购邀请函｜贵阳市｜截止 2026-08-03\n· 政务 信息系统 建设项目A包虚谷数据库采购直接单源采购邀请函｜贵阳市｜截止 2026-08-04\n\n数据健康：同步 1 天，成功 1 / 失败 0\n—— 飞雪工坊 · 标讯雷达"
+  "copyText": "【工作周报 2026-W31】2026-07-27 ~ 2026-08-02\n\n> 模板（2026-08-01 K3 建）：DeepSeek 周五 18:00 前用本周实际工作内容替换各节「（待填）」，\n> 然后跑 `npm run tenders:weekly-site` 合并上线。写完即删本行。\n\n## 本周重点\n\n- （待填：本周主要推进的 3-5 件事，一事一行）\n\n## 关键进展 / 决策\n\n- （待填：有结果的事、定下来的事）\n\n## 数据与交付\n\n- （待填：可量化的产出，如合同、方案、报告、系统上线等）\n\n## 下周计划\n\n- （待填：下周要盯的 3 件事）\n\n工坊 AI 本周运行 3 次（成功 3 / 失败 0）\n\n—— 飞雪工坊"
 }

@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.29",
+    date: "2026-08-01",
+    title: "/weekly 改为工作周报（内容主体移交 Hermes）",
+    summary:
+      "周报定位修正：/weekly 是飞雪的一周工作周报，正文由 Hermes 侧撰写（docs/weekly-hub/<周>.work.md 投放，生成器自动合并）；标讯内容移出周报，标讯雷达留在 /tenders 独立发展。密码查看与一键复制保留。",
+    items: [
+      { tag: "优化", text: "/weekly 重做：工作周报渲染（markdown-lite 标题/列表/引用），标讯内容全部移出" },
+      { tag: "新增", text: "合并契约 docs/weekly-hub/<week>.work.md：DeepSeek 写正文 → tenders:weekly-site 合并上线" },
+      { tag: "优化", text: "页脚保留工坊 AI 运行健康一行；标讯雷达数据不再进入周报" },
+    ],
+  },
+  {
     version: "0.2.28",
     date: "2026-08-01",
     title: "/weekly 招标周报页（密码查看 + 一键复制）",

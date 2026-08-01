@@ -1,36 +1,16 @@
 /**
- * /weekly 站点周报类型与拉取（密码门后的内容，客户端加载）
+ * /weekly 工作周报类型与拉取（密码门后的内容，客户端加载）
+ * schemaVersion 2：工作周报（Hermes 正文为主体），不再含标讯内容
  */
-
-export type WeeklyItem = {
-  title: string;
-  city: string;
-  moneyText: string;
-  bidDeadline: string;
-  firstSeenAt: string;
-  sourceUrl: string;
-};
 
 export type WeeklyReportFile = {
   schemaVersion: number;
   generatedAt: string;
   week: string;
   range: { from: string; to: string };
-  insight: string;
-  overview: {
-    newCount: number;
-    activeCount: number;
-    expiredCount: number;
-    fiveStarCount: number;
-    totalMoneyWan: number;
-    comparable: boolean;
-    historyDays: number;
-  };
-  fiveStar: WeeklyItem[];
-  deadlineSoon: WeeklyItem[];
-  moversUp: { name: string; prev: number; curr: number; delta: number }[];
-  health: { days: number; ok: number; fail: number; agentRuns: number; agentOk: number };
-  dataAsOf: string;
+  hasWork: boolean;
+  workText: string;
+  health: { agentRuns: number; agentOk: number; line: string };
   copyText: string;
 };
 

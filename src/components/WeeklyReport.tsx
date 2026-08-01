@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useState } from "react";
 import {
-  type WeeklyItem,
   type WeeklyReportFile,
   fetchWeeklyReport,
 } from "@/lib/weekly-report";
@@ -10,21 +9,60 @@ import {
 const PASSWORD = "9822";
 const STORE_KEY = "feixue-weekly-unlocked";
 
-function ItemList({ items, showMoney }: { items: WeeklyItem[]; showMoney?: boolean }) {
+/** markdown-lite 渲染：##/### 标题、- 列表、> 引用、其余为段落（周报正文够用即可） */
+function WorkBody({ text }: { text: string }) {
+  const blocks: { kind: string; text: string }[] = [];
+  for (const raw of text.split("\n")) {
+    const line = raw.trimEnd();
+    const t = line.trim();
+    if (!t) continue;
+    if (t.startsWith("### ")) blocks.push({ kind: "h3", text: t.slice(4) });
+    else if (t.startsWith("## ")) blocks.push({ kind: "h2", text: t.slice(3) });
+    else if (t.startsWith("# ")) blocks.push({ kind: "h2", text: t.slice(2) });
+    else if (t.startsWith("- ") || t.startsWith("· ") || t.startsWith("* "))
+      blocks.push({ kind: "li", text: t.slice(2) });
+    else if (t.startsWith("> ")) blocks.push({ kind: "quote", text: t.slice(2) });
+    else blocks.push({ kind: "p", text: t });
+  }
   return (
-    <ul style={{ margin: 0, paddingLeft: 0, listStyle: "none", display: "grid", gap: 10 }}>
-      {items.map((it, i) => (
-        <li key={`${it.title}-${i}`} style={{ fontSize: "0.9375rem", lineHeight: 1.55 }}>
-          <a href={it.sourceUrl || undefined} target="_blank" rel="noreferrer" style={{ fontWeight: 600 }}>
-            {it.title}
-          </a>
-          <span style={{ display: "block", fontSize: "0.8125rem", opacity: 0.65, marginTop: 2 }}>
-            {it.city}
-            {showMoney ? ` · ${it.moneyText}` : ""} · 截止 {it.bidDeadline} · 首见 {it.firstSeenAt}
-          </span>
-        </li>
-      ))}
-    </ul>
+    <div style={{ display: "grid", gap: 10 }}>
+      {blocks.map((b, i) => {
+        if (b.kind === "h2")
+          return (
+            <h2 key={i} className="section-title" style={{ margin: "14px 0 0" }}>
+              {b.text}
+            </h2>
+          );
+        if (b.kind === "h3")
+          return (
+            <h3 key={i} className="section-title" style={{ fontSize: "1rem", margin: "10px 0 0" }}>
+              {b.text}
+            </h3>
+          );
+        if (b.kind === "li")
+          return (
+            <div key={i} style={{ display: "flex", gap: 8, fontSize: "0.9375rem", lineHeight: 1.6 }}>
+              <span style={{ opacity: 0.5 }}>·</span>
+              <span style={{ flex: 1 }}>{b.text}</span>
+            </div>
+          );
+        if (b.kind === "quote")
+          return (
+            <p
+              key={i}
+              className="item-body"
+              style={{ margin: 0, paddingLeft: 12, borderLeft: "2px solid rgba(128,128,128,0.4)", opacity: 0.8 }}
+            >
+              {b.text}
+            </p>
+          );
+        return (
+          <p key={i} className="item-body" style={{ margin: 0, lineHeight: 1.7 }}>
+            {b.text}
+          </p>
+        );
+      })}
+    </div>
   );
 }
 
@@ -76,7 +114,6 @@ export function WeeklyReport() {
     try {
       await navigator.clipboard.writeText(data.copyText);
     } catch {
-      // 兜底：老浏览器/权限受限
       const ta = document.createElement("textarea");
       ta.value = data.copyText;
       document.body.appendChild(ta);
@@ -135,15 +172,16 @@ export function WeeklyReport() {
     return <p className="item-body">加载中…</p>;
   }
 
-  const o = data.overview;
-
   return (
     <>
       <div className="day-bar" style={{ marginTop: 0 }}>
         <strong>
           {data.week} · {data.range.from} ~ {data.range.to}
         </strong>
-        <span>数据截至 {data.dataAsOf || "—"}</span>
+        <span>
+          更新于{" "}
+          {new Date(data.generatedAt).toLocaleString("zh-CN", { hour12: false })}
+        </span>
         <button
           type="button"
           className="btn btn-primary"
@@ -154,68 +192,25 @@ export function WeeklyReport() {
         </button>
       </div>
 
-      {data.insight ? (
-        <div className="card-quiet card-pad" style={{ marginBottom: 20 }}>
-          <p className="item-body" style={{ margin: 0, whiteSpace: "pre-wrap" }}>
-            {data.insight}
-          </p>
+      {data.hasWork ? (
+        <div className="card-quiet card-pad">
+          <WorkBody text={data.workText} />
         </div>
-      ) : null}
-
-      <div className="card-quiet card-pad" style={{ marginBottom: 20 }}>
-        <div className="meta-row" style={{ gap: 18, flexWrap: "wrap", fontSize: "1rem" }}>
-          <span>
-            新增 <strong style={{ fontSize: "1.35rem" }}>{o.newCount}</strong>
-          </span>
-          <span>
-            在途 <strong style={{ fontSize: "1.35rem" }}>{o.activeCount}</strong>
-          </span>
-          <span>
-            5★ <strong style={{ fontSize: "1.35rem" }}>{o.fiveStarCount}</strong>
-          </span>
-          <span>
-            披露金额 <strong style={{ fontSize: "1.35rem" }}>{o.totalMoneyWan >= 10000 ? `${(o.totalMoneyWan / 10000).toFixed(1)} 亿` : `${o.totalMoneyWan} 万`}</strong>
-          </span>
+      ) : (
+        <div className="note">
+          本周正文待 Hermes 侧投放（写入{" "}
+          <code style={{ fontSize: "0.9em" }}>
+            docs/weekly-hub/{data.week}.work.md
+          </code>{" "}
+          后重新生成即合并）。
         </div>
-        {!o.comparable ? (
-          <p className="item-body" style={{ fontSize: "0.8125rem", opacity: 0.65, margin: "10px 0 0" }}>
-            数据积累中（已 {o.historyDays} 天），满 5 天后开启环比。
-          </p>
-        ) : null}
-      </div>
+      )}
 
-      {data.fiveStar.length ? (
-        <section style={{ marginBottom: 22 }}>
-          <h2 className="section-title">5★ 值得盯</h2>
-          <ItemList items={data.fiveStar} showMoney />
-        </section>
+      {data.health.line ? (
+        <p className="item-body" style={{ fontSize: "0.8125rem", opacity: 0.6, marginTop: 18 }}>
+          {data.health.line}
+        </p>
       ) : null}
-
-      {data.deadlineSoon.length ? (
-        <section style={{ marginBottom: 22 }}>
-          <h2 className="section-title">临近截止（10 天内）</h2>
-          <ItemList items={data.deadlineSoon} />
-        </section>
-      ) : null}
-
-      {data.moversUp.length ? (
-        <section style={{ marginBottom: 22 }}>
-          <h2 className="section-title">异动升温（环比上周）</h2>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-            {data.moversUp.map((m) => (
-              <span key={m.name} className="chip">
-                {m.name} {m.prev} → {m.curr}
-              </span>
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      <p className="item-body" style={{ fontSize: "0.8125rem", opacity: 0.6 }}>
-        数据健康：本周同步 {data.health.days} 天（成功 {data.health.ok} / 失败 {data.health.fail}）
-        · 工坊 AI 运行 {data.health.agentRuns} 次（成功 {data.health.agentOk}）。
-        口径：精匹配条目；行业按出现次数计。
-      </p>
     </>
   );
 }
