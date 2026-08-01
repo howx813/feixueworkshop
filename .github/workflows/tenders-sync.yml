@@ -8,9 +8,8 @@
 name: tenders-sync
 
 on:
-  schedule:
-    # 每天 01:00 UTC ≈ 北京时间 09:00
-    - cron: "0 1 * * *"
+  # M3：schedule 触发已移除——每日同步由本机 Hermes cron 接管（tenders-radar-daily.sh），
+  # 避免境外 runner 与本地双 commit 撞车。保留手动按钮作为备用。
   workflow_dispatch:
 
 permissions:
