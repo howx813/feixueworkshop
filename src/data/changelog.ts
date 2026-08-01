@@ -17,6 +17,17 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.30",
+    date: "2026-08-01",
+    title: "导航新增「工作周报」入口",
+    summary:
+      "侧边栏「内容」组与手机底部导航新增 /weekly 工作周报入口（日历图标），周报页不再只是隐藏链接。",
+    items: [
+      { tag: "新增", text: "侧边栏导航「工作周报」入口（每日标讯与更新日志之间）" },
+      { tag: "新增", text: "手机底部导航加「周报」标签" },
+    ],
+  },
+  {
     version: "0.2.29",
     date: "2026-08-01",
     title: "/weekly 改为工作周报（内容主体移交 Hermes）",
