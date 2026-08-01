@@ -1,9 +1,9 @@
 {
   "name": "feixue-workshop",
-  "version": "0.2.26",
+  "version": "0.2.28",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3456",
+    "dev": "next dev -p ${PORT:-3456}",
     "dev:clean": "node scripts/dev-clean.mjs",
     "build": "node scripts/build-export.mjs",
     "preview": "npm run build && npx --yes serve out -l 3457",
