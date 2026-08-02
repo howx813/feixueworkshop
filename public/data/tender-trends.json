@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-01T06:53:42.938Z",
+  "generatedAt": "2026-08-02T01:06:09.961Z",
   "historyFrom": "2026-08-01",
-  "dataAsOf": "2026-08-01",
+  "dataAsOf": "2026-08-02",
   "syncHealth": [
     {
       "date": "2026-08-01",
@@ -14,6 +14,10 @@
     },
     {
       "date": "2026-08-01",
+      "ok": true
+    },
+    {
+      "date": "2026-08-02",
       "ok": true
     }
   ],
@@ -453,8 +457,8 @@
       "title": "贵州黔东电力有限公司储备煤基地 信息系统 建设项目招标公告",
       "stars": 5,
       "firstSeenAt": "2026-08-01",
-      "lastSeenAt": "2026-08-01",
-      "seenCount": 3,
+      "lastSeenAt": "2026-08-02",
+      "seenCount": 4,
       "moneyWan": 0,
       "city": "黔东南苗族侗族自治州",
       "buyer": "贵州黔东电力有限公司",
@@ -466,8 +470,8 @@
       "title": "2026年中国电信贵州公司县域公立医院黔医AI智慧管理中台协议级项目 软件开发 服务采购招标公告",
       "stars": 5,
       "firstSeenAt": "2026-08-01",
-      "lastSeenAt": "2026-08-01",
-      "seenCount": 3,
+      "lastSeenAt": "2026-08-02",
+      "seenCount": 4,
       "moneyWan": 317.23,
       "city": "贵阳市",
       "buyer": "中国电信股份有限公司贵州分公司",
@@ -479,8 +483,8 @@
       "title": "2026年中国电信贵州公司行业视频会议产品运营平台项目 软件开发 服务采购招标公告",
       "stars": 5,
       "firstSeenAt": "2026-08-01",
-      "lastSeenAt": "2026-08-01",
-      "seenCount": 3,
+      "lastSeenAt": "2026-08-02",
+      "seenCount": 4,
       "moneyWan": 892.68,
       "city": "贵阳市",
       "buyer": "中国电信股份有限公司贵州分公司",
