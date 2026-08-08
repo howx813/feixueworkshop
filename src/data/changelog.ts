@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.31",
+    date: "2026-08-08",
+    title: "手搓宝匣新增「傅里叶变换，一次讲透」动画解说页",
+    summary:
+      "/lab/fourier：三段联动 Canvas 动画（纯音搭积木、旋转圆 epicycles 画方波、时域⇄频域联动实验室），每节配解说词卡片，可用浏览器内置语音朗读；讲清时域/频域与傅里叶变换的用途（MP3/JPEG/降噪/5G/CT/FFT）。",
+    items: [
+      { tag: "新增", text: "/lab/fourier 动画解说页：三动画 + 解说词 + TTS 朗读按钮" },
+      { tag: "新增", text: "时域⇄频域联动实验室：方波/锯齿波/三角波切换 + 谐波数滑杆 + 频谱柱" },
+      { tag: "新增", text: "宝匣清单与 LabIcon 注册 fourier 条目（波形+频谱柱图标）" },
+    ],
+  },
+  {
     version: "0.2.30",
     date: "2026-08-01",
     title: "导航新增「工作周报」入口",

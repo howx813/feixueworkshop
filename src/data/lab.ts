@@ -14,7 +14,7 @@ export type LabItem = {
   id: string;
   title: string;
   /** 应用名称前的 SVG 图标标识 */
-  icon: "gravity" | "fluid" | "particles" | "graphic" | "marble" | "snowflake" | "life";
+  icon: "gravity" | "fluid" | "particles" | "graphic" | "marble" | "snowflake" | "life" | "fourier";
   summary: string;
   href: string;
   status: "可玩" | "实验中" | "搁置";
@@ -23,6 +23,17 @@ export type LabItem = {
 };
 
 export const labItems: LabItem[] = [
+  {
+    id: "fourier",
+    title: "傅里叶变换，一次讲透",
+    icon: "fourier",
+    summary:
+      "三段联动动画 + 可朗读解说词：纯音搭积木、旋转圆画方波、时域⇄频域实验室，讲清它到底用来干嘛。",
+    href: "/lab/fourier/",
+    status: "可玩",
+    tags: ["数学", "动画", "解说词", "信号"],
+    updated: "2026-08-08",
+  },
   {
     id: "life",
     title: "生命游戏",
