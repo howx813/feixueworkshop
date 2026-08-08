@@ -38,6 +38,7 @@ const pages = [
   { file: "data/agent-activity.json", mustInclude: ["entries"] },
   { file: "weekly/index.html", mustInclude: ["工作周报", "密码"] },
   { file: "data/weekly-report.json", mustInclude: ["week", "copyText"] },
+  { file: "data/site-analytics.json", mustInclude: ["regions", "trend"] },
 ];
 
 let failed = 0;

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "source": "51la OpenAPI",
+  "generatedAt": "2026-08-08T04:18:00.508Z",
+  "range": {
+    "from": "2026-08-01",
+    "to": "2026-08-07"
+  },
+  "totals": {
+    "uv": 7,
+    "pv": 55,
+    "ip": 9,
+    "sv": 10,
+    "newUserCount": 3
+  },
+  "trend": [
+    {
+      "time": "2026-08-01",
+      "uv": 2,
+      "pv": 16,
+      "ip": 2,
+      "sv": 3,
+      "newUserCount": 1
+    },
+    {
+      "time": "2026-08-02",
+      "uv": 1,
+      "pv": 11,
+      "ip": 3,
+      "sv": 2,
+      "newUserCount": 1
+    },
+    {
+      "time": "2026-08-03",
+      "uv": 2,
+      "pv": 17,
+      "ip": 2,
+      "sv": 2,
+      "newUserCount": 1
+    },
+    {
+      "time": "2026-08-04",
+      "uv": 1,
+      "pv": 10,
+      "ip": 1,
+      "sv": 2,
+      "newUserCount": 0
+    },
+    {
+      "time": "2026-08-05",
+      "uv": 1,
+      "pv": 1,
+      "ip": 1,
+      "sv": 1,
+      "newUserCount": 0
+    },
+    {
+      "time": "2026-08-06",
+      "uv": 0,
+      "pv": 0,
+      "ip": 0,
+      "sv": 0,
+      "newUserCount": 0
+    },
+    {
+      "time": "2026-08-07",
+      "uv": 0,
+      "pv": 0,
+      "ip": 0,
+      "sv": 0,
+      "newUserCount": 0
+    }
+  ],
+  "regions": [
+    {
+      "region": "贵州省-贵阳市",
+      "sessions": 10,
+      "pv": 56,
+      "newVisitors": 4
+    }
+  ],
+  "detailSessions": 10
+}

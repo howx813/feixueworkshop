@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.33",
+    date: "2026-08-08",
+    title: "工作周报新增「访问分析」栏目（51la OpenAPI）",
+    summary:
+      "/weekly 密码门后新增访问分析：周总量（UV/PV/IP/新访客）、7 日 PV 趋势、访客地区排行。数据由 scripts/sync-analytics.mjs 本地同步（51la /trend/day + /visitor/detail/list，密钥读 .env.local 不进仓库），地区为聚合统计、不含任何 IP。",
+    items: [
+      { tag: "新增", text: "analytics:sync 脚本：51la 签名调用 + 地区聚合 → public/data/site-analytics.json" },
+      { tag: "新增", text: "周报页访问分析栏目：总量卡片 + 趋势柱 + 地区条形排行（数据缺失时自动隐藏）" },
+      { tag: "文档", text: ".env.example 增加 LA51_ACCESS_KEY/LA51_SECRET_KEY/LA51_MASK_ID 说明（免费配额 100 次/月）" },
+    ],
+  },
+  {
     version: "0.2.32",
     date: "2026-08-08",
     title: "手搓宝匣新增「频谱显微镜」（傅里叶实操姊妹篇）",

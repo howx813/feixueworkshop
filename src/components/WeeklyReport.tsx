@@ -5,6 +5,10 @@ import {
   type WeeklyReportFile,
   fetchWeeklyReport,
 } from "@/lib/weekly-report";
+import {
+  type SiteAnalyticsFile,
+  fetchSiteAnalytics,
+} from "@/lib/site-analytics";
 
 const PASSWORD = "9822";
 const STORE_KEY = "feixue-weekly-unlocked";
@@ -66,11 +70,185 @@ function WorkBody({ text }: { text: string }) {
   );
 }
 
+/** 访问分析栏目：周总量 + 地区排行 + 7 日趋势（51la 数据，同步脚本生成） */
+function AnalyticsSection({ data }: { data: SiteAnalyticsFile }) {
+  const maxPv = Math.max(1, ...data.trend.map((d) => d.pv));
+  const topRegions = data.regions.slice(0, 8);
+  const rest = data.regions.slice(8);
+  const restSessions = rest.reduce((s, r) => s + r.sessions, 0);
+  const maxSessions = Math.max(1, ...topRegions.map((r) => r.sessions));
+  const totalSessions = Math.max(
+    1,
+    data.regions.reduce((s, r) => s + r.sessions, 0),
+  );
+
+  const stat = (label: string, value: number) => (
+    <div
+      key={label}
+      style={{
+        flex: "1 1 90px",
+        padding: "10px 12px",
+        borderRadius: 10,
+        background: "var(--surface-1)",
+        border: "1px solid var(--border-soft)",
+      }}
+    >
+      <div style={{ fontSize: "1.25rem", fontWeight: 700 }}>{value}</div>
+      <div style={{ fontSize: "0.75rem", opacity: 0.6 }}>{label}</div>
+    </div>
+  );
+
+  return (
+    <div className="card-quiet card-pad" style={{ marginTop: 16 }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "baseline",
+          flexWrap: "wrap",
+          gap: 6,
+        }}
+      >
+        <h2 className="section-title" style={{ margin: 0 }}>
+          访问分析
+        </h2>
+        <span style={{ fontSize: "0.75rem", opacity: 0.55 }}>
+          {data.range.from} ~ {data.range.to} · 51la · 更新于{" "}
+          {new Date(data.generatedAt).toLocaleString("zh-CN", {
+            hour12: false,
+            month: "numeric",
+            day: "numeric",
+            hour: "numeric",
+            minute: "2-digit",
+          })}
+        </span>
+      </div>
+
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
+        {stat("访客 UV", data.totals.uv)}
+        {stat("浏览 PV", data.totals.pv)}
+        {stat("IP 数", data.totals.ip)}
+        {stat("新访客", data.totals.newUserCount)}
+      </div>
+
+      {/* 7 日 PV 趋势 */}
+      <h3 className="section-title" style={{ fontSize: "0.9375rem", margin: "18px 0 8px" }}>
+        7 日趋势（PV）
+      </h3>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "flex-end",
+          gap: 6,
+          height: 72,
+        }}
+      >
+        {data.trend.map((d) => (
+          <div
+            key={d.time}
+            style={{
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 4,
+              minWidth: 0,
+            }}
+          >
+            <span style={{ fontSize: "0.6875rem", opacity: 0.6 }}>{d.pv}</span>
+            <div
+              style={{
+                width: "100%",
+                maxWidth: 34,
+                height: Math.max(2, (d.pv / maxPv) * 44),
+                borderRadius: 4,
+                background: "var(--accent)",
+                opacity: d.pv > 0 ? 0.9 : 0.25,
+              }}
+              title={`${d.time}：PV ${d.pv} / UV ${d.uv}`}
+            />
+            <span style={{ fontSize: "0.6875rem", opacity: 0.55 }}>
+              {d.time.slice(5)}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* 地区排行 */}
+      <h3 className="section-title" style={{ fontSize: "0.9375rem", margin: "18px 0 8px" }}>
+        访客地区（按会话数，共 {totalSessions}）
+      </h3>
+      {topRegions.length === 0 ? (
+        <p className="item-body" style={{ margin: 0, opacity: 0.7 }}>
+          本周暂无访问明细。
+        </p>
+      ) : (
+        <div style={{ display: "grid", gap: 6 }}>
+          {topRegions.map((r) => (
+            <div
+              key={r.region}
+              style={{ display: "flex", alignItems: "center", gap: 10 }}
+            >
+              <span
+                style={{
+                  width: 110,
+                  flexShrink: 0,
+                  fontSize: "0.8125rem",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {r.region}
+              </span>
+              <div
+                style={{
+                  flex: 1,
+                  height: 10,
+                  borderRadius: 5,
+                  background: "var(--surface-2)",
+                  overflow: "hidden",
+                }}
+              >
+                <div
+                  style={{
+                    width: `${(r.sessions / maxSessions) * 100}%`,
+                    height: "100%",
+                    borderRadius: 5,
+                    background: "var(--accent)",
+                  }}
+                />
+              </div>
+              <span
+                style={{
+                  width: 84,
+                  flexShrink: 0,
+                  textAlign: "right",
+                  fontSize: "0.75rem",
+                  opacity: 0.7,
+                }}
+              >
+                {r.sessions} 次 · {Math.round((r.sessions / totalSessions) * 100)}%
+              </span>
+            </div>
+          ))}
+          {restSessions > 0 ? (
+            <p className="item-body" style={{ margin: "2px 0 0", opacity: 0.6 }}>
+              其余 {rest.length} 个地区共 {restSessions} 次。
+            </p>
+          ) : null}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function WeeklyReport() {
   const [unlocked, setUnlocked] = useState(false);
   const [input, setInput] = useState("");
   const [wrong, setWrong] = useState(false);
   const [data, setData] = useState<WeeklyReportFile | null>(null);
+  const [analytics, setAnalytics] = useState<SiteAnalyticsFile | null>(null);
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
 
@@ -92,6 +270,9 @@ export function WeeklyReport() {
       .catch((e) => {
         if (!ac.signal.aborted) setError(e instanceof Error ? e.message : "加载失败");
       });
+    fetchSiteAnalytics(ac.signal).then((a) => {
+      if (!ac.signal.aborted && a) setAnalytics(a);
+    });
     return () => ac.abort();
   }, [unlocked]);
 
@@ -205,6 +386,8 @@ export function WeeklyReport() {
           后重新生成即合并）。
         </div>
       )}
+
+      {analytics ? <AnalyticsSection data={analytics} /> : null}
 
       {data.health.line ? (
         <p className="item-body" style={{ fontSize: "0.8125rem", opacity: 0.6, marginTop: 18 }}>
