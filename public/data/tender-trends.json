@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-06T01:06:15.380Z",
+  "generatedAt": "2026-08-08T01:05:38.950Z",
   "historyFrom": "2026-08-01",
-  "dataAsOf": "2026-08-06",
+  "dataAsOf": "2026-08-08",
   "syncHealth": [
     {
       "date": "2026-08-01",
@@ -35,12 +35,16 @@
     {
       "date": "2026-08-06",
       "ok": true
+    },
+    {
+      "date": "2026-08-08",
+      "ok": true
     }
   ],
   "totals": {
-    "tracked": 179,
+    "tracked": 230,
     "active": 80,
-    "expired": 99
+    "expired": 150
   },
   "weekly": [
     {
@@ -55,109 +59,109 @@
     {
       "week": "2026-W32",
       "from": "2026-08-03",
-      "newCount": 99,
-      "activeCount": 177,
-      "expiredCount": 97,
-      "fiveStarCount": 4,
-      "totalMoneyWan": 55647.630000000005
+      "newCount": 150,
+      "activeCount": 228,
+      "expiredCount": 148,
+      "fiveStarCount": 5,
+      "totalMoneyWan": 65309.42000000002
     }
   ],
   "byCity": [
     {
       "name": "贵阳市",
-      "count": 100,
-      "moneyWan": 47708.34999999999
+      "count": 130,
+      "moneyWan": 55111.9
     },
     {
       "name": "遵义市",
-      "count": 24,
-      "moneyWan": 1737.6
+      "count": 29,
+      "moneyWan": 2793.31
     },
     {
       "name": "黔南布依族苗族自治州",
-      "count": 16,
-      "moneyWan": 1250.8300000000002
+      "count": 18,
+      "moneyWan": 1482.8300000000002
     },
     {
       "name": "黔东南苗族侗族自治州",
-      "count": 10,
-      "moneyWan": 941.29
+      "count": 12,
+      "moneyWan": 969.29
     },
     {
       "name": "六盘水市",
-      "count": 9,
-      "moneyWan": 489.5
+      "count": 11,
+      "moneyWan": 514.19
     },
     {
       "name": "毕节市",
-      "count": 6,
-      "moneyWan": 3166.21
-    },
-    {
-      "name": "安顺市",
-      "count": 5,
-      "moneyWan": 321.75
+      "count": 8,
+      "moneyWan": 3596.21
     },
     {
       "name": "黔西南布依族苗族自治州",
+      "count": 8,
+      "moneyWan": 133.72
+    },
+    {
+      "name": "安顺市",
+      "count": 6,
+      "moneyWan": 321.75
+    },
+    {
+      "name": "贵州省",
       "count": 5,
-      "moneyWan": 53.7
+      "moneyWan": 479.64
     },
     {
       "name": "铜仁市",
       "count": 3,
       "moneyWan": 44.1
-    },
-    {
-      "name": "贵州省",
-      "count": 1,
-      "moneyWan": 71.82
     }
   ],
   "byProfession": [
     {
       "name": "运营商系统集成",
-      "count": 119
+      "count": 157
     },
     {
       "name": "系统集成",
-      "count": 94
+      "count": 122
     },
     {
       "name": "软件开发",
-      "count": 47
+      "count": 58
     },
     {
       "name": "其他",
-      "count": 44
+      "count": 51
     },
     {
       "name": "运营商大数据",
-      "count": 39
+      "count": 47
     },
     {
       "name": "运营商ITO运维",
-      "count": 31
-    },
-    {
-      "name": "信息运维",
-      "count": 29
-    },
-    {
-      "name": "网络安全",
-      "count": 26
+      "count": 35
     },
     {
       "name": "事业单位用房",
-      "count": 24
+      "count": 33
+    },
+    {
+      "name": "信息运维",
+      "count": 33
+    },
+    {
+      "name": "网络安全",
+      "count": 32
     },
     {
       "name": "数据处理",
-      "count": 24
+      "count": 32
     },
     {
       "name": "智慧教育",
-      "count": 23
+      "count": 29
     },
     {
       "name": "运营商云计算",
@@ -169,78 +173,102 @@
     },
     {
       "name": "网络工程",
-      "count": 14
+      "count": 18
     },
     {
       "name": "运营商物联网",
+      "count": 16
+    },
+    {
+      "name": "公共设施",
+      "count": 14
+    },
+    {
+      "name": "运营商网络集成",
       "count": 12
+    },
+    {
+      "name": "基础工程",
+      "count": 11
+    },
+    {
+      "name": "工程设计",
+      "count": 11
+    },
+    {
+      "name": "安防监控",
+      "count": 11
+    },
+    {
+      "name": "运营商IDC",
+      "count": 11
+    },
+    {
+      "name": "智能化安装工程",
+      "count": 10
     },
     {
       "name": "智慧医疗",
       "count": 10
     },
     {
-      "name": "运营商网络集成",
-      "count": 9
-    },
-    {
-      "name": "安防监控",
-      "count": 9
-    },
-    {
-      "name": "运营商IDC",
-      "count": 9
+      "name": "智慧政务",
+      "count": 10
     },
     {
       "name": "通信管线",
-      "count": 8
+      "count": 10
     },
     {
-      "name": "工程设计",
-      "count": 7
-    },
-    {
-      "name": "公共设施",
-      "count": 7
+      "name": "商业和服务业用房",
+      "count": 9
     },
     {
       "name": "生产用房",
-      "count": 7
+      "count": 9
     },
     {
       "name": "数据中心",
-      "count": 7
-    },
-    {
-      "name": "基础工程",
-      "count": 6
-    },
-    {
-      "name": "运营商视频监控",
-      "count": 6
-    },
-    {
-      "name": "智能化安装工程",
-      "count": 6
-    },
-    {
-      "name": "医用器械",
-      "count": 6
-    },
-    {
-      "name": "安全设备",
-      "count": 6
-    },
-    {
-      "name": "智慧政务",
-      "count": 6
+      "count": 9
     },
     {
       "name": "电子计算机",
-      "count": 6
+      "count": 9
+    },
+    {
+      "name": "运营商视频监控",
+      "count": 8
+    },
+    {
+      "name": "医用器械",
+      "count": 8
+    },
+    {
+      "name": "安全设备",
+      "count": 8
+    },
+    {
+      "name": "装修工程",
+      "count": 8
+    },
+    {
+      "name": "环保工程",
+      "count": 7
     },
     {
       "name": "居住用房",
+      "count": 7
+    },
+    {
+      "name": "运营商专线",
+      "count": 6
+    },
+    {
+      "name": "公共设施管理",
+      "count": 6
+    },
+    {
+      "name": "档案",
       "count": 6
     },
     {
@@ -248,27 +276,55 @@
       "count": 6
     },
     {
-      "name": "运营商专线",
+      "name": "通信设备",
       "count": 5
     },
     {
-      "name": "商业和服务业用房",
+      "name": "智慧园区",
       "count": 5
     },
     {
-      "name": "档案",
-      "count": 4
+      "name": "电器设备",
+      "count": 5
     },
     {
       "name": "办公设备",
-      "count": 4
-    },
-    {
-      "name": "装修工程",
-      "count": 4
+      "count": 5
     },
     {
       "name": "智慧市政",
+      "count": 5
+    },
+    {
+      "name": "职业中介",
+      "count": 4
+    },
+    {
+      "name": "运营商信息通信",
+      "count": 4
+    },
+    {
+      "name": "其他智慧城市项目",
+      "count": 4
+    },
+    {
+      "name": "工程监理",
+      "count": 4
+    },
+    {
+      "name": "技术测试和分析",
+      "count": 4
+    },
+    {
+      "name": "医疗卫生服务",
+      "count": 4
+    },
+    {
+      "name": "智能中心",
+      "count": 4
+    },
+    {
+      "name": "社会救助",
       "count": 4
     },
     {
@@ -276,31 +332,15 @@
       "count": 3
     },
     {
-      "name": "运营商信息通信",
+      "name": "运营商移网",
       "count": 3
     },
     {
-      "name": "环保工程",
+      "name": "湖南移网",
       "count": 3
     },
     {
-      "name": "智慧园区",
-      "count": 3
-    },
-    {
-      "name": "其他智慧城市项目",
-      "count": 3
-    },
-    {
-      "name": "电器设备",
-      "count": 3
-    },
-    {
-      "name": "工程监理",
-      "count": 3
-    },
-    {
-      "name": "公共设施管理",
+      "name": "消防工程",
       "count": 3
     },
     {
@@ -308,7 +348,15 @@
       "count": 3
     },
     {
-      "name": "医疗卫生服务",
+      "name": "运营商工业互联网",
+      "count": 3
+    },
+    {
+      "name": "脚手架工程",
+      "count": 3
+    },
+    {
+      "name": "广告服务",
       "count": 3
     },
     {
@@ -316,31 +364,43 @@
       "count": 3
     },
     {
-      "name": "职业中介",
-      "count": 2
+      "name": "海洋服务",
+      "count": 3
+    },
+    {
+      "name": "图书",
+      "count": 3
+    },
+    {
+      "name": "监控设备",
+      "count": 3
+    },
+    {
+      "name": "电子电工",
+      "count": 3
+    },
+    {
+      "name": "电子工程安装",
+      "count": 3
+    },
+    {
+      "name": "工程排水",
+      "count": 3
+    },
+    {
+      "name": "水污染治理",
+      "count": 3
+    },
+    {
+      "name": "运营商数字平台",
+      "count": 3
+    },
+    {
+      "name": "物资采购",
+      "count": 3
     },
     {
       "name": "运营商智算",
-      "count": 2
-    },
-    {
-      "name": "通信设备",
-      "count": 2
-    },
-    {
-      "name": "运营商移网",
-      "count": 2
-    },
-    {
-      "name": "湖南移网",
-      "count": 2
-    },
-    {
-      "name": "消防工程",
-      "count": 2
-    },
-    {
-      "name": "技术测试和分析",
       "count": 2
     },
     {
@@ -352,31 +412,15 @@
       "count": 2
     },
     {
-      "name": "运营商工业互联网",
-      "count": 2
-    },
-    {
       "name": "行政单位用房",
       "count": 2
     },
     {
-      "name": "脚手架工程",
+      "name": "照明工程",
       "count": 2
     },
     {
-      "name": "广告服务",
-      "count": 2
-    },
-    {
-      "name": "海洋服务",
-      "count": 2
-    },
-    {
-      "name": "图书",
-      "count": 2
-    },
-    {
-      "name": "监控设备",
+      "name": "房屋附属设施",
       "count": 2
     },
     {
@@ -388,27 +432,15 @@
       "count": 2
     },
     {
-      "name": "电子电工",
-      "count": 2
-    },
-    {
-      "name": "电子工程安装",
-      "count": 2
-    },
-    {
       "name": "智慧交通",
       "count": 2
     },
     {
-      "name": "智能中心",
+      "name": "西药",
       "count": 2
     },
     {
-      "name": "运营商数字平台",
-      "count": 2
-    },
-    {
-      "name": "社会救助",
+      "name": "工程总承包",
       "count": 2
     },
     {
@@ -420,19 +452,23 @@
       "count": 2
     },
     {
+      "name": "银行服务",
+      "count": 2
+    },
+    {
+      "name": "仓储服务",
+      "count": 2
+    },
+    {
+      "name": "铁路工程",
+      "count": 2
+    },
+    {
       "name": "煤炭采选",
       "count": 1
     },
     {
       "name": "广播摄像系统",
-      "count": 1
-    },
-    {
-      "name": "照明工程",
-      "count": 1
-    },
-    {
-      "name": "房屋附属设施",
       "count": 1
     },
     {
@@ -460,18 +496,6 @@
       "count": 1
     },
     {
-      "name": "西药",
-      "count": 1
-    },
-    {
-      "name": "工程排水",
-      "count": 1
-    },
-    {
-      "name": "水污染治理",
-      "count": 1
-    },
-    {
       "name": "摄影服务",
       "count": 1
     },
@@ -492,15 +516,7 @@
       "count": 1
     },
     {
-      "name": "工程总承包",
-      "count": 1
-    },
-    {
       "name": "光伏",
-      "count": 1
-    },
-    {
-      "name": "物资采购",
       "count": 1
     },
     {
@@ -522,28 +538,60 @@
     {
       "name": "展览服务",
       "count": 1
+    },
+    {
+      "name": "互联网信息传输",
+      "count": 1
+    },
+    {
+      "name": "资料",
+      "count": 1
+    },
+    {
+      "name": "景区管理",
+      "count": 1
+    },
+    {
+      "name": "设计前咨询",
+      "count": 1
+    },
+    {
+      "name": "公共卫生",
+      "count": 1
+    },
+    {
+      "name": "电力设备",
+      "count": 1
+    },
+    {
+      "name": "成衣被具",
+      "count": 1
+    },
+    {
+      "name": "印刷设备",
+      "count": 1
     }
   ],
   "moneyBuckets": [
     {
       "bucket": "未披露",
-      "count": 34
+      "count": 43
     },
     {
       "bucket": "100万以下",
-      "count": 92
+      "count": 115
     },
     {
       "bucket": "100-500万",
-      "count": 39
+      "count": 54
     },
     {
       "bucket": "500-1000万",
-      "count": 7
+      "count": 9
     },
     {
       "bucket": "1000-5000万",
-      "count": 6
+      "count": 8
     },
     {
       "bucket": "5000万以上",
@@ -553,10 +601,18 @@
   "topBuyers": [
     {
       "buyer": "贵州轻工职业大学",
-      "count": 8
+      "count": 14
     },
     {
       "buyer": "中国电信股份有限公司贵州分公司",
+      "count": 6
+    },
+    {
+      "buyer": "贵州省人民医院",
+      "count": 6
+    },
+    {
+      "buyer": "贵州银行股份有限公司",
       "count": 6
     },
     {
@@ -568,7 +624,11 @@
       "count": 5
     },
     {
-      "buyer": "贵州银行股份有限公司",
+      "buyer": "贵州财经职业学院",
+      "count": 5
+    },
+    {
+      "buyer": "贵州省生态移民局",
       "count": 5
     },
     {
@@ -576,30 +636,31 @@
       "count": 5
     },
     {
-      "buyer": "贵州省人民医院",
-      "count": 4
-    },
-    {
-      "buyer": "贵州电子科技职业学院",
-      "count": 4
-    },
-    {
-      "buyer": "贵州财经职业学院",
-      "count": 4
-    },
-    {
       "buyer": "联通数字科技有限公司贵州省分公司",
-      "count": 3
+      "count": 4
     }
   ],
   "highlights": [
+    {
+      "id": "70278572398308",
+      "title": "[中国南方电网]贵州电力建设监理咨询有限责任公司数字监理 信息系统 App端原生鸿蒙第三方测试（安全、性能、功能）服务零星采购公告",
+      "stars": 5,
+      "firstSeenAt": "2026-08-08",
+      "lastSeenAt": "2026-08-08",
+      "seenCount": 1,
+      "moneyWan": 3.9,
+      "city": "贵阳市",
+      "buyer": "贵州电力建设监理咨询有限责任公司",
+      "bidDeadline": "",
+      "sourceUrl": "https://www.bidding.csg.cn/lxcggg/1200438391.jhtml"
+    },
     {
       "id": "70263523926872",
       "title": "贵州银行应用 软件开发 服务采购项目（财务系统）招标公告(采购公告)",
       "stars": 5,
       "firstSeenAt": "2026-08-04",
-      "lastSeenAt": "2026-08-06",
-      "seenCount": 3,
+      "lastSeenAt": "2026-08-08",
+      "seenCount": 4,
       "moneyWan": 999,
       "city": "贵阳市",
       "buyer": "贵州银行股份有限公司",
@@ -624,8 +685,8 @@
       "title": "2026年中国电信贵州公司县域公立医院黔医AI智慧管理中台协议级项目 软件开发 服务采购招标公告",
       "stars": 5,
       "firstSeenAt": "2026-08-01",
-      "lastSeenAt": "2026-08-06",
-      "seenCount": 8,
+      "lastSeenAt": "2026-08-08",
+      "seenCount": 9,
       "moneyWan": 317.23,
       "city": "贵阳市",
       "buyer": "中国电信股份有限公司贵州分公司",
