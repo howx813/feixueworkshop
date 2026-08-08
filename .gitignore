@@ -56,3 +56,6 @@ next-env.d.ts
 /public/graphic/generated/
 /data/pay-orders.json
 /data/graphic-jobs.json
+
+# 本地临时文件
+/tmp/
