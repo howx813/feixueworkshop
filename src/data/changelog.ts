@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.32",
+    date: "2026-08-08",
+    title: "手搓宝匣新增「频谱显微镜」（傅里叶实操姊妹篇）",
+    summary:
+      "/lab/spectrum：麦克风实时声音分析——示波器+频谱柱（对数轴）、瀑布频谱彩虹河、音高表（自相关估基频+音分表盘）、纯音发生器+钢琴小键盘；麦克风不可用时发生器驱动全部仪器。每节配解说词可朗读，与傅里叶页互跳。",
+    items: [
+      { tag: "新增", text: "/lab/spectrum 四仪器：示波器+频谱 / 瀑布频谱 / 音高表 / 发生器+键盘" },
+      { tag: "新增", text: "src/lib/pitch.ts 音高识别（ACF+抛物线插值）+ test-pitch 单测挂入 test:unit" },
+      { tag: "优化", text: "抽取共享 demokit.tsx（AnimCanvas/usePalette/Narration），傅里叶页迁移复用" },
+    ],
+  },
+  {
     version: "0.2.31",
     date: "2026-08-08",
     title: "手搓宝匣新增「傅里叶变换，一次讲透」动画解说页",

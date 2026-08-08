@@ -4,8 +4,8 @@ import {
   FourierBuildDemo,
   FourierEpicycleDemo,
   FourierSpectrumDemo,
-  Narration,
 } from "@/components/FourierDemo";
+import { Narration } from "@/components/demokit";
 import { labMeta } from "@/data/lab";
 import { site } from "@/data/content";
 
@@ -161,6 +161,13 @@ export default function LabFourierPage() {
           傅里叶变换不是把信号变成别的东西，而是<strong>换一种看法</strong>：
           从「什么时候」换成「有哪些频率」。
           很多问题在时域里是一团乱麻，换到频域，一眼看穿。
+        </p>
+        <p className="item-body" style={{ marginTop: 8 }}>
+          学完想上手？去{" "}
+          <Link href="/lab/spectrum/" className="link-accent">
+            频谱显微镜
+          </Link>
+          ，拿自己的声音实时验证一遍 →
         </p>
       </div>
 

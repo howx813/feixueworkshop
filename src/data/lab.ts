@@ -14,7 +14,7 @@ export type LabItem = {
   id: string;
   title: string;
   /** 应用名称前的 SVG 图标标识 */
-  icon: "gravity" | "fluid" | "particles" | "graphic" | "marble" | "snowflake" | "life" | "fourier";
+  icon: "gravity" | "fluid" | "particles" | "graphic" | "marble" | "snowflake" | "life" | "fourier" | "spectrum";
   summary: string;
   href: string;
   status: "可玩" | "实验中" | "搁置";
@@ -23,6 +23,17 @@ export type LabItem = {
 };
 
 export const labItems: LabItem[] = [
+  {
+    id: "spectrum",
+    title: "频谱显微镜",
+    icon: "spectrum",
+    summary:
+      "打开麦克风，实时看自己声音的波形、频谱、瀑布图和音高；没麦也有纯音发生器 + 小键盘。傅里叶页的实操姊妹篇。",
+    href: "/lab/spectrum/",
+    status: "可玩",
+    tags: ["Web Audio", "麦克风", "FFT", "解说词"],
+    updated: "2026-08-08",
+  },
   {
     id: "fourier",
     title: "傅里叶变换，一次讲透",

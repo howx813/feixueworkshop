@@ -31,6 +31,7 @@ const pages = [
   { file: "lab/gravity/index.html", mustInclude: ["引力沙盘"] },
   { file: "lab/graphic/index.html", mustInclude: ["图像小说"] },
   { file: "lab/fourier/index.html", mustInclude: ["傅里叶", "解说词"] },
+  { file: "lab/spectrum/index.html", mustInclude: ["频谱显微镜", "麦克风"] },
   { file: "tenders/index.html", mustInclude: ["每日标讯", "标讯趋势", "工坊 AI 日报"] },
   { file: "data/tenders.json", mustInclude: ["items", "syncedAt"] },
   { file: "data/tender-trends.json", mustInclude: ["weekly", "dataAsOf"] },
