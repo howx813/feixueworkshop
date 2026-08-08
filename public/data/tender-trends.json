@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-08T01:05:38.950Z",
+  "generatedAt": "2026-08-08T01:06:04.819Z",
   "historyFrom": "2026-08-01",
   "dataAsOf": "2026-08-08",
   "syncHealth": [
@@ -34,6 +34,10 @@
     },
     {
       "date": "2026-08-06",
+      "ok": true
+    },
+    {
+      "date": "2026-08-08",
       "ok": true
     },
     {
@@ -647,7 +651,7 @@
       "stars": 5,
       "firstSeenAt": "2026-08-08",
       "lastSeenAt": "2026-08-08",
-      "seenCount": 1,
+      "seenCount": 2,
       "moneyWan": 3.9,
       "city": "贵阳市",
       "buyer": "贵州电力建设监理咨询有限责任公司",
@@ -660,7 +664,7 @@
       "stars": 5,
       "firstSeenAt": "2026-08-04",
       "lastSeenAt": "2026-08-08",
-      "seenCount": 4,
+      "seenCount": 5,
       "moneyWan": 999,
       "city": "贵阳市",
       "buyer": "贵州银行股份有限公司",
@@ -686,7 +690,7 @@
       "stars": 5,
       "firstSeenAt": "2026-08-01",
       "lastSeenAt": "2026-08-08",
-      "seenCount": 9,
+      "seenCount": 10,
       "moneyWan": 317.23,
       "city": "贵阳市",
       "buyer": "中国电信股份有限公司贵州分公司",
