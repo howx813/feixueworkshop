@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-08T01:06:04.819Z",
+  "generatedAt": "2026-08-09T01:05:32.386Z",
   "historyFrom": "2026-08-01",
-  "dataAsOf": "2026-08-08",
+  "dataAsOf": "2026-08-09",
   "syncHealth": [
     {
       "date": "2026-08-01",
@@ -43,12 +43,16 @@
     {
       "date": "2026-08-08",
       "ok": true
+    },
+    {
+      "date": "2026-08-09",
+      "ok": true
     }
   ],
   "totals": {
-    "tracked": 230,
+    "tracked": 233,
     "active": 80,
-    "expired": 150
+    "expired": 153
   },
   "weekly": [
     {
@@ -63,18 +67,18 @@
     {
       "week": "2026-W32",
       "from": "2026-08-03",
-      "newCount": 150,
-      "activeCount": 228,
-      "expiredCount": 148,
+      "newCount": 153,
+      "activeCount": 231,
+      "expiredCount": 151,
       "fiveStarCount": 5,
-      "totalMoneyWan": 65309.42000000002
+      "totalMoneyWan": 65936.87000000002
     }
   ],
   "byCity": [
     {
       "name": "贵阳市",
-      "count": 130,
-      "moneyWan": 55111.9
+      "count": 132,
+      "moneyWan": 55189.07
     },
     {
       "name": "遵义市",
@@ -88,8 +92,8 @@
     },
     {
       "name": "黔东南苗族侗族自治州",
-      "count": 12,
-      "moneyWan": 969.29
+      "count": 13,
+      "moneyWan": 1519.57
     },
     {
       "name": "六盘水市",
@@ -125,19 +129,19 @@
   "byProfession": [
     {
       "name": "运营商系统集成",
-      "count": 157
+      "count": 159
     },
     {
       "name": "系统集成",
-      "count": 122
+      "count": 124
     },
     {
       "name": "软件开发",
-      "count": 58
+      "count": 60
     },
     {
       "name": "其他",
-      "count": 51
+      "count": 52
     },
     {
       "name": "运营商大数据",
@@ -145,14 +149,14 @@
     },
     {
       "name": "运营商ITO运维",
-      "count": 35
-    },
-    {
-      "name": "事业单位用房",
-      "count": 33
+      "count": 37
     },
     {
       "name": "信息运维",
+      "count": 34
+    },
+    {
+      "name": "事业单位用房",
       "count": 33
     },
     {
@@ -169,15 +173,15 @@
     },
     {
       "name": "运营商云计算",
-      "count": 18
+      "count": 19
     },
     {
       "name": "云服务",
-      "count": 18
+      "count": 19
     },
     {
       "name": "网络工程",
-      "count": 18
+      "count": 19
     },
     {
       "name": "运营商物联网",
@@ -189,18 +193,26 @@
     },
     {
       "name": "运营商网络集成",
-      "count": 12
+      "count": 13
     },
     {
       "name": "基础工程",
-      "count": 11
+      "count": 12
     },
     {
       "name": "工程设计",
       "count": 11
     },
     {
+      "name": "智慧医疗",
+      "count": 11
+    },
+    {
       "name": "安防监控",
+      "count": 11
+    },
+    {
+      "name": "智慧政务",
       "count": 11
     },
     {
@@ -212,15 +224,11 @@
       "count": 10
     },
     {
-      "name": "智慧医疗",
-      "count": 10
-    },
-    {
-      "name": "智慧政务",
-      "count": 10
-    },
-    {
       "name": "通信管线",
+      "count": 10
+    },
+    {
+      "name": "电子计算机",
       "count": 10
     },
     {
@@ -236,7 +244,7 @@
       "count": 9
     },
     {
-      "name": "电子计算机",
+      "name": "装修工程",
       "count": 9
     },
     {
@@ -252,8 +260,8 @@
       "count": 8
     },
     {
-      "name": "装修工程",
-      "count": 8
+      "name": "运营商专线",
+      "count": 7
     },
     {
       "name": "环保工程",
@@ -262,10 +270,6 @@
     {
       "name": "居住用房",
       "count": 7
-    },
-    {
-      "name": "运营商专线",
-      "count": 6
     },
     {
       "name": "公共设施管理",
@@ -292,6 +296,14 @@
       "count": 5
     },
     {
+      "name": "技术测试和分析",
+      "count": 5
+    },
+    {
+      "name": "医疗卫生服务",
+      "count": 5
+    },
+    {
       "name": "办公设备",
       "count": 5
     },
@@ -308,6 +320,10 @@
       "count": 4
     },
     {
+      "name": "湖南移网",
+      "count": 4
+    },
+    {
       "name": "其他智慧城市项目",
       "count": 4
     },
@@ -316,11 +332,7 @@
       "count": 4
     },
     {
-      "name": "技术测试和分析",
-      "count": 4
-    },
-    {
-      "name": "医疗卫生服务",
+      "name": "广电双线",
       "count": 4
     },
     {
@@ -340,11 +352,11 @@
       "count": 3
     },
     {
-      "name": "湖南移网",
+      "name": "消防工程",
       "count": 3
     },
     {
-      "name": "消防工程",
+      "name": "湖南双线",
       "count": 3
     },
     {
@@ -361,10 +373,6 @@
     },
     {
       "name": "广告服务",
-      "count": 3
-    },
-    {
-      "name": "广电双线",
       "count": 3
     },
     {
@@ -404,15 +412,15 @@
       "count": 3
     },
     {
+      "name": "社会管理咨询",
+      "count": 3
+    },
+    {
       "name": "运营商智算",
       "count": 2
     },
     {
       "name": "安全服务",
-      "count": 2
-    },
-    {
-      "name": "湖南双线",
       "count": 2
     },
     {
@@ -452,10 +460,6 @@
       "count": 2
     },
     {
-      "name": "社会管理咨询",
-      "count": 2
-    },
-    {
       "name": "银行服务",
       "count": 2
     },
@@ -465,6 +469,10 @@
     },
     {
       "name": "铁路工程",
+      "count": 2
+    },
+    {
+      "name": "公共卫生",
       "count": 2
     },
     {
@@ -560,10 +568,6 @@
       "count": 1
     },
     {
-      "name": "公共卫生",
-      "count": 1
-    },
-    {
       "name": "电力设备",
       "count": 1
     },
@@ -583,7 +587,7 @@
     },
     {
       "bucket": "100万以下",
-      "count": 115
+      "count": 117
     },
     {
       "bucket": "100-500万",
@@ -591,7 +595,7 @@
     },
     {
       "bucket": "500-1000万",
-      "count": 9
+      "count": 10
     },
     {
       "bucket": "1000-5000万",
@@ -650,8 +654,8 @@
       "title": "[中国南方电网]贵州电力建设监理咨询有限责任公司数字监理 信息系统 App端原生鸿蒙第三方测试（安全、性能、功能）服务零星采购公告",
       "stars": 5,
       "firstSeenAt": "2026-08-08",
-      "lastSeenAt": "2026-08-08",
-      "seenCount": 2,
+      "lastSeenAt": "2026-08-09",
+      "seenCount": 3,
       "moneyWan": 3.9,
       "city": "贵阳市",
       "buyer": "贵州电力建设监理咨询有限责任公司",
@@ -663,8 +667,8 @@
       "title": "贵州银行应用 软件开发 服务采购项目（财务系统）招标公告(采购公告)",
       "stars": 5,
       "firstSeenAt": "2026-08-04",
-      "lastSeenAt": "2026-08-08",
-      "seenCount": 5,
+      "lastSeenAt": "2026-08-09",
+      "seenCount": 6,
       "moneyWan": 999,
       "city": "贵阳市",
       "buyer": "贵州银行股份有限公司",
@@ -689,8 +693,8 @@
       "title": "2026年中国电信贵州公司县域公立医院黔医AI智慧管理中台协议级项目 软件开发 服务采购招标公告",
       "stars": 5,
       "firstSeenAt": "2026-08-01",
-      "lastSeenAt": "2026-08-08",
-      "seenCount": 10,
+      "lastSeenAt": "2026-08-09",
+      "seenCount": 11,
       "moneyWan": 317.23,
       "city": "贵阳市",
       "buyer": "中国电信股份有限公司贵州分公司",
