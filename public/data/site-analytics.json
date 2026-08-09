@@ -1,34 +1,27 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "source": "51la OpenAPI",
-  "generatedAt": "2026-08-08T04:18:00.508Z",
+  "generatedAt": "2026-08-09T01:30:17.239Z",
   "range": {
-    "from": "2026-08-01",
-    "to": "2026-08-07"
+    "from": "2026-08-02",
+    "to": "2026-08-08"
   },
+  "coveredTo": "2026-08-08",
   "totals": {
-    "uv": 7,
-    "pv": 55,
-    "ip": 9,
-    "sv": 10,
+    "uv": 6,
+    "pv": 50,
+    "ip": 7,
+    "sv": 9,
     "newUserCount": 3
   },
   "trend": [
     {
-      "time": "2026-08-01",
-      "uv": 2,
-      "pv": 16,
-      "ip": 2,
-      "sv": 3,
-      "newUserCount": 1
-    },
-    {
       "time": "2026-08-02",
       "uv": 1,
       "pv": 11,
-      "ip": 3,
+      "ip": 2,
       "sv": 2,
-      "newUserCount": 1
+      "newUserCount": 2
     },
     {
       "time": "2026-08-03",
@@ -41,7 +34,7 @@
     {
       "time": "2026-08-04",
       "uv": 1,
-      "pv": 10,
+      "pv": 11,
       "ip": 1,
       "sv": 2,
       "newUserCount": 0
@@ -69,15 +62,123 @@
       "ip": 0,
       "sv": 0,
       "newUserCount": 0
+    },
+    {
+      "time": "2026-08-08",
+      "uv": 1,
+      "pv": 10,
+      "ip": 1,
+      "sv": 2,
+      "newUserCount": 0
     }
   ],
   "regions": [
     {
       "region": "贵州省-贵阳市",
-      "sessions": 10,
-      "pv": 56,
-      "newVisitors": 4
+      "sessions": 9,
+      "pv": 50,
+      "newVisitors": 3
     }
   ],
-  "detailSessions": 10
+  "detailSessions": 9,
+  "daily": [
+    {
+      "date": "2026-08-02",
+      "uv": 1,
+      "ip": 2,
+      "sv": 2,
+      "pv": 11,
+      "newUserCount": 2,
+      "regions": [
+        {
+          "region": "贵州省-贵阳市",
+          "sessions": 2,
+          "pv": 11,
+          "newVisitors": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "uv": 2,
+      "ip": 2,
+      "sv": 2,
+      "pv": 17,
+      "newUserCount": 1,
+      "regions": [
+        {
+          "region": "贵州省-贵阳市",
+          "sessions": 2,
+          "pv": 17,
+          "newVisitors": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "uv": 1,
+      "ip": 1,
+      "sv": 2,
+      "pv": 11,
+      "newUserCount": 0,
+      "regions": [
+        {
+          "region": "贵州省-贵阳市",
+          "sessions": 2,
+          "pv": 11,
+          "newVisitors": 0
+        }
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "uv": 1,
+      "ip": 1,
+      "sv": 1,
+      "pv": 1,
+      "newUserCount": 0,
+      "regions": [
+        {
+          "region": "贵州省-贵阳市",
+          "sessions": 1,
+          "pv": 1,
+          "newVisitors": 0
+        }
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "uv": 0,
+      "ip": 0,
+      "sv": 0,
+      "pv": 0,
+      "newUserCount": 0,
+      "regions": []
+    },
+    {
+      "date": "2026-08-07",
+      "uv": 0,
+      "ip": 0,
+      "sv": 0,
+      "pv": 0,
+      "newUserCount": 0,
+      "regions": []
+    },
+    {
+      "date": "2026-08-08",
+      "uv": 1,
+      "ip": 1,
+      "sv": 2,
+      "pv": 10,
+      "newUserCount": 0,
+      "regions": [
+        {
+          "region": "贵州省-贵阳市",
+          "sessions": 2,
+          "pv": 10,
+          "newVisitors": 0
+        }
+      ]
+    }
+  ]
 }

@@ -17,6 +17,17 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.34",
+    date: "2026-08-09",
+    title: "访问分析同步改增量版，API 消耗降到 ≈1 次/天",
+    summary:
+      "analytics:sync 重构：JSON 内保存按天聚合历史（schema v2），每次只补拉新日子——重复运行 0 消耗、漏跑自动补；砍掉 /trend/day 调用，UV/IP 改从访问明细 uuid/ip 去重聚合。稳态 ≈30 次/月（免费配额 100 次内），前端栏目无需改动。",
+    items: [
+      { tag: "优化", text: "增量同步：coveredTo 游标 + daily 历史库，重复运行 0 次 API 调用" },
+      { tag: "优化", text: "不再调趋势接口：UV/IP 从明细去重计算，每次同步省 1 次调用" },
+    ],
+  },
+  {
     version: "0.2.33",
     date: "2026-08-08",
     title: "工作周报新增「访问分析」栏目（51la OpenAPI）",
