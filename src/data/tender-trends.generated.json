@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-09T01:05:33.277Z",
+  "generatedAt": "2026-08-10T01:05:31.095Z",
   "historyFrom": "2026-08-01",
-  "dataAsOf": "2026-08-09",
+  "dataAsOf": "2026-08-10",
   "syncHealth": [
     {
       "date": "2026-08-01",
@@ -51,12 +51,16 @@
     {
       "date": "2026-08-09",
       "ok": true
+    },
+    {
+      "date": "2026-08-10",
+      "ok": true
     }
   ],
   "totals": {
-    "tracked": 233,
+    "tracked": 240,
     "active": 80,
-    "expired": 153
+    "expired": 160
   },
   "weekly": [
     {
@@ -73,16 +77,25 @@
       "from": "2026-08-03",
       "newCount": 153,
       "activeCount": 231,
-      "expiredCount": 151,
+      "expiredCount": 158,
       "fiveStarCount": 5,
       "totalMoneyWan": 65936.87000000002
+    },
+    {
+      "week": "2026-W33",
+      "from": "2026-08-10",
+      "newCount": 7,
+      "activeCount": 80,
+      "expiredCount": 0,
+      "fiveStarCount": 3,
+      "totalMoneyWan": 16274.86
     }
   ],
   "byCity": [
     {
       "name": "贵阳市",
-      "count": 132,
-      "moneyWan": 55189.07
+      "count": 136,
+      "moneyWan": 55575.15
     },
     {
       "name": "遵义市",
@@ -101,13 +114,13 @@
     },
     {
       "name": "六盘水市",
-      "count": 11,
+      "count": 12,
       "moneyWan": 514.19
     },
     {
       "name": "毕节市",
-      "count": 8,
-      "moneyWan": 3596.21
+      "count": 10,
+      "moneyWan": 3756.21
     },
     {
       "name": "黔西南布依族苗族自治州",
@@ -133,34 +146,38 @@
   "byProfession": [
     {
       "name": "运营商系统集成",
-      "count": 159
+      "count": 163
     },
     {
       "name": "系统集成",
-      "count": 124
+      "count": 127
     },
     {
       "name": "软件开发",
-      "count": 60
+      "count": 63
     },
     {
       "name": "其他",
-      "count": 52
+      "count": 53
     },
     {
       "name": "运营商大数据",
-      "count": 47
+      "count": 49
     },
     {
       "name": "运营商ITO运维",
-      "count": 37
+      "count": 41
     },
     {
       "name": "信息运维",
-      "count": 34
+      "count": 38
     },
     {
       "name": "事业单位用房",
+      "count": 33
+    },
+    {
+      "name": "数据处理",
       "count": 33
     },
     {
@@ -168,20 +185,16 @@
       "count": 32
     },
     {
-      "name": "数据处理",
-      "count": 32
-    },
-    {
       "name": "智慧教育",
-      "count": 29
+      "count": 30
     },
     {
       "name": "运营商云计算",
-      "count": 19
+      "count": 20
     },
     {
       "name": "云服务",
-      "count": 19
+      "count": 20
     },
     {
       "name": "网络工程",
@@ -276,6 +289,10 @@
       "count": 7
     },
     {
+      "name": "通信设备",
+      "count": 6
+    },
+    {
       "name": "公共设施管理",
       "count": 6
     },
@@ -286,10 +303,6 @@
     {
       "name": "教育设备",
       "count": 6
-    },
-    {
-      "name": "通信设备",
-      "count": 5
     },
     {
       "name": "智慧园区",
@@ -587,15 +600,15 @@
   "moneyBuckets": [
     {
       "bucket": "未披露",
-      "count": 43
+      "count": 45
     },
     {
       "bucket": "100万以下",
-      "count": 117
+      "count": 121
     },
     {
       "bucket": "100-500万",
-      "count": 54
+      "count": 55
     },
     {
       "bucket": "500-1000万",
@@ -617,7 +630,7 @@
     },
     {
       "buyer": "中国电信股份有限公司贵州分公司",
-      "count": 6
+      "count": 7
     },
     {
       "buyer": "贵州省人民医院",
@@ -658,8 +671,8 @@
       "title": "[中国南方电网]贵州电力建设监理咨询有限责任公司数字监理 信息系统 App端原生鸿蒙第三方测试（安全、性能、功能）服务零星采购公告",
       "stars": 5,
       "firstSeenAt": "2026-08-08",
-      "lastSeenAt": "2026-08-09",
-      "seenCount": 4,
+      "lastSeenAt": "2026-08-10",
+      "seenCount": 5,
       "moneyWan": 3.9,
       "city": "贵阳市",
       "buyer": "贵州电力建设监理咨询有限责任公司",
@@ -671,8 +684,8 @@
       "title": "贵州银行应用 软件开发 服务采购项目（财务系统）招标公告(采购公告)",
       "stars": 5,
       "firstSeenAt": "2026-08-04",
-      "lastSeenAt": "2026-08-09",
-      "seenCount": 7,
+      "lastSeenAt": "2026-08-10",
+      "seenCount": 8,
       "moneyWan": 999,
       "city": "贵阳市",
       "buyer": "贵州银行股份有限公司",
@@ -697,8 +710,8 @@
       "title": "2026年中国电信贵州公司县域公立医院黔医AI智慧管理中台协议级项目 软件开发 服务采购招标公告",
       "stars": 5,
       "firstSeenAt": "2026-08-01",
-      "lastSeenAt": "2026-08-09",
-      "seenCount": 12,
+      "lastSeenAt": "2026-08-10",
+      "seenCount": 13,
       "moneyWan": 317.23,
       "city": "贵阳市",
       "buyer": "中国电信股份有限公司贵州分公司",
