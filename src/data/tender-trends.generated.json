@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T01:05:33.232Z",
+  "generatedAt": "2026-08-11T01:06:11.392Z",
   "historyFrom": "2026-08-01",
   "dataAsOf": "2026-08-11",
   "syncHealth": [
@@ -58,6 +58,10 @@
     },
     {
       "date": "2026-08-10",
+      "ok": true
+    },
+    {
+      "date": "2026-08-11",
       "ok": true
     },
     {
@@ -749,7 +753,7 @@
       "stars": 5,
       "firstSeenAt": "2026-08-04",
       "lastSeenAt": "2026-08-11",
-      "seenCount": 10,
+      "seenCount": 11,
       "moneyWan": 999,
       "city": "贵阳市",
       "buyer": "贵州银行股份有限公司",
@@ -775,7 +779,7 @@
       "stars": 5,
       "firstSeenAt": "2026-08-01",
       "lastSeenAt": "2026-08-11",
-      "seenCount": 15,
+      "seenCount": 16,
       "moneyWan": 317.23,
       "city": "贵阳市",
       "buyer": "中国电信股份有限公司贵州分公司",
