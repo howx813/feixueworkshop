@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-08-12T01:05:30.204Z",
+  "syncedAt": "2026-08-12T01:05:31.136Z",
   "source": "public tender list + detail",
   "authenticated": true,
   "provinceCodes": [
@@ -72,7 +72,7 @@
       "qualSection": "（ 1 ） 具有相应的民事行为能力，具有独立承担民事义务的能力，提供三证合一后的营业执照及法人身份证。 （ 2 ） 具有良好的商业信誉和健全的财务会计制度，提供经合法审计机构出具 的近1年（即2025年） 度财务审计报告。成立不足一年的企业提供基本户开户银行出具的资信证明。 （ 3 ） 具有履行合同所必需的条件，如设备、专业技术能力，提供承诺，格式自拟。 （ 4 ） 具 有依法缴纳税收和社会保障资金的良好记录；提供 近1年任意 3个月依法缴纳税收和社会保障资金的证明材料 ， 依法免税或不需要缴纳社保的，须提供有效的证明材料 。 （ 5 ） 信用情况良好，在最近三年经营活动中，无行政处罚、严重失信、经营异常情况。在“信用中国”网站（www.creditchina.gov.cn）下载信用信息报告，报告生成时间为购买招标文件之日至开标前一天的任意时间，投标人须提供查询报告加盖公章，作为信用信息查询记录和证据编入",
       "qualHits": [],
       "deepAnalysis": {
-        "analyzedAt": "2026-08-12T01:05:28.704Z",
+        "analyzedAt": "2026-08-12T01:05:28.741Z",
         "summary": "匹配星级 5（综合分 81）；截止 2026-08-25；约 999 万元；与能力清单重合点较少，需人工看资格专章；未获取到可下载招标文件附件（可能仅有来源链接）。",
         "matchedStandards": [],
         "mustRequirements": [
@@ -226,7 +226,7 @@
       "qualSection": "",
       "qualHits": [],
       "deepAnalysis": {
-        "analyzedAt": "2026-08-12T01:05:28.959Z",
+        "analyzedAt": "2026-08-12T01:05:28.995Z",
         "summary": "匹配星级 4（综合分 72）；截止未从公告解析到；约 110 万元；与能力清单重合点较少，需人工看资格专章；已下载附件 1 个。",
         "matchedStandards": [],
         "mustRequirements": [
@@ -297,8 +297,8 @@
       "qualSection": "",
       "qualHits": [],
       "deepAnalysis": {
-        "analyzedAt": "2026-08-12T01:05:29.547Z",
-        "summary": "匹配星级 4（综合分 72）；截止 2026-08-13；预算约 11.8 万元；与能力清单重合点较少，需人工看资格专章；未获取到可下载招标文件附件（可能仅有来源链接）。",
+        "analyzedAt": "2026-08-12T01:05:30.424Z",
+        "summary": "匹配星级 4（综合分 72）；截止 2026-08-13；预算约 11.8 万元；与能力清单重合点较少，需人工看资格专章；已下载附件 4 个。",
         "matchedStandards": [],
         "mustRequirements": [],
         "mentionedInDoc": [],
@@ -306,26 +306,26 @@
         "files": [
           {
             "fileName": "附件1：信息系统网络安全等级保护测评服务参数.docx",
-            "size": 0,
-            "error": "fetch failed"
+            "size": 18951,
+            "error": null
           },
           {
             "fileName": "附件2：投标申请表.docx",
-            "size": 0,
-            "error": "fetch failed"
+            "size": 13913,
+            "error": null
           },
           {
             "fileName": "附件3：投标廉洁承诺书.doc",
-            "size": 0,
-            "error": "fetch failed"
+            "size": 16896,
+            "error": null
           },
           {
             "fileName": "<z>< 关于公开征集群众身边不正之风和腐败问题线索的公告</z>",
-            "size": 0,
-            "error": "fetch failed"
+            "size": 33235,
+            "error": null
           }
         ],
-        "hasLocalDocs": false
+        "hasLocalDocs": true
       }
     },
     {
@@ -385,7 +385,7 @@
       "qualSection": "",
       "qualHits": [],
       "deepAnalysis": {
-        "analyzedAt": "2026-08-12T01:05:29.215Z",
+        "analyzedAt": "2026-08-12T01:05:29.218Z",
         "summary": "匹配星级 4（综合分 72）；截止 2026-08-10；约 1.26 万元；与能力清单重合点较少，需人工看资格专章；已下载附件 1 个。",
         "matchedStandards": [],
         "mustRequirements": [],
@@ -628,7 +628,7 @@
       "qualSection": "",
       "qualHits": [],
       "deepAnalysis": {
-        "analyzedAt": "2026-08-12T01:05:30.201Z",
+        "analyzedAt": "2026-08-12T01:05:31.134Z",
         "summary": "匹配星级 4（综合分 68）；截止 2026-08-13；规模未披露；与能力清单重合点较少，需人工看资格专章；已下载附件 2 个。",
         "matchedStandards": [],
         "mustRequirements": [],
