@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
-# 安装 / 卸载 macOS 每日标讯 launchd（默认每天 09:05 本机同步 + commit + push）
+# 安装 / 卸载 macOS 每日标讯 launchd
+# 默认：每天 10:00 同步 + commit + push + deploy（线上自动更新）
 # 凭证读项目 .env.local（BXND_USERNAME / BXND_PASSWORD），不写进 plist。
+#
+# 用法:
+#   ./scripts/install-tenders-launchd.sh              # 10:00 + deploy
+#   ./scripts/install-tenders-launchd.sh install 10 0
+#   ./scripts/install-tenders-launchd.sh install 10 0 --no-deploy
+#   ./scripts/install-tenders-launchd.sh --uninstall
 
 set -euo pipefail
 
@@ -11,9 +18,29 @@ LOG_DIR="$ROOT/.logs"
 LOG_OUT="$LOG_DIR/tenders-daily.out.log"
 LOG_ERR="$LOG_DIR/tenders-daily.err.log"
 
-# 可选：第二个参数改点钟，默认 9 点 5 分
-HOUR="${2:-9}"
-MINUTE="${3:-5}"
+# 参数：install [HOUR] [MINUTE] [--no-deploy]
+HOUR="10"
+MINUTE="0"
+DO_DEPLOY=1
+ARGS=()
+for a in "$@"; do
+  case "$a" in
+    --uninstall) ARGS+=("$a") ;;
+    --no-deploy) DO_DEPLOY=0 ;;
+    install) ;;
+    *) ARGS+=("$a") ;;
+  esac
+done
+if [[ "${ARGS[0]:-}" == "--uninstall" ]]; then
+  :
+elif [[ "${#ARGS[@]}" -ge 1 && "${ARGS[0]}" =~ ^[0-9]+$ ]]; then
+  HOUR="${ARGS[0]}"
+  MINUTE="${ARGS[1]:-0}"
+elif [[ "${#ARGS[@]}" -ge 2 && "${ARGS[1]}" =~ ^[0-9]+$ ]]; then
+  # install 10 0
+  HOUR="${ARGS[0]}"
+  MINUTE="${ARGS[1]}"
+fi
 
 uninstall() {
   if launchctl print "gui/$(id -u)/${LABEL}" &>/dev/null; then
@@ -34,6 +61,11 @@ chmod +x "$ROOT/scripts/tenders-daily.sh"
 # 先卸载旧任务，再写 plist（避免写完又被 uninstall 删掉）
 uninstall 2>/dev/null || true
 
+DAILY_FLAGS="--commit --push"
+if [[ "$DO_DEPLOY" -eq 1 ]]; then
+  DAILY_FLAGS="--commit --push --deploy"
+fi
+
 # 用 login shell 加载 nvm/homebrew；工作目录固定仓库
 cat > "$PLIST" << EOF
 <?xml version="1.0" encoding="UTF-8"?>
@@ -48,7 +80,7 @@ cat > "$PLIST" << EOF
   <array>
     <string>/bin/zsh</string>
     <string>-lc</string>
-    <string>cd '${ROOT}' &amp;&amp; ./scripts/tenders-daily.sh --commit --push</string>
+    <string>cd '${ROOT}' &amp;&amp; ./scripts/tenders-daily.sh ${DAILY_FLAGS}</string>
   </array>
   <key>StartCalendarInterval</key>
   <dict>
@@ -80,10 +112,11 @@ launchctl enable "gui/$(id -u)/${LABEL}" 2>/dev/null || true
 
 echo "已安装 ${LABEL}"
 echo "  时间: 每天 ${HOUR}:$(printf '%02d' "$MINUTE")（本机时区）"
-echo "  动作: tenders:sync → commit → push"
+echo "  动作: tenders:sync → aggregate → commit → push${DO_DEPLOY:+ → deploy}"
 echo "  日志: ${LOG_OUT}"
 echo "  卸载: $0 --uninstall"
-echo ""
-echo "线上要看到新数据，还需在 push 后部署一次，或手动:"
-echo "  npm run deploy"
-echo "也可改 tenders-daily.sh 加 --deploy（会跑完整预检，更重）。"
+if [[ "$DO_DEPLOY" -eq 1 ]]; then
+  echo "  说明: 含完整 predeploy+deploy，约数分钟；本机需开机且 tcb 已登录"
+else
+  echo "  说明: 仅 push，线上需另跑 npm run deploy"
+fi
