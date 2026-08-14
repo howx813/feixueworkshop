@@ -14,13 +14,12 @@ import trendsData from "@/data/tender-trends.generated.json";
 
 export const metadata: Metadata = {
   title: "每日标讯",
-  description: `${site.name}每日标讯：软件 / 信息化类招标线索与关键字段摘要。`,
+  description: `${site.name}每日标讯：中电信人工智能 / 电信贵州 · 卡片化分类浏览。`,
 };
 
 const initial = tendersData as TendersFile;
 const trends = trendsData as TenderTrendsFile;
 
-/** 构建期从 data/agent-activity.jsonl 末尾读最新一条（首屏；运行时热刷补齐） */
 function latestActivity(): AgentActivityEntry | null {
   try {
     const file = path.join(process.cwd(), "data", "agent-activity.jsonl");
@@ -29,63 +28,59 @@ function latestActivity(): AgentActivityEntry | null {
       try {
         return JSON.parse(lines[i]) as AgentActivityEntry;
       } catch {
-        // 坏行跳过，继续往前找
+        // skip
       }
     }
   } catch {
-    // 文件不存在等：返回 null，组件显示空态
+    // empty
   }
   return null;
 }
 
 export default function TendersPage() {
   return (
-    <div className="page">
+    <div className="page tenders-page">
       <p className="page-kicker">Daily Bids</p>
       <h1 className="page-title">每日标讯</h1>
-      <p className="page-desc">
-        静态站点 + 定时快照：贵州软件/信息化类招标 +{" "}
-        <strong>中电信人工智能科技有限公司（全国）</strong>
-        专项。默认视图看中电信人工智能，并附中标公示分析（中标人榜、金额、主题）；可切换「全部 /
-        电信贵州·数智」。按匹配星级排序；展示截止、规模、文件费与资格摘录。5
-        星项目会尝试深挖公开招标附件。
+      <p className="page-desc tenders-page-desc">
+        卡片浏览 · 按主体与阶段聚焦。默认中电信人工智能在投招采；中标结果含聚合分析。
       </p>
 
       <AgentPulse initial={latestActivity()} />
 
-      <TenderTrends initial={trends} />
+      <details className="tenders-fold">
+        <summary>标讯趋势（历史跟踪）</summary>
+        <div className="tenders-fold-body">
+          <TenderTrends initial={trends} />
+        </div>
+      </details>
 
       <TenderBoard initial={initial} />
 
-      <div className="card-quiet card-pad" style={{ marginTop: 28 }}>
-        <h2 className="section-title" style={{ marginTop: 0 }}>
-          匹配用公开标准关键词（参考）
-        </h2>
-        <p className="item-body">
-          下列为行业常见公开资质/标准名称，仅作关键词匹配提示，不代表任何主体持证情况，也不构成投标承诺。
-        </p>
-        <div className="list-stack" style={{ marginTop: 14 }}>
-          {softwareQuals.map((q) => (
-            <div
-              key={q.id}
-              className="meta-row"
-              style={{ alignItems: "flex-start" }}
-            >
-              <span className="chip">{q.domain}</span>
-              <span style={{ flex: 1 }}>
-                <strong style={{ fontWeight: 650 }}>{q.name}</strong>
-                <span style={{ opacity: 0.75 }}> — {q.useCase}</span>
-              </span>
-            </div>
-          ))}
+      <details className="tenders-fold" style={{ marginTop: 24 }}>
+        <summary>匹配用公开标准关键词（参考）</summary>
+        <div className="tenders-fold-body card-quiet card-pad">
+          <p className="item-body" style={{ marginTop: 0 }}>
+            行业常见公开资质/标准名称，仅作关键词提示，不代表持证情况。
+          </p>
+          <div className="tender-qual-ref">
+            {softwareQuals.map((q) => (
+              <div key={q.id} className="tender-qual-ref-row">
+                <span className="chip">{q.domain}</span>
+                <span>
+                  <strong style={{ fontWeight: 650 }}>{q.name}</strong>
+                  <span style={{ opacity: 0.7 }}> — {q.useCase}</span>
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div
-          style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 18 }}
-        >
-          <Link href="/" className="btn btn-ghost">
-            返回首页
-          </Link>
-        </div>
+      </details>
+
+      <div style={{ marginTop: 18 }}>
+        <Link href="/" className="btn btn-ghost">
+          返回首页
+        </Link>
       </div>
     </div>
   );
