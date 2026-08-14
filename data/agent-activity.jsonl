@@ -24,3 +24,5 @@
 {"ts":"2026-08-14T08:45:14.913Z","agent":"tenders-sync","ok":true,"newCount":10,"activeCount":80,"artifacts":["data/tenders-history/2026-08.jsonl","public/data/tenders.json"],"note":""}
 {"ts":"2026-08-14T08:51:28.797Z","agent":"tenders-sync","ok":true,"newCount":1,"activeCount":80,"artifacts":["data/tenders-history/2026-08.jsonl","public/data/tenders.json"],"note":""}
 {"ts":"2026-08-14T09:01:05.235Z","agent":"tenders-sync","ok":true,"newCount":30,"activeCount":100,"artifacts":["data/tenders-history/2026-08.jsonl","public/data/tenders.json"],"note":""}
+{"ts":"2026-08-14T09:16:39.574Z","agent":"tenders-sync","ok":true,"newCount":2,"activeCount":100,"artifacts":["data/tenders-history/2026-08.jsonl","public/data/tenders.json"],"note":""}
+{"ts":"2026-08-14T09:17:48.543Z","agent":"tenders-sync","ok":true,"newCount":0,"activeCount":100,"artifacts":["data/tenders-history/2026-08.jsonl","public/data/tenders.json"],"note":""}

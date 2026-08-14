@@ -398,6 +398,18 @@ function extractKeyFields(plain, listItem = {}, detail = {}) {
     }
   }
 
+  const award = extractAwardFields(text, listItem, detail);
+  // 中标/结果公示：金额优先取中标价；招标控制价作备用
+  if (award.awardMoneyWan > 0) {
+    if (!moneyWan || moneyWan <= 0) moneyWan = award.awardMoneyWan;
+    if (!scaleText || scaleText === "规模未披露") {
+      scaleText =
+        award.awardMoneyWan >= 10000
+          ? `中标约 ${(award.awardMoneyWan / 10000).toFixed(2)} 亿元`
+          : `中标约 ${award.awardMoneyWan.toFixed(award.awardMoneyWan >= 100 ? 0 : 2)} 万元`;
+    }
+  }
+
   return {
     bidDeadline: bidDeadline || "",
     fileGetDeadline: fileGetDeadline || "",
@@ -408,6 +420,135 @@ function extractKeyFields(plain, listItem = {}, detail = {}) {
     bondText,
     qualSection,
     qualHits: qualHits.slice(0, 12),
+    winner: award.winner,
+    awardMoneyWan: award.awardMoneyWan,
+    candidates: award.candidates,
+    awardNoticeKind: award.awardNoticeKind,
+  };
+}
+
+/**
+ * 中标/成交公示字段：中标人、金额、候选人、公示类型。
+ * 列表 zhongBiaoMoney 多为万元；详情多为元（≥1000 按元换算）。
+ */
+function extractAwardFields(plain, listItem = {}, detail = {}) {
+  const text = plain || "";
+  const title = stripHtml(listItem.name || detail.name || "");
+
+  let awardNoticeKind = "";
+  if (/中标候选人/.test(title + text.slice(0, 80))) awardNoticeKind = "中标候选人公示";
+  else if (/成交候选人/.test(title + text.slice(0, 80)))
+    awardNoticeKind = "成交候选人公示";
+  else if (/直接采购/.test(title)) awardNoticeKind = "直接采购公示";
+  else if (/询比结果|结果公示/.test(title)) awardNoticeKind = "询比/结果公示";
+  else if (/中标|成交/.test(listItem.tenderType || "") || /中标|成交/.test(title))
+    awardNoticeKind = "中标/结果公示";
+
+  let winner = stripHtml(
+    detail.zhongBiao ||
+      listItem.zhongBiao ||
+      detail.zhongBiaoShow ||
+      listItem.zhongBiaoShow ||
+      "",
+  ).trim();
+
+  // 正文兜底：第一中标/成交候选人、成交供应商
+  if (!winner) {
+    const m =
+      text.match(
+        /第一(?:中标|成交)候选人[^。]{0,40}?单位名称[：:]\s*([^\s（(，,。；;]{4,80}?(?:公司|院|中心|大学|所))/,
+      ) ||
+      text.match(
+        /成交供应商名称\s*[：:]?\s*([^\s\d][^\n]{2,60}?(?:公司|院|中心))/,
+      ) ||
+      text.match(
+        /(?:中标|成交)(?:候选)?人[：:]\s*([^\s（(，,。；;]{4,80}?(?:公司|院|中心))/,
+      );
+    if (m) winner = m[1].trim();
+  }
+
+  const toWan = (raw, preferYuan) => {
+    const n = Number(raw) || 0;
+    if (!n) return 0;
+    if (preferYuan && n >= 1000) return n / 10000;
+    // 列表偶发直接给元
+    if (!preferYuan && n >= 100000) return n / 10000;
+    return n;
+  };
+
+  let awardMoneyWan = 0;
+  const detailAward = Number(detail.zhongBiaoMoney || 0) || 0;
+  const listAward = Number(listItem.zhongBiaoMoney || 0) || 0;
+  if (detailAward > 0) {
+    awardMoneyWan = toWan(detailAward, true);
+  } else if (listAward > 0) {
+    awardMoneyWan = toWan(listAward, false);
+  }
+  if (!awardMoneyWan) {
+    const quoteM = text.match(
+      /(?:投标报价|响应报价|中标金额|成交金额)\s*[：:为]?\s*([0-9]+(?:,[0-9]{3})*(?:\.[0-9]+)?)\s*元/,
+    );
+    if (quoteM) {
+      awardMoneyWan = Number(quoteM[1].replace(/,/g, "")) / 10000;
+    }
+  }
+
+  /** @type {{ rank: number, name: string, moneyWan: number }[]} */
+  const candidates = [];
+  const rankMap = {
+    一: 1,
+    二: 2,
+    三: 3,
+    四: 4,
+    五: 5,
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+  };
+  // 分段：第X中标/成交候选人 … 单位名称：… 报价：…元
+  const candBlockRe =
+    /第([一二三四五六七八九十1-9])(?:中标|成交)候选人([\s\S]{0,280}?)(?=第[一二三四五六七八九十1-9](?:中标|成交)候选人|（二）|二[、.．]|公示期|$)/g;
+  let cm;
+  while ((cm = candBlockRe.exec(text)) !== null) {
+    const rank = rankMap[cm[1]] || candidates.length + 1;
+    const block = cm[2] || "";
+    const nameM = block.match(
+      /单位名称\s*[：:]\s*([^\s（(，,。；;\d][^（(，,。；;\n]{2,70}?(?:公司|院|中心|大学|所|集团))/,
+    );
+    const moneyM = block.match(
+      /(?:投标报价|响应报价)\s*[：:为]?\s*([0-9]+(?:,[0-9]{3})*(?:\.[0-9]+)?)\s*元/,
+    );
+    const name = (nameM?.[1] || "").trim();
+    const moneyWan = moneyM
+      ? Number(moneyM[1].replace(/,/g, "")) / 10000
+      : 0;
+    if (name && !candidates.some((c) => c.name === name)) {
+      candidates.push({
+        rank,
+        name,
+        moneyWan: Number(moneyWan.toFixed(4)) || 0,
+      });
+    }
+  }
+  if (!winner && candidates[0]) winner = candidates[0].name;
+  if (!awardMoneyWan && candidates[0]?.moneyWan) {
+    awardMoneyWan = candidates[0].moneyWan;
+  }
+  if (winner && !candidates.some((c) => c.name === winner)) {
+    candidates.unshift({
+      rank: 1,
+      name: winner,
+      moneyWan: Number(awardMoneyWan.toFixed(4)) || 0,
+    });
+  }
+
+  return {
+    winner: winner || "",
+    awardMoneyWan: Number(awardMoneyWan.toFixed(4)) || 0,
+    candidates: candidates.slice(0, 5),
+    awardNoticeKind,
   };
 }
 
@@ -1042,7 +1183,11 @@ for (const it of ordered) {
   }
 
   const tenderType = it.tenderType || "";
-  const money = keys.moneyWan || Number(it.zhaoBiaoMoney || 0) || 0;
+  const money =
+    keys.moneyWan ||
+    keys.awardMoneyWan ||
+    Number(it.zhaoBiaoMoney || 0) ||
+    0;
   const buyerName = stripHtml(
     it.zhaoBiao || it.customerName || detail?.zhaoBiao || "",
   );
@@ -1103,6 +1248,10 @@ for (const it of ordered) {
     bondText: keys.bondText,
     qualSection: keys.qualSection,
     qualHits: keys.qualHits,
+    winner: keys.winner || "",
+    awardMoneyWan: keys.awardMoneyWan || 0,
+    candidates: keys.candidates || [],
+    awardNoticeKind: keys.awardNoticeKind || "",
     _detail: detail,
     _keys: keys,
   });

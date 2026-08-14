@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-08-14T09:01:05.221Z",
+  "syncedAt": "2026-08-14T09:17:48.532Z",
   "source": "public tender list + detail",
   "authenticated": true,
   "provinceCodes": [
@@ -8,7 +8,7 @@
   "since": "2026-07-31",
   "queryCount": 21,
   "rawCount": 240,
-  "softwareCount": 208,
+  "softwareCount": 207,
   "matchedCount": 100,
   "fiveStarCount": 2,
   "ctaAiCount": 30,
@@ -16,79 +16,6 @@
   "deepAnalyzed": 5,
   "note": "匹配星级综合「软件相关度 / 公开标准关键词 / 在投状态 / 规模 / 截止信息」。含全国检索「中电信人工智能科技」专项。5 星会尝试下载公开附件并做资格摘录。不等于可中标判断。账号密码勿入库。",
   "items": [
-    {
-      "id": "70318951163348",
-      "title": "中电信人工智能 公司某地视频AI应用项目视图库服务采购项目（第二次招标）招标公告",
-      "tenderType": "招采",
-      "date": "2026-08-13",
-      "publishTime": "2026-08-13 19:28:25",
-      "province": "北京市",
-      "city": "北京市",
-      "buyer": "中电信人工智能科技（北京）有限公司",
-      "moneyWan": 288,
-      "professions": [
-        "系统集成",
-        "运营商大数据",
-        "运营商系统集成",
-        "运营商云计算",
-        "云服务"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "itss3",
-          "name": "ITSS",
-          "domain": "运维"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        },
-        {
-          "id": "vas",
-          "name": "增值电信业务许可",
-          "domain": "通用"
-        }
-      ],
-      "score": 135,
-      "stars": 3,
-      "starScore": 100,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模适中（约 288 万）",
-        "投标截止：2026-09-04 09:00:00",
-        "不收取文件费",
-        "重点采购主体相关"
-      ],
-      "focusTags": [
-        "cta-ai"
-      ],
-      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=185598604714043&type=1&docTypeCode=TenderAnnouncement&securityViewCode=081fbacc302d9dfedb562fb7b3f62c67",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70318951163348",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-09-04 09:00:00",
-      "fileGetDeadline": "",
-      "scaleText": "约 288 万元",
-      "docFeeRequired": false,
-      "docFeeText": "不收取文件费用",
-      "bondText": "",
-      "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 的 成熟稳定的产品 （本项目不涉及） 。 2.4 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年08月14日 00时00分00秒 至 2026年08月19日 00时00分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6. 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
-      "qualHits": []
-    },
     {
       "id": "70312811810068",
       "title": "中电信人工智能科技 （北京）有限公司2026年C端产品质量测试服务采购项目第二次询比公告",
@@ -150,7 +77,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70279515514256",
@@ -213,7 +144,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70262910163977",
@@ -290,7 +225,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70261435783628",
@@ -347,7 +286,150 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70247594598156",
+      "title": "中电信人工智能科技（北京）有限公司 2026年监控调度与变更操作专区建设工程询比文件",
+      "tenderType": "招采",
+      "date": "2026-07-31",
+      "publishTime": "2026-07-31 22:03:07",
+      "province": "北京市",
+      "city": "市辖区",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 220.7462,
+      "professions": [
+        "事业单位用房",
+        "运营商视频监控",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化",
+          "domain": "集成"
+        }
+      ],
+      "score": 135,
+      "stars": 3,
+      "starScore": 100,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "硬门槛标准命中：电子与智能化",
+        "规模适中（约 221 万）",
+        "投标截止：2026-08-10 09:00:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093824679260&type=3&docTypeCode=CompareSelect&securityViewCode=72fb1914be3e607db5edde93ada1a099",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70247594598156",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-08-10 09:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "中标约 221 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [
+        "电子与智能化工程专业承包二级及以上资"
+      ],
+      "winner": "中通服建设有限公司",
+      "awardMoneyWan": 220.7462,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "中通服建设有限公司",
+          "moneyWan": 220.7462
+        }
+      ],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70318951163348",
+      "title": "中电信人工智能 公司某地视频AI应用项目视图库服务采购项目（第二次招标）招标公告",
+      "tenderType": "招采",
+      "date": "2026-08-13",
+      "publishTime": "2026-08-13 19:28:25",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 288,
+      "professions": [
+        "系统集成",
+        "运营商大数据",
+        "运营商系统集成",
+        "运营商云计算",
+        "云服务"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务许可",
+          "domain": "通用"
+        }
+      ],
+      "score": 125,
+      "stars": 3,
+      "starScore": 97,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 288 万）",
+        "投标截止：2026-09-04",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70318951163348",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70318951163348",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-04",
+      "fileGetDeadline": "",
+      "scaleText": "约 288 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70279515741712",
@@ -409,7 +491,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70269121302668",
@@ -480,70 +566,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
-    },
-    {
-      "id": "70247594598156",
-      "title": "中电信人工智能科技（北京）有限公司 2026年监控调度与变更操作专区建设工程询比文件",
-      "tenderType": "招采",
-      "date": "2026-07-31",
-      "publishTime": "2026-07-31 22:03:07",
-      "province": "北京市",
-      "city": "市辖区",
-      "buyer": "中电信人工智能科技（北京）有限公司",
-      "moneyWan": 0,
-      "professions": [
-        "事业单位用房",
-        "运营商视频监控",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        },
-        {
-          "id": "ei-1",
-          "name": "电子与智能化",
-          "domain": "集成"
-        }
-      ],
-      "score": 119,
-      "stars": 3,
-      "starScore": 92,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "硬门槛标准命中：电子与智能化",
-        "投标截止：2026-08-10 09:00:00",
-        "不收取文件费",
-        "重点采购主体相关",
-        "证书级重合：电子与智能化"
-      ],
-      "focusTags": [
-        "cta-ai"
-      ],
-      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093824679260&type=3&docTypeCode=CompareSelect&securityViewCode=72fb1914be3e607db5edde93ada1a099",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70247594598156",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-08-10 09:00:00",
-      "fileGetDeadline": "",
-      "scaleText": "规模未披露",
-      "docFeeRequired": false,
-      "docFeeText": "不收取文件费用",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [
-        "电子与智能化工程专业承包二级及以上资"
-      ]
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70280817608148",
@@ -598,7 +625,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70307182601932",
@@ -672,7 +703,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 或是与中华人民共和国有正常贸易与往来的国家或地区 的 成熟稳定的产品。（ 本项目不涉及 ） 。 2.3. 2 投标产品所涉知识产权应保证不存在权利瑕疵，不侵害第三方专利权、商标权、著作权或其他任何形式的合法权益，并提供《知识产权不侵权承诺函》 。 2.3.7 投标产品 业绩要求： 。 2. 4 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年08月12日 09时00分00秒 至 2026年08月17日 17时30分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70307177830596",
@@ -735,7 +770,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 或是与中华人民共和国有正常贸易与往来的国家或地区 的 成熟稳定的产品。（本项目不涉及） 。 2.3.2 投标产品所涉知识产权应保证不存在权利瑕疵，不侵害第三方专利权、商标权、著作权或其他任何形式的合法权益，并提供《知识产权不侵权承诺函》 。 2.4 法律法规规定的其他要求。 3. 资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4. 招标文件的获取 4.1 招标文件获取时间 : 2026年08月12日 09时00分00秒 至 2026年08月17日 17时30分00秒 （北京时间，下同）。 4.2 招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1 登录“中国电信阳光采购网（ https://caigou.chinatelecom.com.cn ）”后，通过“招投标 - 采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册”。 4.3 招标文件费用： 获取本招标文件不收取费用。 5.",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70307171991236",
@@ -806,7 +845,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 或是与中华人民共和国有正常贸易与往来的国家或地区 的 成熟稳定的产品。（ 本项目不涉及 ） 。 2.3. 2 投标产品所涉知识产权应保证不存在权利瑕疵，不侵害第三方专利权、商标权、著作权或其他任何形式的合法权益，并提供《知识产权不侵权承诺函》 。 2.3.7 投标产品 业绩要求： 。 2. 4 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年08月12日 09时00分00秒 至 2026年08月17日 17时30分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70307185238028",
@@ -860,7 +903,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 或是与中华人民共和国有正常贸易与往来的国家或地区 的 成熟稳定的产品。（ 本项目不涉及 ） 。 2.3. 2 投标产品所涉知识产权应保证不存在权利瑕疵，不侵害第三方专利权、商标权、著作权或其他任何形式的合法权益，并提供《知识产权不侵权承诺函》 。 2.3.7 投标产品 业绩要求： 。 2. 4 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年08月12日 09时00分00秒 至 2026年08月17日 17时30分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70307830573128",
@@ -909,7 +956,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70302909633808",
@@ -952,7 +1003,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 或是与中华人民共和国有正常贸易与往来的国家或地区 的 成熟稳定的产品 。 2.4 法律法规规定的其他要求。 3. 资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4. 招标文件的获取 4.1 招标文件获取时间 : 2026年08月11日 09时00分00秒 至 2026年08月17日 17时00分00秒 （北京时间，下同）。 4.2 招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1 登录“中国电信阳光采购网（ https://caigou.chinatelecom.com.cn ）”后，通过“招投标 - 采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册 ” 。 4.3 招标文件费用： 获取本招标文件不收取费用。 5.",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70286302957260",
@@ -998,7 +1053,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70316749365132",
@@ -1058,7 +1117,83 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "蜜度科技股份有限公司",
+      "awardMoneyWan": 279.95,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "蜜度科技股份有限公司",
+          "moneyWan": 279.9511
+        }
+      ],
+      "awardNoticeKind": "中标候选人公示"
+    },
+    {
+      "id": "70317261786008",
+      "title": "中电信人工智能科技 （北京）有限公司2026年监控调度与变更操作专区建设工程成交候选人公示",
+      "tenderType": "中标",
+      "date": "2026-08-13",
+      "publishTime": "2026-08-13 12:18:21",
+      "province": "北京市",
+      "city": "市辖区",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 220.75,
+      "professions": [
+        "事业单位用房",
+        "系统集成",
+        "运营商大数据",
+        "运营商视频监控",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 90,
+      "stars": 2,
+      "starScore": 42,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 221 万）",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70317261786008",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70317261786008",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "中标约 221 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "中通服建设有限公司",
+      "awardMoneyWan": 220.75,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "中通服建设有限公司",
+          "moneyWan": 220.7462
+        }
+      ],
+      "awardNoticeKind": "成交候选人公示"
     },
     {
       "id": "70305674905936",
@@ -1118,7 +1253,17 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "北京恒远创智信息技术有限公司",
+      "awardMoneyWan": 405.95,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "北京恒远创智信息技术有限公司",
+          "moneyWan": 405.9546
+        }
+      ],
+      "awardNoticeKind": "中标候选人公示"
     },
     {
       "id": "70280820415192",
@@ -1177,7 +1322,17 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "浙江省公众信息产业有限公司",
+      "awardMoneyWan": 13.78,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "浙江省公众信息产业有限公司",
+          "moneyWan": 13.78
+        }
+      ],
+      "awardNoticeKind": "成交候选人公示"
     },
     {
       "id": "70262914088464",
@@ -1234,7 +1389,17 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "中国通信建设第一工程局有限公司",
+      "awardMoneyWan": 0,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "中国通信建设第一工程局有限公司",
+          "moneyWan": 0
+        }
+      ],
+      "awardNoticeKind": "询比/结果公示"
     },
     {
       "id": "70322263400080",
@@ -1288,7 +1453,17 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "北京天融信网络安全技术有限公司",
+      "awardMoneyWan": 0,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "北京天融信网络安全技术有限公司",
+          "moneyWan": 0
+        }
+      ],
+      "awardNoticeKind": "询比/结果公示"
     },
     {
       "id": "70317158875096",
@@ -1347,62 +1522,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
-    },
-    {
-      "id": "70317261786008",
-      "title": "中电信人工智能科技 （北京）有限公司2026年监控调度与变更操作专区建设工程成交候选人公示",
-      "tenderType": "中标",
-      "date": "2026-08-13",
-      "publishTime": "2026-08-13 12:18:21",
-      "province": "北京市",
-      "city": "市辖区",
-      "buyer": "中电信人工智能科技（北京）有限公司",
-      "moneyWan": 0,
-      "professions": [
-        "事业单位用房",
-        "系统集成",
-        "运营商大数据",
-        "运营商视频监控",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 74,
-      "stars": 1,
-      "starScore": 30,
-      "starReasons": [
-        "已结束或结果公示，参考价值低",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "重点采购主体相关"
-      ],
-      "focusTags": [
-        "cta-ai"
-      ],
-      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70317261786008",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70317261786008",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "规模未披露",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": "中标候选人公示"
     },
     {
       "id": "70316749245260",
@@ -1457,7 +1581,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": "询比/结果公示"
     },
     {
       "id": "70306126037060",
@@ -1516,7 +1644,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": "中标候选人公示"
     },
     {
       "id": "70314814971660",
@@ -1574,7 +1706,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": "成交候选人公示"
     },
     {
       "id": "70280820323160",
@@ -1616,7 +1752,17 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "中电信数智科技有限公司",
+      "awardMoneyWan": 55.76,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "中电信数智科技有限公司",
+          "moneyWan": 55.756
+        }
+      ],
+      "awardNoticeKind": "成交候选人公示"
     },
     {
       "id": "70267890097804",
@@ -1653,7 +1799,17 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "中广新型媒体研究院有限公司",
+      "awardMoneyWan": 0,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "中广新型媒体研究院有限公司",
+          "moneyWan": 0
+        }
+      ],
+      "awardNoticeKind": "直接采购公示"
     },
     {
       "id": "70313977404884",
@@ -1692,7 +1848,17 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "中数通信息有限公司",
+      "awardMoneyWan": 0,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "中数通信息有限公司",
+          "moneyWan": 0
+        }
+      ],
+      "awardNoticeKind": "直接采购公示"
     },
     {
       "id": "70314813747660",
@@ -1732,7 +1898,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": "成交候选人公示"
     },
     {
       "id": "70263523926872",
@@ -1792,8 +1962,12 @@
       "bondText": "",
       "qualSection": "（ 1 ） 具有相应的民事行为能力，具有独立承担民事义务的能力，提供三证合一后的营业执照及法人身份证。 （ 2 ） 具有良好的商业信誉和健全的财务会计制度，提供经合法审计机构出具 的近1年（即2025年） 度财务审计报告。成立不足一年的企业提供基本户开户银行出具的资信证明。 （ 3 ） 具有履行合同所必需的条件，如设备、专业技术能力，提供承诺，格式自拟。 （ 4 ） 具 有依法缴纳税收和社会保障资金的良好记录；提供 近1年任意 3个月依法缴纳税收和社会保障资金的证明材料 ， 依法免税或不需要缴纳社保的，须提供有效的证明材料 。 （ 5 ） 信用情况良好，在最近三年经营活动中，无行政处罚、严重失信、经营异常情况。在“信用中国”网站（www.creditchina.gov.cn）下载信用信息报告，报告生成时间为购买招标文件之日至开标前一天的任意时间，投标人须提供查询报告加盖公章，作为信用信息查询记录和证据编入",
       "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": "",
       "deepAnalysis": {
-        "analyzedAt": "2026-08-14T09:01:03.348Z",
+        "analyzedAt": "2026-08-14T09:17:46.999Z",
         "summary": "匹配星级 5（综合分 81）；截止 2026-08-25；约 999 万元；与能力清单重合点较少，需人工看资格专章；未获取到可下载招标文件附件（可能仅有来源链接）。",
         "matchedStandards": [],
         "mustRequirements": [
@@ -1865,8 +2039,12 @@
       "bondText": "",
       "qualSection": "1.具有独立承担民事责任的能力：提供法人或其他组织的营业执照等证明文件； 2.具有良好的商业信誉和健全的财务会计制度： 投标供应商提供由会计师事务所出具的 2024年度或2025年度财务审计报告，或2026年1月至投标截止时间内银行出具的资信证明 ； 3.具有履行合同所必需的设备和专业技术能力：提供具有履行合同所必需的设备和专业技术能力的证明材料或承诺函（承诺函格式自拟）； 4.具有依法缴纳税收和社会保障资金的良好记录： 提供 2026年1月至今任意一个月依法缴纳税收（非纳税组织或纳税零申报的投标供应商提供相关佐证证明材料）的证明材料和提供2026年1月至今任意一个月依法缴纳社会保障资金的证明材料；新成立不满三个月的投标供应商提供依法缴纳税收和社会保障金的书面承诺，如不需缴纳的，需出具有效的证明材料 ； 5.参加本次采购活动前三年内，在经营活动中没有违法违规记录：提供参加采购活动前3年内在经营活动中没有重大违法记录的书面声明（格式文件详见",
       "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": "",
       "deepAnalysis": {
-        "analyzedAt": "2026-08-14T09:01:03.348Z",
+        "analyzedAt": "2026-08-14T09:17:47.000Z",
         "summary": "匹配星级 5（综合分 73）；截止 2026-08-25；预算约 34.33 万元；与能力清单重合点较少，需人工看资格专章；未获取到可下载招标文件附件（可能仅有来源链接）。",
         "matchedStandards": [],
         "mustRequirements": [],
@@ -1957,7 +2135,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70295511705540",
@@ -2024,7 +2206,17 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "贵州恒创伟业科技有限公司",
+      "awardMoneyWan": 0,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "贵州恒创伟业科技有限公司",
+          "moneyWan": 0
+        }
+      ],
+      "awardNoticeKind": ""
     },
     {
       "id": "70313487588932",
@@ -2088,7 +2280,11 @@
       "docFeeText": "需购买，约 500 元/套",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70318115741648",
@@ -2141,8 +2337,12 @@
       "bondText": "",
       "qualSection": "",
       "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": "",
       "deepAnalysis": {
-        "analyzedAt": "2026-08-14T09:01:05.218Z",
+        "analyzedAt": "2026-08-14T09:17:48.529Z",
         "summary": "匹配星级 4（综合分 72）；截止未从公告解析到；约 155 万元；与能力清单重合点较少，需人工看资格专章；已下载附件 2 个。",
         "matchedStandards": [],
         "mustRequirements": [
@@ -2221,8 +2421,12 @@
       "bondText": "",
       "qualSection": ".....................................................................",
       "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": "",
       "deepAnalysis": {
-        "analyzedAt": "2026-08-14T09:01:04.082Z",
+        "analyzedAt": "2026-08-14T09:17:47.538Z",
         "summary": "匹配星级 4（综合分 72）；截止未从公告解析到；约 76.00 万元；与能力清单重合点较少，需人工看资格专章；已下载附件 1 个。",
         "matchedStandards": [],
         "mustRequirements": [
@@ -2294,7 +2498,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70312596252500",
@@ -2345,7 +2553,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70312596238484",
@@ -2397,7 +2609,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70308764094856",
@@ -2476,8 +2692,12 @@
       "bondText": "",
       "qualSection": "",
       "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": "",
       "deepAnalysis": {
-        "analyzedAt": "2026-08-14T09:01:04.303Z",
+        "analyzedAt": "2026-08-14T09:17:47.753Z",
         "summary": "匹配星级 4（综合分 72）；截止未从公告解析到；约 110 万元；与能力清单重合点较少，需人工看资格专章；已下载附件 1 个。",
         "matchedStandards": [],
         "mustRequirements": [
@@ -2554,7 +2774,11 @@
       "docFeeText": "需购买文件（金额见原文）",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70312596245460",
@@ -2606,7 +2830,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70306606111368",
@@ -2663,7 +2891,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70277367212232",
@@ -2720,7 +2952,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "1.投标人必须是在中华人民共和国境内注册并合法运作的法人或其他组织，经营范围须涵盖所投标内容。 2.存在关联关系的不同单位，不得响应同一个标段的采购活动。 3.处于国家、行业、我公司对采购标的物产品质量处罚或采购人取消招标资格处罚期内的供应商不允许参加该标的物的投标。 &#xa0; 4.投标人不存在被我公司及上级母公司列入黑名单，或与被列入黑名单的供应商法人存在独资或者以合资、入股、承包、租赁等形式参与经营等情况。 5.投标人不存在与我公司中层及以上领导人员和重要岗位人员本人（在职或已退休）及其配偶、子女及其配偶等亲属存在个人独资或者以合资、入股、承包、租赁等形式参与经营。 6.近三年内未在全国企业信用信息公示系统、“信用中国”等网站被列入严重违法失信企业名单或失信被执行人名单的证明材料（提供网站查询报告或网页截图）。 7.投标人应具备所招标标的物的生产（经营）及供货资质和能力。如危险化学品须具有国家行政机关颁发的特许生产或经营危险化学品的证书等。 8.联合体参加采购活动要求。 （1）本项目是否接受联合体单位参加： 【否】 。 （2）接受联合体单位参加的，联合体应满足上述第1条款规定的资格要求，此外联合体各方还应满足下列要求： &#xa0;&#xa0;&#xa0; / &#xa0;&#xa0;&#xa0;&#xa0; 。 9.其他要求： 本项目不接受挂靠、违法转包、分包）。 10.",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70281157435668",
@@ -2777,7 +3013,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70264550822220",
@@ -2834,7 +3074,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70302341580164",
@@ -2904,7 +3148,11 @@
       "docFeeText": "需购买文件（金额见原文）",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70305445120656",
@@ -2961,7 +3209,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70300594283592",
@@ -3030,7 +3282,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70274038146500",
@@ -3087,7 +3343,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70312773974860",
@@ -3154,7 +3414,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 的 成熟稳定的产品 。 2.3.2 （1）标产品应是来自中华人民共和国的成熟稳定的产品，提供承诺函（格式自拟）。 （2）投标产品应是来自中华人民共和国【或是与中华人民共和国有正常贸易与往来的国家或地区】的产品，提供承诺函（格式自拟）。 （3）投标产品所涉知识产权应保证不存在权利瑕疵，不侵害第三方专利权、商标权、著作权或其他任何形式的合法权益，并提供《知识产权不侵权承诺函》。 （4）投标人承诺：本项目所投全部列入 3C 目录产品均已取得有效 CCC 认证，交货验收时可完整提供对应证书原件核验，若承诺不实自愿承担投标无效、取消中标及全部违约责任。 。 2.3.5 。 2.4 投标产品制造商（集成商、软件开发商、软件著作权人等）资格要求 2.4.1 制造商应提供合法有效的登记（或注册）证明文件，应具有良好的银行资信和商业信誉。 2.4.5 2.7 法律法规规定的其他要求。 3. 资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4. 招标文件的获取 4.1 招标文件获取时间 : 2026年08月13日 09时00分00秒 至 2026年08月18日 09时00分00秒 （北京时间，下同）。 4.2 招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70269220822820",
@@ -3220,7 +3484,17 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "贵州汇通华城股份有限公司",
+      "awardMoneyWan": 35.4415,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "贵州汇通华城股份有限公司",
+          "moneyWan": 35.4415
+        }
+      ],
+      "awardNoticeKind": ""
     },
     {
       "id": "70318272406040",
@@ -3272,7 +3546,11 @@
       "docFeeText": "需购买文件（金额见原文）",
       "bondText": "",
       "qualSection": "： 1.供应商提供以下资料： （一）法人或者其他组织的营业执照等证明文件，自然人的身份证明； （二）财务状况报告，依法缴纳税收和社会保障资金的相关材料； （三）具备履行合同所必需的设备和专业技术能力的证明材料； （四）参加采购活动前 3年内在经营活动中没有重大违法记录的书面声明； （五）具备法律、行政法规规定的其他条件的证明材料。 2.本项目所需特殊行业资质或要求 ： 无 3 .本项目 不接受 联合体 谈判 4. 本项目 接受 分公司 谈判 注 :取得营业执照的 分公司 可参与本项目投标，但须提供其总公司出具的授权书（授权书格式自拟，需加盖总公司公章 。 （以上所需提交的具体资料详见初步审查表） 七 、 采购文件 获取时间及售价 ： 1 . 获取时间 ： 202 6 年 8 月 14日 至 202 6 年 8 月 20 日 2. 文件售价： 0元人民币（售后不退） 八 、 采购文件 获取方式： （ 1 ） 凡有意参加响应者，请登录贵阳市国企招采平台：（ https://www.ygzcfwy.net/#/）进行项目报名和下载电子采购文件（未在该采购平台注册过的响应供应商请先注册，注册后进行实名认证，认证通过后进行企业主体认证。通过企业认证后登录进行项目报名和下载电子采购文件，（点击登录入口-登入后进入 投标系统端口 - 项目列表 -采购项目 - 我要参与 ）。 （ 2 ）响应单位注",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70313397078868",
@@ -3330,7 +3608,77 @@
       "docFeeText": "需购买文件（金额见原文）",
       "bondText": "",
       "qualSection": "（1）具备独立承担民事责任能力的、在中华人民共和国境内注册的法人，具有有效的营业执照，并有良好信誉（提供营业执照复印件）； （2）提供2025年度经第三方审计的公司财务审计报告（包括审计报告、资产负债表、利润表、现金流量表及其附注，审计报告应盖有会计师事务所单位章和注册会计师的执业专用章，并附会计师事务所的营业执照及执业证书及2名签字注册会计师的有效执业证书）或2026年1月以后的基本账户开户银行出具的资信证明；成立不足一年的响应人可提供自成立以来的公司财务报表（扫描件并加盖响应人单位公章）。 （3）供应商、供应商法定代表人（2023年1月1日至响应截止时间）内无行贿记录；（须提供书面承诺书） （4）供应商须承诺：在“信用中国”网站、国家企业信用信息公示系统等渠道查询中未被列入严重失信主体名单、经营异常名录、严重违法失信名单中，如被列入严重失信主体名单、经营异常名录、严重违法失信名单中的供应商取消其响应资格，并承担由此造成的一切法律责任及后果。（按询比文件格式提供书面承诺并加盖供应商公章。） （5）供应商近三年内不曾在任何合同中违约、被逐或因供应商自身的原因而使任何合同被解除，近三年内没有与骗取合同有关以及其他经济方面的违法行为。（须提供书面承诺书） （6）具有履行合同所必需的人员、设备及专业技术能力；（须提供书面承诺书） （7）本次采购不接受联合体竞标。 （8）与采购人存在利害关",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70323856802772",
+      "title": "岑巩县农业农村局关于岑巩县国家级水稻制种大县水稻 智慧 制种管理平台体系升级建设（四次）的公开招标公告",
+      "tenderType": "招采",
+      "date": "2026-08-14",
+      "publishTime": "2026-08-14 16:57:00",
+      "province": "贵州省",
+      "city": "黔东南苗族侗族自治州",
+      "buyer": "岑巩县农业农村局",
+      "moneyWan": 508,
+      "professions": [
+        "智能化安装工程",
+        "软件开发",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化",
+          "domain": "集成"
+        }
+      ],
+      "score": 133,
+      "stars": 3,
+      "starScore": 72,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 508 万）",
+        "投标截止：2026-09-04"
+      ],
+      "focusTags": [],
+      "sourceUrl": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202608/t20260814_27136236.htm",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70323856802772",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-04",
+      "fileGetDeadline": "",
+      "scaleText": "约 508 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 标项1：申请人的资格要求 3.本项目的特定资格要求： 【标项1】 /",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70319873835160",
@@ -3383,7 +3731,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 无 3.本项目的特定资格要求： 【标项1】 无",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70312574722824",
@@ -3443,7 +3795,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 3.本项目的特定资格要求： 标项1：不允许联合投标，需满足如下的特定资格要求：无。",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70314278494992",
@@ -3498,7 +3854,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 3.本项目的特定资格要求： 标项1：不允许联合投标，需满足如下的特定资格要求：无。",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70278130475332",
@@ -3551,7 +3911,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "： 1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 无 3.本项目的特定资格要求： 【标项1】 无",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70270059140304",
@@ -3615,7 +3979,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 标项1:供应商为中小企业/小微企业、供应商为监狱企业、供应商为残疾人福利企业,标项2:供应商为中小企业/小微企业、供应商为监狱企业、供应商为残疾人福利企业 3.本项目的特定资格要求： 标项1：不允许联合投标，需满足如下政府采购政策需满足的资格要求：供应商为中小企业/小微企业、供应商为监狱企业、供应商为残疾人福利企业，需满足如下的特定资格要求：无;标项2：不允许联合投标，需满足如下政府采购政策需满足的资格要求：供应商为中小企业/小微企业、供应商为监狱企业、供应商为残疾人福利企业，需满足如下的特定资格要求：无。",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70262796689028",
@@ -3667,7 +4035,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 3.本项目的特定资格要求： 标项1：不允许联合投标。",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70246200943052",
@@ -3726,7 +4098,17 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "中国移动通信集团贵州有限公司遵义分公司",
+      "awardMoneyWan": 54,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "中国移动通信集团贵州有限公司遵义分公司",
+          "moneyWan": 54
+        }
+      ],
+      "awardNoticeKind": ""
     },
     {
       "id": "70316726766084",
@@ -3766,7 +4148,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "2.3.1 / 应是来自中华人民共和国 的 / 。 2. 4 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年08月13日 09时00分00秒 至 2026年08月18日 17时00分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 7 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70318852567972",
@@ -3821,7 +4207,11 @@
       "docFeeText": "需购买，约 300.00 元/套",
       "bondText": "",
       "qualSection": "： 2.1一般资格要求： ①具有独立承担民事责任的能力：提供合法有效的法人或其他组织的营业执照等证明文件； ②具有良好的商业信誉和健全的财务会计制度：提供2024年或2025年经审计的财务报表，或提供基本开户银行出具的资信证明，新成立的公司可提供公司自成立以来的财务报表证明材料； ③具有履行合同所必需的设备和专业技术能力：供应商自行提供承诺； ④具有依法缴纳税收和社会保障资金的良好记录：提供2026年1月至今任意三个月依法缴纳税收证明和缴纳社会保障资金的有效证明材料（依法免征、免缴、缓缴税收的应提供相关证明材料）； ⑤参加政府采购活动前三年内，在经营活动中没有重大违法记录：提供参加本次采购活动前3年内在经营活动中没有重大违法记录的书面声明； ⑥法律、行政法规规定的其他条件。供应商须承诺在“信用中国”网站、中国政府采购网（www.ccgp.gov.cn）等渠道查询中未被列入失信被执行人名单违法失信主体、政府采购严重违法失信行为记录名单中，如被列入失信被执行人、重大税收违法失信主体、政府采购严重违法失信行为记录名单中的供应商，若成交供应商被查出将取消其成交资格，并承担由此造成的一切法律责任及后果。具体要求：提供承诺书； 2.2项目负责人资格要求 ：项目负责人具有本科或以上学历，持有档案类初级及以上职称证书或者档案管理师证书或具有档案上岗证书或档案专业人员培训证书， 5年及以上类似档案整",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70311997962468",
@@ -3882,7 +4272,11 @@
       "docFeeText": "需购买，约 300 元/套",
       "bondText": "",
       "qualSection": "（1）一般资格要求 ①具有独立承担民事责任的能力；提供法人或其他组织的营业执照等证明文件，或自然人身份证明（复印件或扫描件加盖公章）； ②具有良好的商业信誉和健全的财务会计制度；供应商是法人的，提供2025年度经会计师事务所审计的审计报告，或2026年1月至今基本开户银行出具的资信证明。部分其他组织和自然人，没有经审计的财务报告，可以提供2025年1月至今银行出具的资信证明（复印或扫描件须加盖公章）； ③具有履行合同所必需的设备和专业技术能力（以投标人的承诺为依据）； ④具有依法缴纳税收和社会保障资金的良好记录：具体要求：提供2026年1月至今任意1个月缴纳社保凭证和缴纳税收证明的相关材料（如依法无需缴纳的，需出具有效的证明材料）； ⑤参加招标活动前三年内，在经营活动中没有重大违法记录（投标人提供承诺函）； ⑥法律、行政法规规定的其他条件： 供应商须承诺：在“信用中国”网站（www.creditchina.gov.cn）、中国政府采购网（www.ccgp.gov.cn）等渠道查询中未被列入失信被执行人名单、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单中，如被列入失信被执行人、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单中的供应商取消其投标资格，并承担由此造成的一切法律责任及后果。 （2）特殊资格要求 无 7 、本次招标不接受联合体投标。 8 、获取磋",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70312008050084",
@@ -3943,7 +4337,11 @@
       "docFeeText": "需购买，约 300 元/套",
       "bondText": "",
       "qualSection": "（1）一般资格要求 ①具有独立承担民事责任的能力；提供法人或其他组织的营业执照等证明文件，或自然人身份证明（复印件或扫描件加盖公章）； ②具有良好的商业信誉和健全的财务会计制度；供应商是法人的，提供2025年度经会计师事务所审计的审计报告，或2026年1月至今基本开户银行出具的资信证明。部分其他组织和自然人，没有经审计的财务报告，可以提供2025年1月至今银行出具的资信证明（复印或扫描件须加盖公章）； ③具有履行合同所必需的设备和专业技术能力（以投标人的承诺为依据）； ④具有依法缴纳税收和社会保障资金的良好记录：具体要求：提供2026年1月至今任意1个月缴纳社保凭证和缴纳税收证明的相关材料（如依法无需缴纳的，需出具有效的证明材料）； ⑤参加招标活动前三年内，在经营活动中没有重大违法记录（投标人提供承诺函）； ⑥法律、行政法规规定的其他条件： 供应商须承诺：在“信用中国”网站（www.creditchina.gov.cn）、中国政府采购网（www.ccgp.gov.cn）等渠道查询中未被列入失信被执行人名单、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单中，如被列入失信被执行人、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单中的供应商取消其投标资格，并承担由此造成的一切法律责任及后果。 （2）特殊资格要求 无 7 、本次招标不接受联合体投标。 8 、获取磋",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70312004059044",
@@ -4004,7 +4402,11 @@
       "docFeeText": "需购买，约 300 元/套",
       "bondText": "",
       "qualSection": "（1）一般资格要求 ①具有独立承担民事责任的能力；提供法人或其他组织的营业执照等证明文件，或自然人身份证明（复印件或扫描件加盖公章）； ②具有良好的商业信誉和健全的财务会计制度；供应商是法人的，提供2025年度经会计师事务所审计的审计报告，或2026年1月至今基本开户银行出具的资信证明。部分其他组织和自然人，没有经审计的财务报告，可以提供2025年1月至今银行出具的资信证明（复印或扫描件须加盖公章）； ③具有履行合同所必需的设备和专业技术能力（以投标人的承诺为依据）； ④具有依法缴纳税收和社会保障资金的良好记录：具体要求：提供2026年1月至今任意1个月缴纳社保凭证和缴纳税收证明的相关材料（如依法无需缴纳的，需出具有效的证明材料）； ⑤参加招标活动前三年内，在经营活动中没有重大违法记录（投标人提供承诺函）； ⑥法律、行政法规规定的其他条件： 供应商须承诺：在“信用中国”网站（www.creditchina.gov.cn）、中国政府采购网（www.ccgp.gov.cn）等渠道查询中未被列入失信被执行人名单、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单中，如被列入失信被执行人、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单中的供应商取消其投标资格，并承担由此造成的一切法律责任及后果。 （2）特殊资格要求 供应商具备网络安全等级测评与检测评估机构服务认证证",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70312001580452",
@@ -4059,7 +4461,11 @@
       "docFeeText": "需购买，约 300 元/套",
       "bondText": "",
       "qualSection": "（1）一般资格要求 ①具有独立承担民事责任的能力；提供法人或其他组织的营业执照等证明文件，或自然人身份证明（复印件或扫描件加盖公章）； ②具有良好的商业信誉和健全的财务会计制度；供应商是法人的，提供2025年度经会计师事务所审计的审计报告，或2026年1月至今基本开户银行出具的资信证明。部分其他组织和自然人，没有经审计的财务报告，可以提供2025年1月至今银行出具的资信证明（复印或扫描件须加盖公章）； ③具有履行合同所必需的设备和专业技术能力（以投标人的承诺为依据）； ④具有依法缴纳税收和社会保障资金的良好记录：具体要求：提供2026年1月至今任意1个月缴纳社保凭证和缴纳税收证明的相关材料（如依法无需缴纳的，需出具有效的证明材料）； ⑤参加招标活动前三年内，在经营活动中没有重大违法记录（投标人提供承诺函）； ⑥法律、行政法规规定的其他条件： 供应商须承诺：在“信用中国”网站（www.creditchina.gov.cn）、中国政府采购网（www.ccgp.gov.cn）等渠道查询中未被列入失信被执行人名单、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单中，如被列入失信被执行人、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单中的供应商取消其投标资格，并承担由此造成的一切法律责任及后果。 （2）特殊资格要求 无 7 、本次招标不接受联合体投标。 8 、获取磋",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70312002062500",
@@ -4114,7 +4520,11 @@
       "docFeeText": "需购买，约 300 元/套",
       "bondText": "",
       "qualSection": "（1）一般资格要求 ①具有独立承担民事责任的能力；提供法人或其他组织的营业执照等证明文件，或自然人身份证明（复印件或扫描件加盖公章）； ②具有良好的商业信誉和健全的财务会计制度；供应商是法人的，提供2025年度经会计师事务所审计的审计报告，或2026年1月至今基本开户银行出具的资信证明。部分其他组织和自然人，没有经审计的财务报告，可以提供2025年1月至今银行出具的资信证明（复印或扫描件须加盖公章）； ③具有履行合同所必需的设备和专业技术能力（以投标人的承诺为依据）； ④具有依法缴纳税收和社会保障资金的良好记录：具体要求：提供2026年1月至今任意1个月缴纳社保凭证和缴纳税收证明的相关材料（如依法无需缴纳的，需出具有效的证明材料）； ⑤参加招标活动前三年内，在经营活动中没有重大违法记录（投标人提供承诺函）； ⑥法律、行政法规规定的其他条件： 供应商须承诺：在“信用中国”网站（www.creditchina.gov.cn）、中国政府采购网（www.ccgp.gov.cn）等渠道查询中未被列入失信被执行人名单、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单中，如被列入失信被执行人、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单中的供应商取消其投标资格，并承担由此造成的一切法律责任及后果。 （2）特殊资格要求 供应商须属于国家密码管理局公告（第53 号）公布的",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70323622926992",
@@ -4175,7 +4585,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70323647701072",
@@ -4226,7 +4640,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "： （ 一 ） 一般资格要求： 1 .具有独立承担民事责任的能力； 2 .具有良好的商业信誉和健全的财务会计制度 ； 3 .具有履行合同所必需的设备和专业技术能力 ； 4 .有依法缴纳税收和社会保障资金的良好记录 ； 5 .参加采购活动前三年内，在经营活动中没有重大违法记录 ； 6 . 法律 、行政法规规定的其他条件 。 （二） 本项目的特定资格要求： 1.供应商须具有建设行政主管部门核发的建筑装修装饰工程专业承包二级及以上资质； 2.供应商须具有有效的安全生产许可证； 3.拟派的项目经理具备建筑工程专业二级及以上注册建造师资格并持有有效的《安全生产考核合格证书》B证。",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70323619963984",
@@ -4280,7 +4698,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70319883432292",
@@ -4337,7 +4759,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70320037087268",
@@ -4396,7 +4822,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70320034240164",
@@ -4446,7 +4876,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70319897613476",
@@ -4496,7 +4930,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70319860276440",
@@ -4547,7 +4985,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70311735460300",
@@ -4614,7 +5056,17 @@
       "qualSection": "",
       "qualHits": [
         "涉密档案数字化加工”"
-      ]
+      ],
+      "winner": "陕西云普信息科技有限公司",
+      "awardMoneyWan": 62.793,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "陕西云普信息科技有限公司",
+          "moneyWan": 62.793
+        }
+      ],
+      "awardNoticeKind": ""
     },
     {
       "id": "70301447075524",
@@ -4670,7 +5122,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "： 1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 标项1：供应商为中小企业/小微企业 3.本项目的特定资格要求： 【标项1】 /",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70273364820756",
@@ -4734,7 +5190,64 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "（复印件加盖公章、原件备查）： （一）有效的营业执照; （二）企业法定代表人证明书及授权委托书; （三）法定代表人及授权委托人的公民身份证; （四）提供被委托人无违法违纪书面自行声明; （五）提供依法缴纳税收（2026年任意三个月的纳税证明）。 （六）报名截止日前3年在经营活动中没有重大违法记录、无利用不正当竞争手段骗取中标、无重大经济刑事案件的书面声明，并附上信用中国网、中国裁判文书网等网站查询网页截图; 注：报名需要提供以上资料。",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70323855986776",
+      "title": "贵州省政务服务中心2026年度 信息安全 公开招标公告",
+      "tenderType": "招采",
+      "date": "2026-08-14",
+      "publishTime": "2026-08-14 16:56:17",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省人民政府办公厅",
+      "moneyWan": 843.84,
+      "professions": [
+        "网络安全"
+      ],
+      "matchedQuals": [
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "domain": "安全"
+        },
+        {
+          "id": "dsmm2",
+          "name": "DSMM",
+          "domain": "数据"
+        }
+      ],
+      "score": 122,
+      "stars": 3,
+      "starScore": 62,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 844 万）",
+        "投标截止：2026-08-24"
+      ],
+      "focusTags": [],
+      "sourceUrl": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202608/t20260814_27136331.htm",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70323855986776",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-08-24",
+      "fileGetDeadline": "",
+      "scaleText": "约 844 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 标项3:供应商为中小企业/小微企业、供应商为监狱企业、供应商为残疾人福利企业 3.本项目的特定资格要求： 标项1：不允许联合投标，需满足如下的特定资格要求：无;标项2：不允许联合投标，需满足如下的特定资格要求：无;标项3：不允许联合投标，需满足如下政府采购政策需满足的资格要求：供应商为中小企业/小微企业、供应商为监狱企业、供应商为残疾人福利企业，需满足如下的特定资格要求：C包供应商须具有公安部第三研究所颁发的《网络安全等级测评与检测评估机构服务认证证书》；。",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70322254253444",
@@ -4781,7 +5294,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 的 成熟稳定的产品： 本项目不涉及 。 2.4 投标产品制造商（集成商、软件开发商、软件著作权人等）资格要求： 无 。 2. 5 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年08月14日 09时00分00秒 至 2026年08月19日 17时00分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70322251551244",
@@ -4828,7 +5345,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 的 成熟稳定的产品， 本项目不涉及 。 2.4 投标产品制造商（集成商、软件开发商、软件著作权人等）资格要求： 本项目不涉及 。 2. 5 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年08月14日 09时00分00秒 至 2026年08月19日 17时00分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70322253693456",
@@ -4875,7 +5396,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 的 成熟稳定的产品：本项目不涉及 。 2.4 投标产品制造商（集成商、软件开发商、软件著作权人等）资格要求： 本项目不涉及。 2.5 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年08月14日 09时00分00秒 至 2026年08月19日 17时00分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70322251099204",
@@ -4922,7 +5447,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 的 成熟稳定的产品， 本项目不涉及 。 2.4 投标产品制造商（集成商、软件开发商、软件著作权人等）资格要求： 本项目不涉及。 2. 5 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年08月14日 09时00分00秒 至 2026年08月19日 17时00分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70322250945224",
@@ -4969,7 +5498,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 的 成熟稳定的产品 ： 本项目不涉及 。 2.4 投标产品制造商（集 成商、软件开发商、软件著作权人等）资格要求： 无 。 2. 5 法律法规规定的其他要求。 3. 资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4. 招标文件的获取 4.1 招标文件获取时间 : 2026年08月14日 09时00分00秒 至 2026年08月19日 17时00分00秒 （北京时间，下同）。 4.2 招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1 登录“中国电信阳光采购网（ https://caigou.chinatelecom.com.cn ）”后，通过“招投标 - 采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册 方法详见本公告“ 6 投标人注册 ” 。 4.3 招标文件费用： 获取本招标文件不收取费用。 5.",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70319599766116",
@@ -5018,7 +5551,11 @@
       "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70307890088396",
@@ -5072,7 +5609,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "： 1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 标项1:供应商应为中小企业/小微企业,供应商应为监狱企业,供应商应为残疾人福利企业 3.申请人的一般资格要求： 标项1： ①具有独立承担民事责任的能力：提供法人或其他组织的营业执照等证明文件，或自然人身份证明； ②具有良好的商业信誉和健全的财务会计制度： 具体要求：供应商是法人的，应提供经审计的2025年度完整的财务报告或其开户银行2026年以来出具的资信证明。 ③具有履行合同所必需的设备和专业技术能力： 具体要求：提供承诺函（格式自拟）。 ④具有依法缴纳税收和社会保障资金的良好记录： 具体要求：提供依法缴纳税收和社会保障资金的有效证明材料（2026年1月至今任意三个月，新成立不足3个月的公司提供成立至今月份缴纳税收和社会保障资金的相关材料，依法无须缴纳的提供相关证明材料）； ⑤参加政府采购活动前三年内，在经营活动中没有重大违法记录： 提供书面声明（格式自拟）; ⑥法律、行政法规规定的其他条件：a.供应商须承诺：在“信用中国 ”网站 （ www.cr editchina.gov.cn）、中国政府采购网（www.ccgp.gov.cn）等渠道查询中未被列入失信被执行人名单、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单中，如被列入失信被执行人、重大税收违法案件当事人名单、政",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70308779187020",
@@ -5119,7 +5660,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "： 1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 标项1：供应商应为残疾人福利企业,满足《中华人民共和国政府采购法》第二十二条规定,供应商为节能产品、环境标志产品企业,供应商应为监狱企业,供应商为中小企业/小微企业 3.本项目的特定资格要求： 【标项1】 无",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70302409846884",
@@ -5188,7 +5733,11 @@
       "docFeeText": "需购买文件（金额见原文）",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70320056785172",
@@ -5246,7 +5795,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70318254016356",
@@ -5292,7 +5845,11 @@
       "docFeeText": "需购买，约 500 元/套",
       "bondText": "",
       "qualSection": "（一）符合政府采购法第二十二条规定，提供政府采购法实施条例第十七条规定资料。 1.具有独立承担民事责任的能力：提供法人或其他组织的营业执照等证明文件，或自然人身份证明（复印件加盖公章）； 2.具有良好的商业信誉和健全的财务会计制度：投标人是法人的，提供2024年度或2025年度经会计师事务所出具的审计报告（成立不满一年的提供其基本开户银行出具的2026年1月至投标截止时间前任意时间的银行资信证明），审计报告应盖有会计师事务所单位章和注册会计师的执业专用章，并附会计师事务所的营业执照及执业证书；自然人或其他组织，没有经审计的财务报告，可提供其基本开户银行出具的2026年1月至投标截止时间前任意时间的银行资信证明（须附基本户银行开户许可证）； 3.具有履行合同所必需的设备和专业技术能力：提供具有履行合同所必需的设备和专业技术能力的证明材料或承诺函（承诺函格式自拟）； 4.具有依法缴纳税收和社会保障资金的良好记录：提供2026年1月至今任意3个月依法缴纳税收和社会保障资金的相关材料；成立不满3个月的投标人，提供依法缴纳税收和社保的承诺函，承诺函须由法定代表人签名并加盖投标人公章（承诺函格式自拟）；（依法免税或不需缴纳税收的应提供相关证明材料） 5.参加本次政府采购活动前三年内，在经营活动中没有违法违规记录：提供参加本次投标活动前3年内在经营活动中没有重大违法记录的书面声明（格式文件详见投",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70322994444172",
@@ -5338,7 +5895,71 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "： 1.满足《中华人民共和国政府采购法》第二十二条规定并提供《中华人民共和国政府采购法实施条例》第十七条所要求的材料； 2.特殊资格要求： 需具备有效的互联网新闻信息服务许可或相关的备案证明（复印件或扫描件加盖公章）",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70323635826256",
+      "title": "[采购意向]独山县 智慧 林业建设项目",
+      "tenderType": "招采",
+      "date": "2026-08-14",
+      "publishTime": "2026-08-14 16:04:52",
+      "province": "贵州省",
+      "city": "黔南布依族苗族自治州",
+      "buyer": "独山县林业局",
+      "moneyWan": 65.04,
+      "professions": [
+        "电子电工",
+        "电力设备",
+        "通信设备",
+        "航空设备",
+        "金属材料",
+        "结构用料",
+        "事业单位用房",
+        "智慧政务",
+        "软件开发",
+        "电信服务",
+        "网络工程",
+        "运营商网络集成",
+        "运营商物联网",
+        "运营商低空经济"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        }
+      ],
+      "score": 90,
+      "stars": 3,
+      "starScore": 56,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "规模适中（约 65 万）"
+      ],
+      "focusTags": [],
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=5OxBhgzkqTAQUvpnYSxrIw==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70323635826256",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "预算约 650400 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70313353992804",
@@ -5390,7 +6011,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "无。 （ 3）本项目 不接受 联合体投标。 8 . 获取 采购文件时须提供的材料： （ 1） 提供法人或其他组织的营业执照等证明文件，或自然人身份证明 （复印件加盖投标单位公章）； （ 2） 法定代表人授权书（原件，模板详见附件）及授权代表身份证（原件）； （ 3） 若是法定代表人 获取 的，须出示法定代表人身份证明书（原件，模板详见附件）及法人身份证（原件）； 9 . 获取 采购文件时间 ： 202 6 - 08 - 13 至 202 6 - 08 - 19 09:00:00-17:00:00（ 周末及 节假日除外）。 10 . 获取 采购文件地点： 贵州融创智联招标有限公司（ 贵州省贵阳市观山湖区西部研发基地二号楼 19层 ） 。 11.报名费： 500.00元/套 1 2 . 响应文件递交截止时间： 202 6 - 08 - 24 15 : 0 0:00。 1 3 . 开标时间： 202 6 - 08 - 24 15 : 0 0:00。 1 4 . 开标地点： 贵州融创智联招标有限公司（ 贵州省贵阳市观山湖区西部研发基地二号楼 19层 ） 。 15 .采购人、代理机构的名称、地址、联系方式 （ 1）采购人名称： 贵阳市花溪区融媒体中心 联系地址 ： 贵州省贵阳市花溪区阳光街道明珠大道 192号（花溪区大数据产业园3号楼11层） （ 2）代理机构名称： 贵州融创智联招标有限公司",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70272600013652",
@@ -5445,7 +6070,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70264453363720",
@@ -5509,7 +6138,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70318666812492",
@@ -5552,7 +6185,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "时间： 2026年08月13日 至 2026年08月24日 ，每天上午 08:00至12:00 ，下午 13:30至17:00 （北京时间，法定节假日除外） 地点： 全国公共资源交易平台（贵州省·铜仁市）网上交易大厅（https://ggzy.guizhou.gov.cn/hallweb/#/login） 方式： 无 售价（元）： 0 四、提交投标文件截止时间、开标时间和地点 提交投标文件截止时间： 2026年09月03日 09:30 （北京时间） 投标地点（网址）： http://58.42.4.86:50014/TPBidder/memberLogin 开标时间： 2026年09月03日 09:30 开标地点： 铜仁市公共资源交易中心铜仁市开标室一 五、公告期限 自本公告发布之日起5个工作日。 六、其他补充事宜 1.本项目是电子开评标，请各位投标人携带CA前往交易公告指定的开标地点参与开标或选择不见面开标模式参与开标。采用电子化开标的，不再进行投标人身份核验，以数字证书为准。 2.根据《关于印发中小企业划型标准规定的通知》的规定，本项目所属行业分类为其他未列明行业。 七、对本次采购提出询问，请按以下方式联系 1.采购人信息 名 称： 铜仁市工业和信息化局 地 址： 铜仁市碧江区灯塔街道碧江经开区铜仁市企业服务中心 联系方式： 19385299005 联系方式： 13984894",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     },
     {
       "id": "70307031837252",
@@ -5613,166 +6250,11 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
-      "qualHits": []
-    },
-    {
-      "id": "70279388972620",
-      "title": "贵州省交通运输厅2026年度 信息安全 项目公开招标公告(采购公告)",
-      "tenderType": "招采",
-      "date": "2026-08-06",
-      "publishTime": "2026-08-06 16:02:13",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵州省交通运输厅",
-      "moneyWan": 775.78,
-      "professions": [
-        "网络安全"
-      ],
-      "matchedQuals": [
-        {
-          "id": "iso27001",
-          "name": "ISO27001",
-          "domain": "安全"
-        }
-      ],
-      "score": 109,
-      "stars": 3,
-      "starScore": 54,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "规模适中（约 776 万）",
-        "投标截止：2026-08-14"
-      ],
-      "focusTags": [],
-      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=x/Rpg7k+q3/S8HFehT5aFw==",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70279388972620",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-08-14",
-      "fileGetDeadline": "",
-      "scaleText": "约 776 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 3.本项目的特定资格要求： 标项1：不允许联合投标，需满足如下的特定资格要求：标包一（网络安全等级保护测评）投标供应商须具有网络安全服务认证证书等级保护测评服务认证，证书在有效期范围以内，且为网络安全等级保护网（www.djbh.net）可查询单位，提供证明文件并加盖投标供应商公章。;标项2：不允许联合投标，需满足如下的特定资格要求：标包二（商用密码应用安全性评估）投标供应商须为国家密码管理局《商用密码检测机构（商用密码应用安全性评估业务）目录》（国家密码管理局公告第 53 号，2025年 10 月 27 日）收录单位，提供证明文件并加盖投标供应商公章。;标项3：不允许联合投标;标项4：不允许联合投标;标项5：不允许联合投标;标项6：不允许联合投标。",
-      "qualHits": []
-    },
-    {
-      "id": "70322502674192",
-      "title": "关于《中国移动贵州公司 大数据 （贵阳）创新研究院2026年至2027年（12个月）智能应用产品能力研发项目》的技术征询公告",
-      "tenderType": "招采",
-      "date": "2026-08-14",
-      "publishTime": "2026-08-14 11:05:57",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "中国移动通信集团贵州有限公司",
-      "moneyWan": 0,
-      "professions": [
-        "软件开发",
-        "数据处理",
-        "运营商大数据",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 101,
-      "stars": 3,
-      "starScore": 52,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词"
-      ],
-      "focusTags": [],
-      "sourceUrl": "https://b2b.10086.cn/#/noticeDetail?publishId=2088098388264329217&publishUuid=d7c15097f1624a6c87fab9fc49baf457&publishType=PURCHASE_SERVICE&publishOneType=PURCHASE_OPINION",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70322502674192",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "规模未披露",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": []
-    },
-    {
-      "id": "70321826176272",
-      "title": "遵义—吉安天然气管道项目初步设计阶段勘察项目隧道 数字化 勘察支持服务-临时",
-      "tenderType": "招采",
-      "date": "2026-08-14",
-      "publishTime": "2026-08-14 08:14:16",
-      "province": "贵州省",
-      "city": "遵义市",
-      "buyer": "中国石油工程建设有限公司",
-      "moneyWan": 0,
-      "professions": [
-        "能源开采设备",
-        "石油化工",
-        "煤气",
-        "公路工程",
-        "隧道工程",
-        "管线工程",
-        "公共设施",
-        "系统集成",
-        "设计前咨询",
-        "工程勘探",
-        "工程设计",
-        "管道运输",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 89,
-      "stars": 3,
-      "starScore": 52,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词"
-      ],
-      "focusTags": [],
-      "sourceUrl": "https://www.ymzec.com/bid/web-outportal/#/trade-info-detail?id=1537383095824793600&noticeType=15&publishStatus=2&systemStatus",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70321826176272",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "规模未披露",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": []
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
     }
   ]
 }

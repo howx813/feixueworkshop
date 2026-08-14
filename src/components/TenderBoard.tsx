@@ -10,9 +10,11 @@ import {
   formatDocFee,
   formatStars,
   formatTenderMoney,
+  isAwardNotice,
   starClass,
   tenderScoreClass,
 } from "@/lib/tenders";
+import { CtaAiAwardAnalysisPanel } from "@/components/CtaAiAwardAnalysis";
 
 type Props = {
   initial: TendersFile;
@@ -161,8 +163,12 @@ export function TenderBoard({ initial }: Props) {
         会尝试下载公开招标附件并做资格摘录（本机目录，不进公开仓库）。
         <br />
         <strong style={{ fontWeight: 650 }}>关注字段：</strong>
-        投标截止、文件资格摘录、规模、标书/文件费。自动抽取可能不全，务必核对原文。
+        投标截止、文件资格摘录、规模、标书/文件费；中标公示另抽中标人与中标金额。自动抽取可能不全，务必核对原文。
       </div>
+
+      {focus === "cta-ai" ? (
+        <CtaAiAwardAnalysisPanel items={allItems} />
+      ) : null}
 
       <div className="list-stack">
         {items.length === 0 ? (
@@ -247,41 +253,83 @@ export function TenderBoard({ initial }: Props) {
                 ) : null}
               </p>
 
-              <div className="tender-keygrid" aria-label="关键信息">
-                <div className="tender-keycell">
-                  <span className="tender-keylabel">投标截止</span>
-                  <span className="tender-keyvalue">
-                    {item.bidDeadline || "未写明"}
-                  </span>
+              {isAwardNotice(item) && (item.winner || item.awardMoneyWan) ? (
+                <div className="tender-keygrid" aria-label="中标信息">
+                  <div className="tender-keycell">
+                    <span className="tender-keylabel">中标/成交人</span>
+                    <span className="tender-keyvalue">
+                      {item.winner || "未解析"}
+                    </span>
+                  </div>
+                  <div className="tender-keycell">
+                    <span className="tender-keylabel">中标金额</span>
+                    <span className="tender-keyvalue">
+                      {(item.awardMoneyWan || 0) > 0
+                        ? formatTenderMoney(item.awardMoneyWan || 0)
+                        : item.scaleText || formatTenderMoney(item.moneyWan)}
+                    </span>
+                  </div>
+                  {item.candidates && item.candidates.length > 1 ? (
+                    <div className="tender-keycell" style={{ gridColumn: "1 / -1" }}>
+                      <span className="tender-keylabel">候选人</span>
+                      <span className="tender-keyvalue" style={{ fontSize: "0.8125rem" }}>
+                        {item.candidates
+                          .map(
+                            (c) =>
+                              `${c.rank}.${c.name}${
+                                c.moneyWan > 0
+                                  ? `（${formatTenderMoney(c.moneyWan)}）`
+                                  : ""
+                              }`,
+                          )
+                          .join(" · ")}
+                      </span>
+                    </div>
+                  ) : null}
+                  {item.awardNoticeKind ? (
+                    <div className="tender-keycell">
+                      <span className="tender-keylabel">公示类型</span>
+                      <span className="tender-keyvalue">{item.awardNoticeKind}</span>
+                    </div>
+                  ) : null}
                 </div>
-                <div className="tender-keycell">
-                  <span className="tender-keylabel">项目规模</span>
-                  <span className="tender-keyvalue">
-                    {item.scaleText || formatTenderMoney(item.moneyWan)}
-                    {item.bondText ? ` · ${item.bondText}` : ""}
-                  </span>
+              ) : (
+                <div className="tender-keygrid" aria-label="关键信息">
+                  <div className="tender-keycell">
+                    <span className="tender-keylabel">投标截止</span>
+                    <span className="tender-keyvalue">
+                      {item.bidDeadline || "未写明"}
+                    </span>
+                  </div>
+                  <div className="tender-keycell">
+                    <span className="tender-keylabel">项目规模</span>
+                    <span className="tender-keyvalue">
+                      {item.scaleText || formatTenderMoney(item.moneyWan)}
+                      {item.bondText ? ` · ${item.bondText}` : ""}
+                    </span>
+                  </div>
+                  <div className="tender-keycell">
+                    <span className="tender-keylabel">标书/文件费</span>
+                    <span
+                      className={`tender-keyvalue${
+                        item.docFeeRequired === true
+                          ? " tender-fee-yes"
+                          : item.docFeeRequired === false
+                            ? " tender-fee-no"
+                            : ""
+                      }`}
+                    >
+                      {formatDocFee(item)}
+                    </span>
+                  </div>
+                  <div className="tender-keycell">
+                    <span className="tender-keylabel">获取文件截止</span>
+                    <span className="tender-keyvalue">
+                      {item.fileGetDeadline || "未写明"}
+                    </span>
+                  </div>
                 </div>
-                <div className="tender-keycell">
-                  <span className="tender-keylabel">标书/文件费</span>
-                  <span
-                    className={`tender-keyvalue${
-                      item.docFeeRequired === true
-                        ? " tender-fee-yes"
-                        : item.docFeeRequired === false
-                          ? " tender-fee-no"
-                          : ""
-                    }`}
-                  >
-                    {formatDocFee(item)}
-                  </span>
-                </div>
-                <div className="tender-keycell">
-                  <span className="tender-keylabel">获取文件截止</span>
-                  <span className="tender-keyvalue">
-                    {item.fileGetDeadline || "未写明"}
-                  </span>
-                </div>
-              </div>
+              )}
 
               {item.stars === 5 && item.deepAnalysis ? (
                 <div className="tender-deepbox">
