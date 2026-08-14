@@ -44,7 +44,9 @@ export default function TendersPage() {
       <p className="page-kicker">Daily Bids</p>
       <h1 className="page-title">每日标讯</h1>
       <p className="page-desc">
-        静态站点 + 定时快照：汇总软件 / 信息化类招标，按匹配星级排序；展示截止、规模、文件费与资格摘录。5
+        静态站点 + 定时快照：贵州软件/信息化类招标 +{" "}
+        <strong>中电信人工智能科技有限公司（全国）</strong>
+        专项。默认视图看中电信人工智能；可切换「全部 / 电信贵州·数智」。按匹配星级排序；展示截止、规模、文件费与资格摘录。5
         星项目会尝试深挖公开招标附件。
       </p>
 

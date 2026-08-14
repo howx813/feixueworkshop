@@ -1,10 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
+  type TenderFocusFilter,
   type TenderItem,
   type TendersFile,
   fetchTendersPublic,
+  filterTendersByFocus,
   formatDocFee,
   formatStars,
   formatTenderMoney,
@@ -16,10 +18,25 @@ type Props = {
   initial: TendersFile;
 };
 
+const FOCUS_TABS: { id: TenderFocusFilter; label: string; hint: string }[] = [
+  { id: "all", label: "全部", hint: "贵州软件/信息化池 + 全国专项" },
+  {
+    id: "cta-ai",
+    label: "中电信人工智能科技",
+    hint: "全国检索 · 中电信人工智能科技有限公司（含北京）",
+  },
+  {
+    id: "telecom-gz",
+    label: "电信贵州 / 数智",
+    hint: "中国电信贵州 · 中电信数智贵州",
+  },
+];
+
 export function TenderBoard({ initial }: Props) {
   const [data, setData] = useState<TendersFile>(initial);
   const [status, setStatus] = useState<"idle" | "refreshing" | "error">("idle");
   const [error, setError] = useState("");
+  const [focus, setFocus] = useState<TenderFocusFilter>("cta-ai");
 
   const refresh = useCallback(async (signal?: AbortSignal) => {
     setStatus("refreshing");
@@ -47,8 +64,21 @@ export function TenderBoard({ initial }: Props) {
     return () => ac.abort();
   }, [refresh]);
 
-  const items: TenderItem[] = data.items || [];
+  const allItems: TenderItem[] = useMemo(
+    () => data.items || [],
+    [data.items],
+  );
+  const items = useMemo(
+    () => filterTendersByFocus(allItems, focus),
+    [allItems, focus],
+  );
   const fiveStar = items.filter((i) => (i.stars || 0) >= 5);
+  const ctaAiN =
+    data.ctaAiCount ??
+    allItems.filter((i) => (i.focusTags || []).includes("cta-ai")).length;
+  const telecomGzN =
+    data.telecomGzCount ??
+    allItems.filter((i) => (i.focusTags || []).includes("telecom-gz")).length;
   const syncedLabel = data.syncedAt
     ? new Date(data.syncedAt).toLocaleString("zh-CN", { hour12: false })
     : "—";
@@ -58,8 +88,10 @@ export function TenderBoard({ initial }: Props) {
       <div className="day-bar">
         <strong>线索 {items.length} 条</strong>
         <span>
-          5★ {data.fiveStarCount ?? fiveStar.length} · 深挖{" "}
-          {data.deepAnalyzed ?? fiveStar.filter((i) => i.deepAnalysis).length}
+          5★ {fiveStar.length}
+          {focus === "all"
+            ? ` · 全池 ${allItems.length} · 深挖 ${data.deepAnalyzed ?? 0}`
+            : ` · 筛选自全池 ${allItems.length}`}
         </span>
         <span>
           回溯自 {data.since || "—"} · 软件池 {data.softwareCount ?? "—"}
@@ -76,6 +108,42 @@ export function TenderBoard({ initial }: Props) {
         </button>
       </div>
 
+      <div
+        className="meta-row"
+        style={{ marginBottom: 14, flexWrap: "wrap", gap: 8 }}
+        role="tablist"
+        aria-label="标讯筛选"
+      >
+        {FOCUS_TABS.map((tab) => {
+          const count =
+            tab.id === "all"
+              ? allItems.length
+              : tab.id === "cta-ai"
+                ? ctaAiN
+                : telecomGzN;
+          const active = focus === tab.id;
+          return (
+            <button
+              key={tab.id}
+              type="button"
+              role="tab"
+              aria-selected={active}
+              title={tab.hint}
+              className={`chip ${active ? "chip-accent" : ""}`}
+              style={{
+                cursor: "pointer",
+                border: active ? "1px solid var(--accent, #2563eb)" : undefined,
+                fontWeight: active ? 650 : 500,
+              }}
+              onClick={() => setFocus(tab.id)}
+            >
+              {tab.label}
+              <span style={{ opacity: 0.75, marginLeft: 6 }}>{count}</span>
+            </button>
+          );
+        })}
+      </div>
+
       {status === "error" ? (
         <div className="note" style={{ marginBottom: 16 }}>
           热更新失败（{error}），仍展示构建期快照。可稍后再点「刷新快照」。
@@ -83,6 +151,10 @@ export function TenderBoard({ initial }: Props) {
       ) : null}
 
       <div className="note" style={{ marginBottom: 20 }}>
+        <strong style={{ fontWeight: 650 }}>当前视图：</strong>
+        {FOCUS_TABS.find((t) => t.id === focus)?.hint}
+        。默认打开「中电信人工智能科技」全国专项（北京主体标讯不限贵州省码）。
+        <br />
         <strong style={{ fontWeight: 650 }}>匹配星级：</strong>
         1–5 星综合软件相关度、公开标准关键词重合、是否在投、规模与截止信息。
         <strong> 5 星</strong>
@@ -99,11 +171,23 @@ export function TenderBoard({ initial }: Props) {
               暂无匹配标讯
             </h2>
             <p className="item-body">
-              执行{" "}
-              <code style={{ fontSize: "0.9em" }}>npm run tenders:sync</code>{" "}
-              后，快照会写入{" "}
-              <code style={{ fontSize: "0.9em" }}>public/data/tenders.json</code>
-              。
+              {focus === "cta-ai" ? (
+                <>
+                  当前快照里还没有「中电信人工智能科技」专项条目。请确认已跑{" "}
+                  <code style={{ fontSize: "0.9em" }}>npm run tenders:sync</code>{" "}
+                  （含全国检索），并点「刷新快照」。
+                </>
+              ) : (
+                <>
+                  执行{" "}
+                  <code style={{ fontSize: "0.9em" }}>npm run tenders:sync</code>{" "}
+                  后，快照会写入{" "}
+                  <code style={{ fontSize: "0.9em" }}>
+                    public/data/tenders.json
+                  </code>
+                  。
+                </>
+              )}
             </p>
           </article>
         ) : (
@@ -122,6 +206,16 @@ export function TenderBoard({ initial }: Props) {
                 <span className="chip chip-amber">
                   {item.tenderType || "标讯"}
                 </span>
+                {(item.focusTags || []).includes("cta-ai") ? (
+                  <span className="chip chip-accent" title="中电信人工智能科技专项">
+                    中电信AI
+                  </span>
+                ) : null}
+                {(item.focusTags || []).includes("telecom-gz") ? (
+                  <span className="chip" title="电信贵州 / 数智">
+                    电信黔
+                  </span>
+                ) : null}
                 <span>{item.date || "日期未知"}</span>
                 <span>
                   {[item.province, item.city].filter(Boolean).join(" · ")}

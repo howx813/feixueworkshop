@@ -46,6 +46,8 @@ export type TenderItem = {
   bondText?: string;
   qualSection?: string;
   qualHits?: string[];
+  /** 专项标签：cta-ai=中电信人工智能科技；telecom-gz=电信贵州/数智 */
+  focusTags?: string[];
 };
 
 export type TendersFile = {
@@ -54,11 +56,23 @@ export type TendersFile = {
   matchedCount: number;
   softwareCount: number;
   fiveStarCount?: number;
+  ctaAiCount?: number;
+  telecomGzCount?: number;
   deepAnalyzed?: number;
   authenticated?: boolean;
   note: string;
   items: TenderItem[];
 };
+
+export type TenderFocusFilter = "all" | "cta-ai" | "telecom-gz";
+
+export function filterTendersByFocus(
+  items: TenderItem[],
+  focus: TenderFocusFilter,
+): TenderItem[] {
+  if (focus === "all") return items;
+  return items.filter((i) => (i.focusTags || []).includes(focus));
+}
 
 export const TENDERS_PUBLIC_PATH = "/data/tenders.json";
 

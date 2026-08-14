@@ -1,19 +1,1739 @@
 {
-  "syncedAt": "2026-08-14T08:51:28.781Z",
+  "syncedAt": "2026-08-14T09:01:05.221Z",
   "source": "public tender list + detail",
   "authenticated": true,
   "provinceCodes": [
     520000
   ],
   "since": "2026-07-31",
-  "queryCount": 12,
-  "rawCount": 209,
-  "softwareCount": 178,
-  "matchedCount": 80,
+  "queryCount": 21,
+  "rawCount": 240,
+  "softwareCount": 208,
+  "matchedCount": 100,
   "fiveStarCount": 2,
+  "ctaAiCount": 30,
+  "telecomGzCount": 14,
   "deepAnalyzed": 5,
-  "note": "匹配星级综合「软件相关度 / 公开标准关键词 / 在投状态 / 规模 / 截止信息」。5 星会尝试下载公开附件并做资格摘录。不等于可中标判断。账号密码勿入库。",
+  "note": "匹配星级综合「软件相关度 / 公开标准关键词 / 在投状态 / 规模 / 截止信息」。含全国检索「中电信人工智能科技」专项。5 星会尝试下载公开附件并做资格摘录。不等于可中标判断。账号密码勿入库。",
   "items": [
+    {
+      "id": "70318951163348",
+      "title": "中电信人工智能 公司某地视频AI应用项目视图库服务采购项目（第二次招标）招标公告",
+      "tenderType": "招采",
+      "date": "2026-08-13",
+      "publishTime": "2026-08-13 19:28:25",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 288,
+      "professions": [
+        "系统集成",
+        "运营商大数据",
+        "运营商系统集成",
+        "运营商云计算",
+        "云服务"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS",
+          "domain": "运维"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务许可",
+          "domain": "通用"
+        }
+      ],
+      "score": 135,
+      "stars": 3,
+      "starScore": 100,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 288 万）",
+        "投标截止：2026-09-04 09:00:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=185598604714043&type=1&docTypeCode=TenderAnnouncement&securityViewCode=081fbacc302d9dfedb562fb7b3f62c67",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70318951163348",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-04 09:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 288 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 的 成熟稳定的产品 （本项目不涉及） 。 2.4 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年08月14日 00时00分00秒 至 2026年08月19日 00时00分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6. 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
+      "qualHits": []
+    },
+    {
+      "id": "70312811810068",
+      "title": "中电信人工智能科技 （北京）有限公司2026年C端产品质量测试服务采购项目第二次询比公告",
+      "tenderType": "招采",
+      "date": "2026-08-12",
+      "publishTime": "2026-08-12 17:03:17",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 158.9,
+      "professions": [
+        "系统集成",
+        "其他",
+        "运营商ITO运维",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS",
+          "domain": "运维"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 128,
+      "stars": 3,
+      "starScore": 100,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 159 万）",
+        "投标截止：2026-08-20 09:30:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093601269824&type=3&docTypeCode=CompareSelect&securityViewCode=cbfd89ad3144a8b9fe2a11f02aadb189",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70312811810068",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-08-20 09:30:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 159 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70279515514256",
+      "title": "中电信人工智能科技有限公司 金融领域智能检测集成服务采购项目（第二次）",
+      "tenderType": "招采",
+      "date": "2026-08-06",
+      "publishTime": "2026-08-06 16:30:59",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 75.5,
+      "professions": [
+        "系统集成",
+        "网络工程",
+        "运营商大数据",
+        "运营商物联网",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "secret",
+          "name": "涉密相关",
+          "domain": "安全"
+        }
+      ],
+      "score": 126,
+      "stars": 3,
+      "starScore": 100,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 76 万）",
+        "投标截止：2026-08-17 09:30:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093772222543&type=3&docTypeCode=CompareSelect&securityViewCode=619dda758b035486d5d0a1601fdb5f8f",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70279515514256",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-08-17 09:30:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 75.50 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70262910163977",
+      "title": "中电信人工智能科技（北京）有限公司 视联网平台智能化技术支撑服务项目询比公告",
+      "tenderType": "招采",
+      "date": "2026-08-03",
+      "publishTime": "2026-08-03 16:31:42",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 230.64,
+      "professions": [
+        "智能化安装工程",
+        "软件开发",
+        "系统集成",
+        "其他",
+        "安防监控",
+        "运营商视频监控",
+        "运营商网络集成",
+        "运营商系统集成",
+        "运营商数字平台"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "secret",
+          "name": "涉密相关",
+          "domain": "安全"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化",
+          "domain": "集成"
+        }
+      ],
+      "score": 129,
+      "stars": 3,
+      "starScore": 100,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 231 万）",
+        "投标截止：2026-08-12 09:30:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093637990182&type=3&docTypeCode=CompareSelect&securityViewCode=f810c56b75b1df3e7878303a71479a3d",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70262910163977",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-08-12 09:30:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 231 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70261435783628",
+      "title": "中电信人工智能科技（北京）有限公司 2026年咨询服务采购项目（第二次）（重新采购）询比公告",
+      "tenderType": "招采",
+      "date": "2026-08-03",
+      "publishTime": "2026-08-03 10:07:50",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 362,
+      "professions": [
+        "系统集成",
+        "其他",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 118,
+      "stars": 3,
+      "starScore": 100,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 362 万）",
+        "投标截止：2026-08-11 09:30:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093602326971&type=3&docTypeCode=CompareSelect&securityViewCode=84a8cb06b5e266d79dc4145b658ad5ca",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70261435783628",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-08-11 09:30:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 362 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70279515741712",
+      "title": "中电信人工智能科技有限公司 2026年统一安全测试服务项目（标包三：多模态AIGC鉴伪检测技术能力及安全能力评测服务）第三次询比公告",
+      "tenderType": "招采",
+      "date": "2026-08-06",
+      "publishTime": "2026-08-06 16:31:07",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 35,
+      "professions": [
+        "系统集成",
+        "网络安全",
+        "其他",
+        "运营商ITO运维"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS",
+          "domain": "运维"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 125,
+      "stars": 3,
+      "starScore": 92,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模较小",
+        "投标截止：2026-08-17 09:30:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093773271134&type=3&docTypeCode=CompareSelect&securityViewCode=7d79575bb3d03fdccba88cfa4645cb79",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70279515741712",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-08-17 09:30:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 35.00 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70269121302668",
+      "title": "中电信人工智能科技（北京）有限公司 2026年视联网火情识别软件服务采购项目（某市算法仓）定开服务采购项目询比公告",
+      "tenderType": "招采",
+      "date": "2026-08-04",
+      "publishTime": "2026-08-04 19:01:32",
+      "province": "江苏省",
+      "city": "苏州市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 5,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "安防监控",
+        "运营商大数据",
+        "运营商视频监控",
+        "运营商网络集成",
+        "运营商系统集成",
+        "运营商数字平台"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化",
+          "domain": "集成"
+        }
+      ],
+      "score": 121,
+      "stars": 3,
+      "starScore": 92,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模较小",
+        "投标截止：2026-08-14 09:30:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093610713755&type=3&docTypeCode=CompareSelect&securityViewCode=117ebefa1d362620ba13a47114845941",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70269121302668",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-08-14 09:30:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 5.00 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70247594598156",
+      "title": "中电信人工智能科技（北京）有限公司 2026年监控调度与变更操作专区建设工程询比文件",
+      "tenderType": "招采",
+      "date": "2026-07-31",
+      "publishTime": "2026-07-31 22:03:07",
+      "province": "北京市",
+      "city": "市辖区",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "事业单位用房",
+        "运营商视频监控",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化",
+          "domain": "集成"
+        }
+      ],
+      "score": 119,
+      "stars": 3,
+      "starScore": 92,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "硬门槛标准命中：电子与智能化",
+        "投标截止：2026-08-10 09:00:00",
+        "不收取文件费",
+        "重点采购主体相关",
+        "证书级重合：电子与智能化"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093824679260&type=3&docTypeCode=CompareSelect&securityViewCode=72fb1914be3e607db5edde93ada1a099",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70247594598156",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-08-10 09:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [
+        "电子与智能化工程专业承包二级及以上资"
+      ]
+    },
+    {
+      "id": "70280817608148",
+      "title": "中电信人工智能科技有限公司 2026年网络与信息安全支撑服务项目询比公告",
+      "tenderType": "招采",
+      "date": "2026-08-06",
+      "publishTime": "2026-08-06 22:12:01",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 55,
+      "professions": [
+        "网络安全",
+        "其他",
+        "运营商专线"
+      ],
+      "matchedQuals": [
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "domain": "安全"
+        },
+        {
+          "id": "dsmm2",
+          "name": "DSMM",
+          "domain": "数据"
+        }
+      ],
+      "score": 114,
+      "stars": 3,
+      "starScore": 90,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 55 万）",
+        "投标截止：2026-08-17 09:00:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093838307540&type=3&docTypeCode=CompareSelect&securityViewCode=70af63b15733f26ef425ecac677de88e",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70280817608148",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-08-17 09:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 55.00 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70307182601932",
+      "title": "中电信人工智能科技有限公司 2026-2027年合同交付支撑服务项目（标包2：AI中台等AI类软件二开技术服务）招标公告",
+      "tenderType": "招采",
+      "date": "2026-08-11",
+      "publishTime": "2026-08-11 16:40:43",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "系统集成",
+        "技术测试和分析",
+        "其他",
+        "运营商大数据",
+        "运营商系统集成",
+        "运营商云计算",
+        "云服务"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "secret",
+          "name": "涉密相关",
+          "domain": "安全"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务许可",
+          "domain": "通用"
+        }
+      ],
+      "score": 119,
+      "stars": 3,
+      "starScore": 88,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "投标截止：2026-09-02 09:30:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093783759059&type=1&docTypeCode=TenderAnnouncement&securityViewCode=1c0ba2f96b0bbcd1e6038214a7edc1d8",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70307182601932",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-02 09:30:00",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 或是与中华人民共和国有正常贸易与往来的国家或地区 的 成熟稳定的产品。（ 本项目不涉及 ） 。 2.3. 2 投标产品所涉知识产权应保证不存在权利瑕疵，不侵害第三方专利权、商标权、著作权或其他任何形式的合法权益，并提供《知识产权不侵权承诺函》 。 2.3.7 投标产品 业绩要求： 。 2. 4 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年08月12日 09时00分00秒 至 2026年08月17日 17时30分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
+      "qualHits": []
+    },
+    {
+      "id": "70307177830596",
+      "title": "中电信人工智能科技有限公司 2026-2027年合同交付支撑服务项目（标包3：数据中台等大数据类软件二开技术服务）招标公告",
+      "tenderType": "招采",
+      "date": "2026-08-11",
+      "publishTime": "2026-08-11 16:39:26",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "系统集成",
+        "数据处理",
+        "技术测试和分析",
+        "其他",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "secret",
+          "name": "涉密相关",
+          "domain": "安全"
+        }
+      ],
+      "score": 119,
+      "stars": 3,
+      "starScore": 88,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "投标截止：2026-09-02 10:00:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093631686499&type=1&docTypeCode=TenderAnnouncement&securityViewCode=c2f5a0d7be4e73c44ddb9f2c958a07c5",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70307177830596",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-02 10:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 或是与中华人民共和国有正常贸易与往来的国家或地区 的 成熟稳定的产品。（本项目不涉及） 。 2.3.2 投标产品所涉知识产权应保证不存在权利瑕疵，不侵害第三方专利权、商标权、著作权或其他任何形式的合法权益，并提供《知识产权不侵权承诺函》 。 2.4 法律法规规定的其他要求。 3. 资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4. 招标文件的获取 4.1 招标文件获取时间 : 2026年08月12日 09时00分00秒 至 2026年08月17日 17时30分00秒 （北京时间，下同）。 4.2 招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1 登录“中国电信阳光采购网（ https://caigou.chinatelecom.com.cn ）”后，通过“招投标 - 采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册”。 4.3 招标文件费用： 获取本招标文件不收取费用。 5.",
+      "qualHits": []
+    },
+    {
+      "id": "70307171991236",
+      "title": "中电信人工智能科技有限公司 2026-2027年合同交付支撑服务项目（标包4：软件安全评估测试服务）招标公告",
+      "tenderType": "招采",
+      "date": "2026-08-11",
+      "publishTime": "2026-08-11 16:38:08",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "系统集成",
+        "其他",
+        "运营商ITO运维",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS",
+          "domain": "运维"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "ccrc",
+          "name": "CCRC 信息安全服务",
+          "domain": "安全"
+        },
+        {
+          "id": "secret",
+          "name": "涉密相关",
+          "domain": "安全"
+        }
+      ],
+      "score": 119,
+      "stars": 3,
+      "starScore": 88,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "投标截止：2026-09-02 10:30:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093600220564&type=1&docTypeCode=TenderAnnouncement&securityViewCode=e1f68c140e83a215de793ccee88fe6c5",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70307171991236",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-02 10:30:00",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 或是与中华人民共和国有正常贸易与往来的国家或地区 的 成熟稳定的产品。（ 本项目不涉及 ） 。 2.3. 2 投标产品所涉知识产权应保证不存在权利瑕疵，不侵害第三方专利权、商标权、著作权或其他任何形式的合法权益，并提供《知识产权不侵权承诺函》 。 2.3.7 投标产品 业绩要求： 。 2. 4 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年08月12日 09时00分00秒 至 2026年08月17日 17时30分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
+      "qualHits": []
+    },
+    {
+      "id": "70307185238028",
+      "title": "中电信人工智能科技有限公司 2026-2027年合同交付支撑服务项目（标包1：安装部署技术支撑服务）招标公告",
+      "tenderType": "招采",
+      "date": "2026-08-11",
+      "publishTime": "2026-08-11 16:41:24",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "软件开发",
+        "其他"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
+        {
+          "id": "secret",
+          "name": "涉密相关",
+          "domain": "安全"
+        }
+      ],
+      "score": 107,
+      "stars": 3,
+      "starScore": 88,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "投标截止：2026-09-02 09:00:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093631686197&type=1&docTypeCode=TenderAnnouncement&securityViewCode=3ff9a827e41dc91239de1d3d8ebe6720",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70307185238028",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-02 09:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 或是与中华人民共和国有正常贸易与往来的国家或地区 的 成熟稳定的产品。（ 本项目不涉及 ） 。 2.3. 2 投标产品所涉知识产权应保证不存在权利瑕疵，不侵害第三方专利权、商标权、著作权或其他任何形式的合法权益，并提供《知识产权不侵权承诺函》 。 2.3.7 投标产品 业绩要求： 。 2. 4 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年08月12日 09时00分00秒 至 2026年08月17日 17时30分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
+      "qualHits": []
+    },
+    {
+      "id": "70307830573128",
+      "title": "中电信人工智能科技有限公司 2026年监控调度与变更操作专区建设工程监理项目询比公告",
+      "tenderType": "招采",
+      "date": "2026-08-11",
+      "publishTime": "2026-08-11 19:29:31",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 4.85,
+      "professions": [
+        "事业单位用房",
+        "工程监理",
+        "运营商视频监控"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        }
+      ],
+      "score": 77,
+      "stars": 3,
+      "starScore": 74,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "规模较小",
+        "投标截止：2026-08-21 09:00:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093849845111&type=3&docTypeCode=CompareSelect&securityViewCode=682eebb79029f2d018dc4491c793edf9",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70307830573128",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-08-21 09:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 4.85 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70302909633808",
+      "title": "中电信人工智能科技有限公司 演示空间设计及装饰施工采购项目（标包3：工程监理）",
+      "tenderType": "招采",
+      "date": "2026-08-10",
+      "publishTime": "2026-08-10 22:08:11",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 10,
+      "professions": [
+        "工程设计",
+        "装修设计",
+        "工程监理"
+      ],
+      "matchedQuals": [],
+      "score": 72,
+      "stars": 3,
+      "starScore": 74,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "规模较小",
+        "投标截止：2026-09-01 09:30:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093779566075&type=1&docTypeCode=TenderAnnouncement&securityViewCode=b3d2581940d858bf41c86325ec9b631e",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70302909633808",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-01 09:30:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 10.00 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 或是与中华人民共和国有正常贸易与往来的国家或地区 的 成熟稳定的产品 。 2.4 法律法规规定的其他要求。 3. 资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4. 招标文件的获取 4.1 招标文件获取时间 : 2026年08月11日 09时00分00秒 至 2026年08月17日 17时00分00秒 （北京时间，下同）。 4.2 招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1 登录“中国电信阳光采购网（ https://caigou.chinatelecom.com.cn ）”后，通过“招投标 - 采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册 ” 。 4.3 招标文件费用： 获取本招标文件不收取费用。 5.",
+      "qualHits": []
+    },
+    {
+      "id": "70286302957260",
+      "title": "中电信人工智能科技有限公司 2026年员工工服采购项目询比公告",
+      "tenderType": "招采",
+      "date": "2026-08-07",
+      "publishTime": "2026-08-07 22:03:32",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "成衣被具"
+      ],
+      "matchedQuals": [
+        {
+          "id": "secret",
+          "name": "涉密相关",
+          "domain": "安全"
+        }
+      ],
+      "score": 69,
+      "stars": 3,
+      "starScore": 70,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "投标截止：2026-08-17 09:00:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093653717004&type=3&docTypeCode=CompareSelect&securityViewCode=0b22b1f725342a8b093cb1c2b3c46e9b",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70286302957260",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-08-17 09:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70316749365132",
+      "title": "中电信人工智能科技 （北京）有限公司2026年舆情洞察平台建设工程项目中标候选人公示",
+      "tenderType": "中标",
+      "date": "2026-08-13",
+      "publishTime": "2026-08-13 10:07:50",
+      "province": "北京市",
+      "city": "市辖区",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 279.95,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 102,
+      "stars": 2,
+      "starScore": 42,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 280 万）",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70316749365132",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70316749365132",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "约 280 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70305674905936",
+      "title": "中电信人工智能科技 （北京）有限公司2026年翼点触达平台建设工程项目中标候选人公示",
+      "tenderType": "中标",
+      "date": "2026-08-11",
+      "publishTime": "2026-08-11 10:08:14",
+      "province": "北京市",
+      "city": "市辖区",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 405.95,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 103,
+      "stars": 2,
+      "starScore": 42,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 406 万）",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70305674905936",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70305674905936",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "约 406 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70280820415192",
+      "title": "中电信人工智能科技有限公司 2026年某地智能中台及云管平台部署和运维售后服务采购项目（第三次）成交候选人公示",
+      "tenderType": "中标",
+      "date": "2026-08-06",
+      "publishTime": "2026-08-06 22:12:50",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 13.2,
+      "professions": [
+        "其他",
+        "运营商系统集成",
+        "云服务"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务许可",
+          "domain": "通用"
+        }
+      ],
+      "score": 96,
+      "stars": 2,
+      "starScore": 34,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模较小",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70280820415192",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70280820415192",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "约 13.20 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70262914088464",
+      "title": "中电信人工智能科技（北京）有限公司 2026年企业外立面标识建设工程项目（第二次）询比结果公示",
+      "tenderType": "中标",
+      "date": "2026-08-03",
+      "publishTime": "2026-08-03 16:32:40",
+      "province": "北京市",
+      "city": "市辖区",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 17.87,
+      "professions": [
+        "幕墙工程",
+        "装修工程",
+        "系统集成",
+        "广告服务",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 84,
+      "stars": 2,
+      "starScore": 34,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模较小",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70262914088464",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70262914088464",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "约 17.87 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70322263400080",
+      "title": "中电信人工智能科技 （北京）有限公司2026年统一安全测试项目标包一：安全渗透测试询比结果公示",
+      "tenderType": "中标",
+      "date": "2026-08-14",
+      "publishTime": "2026-08-14 10:08:11",
+      "province": "北京市",
+      "city": "市辖区",
+      "buyer": "中国电信集团公司",
+      "moneyWan": 0,
+      "professions": [
+        "系统集成",
+        "网络安全",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 74,
+      "stars": 1,
+      "starScore": 30,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70322263400080",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70322263400080",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70317158875096",
+      "title": "中电信人工智能科技 （北京）有限公司2026年舆情洞察平台建设工程项目中标候选人公示",
+      "tenderType": "中标",
+      "date": "2026-08-13",
+      "publishTime": "2026-08-13 11:54:24",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "",
+      "moneyWan": 0,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 86,
+      "stars": 1,
+      "starScore": 30,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70317158875096",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70317158875096",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70317261786008",
+      "title": "中电信人工智能科技 （北京）有限公司2026年监控调度与变更操作专区建设工程成交候选人公示",
+      "tenderType": "中标",
+      "date": "2026-08-13",
+      "publishTime": "2026-08-13 12:18:21",
+      "province": "北京市",
+      "city": "市辖区",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "事业单位用房",
+        "系统集成",
+        "运营商大数据",
+        "运营商视频监控",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 74,
+      "stars": 1,
+      "starScore": 30,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70317261786008",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70317261786008",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70316749245260",
+      "title": "中电信人工智能科技 （北京）有限公司2026年统一安全测试项目标包二：软件供应链安全测试询比结果公示",
+      "tenderType": "中标",
+      "date": "2026-08-13",
+      "publishTime": "2026-08-13 10:07:42",
+      "province": "北京市",
+      "city": "市辖区",
+      "buyer": "中国电信集团公司",
+      "moneyWan": 0,
+      "professions": [
+        "系统集成",
+        "网络安全",
+        "仓储服务",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 74,
+      "stars": 1,
+      "starScore": 30,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70316749245260",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70316749245260",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70306126037060",
+      "title": "中电信人工智能科技 （北京）有限公司2026年翼点触达平台建设工程项目中标候选人公示",
+      "tenderType": "中标",
+      "date": "2026-08-11",
+      "publishTime": "2026-08-11 12:05:08",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "",
+      "moneyWan": 0,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "运营商大数据",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 86,
+      "stars": 1,
+      "starScore": 30,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70306126037060",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70306126037060",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70314814971660",
+      "title": "中电信人工智能科技有限公司 2026年某地智能中台及云管平台部署和运维售后服务采购项目（第三次）成交候选人公示",
+      "tenderType": "中标",
+      "date": "2026-08-06",
+      "publishTime": "2026-08-06 00:00:03",
+      "province": "",
+      "city": "",
+      "buyer": "中电信人工智能科技有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "其他",
+        "运营商系统集成",
+        "云服务"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务许可",
+          "domain": "通用"
+        }
+      ],
+      "score": 86,
+      "stars": 1,
+      "starScore": 30,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70314814971660",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70314814971660",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70280820323160",
+      "title": "中电信人工智能科技有限公司 2026年个保合规审计服务项目成交候选人公示",
+      "tenderType": "中标",
+      "date": "2026-08-06",
+      "publishTime": "2026-08-06 22:12:42",
+      "province": "北京市",
+      "city": "市辖区",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 60,
+      "professions": [
+        "法律服务",
+        "审计服务",
+        "其他"
+      ],
+      "matchedQuals": [],
+      "score": 43,
+      "stars": 1,
+      "starScore": 24,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "规模适中（约 60 万）",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai",
+        "telecom-gz"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70280820323160",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70280820323160",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "约 60.00 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70267890097804",
+      "title": "中电信人工智能科技有限公司 2026年人物动作垂类视频数据采购项目公开询比转直接采购公示",
+      "tenderType": "中标",
+      "date": "2026-08-04",
+      "publishTime": "2026-08-04 14:05:36",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 283.02,
+      "professions": [],
+      "matchedQuals": [],
+      "score": 46,
+      "stars": 1,
+      "starScore": 24,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "规模适中（约 283 万）",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70267890097804",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70267890097804",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "约 283 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70313977404884",
+      "title": "中电信人工智能科技 （北京）有限公司2026年某家电制造业MAAS平台项目定制化研发服务直接采购公示",
+      "tenderType": "中标",
+      "date": "2026-08-12",
+      "publishTime": "2026-08-12 22:02:42",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "电子电工",
+        "基础工程"
+      ],
+      "matchedQuals": [],
+      "score": 30,
+      "stars": 1,
+      "starScore": 12,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70313977404884",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70313977404884",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
+    {
+      "id": "70314813747660",
+      "title": "中电信人工智能科技有限公司 2026年个保合规审计服务项目成交候选人公示",
+      "tenderType": "中标",
+      "date": "2026-08-06",
+      "publishTime": "2026-08-06 00:00:33",
+      "province": "",
+      "city": "",
+      "buyer": "",
+      "moneyWan": 0,
+      "professions": [
+        "法律服务",
+        "审计服务",
+        "其他"
+      ],
+      "matchedQuals": [],
+      "score": 30,
+      "stars": 1,
+      "starScore": 12,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70314813747660",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70314813747660",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": []
+    },
     {
       "id": "70263523926872",
       "title": "贵州银行应用 软件开发 服务采购项目（财务系统）招标公告(采购公告)",
@@ -59,6 +1779,7 @@
         "投标截止：2026-08-25",
         "需购买文件（金额见原文）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=917322",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70263523926872",
       "stageName": "",
@@ -72,7 +1793,7 @@
       "qualSection": "（ 1 ） 具有相应的民事行为能力，具有独立承担民事义务的能力，提供三证合一后的营业执照及法人身份证。 （ 2 ） 具有良好的商业信誉和健全的财务会计制度，提供经合法审计机构出具 的近1年（即2025年） 度财务审计报告。成立不足一年的企业提供基本户开户银行出具的资信证明。 （ 3 ） 具有履行合同所必需的条件，如设备、专业技术能力，提供承诺，格式自拟。 （ 4 ） 具 有依法缴纳税收和社会保障资金的良好记录；提供 近1年任意 3个月依法缴纳税收和社会保障资金的证明材料 ， 依法免税或不需要缴纳社保的，须提供有效的证明材料 。 （ 5 ） 信用情况良好，在最近三年经营活动中，无行政处罚、严重失信、经营异常情况。在“信用中国”网站（www.creditchina.gov.cn）下载信用信息报告，报告生成时间为购买招标文件之日至开标前一天的任意时间，投标人须提供查询报告加盖公章，作为信用信息查询记录和证据编入",
       "qualHits": [],
       "deepAnalysis": {
-        "analyzedAt": "2026-08-14T08:51:27.364Z",
+        "analyzedAt": "2026-08-14T09:01:03.348Z",
         "summary": "匹配星级 5（综合分 81）；截止 2026-08-25；约 999 万元；与能力清单重合点较少，需人工看资格专章；未获取到可下载招标文件附件（可能仅有来源链接）。",
         "matchedStandards": [],
         "mustRequirements": [
@@ -131,6 +1852,7 @@
         "投标截止：2026-08-25",
         "需购买，约 300 元/套"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=923722",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70323677397068",
       "stageName": "",
@@ -144,7 +1866,7 @@
       "qualSection": "1.具有独立承担民事责任的能力：提供法人或其他组织的营业执照等证明文件； 2.具有良好的商业信誉和健全的财务会计制度： 投标供应商提供由会计师事务所出具的 2024年度或2025年度财务审计报告，或2026年1月至投标截止时间内银行出具的资信证明 ； 3.具有履行合同所必需的设备和专业技术能力：提供具有履行合同所必需的设备和专业技术能力的证明材料或承诺函（承诺函格式自拟）； 4.具有依法缴纳税收和社会保障资金的良好记录： 提供 2026年1月至今任意一个月依法缴纳税收（非纳税组织或纳税零申报的投标供应商提供相关佐证证明材料）的证明材料和提供2026年1月至今任意一个月依法缴纳社会保障资金的证明材料；新成立不满三个月的投标供应商提供依法缴纳税收和社会保障金的书面承诺，如不需缴纳的，需出具有效的证明材料 ； 5.参加本次采购活动前三年内，在经营活动中没有违法违规记录：提供参加采购活动前3年内在经营活动中没有重大违法记录的书面声明（格式文件详见",
       "qualHits": [],
       "deepAnalysis": {
-        "analyzedAt": "2026-08-14T08:51:27.365Z",
+        "analyzedAt": "2026-08-14T09:01:03.348Z",
         "summary": "匹配星级 5（综合分 73）；截止 2026-08-25；预算约 34.33 万元；与能力清单重合点较少，需人工看资格专章；未获取到可下载招标文件附件（可能仅有来源链接）。",
         "matchedStandards": [],
         "mustRequirements": [],
@@ -221,6 +1943,9 @@
         "投标截止：2026-08-10",
         "重点采购主体相关"
       ],
+      "focusTags": [
+        "telecom-gz"
+      ],
       "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=1438241886866&type=5&docTypeCode=NegotiationSelect&securityViewCode=384e34108593ea7315f229c4fa578f8d",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70268664847832",
       "stageName": "",
@@ -285,6 +2010,9 @@
         "业态相关，但未见明确证书门槛词",
         "重点采购主体相关"
       ],
+      "focusTags": [
+        "telecom-gz"
+      ],
       "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=1438264962935&type=5&docTypeCode=NegotiationSelect&securityViewCode=269275d138021f985dc2ba0b10a8bca5",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70295511705540",
       "stageName": "",
@@ -348,6 +2076,7 @@
         "投标截止：2026-09-04 09:30:00",
         "需购买，约 500 元/套"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=922598",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70313487588932",
       "stageName": "",
@@ -399,6 +2128,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 155 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=uOr09qrj+OJofpeEPyN+7Q==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70318115741648",
       "stageName": "",
@@ -412,7 +2142,7 @@
       "qualSection": "",
       "qualHits": [],
       "deepAnalysis": {
-        "analyzedAt": "2026-08-14T08:51:28.779Z",
+        "analyzedAt": "2026-08-14T09:01:05.218Z",
         "summary": "匹配星级 4（综合分 72）；截止未从公告解析到；约 155 万元；与能力清单重合点较少，需人工看资格专章；已下载附件 2 个。",
         "matchedStandards": [],
         "mustRequirements": [
@@ -478,6 +2208,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 76 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=iN94FS96jXdv2IOwXCbcoQ==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70314282685964",
       "stageName": "",
@@ -491,7 +2222,7 @@
       "qualSection": ".....................................................................",
       "qualHits": [],
       "deepAnalysis": {
-        "analyzedAt": "2026-08-14T08:51:27.866Z",
+        "analyzedAt": "2026-08-14T09:01:04.082Z",
         "summary": "匹配星级 4（综合分 72）；截止未从公告解析到；约 76.00 万元；与能力清单重合点较少，需人工看资格专章；已下载附件 1 个。",
         "matchedStandards": [],
         "mustRequirements": [
@@ -551,6 +2282,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 1633 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=jOBzFAXvXaPfrPtSFsP6AA==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70312596233492",
       "stageName": "",
@@ -601,6 +2333,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 534 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=jOBzFAXvXaPfrPtSFsP6AA==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70312596252500",
       "stageName": "",
@@ -652,6 +2385,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 423 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=jOBzFAXvXaPfrPtSFsP6AA==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70312596238484",
       "stageName": "",
@@ -729,6 +2463,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 110 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=Vb63wZ2TMTbs5Rds7NUpYg==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70308764094856",
       "stageName": "",
@@ -742,7 +2477,7 @@
       "qualSection": "",
       "qualHits": [],
       "deepAnalysis": {
-        "analyzedAt": "2026-08-14T08:51:28.078Z",
+        "analyzedAt": "2026-08-14T09:01:04.303Z",
         "summary": "匹配星级 4（综合分 72）；截止未从公告解析到；约 110 万元；与能力清单重合点较少，需人工看资格专章；已下载附件 1 个。",
         "matchedStandards": [],
         "mustRequirements": [
@@ -807,6 +2542,7 @@
         "投标截止：2026-08-17 10:00",
         "需购买文件（金额见原文）"
       ],
+      "focusTags": [],
       "sourceUrl": "https://ggzy.guizhou.gov.cn/tradeInfo/detailHtml?metaId=1246718167267545088",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70302407884676",
       "stageName": "",
@@ -858,6 +2594,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模偏大，需评估交付能力"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=jOBzFAXvXaPfrPtSFsP6AA==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70312596245460",
       "stageName": "",
@@ -914,6 +2651,7 @@
         "业态相关，但未见明确证书门槛词",
         "投标截止：2026-08-18"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.cfcpn.com/jcw/sys/index/goUrl?url=modules/sys/login/detail&column=undefined&searchVal=e3e99010e04042ba993a8f24b71c22e9",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70306606111368",
       "stageName": "",
@@ -970,6 +2708,7 @@
         "业态相关，但未见明确证书门槛词",
         "投标截止：2026-08-12 18:00"
       ],
+      "focusTags": [],
       "sourceUrl": "https://www.crrcgo.cc/#/detail/purchaseDetail?id=2539299741712300032&title=中车贵阳-设备-三维CAD设计软件采购-信息化软硬件-工业软件-业务应用软件竞标式谈判-标准合同采购公告&tabName=first",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70277367212232",
       "stageName": "",
@@ -1026,6 +2765,7 @@
         "业态相关，但未见明确证书门槛词",
         "投标截止：2026-08-13"
       ],
+      "focusTags": [],
       "sourceUrl": "https://pms.bgzchina.com:8080/cms/channel/1ywgg1/90011964.htm",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70281157435668",
       "stageName": "",
@@ -1082,6 +2822,7 @@
         "业态相关，但未见明确证书门槛词",
         "投标截止：2026-08-10"
       ],
+      "focusTags": [],
       "sourceUrl": "https://pms.bgzchina.com:8080/cms/channel/1ywgg1/90011956.htm",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70264550822220",
       "stageName": "",
@@ -1151,6 +2892,7 @@
         "需购买文件（金额见原文）",
         "证书级重合：质量管理体系"
       ],
+      "focusTags": [],
       "sourceUrl": "https://bid.powerchina.cn/notice/detail?id=2409504616&type=招采公告&typeName=招采公告&index=3-3&path=/consult/notice&companyType=3&bidType=",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70302341580164",
       "stageName": "",
@@ -1207,6 +2949,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模较小"
       ],
+      "focusTags": [],
       "sourceUrl": "https://www.bidding.csg.cn/lxcggg/1200438804.jhtml",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70305445120656",
       "stageName": "",
@@ -1273,6 +3016,9 @@
         "不收取文件费",
         "重点采购主体相关"
       ],
+      "focusTags": [
+        "telecom-gz"
+      ],
       "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=1438268308981&type=3&docTypeCode=CompareSelect&securityViewCode=0e399e70515099e0ceb28f6cc34c98c4",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70300594283592",
       "stageName": "",
@@ -1326,6 +3072,9 @@
         "投标截止：2026-08-13 09:30:00",
         "不收取文件费",
         "重点采购主体相关"
+      ],
+      "focusTags": [
+        "telecom-gz"
       ],
       "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=1438242574995&type=3&docTypeCode=CompareSelect&securityViewCode=1b483c04cc64a040782cb0630b0c3599",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70274038146500",
@@ -1391,6 +3140,9 @@
         "不收取文件费",
         "重点采购主体相关"
       ],
+      "focusTags": [
+        "telecom-gz"
+      ],
       "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=1438277361037&type=1&docTypeCode=TenderAnnouncement&securityViewCode=fbb88fb06bc1441b0b361833f8e34e2d",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70312773974860",
       "stageName": "",
@@ -1454,6 +3206,9 @@
         "不收取文件费",
         "重点采购主体相关"
       ],
+      "focusTags": [
+        "telecom-gz"
+      ],
       "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=1438254054888&type=3&docTypeCode=CompareSelect&securityViewCode=9f72d3c8e3d4e83ad4e6d41e83696a5c",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70269220822820",
       "stageName": "",
@@ -1505,6 +3260,7 @@
         "投标截止：2026-08-21",
         "需购买文件（金额见原文）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=923017",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70318272406040",
       "stageName": "",
@@ -1562,6 +3318,7 @@
         "投标截止：2026-08-17 10:00",
         "需购买文件（金额见原文）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=922446",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70313397078868",
       "stageName": "",
@@ -1614,6 +3371,7 @@
         "规模适中（约 993 万）",
         "投标截止：2026-09-03"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=ZnQEyzyBdy44vf91R3c/lQ==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70319873835160",
       "stageName": "",
@@ -1673,6 +3431,7 @@
         "规模适中（约 155 万）",
         "投标截止：2026-08-20"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=2iSCaxyQ+QUcBtskhReBUA==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70312574722824",
       "stageName": "",
@@ -1727,6 +3486,7 @@
         "规模适中（约 181 万）",
         "投标截止：2026-09-01"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=PHe4bctYORKO0WJEHwU0DA==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70314278494992",
       "stageName": "",
@@ -1779,6 +3539,7 @@
         "规模适中（约 106 万）",
         "投标截止：2026-08-13"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=KBU6hSaVZ7T/HZHvJrWqHw==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70278130475332",
       "stageName": "",
@@ -1842,6 +3603,7 @@
         "规模适中（约 241 万）",
         "投标截止：2026-08-12"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=7/hM7myDxVIulOWWfx+nYw==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70270059140304",
       "stageName": "",
@@ -1893,6 +3655,7 @@
         "规模适中（约 59 万）",
         "投标截止：2026-08-11"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=Y2s8hxOL/vtrYqLL+oXLHg==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70262796689028",
       "stageName": "",
@@ -1951,6 +3714,7 @@
         "规模适中（约 115 万）",
         "投标截止：2026-08-05"
       ],
+      "focusTags": [],
       "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=zd10GnLdr2sYtZNUh6J40YTwhJI3yMqKEmeFXDD+K4I=&district=52",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70246200943052",
       "stageName": "",
@@ -1987,6 +3751,9 @@
         "投标截止：2026-08-28 09:30:00",
         "不收取文件费",
         "重点采购主体相关"
+      ],
+      "focusTags": [
+        "telecom-gz"
       ],
       "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184633498313339&type=1&docTypeCode=TenderAnnouncement&securityViewCode=48ab32ee9a49008341610f00b886fd72",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70316726766084",
@@ -2042,6 +3809,7 @@
         "投标截止：2026-08-20 10:00",
         "需购买，约 300.00 元/套"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=923433",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70318852567972",
       "stageName": "",
@@ -2102,6 +3870,7 @@
         "投标截止：2026-08-24 10:00",
         "需购买，约 300 元/套"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=922320",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70311997962468",
       "stageName": "",
@@ -2162,6 +3931,7 @@
         "投标截止：2026-08-24 10:30",
         "需购买，约 300 元/套"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=922313",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70312008050084",
       "stageName": "",
@@ -2222,6 +3992,7 @@
         "投标截止：2026-08-24 10:30",
         "需购买，约 300 元/套"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=922317",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70312004059044",
       "stageName": "",
@@ -2276,6 +4047,7 @@
         "投标截止：2026-08-24 10:00",
         "需购买，约 300 元/套"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=922319",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70312001580452",
       "stageName": "",
@@ -2330,6 +4102,7 @@
         "投标截止：2026-08-24 10:30",
         "需购买，约 300 元/套"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=922318",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70312002062500",
       "stageName": "",
@@ -2390,6 +4163,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 99 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=MuXsSSA3obGsajAQBPykUA==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70323622926992",
       "stageName": "",
@@ -2440,6 +4214,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 58 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=923817",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70323647701072",
       "stageName": "",
@@ -2493,6 +4268,7 @@
         "规模较小",
         "投标截止：2026-08-21"
       ],
+      "focusTags": [],
       "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=v9gL3HiRm9U94fKsEkMV7oTwhJI3yMqKEmeFXDD+K4I=&district=52",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70323619963984",
       "stageName": "",
@@ -2549,6 +4325,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 87 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=tubZG9ANJrSZokc/RTfxxA==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70319883432292",
       "stageName": "",
@@ -2607,6 +4384,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 65 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=UNTxqwfliILntNkw0tfUdg==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70320037087268",
       "stageName": "",
@@ -2656,6 +4434,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 331 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=B96CSPjb6Z2HQGCKxmDCWQ==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70320034240164",
       "stageName": "",
@@ -2705,6 +4484,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 170 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=sfemthGVkB7DMcCwnzsPrg==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70319897613476",
       "stageName": "",
@@ -2755,6 +4535,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 105 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=zgvi/UrUO8oE5A3xVLJtBA==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70319860276440",
       "stageName": "",
@@ -2819,6 +4600,7 @@
         "规模较小",
         "投标截止：2026-08-19"
       ],
+      "focusTags": [],
       "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=C8NNAKr8XCxHvhtO/L/En4TwhJI3yMqKEmeFXDD+K4I=&district=52",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70311735460300",
       "stageName": "",
@@ -2876,6 +4658,7 @@
         "规模较小",
         "投标截止：2026-08-18"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202608/t20260810_27102788.htm",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70301447075524",
       "stageName": "",
@@ -2939,6 +4722,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 300 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "https://www.gydey.cn/index.php?m=content&c=index&a=show&catid=26&id=6566",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70273364820756",
       "stageName": "",
@@ -2982,6 +4766,9 @@
         "投标截止：2026-09-01 09:30:00",
         "不收取文件费",
         "重点采购主体相关"
+      ],
+      "focusTags": [
+        "telecom-gz"
       ],
       "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184633682885725&type=1&docTypeCode=TenderAnnouncement&securityViewCode=0b4d45a187c4509ef45a8b9fb95f847b",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70322254253444",
@@ -3027,6 +4814,9 @@
         "不收取文件费",
         "重点采购主体相关"
       ],
+      "focusTags": [
+        "telecom-gz"
+      ],
       "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184633457391576&type=1&docTypeCode=TenderAnnouncement&securityViewCode=24b571a809b2fb587acbde8ee43e2663",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70322251551244",
       "stageName": "",
@@ -3070,6 +4860,9 @@
         "投标截止：2026-09-01 09:30:00",
         "不收取文件费",
         "重点采购主体相关"
+      ],
+      "focusTags": [
+        "telecom-gz"
       ],
       "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184633444802094&type=1&docTypeCode=TenderAnnouncement&securityViewCode=f3e8312edbe86c8d918dd1d279ef498c",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70322253693456",
@@ -3115,6 +4908,9 @@
         "不收取文件费",
         "重点采购主体相关"
       ],
+      "focusTags": [
+        "telecom-gz"
+      ],
       "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184633623093894&type=1&docTypeCode=TenderAnnouncement&securityViewCode=c065575817870f7549e470e1881b1f48",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70322251099204",
       "stageName": "",
@@ -3158,6 +4954,9 @@
         "投标截止：2026-09-01 09:30:00",
         "不收取文件费",
         "重点采购主体相关"
+      ],
+      "focusTags": [
+        "telecom-gz"
       ],
       "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184633678686635&type=1&docTypeCode=TenderAnnouncement&securityViewCode=f316ed4684357e61f39fc1f31e6a9eaa",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70322250945224",
@@ -3204,6 +5003,9 @@
         "投标截止：2026-08-21 09:30:00",
         "不收取文件费",
         "重点采购主体相关"
+      ],
+      "focusTags": [
+        "telecom-gz"
       ],
       "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184633672383310&type=3&docTypeCode=CompareSelect&securityViewCode=32f68c27ef5196ff8e10fb36df7e4c0d",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70319599766116",
@@ -3258,6 +5060,7 @@
         "规模适中（约 87 万）",
         "投标截止：2026-08-19"
       ],
+      "focusTags": [],
       "sourceUrl": "https://ggzy.guizhou.gov.cn/tradeInfo/detailHtml?metaId=1247067820181819392",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70307890088396",
       "stageName": "",
@@ -3304,6 +5107,7 @@
         "规模适中（约 51 万）",
         "投标截止：2026-08-19"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=o7Typ8et4UiCAuTMS6odcA==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70308779187020",
       "stageName": "",
@@ -3372,6 +5176,7 @@
         "投标截止：2026-08-17 09:30",
         "需购买文件（金额见原文）"
       ],
+      "focusTags": [],
       "sourceUrl": "https://ggzy.guizhou.gov.cn/tradeInfo/detailHtml?metaId=1246718300382171136",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70302409846884",
       "stageName": "",
@@ -3429,6 +5234,7 @@
         "业态相关，但未见明确证书门槛词",
         "投标截止：2026-08-12 13:30"
       ],
+      "focusTags": [],
       "sourceUrl": "https://cg.gt.cn/cgxx/002004/20260813/e0760657-dc3b-4d25-8b8d-a281a4ae1b36.html",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70320056785172",
       "stageName": "",
@@ -3474,6 +5280,7 @@
         "投标截止：2026-08-24",
         "需购买，约 500 元/套"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=923053",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70318254016356",
       "stageName": "",
@@ -3519,6 +5326,7 @@
         "规模较小",
         "投标截止：2026-08-25"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=923640",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70322994444172",
       "stageName": "",
@@ -3570,6 +5378,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模较小"
       ],
+      "focusTags": [],
       "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=922792",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70313353992804",
       "stageName": "",
@@ -3624,6 +5433,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模较小"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=EEsjI3tx7b5pcfThJKSV3w==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70272600013652",
       "stageName": "",
@@ -3687,6 +5497,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模较小"
       ],
+      "focusTags": [],
       "sourceUrl": "https://www.qxnzjfwcs.com/door/menhu_more/gonggao_caigou_info.html?id=GCDGZJ2026080001M3D1116",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70264453363720",
       "stageName": "",
@@ -3729,6 +5540,7 @@
         "规模适中（约 210 万）",
         "投标截止：2026-09-03"
       ],
+      "focusTags": [],
       "sourceUrl": "https://www.ggzy.gov.cn/information/deal/html/a/520000/0201/20260813/d2d7a5d725b35fd59c47ab5ba195321f.html",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70318666812492",
       "stageName": "",
@@ -3789,6 +5601,7 @@
         "业态相关，但未见明确证书门槛词",
         "规模适中（约 195 万）"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=Cd3Cl0o5v8h90qbfe4jC4g==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70307031837252",
       "stageName": "",
@@ -3831,6 +5644,7 @@
         "规模适中（约 776 万）",
         "投标截止：2026-08-14"
       ],
+      "focusTags": [],
       "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=x/Rpg7k+q3/S8HFehT5aFw==",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70279388972620",
       "stageName": "",
@@ -3886,6 +5700,7 @@
         "专业标签匹配",
         "业态相关，但未见明确证书门槛词"
       ],
+      "focusTags": [],
       "sourceUrl": "https://b2b.10086.cn/#/noticeDetail?publishId=2088098388264329217&publishUuid=d7c15097f1624a6c87fab9fc49baf457&publishType=PURCHASE_SERVICE&publishOneType=PURCHASE_OPINION",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70322502674192",
       "stageName": "",
@@ -3945,6 +5760,7 @@
         "专业标签匹配",
         "业态相关，但未见明确证书门槛词"
       ],
+      "focusTags": [],
       "sourceUrl": "https://www.ymzec.com/bid/web-outportal/#/trade-info-detail?id=1537383095824793600&noticeType=15&publishStatus=2&systemStatus",
       "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70321826176272",
       "stageName": "",
@@ -3952,507 +5768,6 @@
       "bidDeadline": "",
       "fileGetDeadline": "",
       "scaleText": "规模未披露",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": []
-    },
-    {
-      "id": "70311424840660",
-      "title": "中国移动贵州公司数智化部2026至2027年（12个月） 大数据 平台MPP侧运维服务项目_询比公告",
-      "tenderType": "招采",
-      "date": "2026-08-12",
-      "publishTime": "2026-08-12 11:04:04",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "中国移动通信集团贵州有限公司",
-      "moneyWan": 0,
-      "professions": [
-        "软件开发",
-        "系统集成",
-        "数据处理",
-        "信息运维",
-        "其他",
-        "运营商ITO运维",
-        "运营商大数据",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "itss3",
-          "name": "ITSS",
-          "domain": "运维"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 101,
-      "stars": 3,
-      "starScore": 52,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词"
-      ],
-      "sourceUrl": "https://b2b.10086.cn/#/noticeDetail?publishId=2087180999429009410&publishUuid=018bc00ba6b941caaf7eeb14ec8284bb&publishType=PROCUREMENT&publishOneType=PROCUREMENT",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70311424840660",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "规模未披露",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": []
-    },
-    {
-      "id": "70314278438992",
-      "title": "省级政务 云服务 统筹保障项目（2026-2027年）公开招标公告(采购公告)",
-      "tenderType": "招采",
-      "date": "2026-08-12",
-      "publishTime": "2026-08-12 23:28:26",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵州省信息中心",
-      "moneyWan": 23981.63,
-      "professions": [
-        "运营商云计算",
-        "云服务"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "vas",
-          "name": "增值电信业务许可",
-          "domain": "通用"
-        }
-      ],
-      "score": 122,
-      "stars": 3,
-      "starScore": 50,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "业态相关，但未见明确证书门槛词",
-        "投标截止：2026-08-20"
-      ],
-      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=AsBmeyhVEEB0fhbpOTzYjw==",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70314278438992",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-08-20",
-      "fileGetDeadline": "",
-      "scaleText": "约 2.40 亿元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 3.本项目的特定资格要求： 标项1：不允许联合投标，需满足如下的特定资格要求：无。",
-      "qualHits": []
-    },
-    {
-      "id": "70307742991880",
-      "title": "2026年中国电信贵州公司行业视频会议产品运营平台项目 软件开发 服务采购中标候选人公示",
-      "tenderType": "中标",
-      "date": "2026-08-11",
-      "publishTime": "2026-08-11 19:05:36",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "中国电信股份有限公司贵州分公司",
-      "moneyWan": 884.95,
-      "professions": [
-        "广播摄像系统",
-        "基础工程",
-        "软件开发",
-        "系统集成",
-        "通信运营支撑",
-        "其他",
-        "运营商视频监控",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 105,
-      "stars": 3,
-      "starScore": 50,
-      "starReasons": [
-        "已结束或结果公示，参考价值低",
-        "标题强软件/信息化信号",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模适中（约 885 万）",
-        "重点采购主体相关"
-      ],
-      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=4851564291171741696&type=7&docTypeCode=ResultAnnounc&securityViewCode=f639f958f86b48735fb263c4e7448beb",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70307742991880",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "约 885 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": []
-    },
-    {
-      "id": "70280784006284",
-      "title": "2026年天翼云科技有限公司贵州分公司国家紧急医学救援基地（贵州） 软件开发 服务采购成交候选人公示",
-      "tenderType": "中标",
-      "date": "2026-08-06",
-      "publishTime": "2026-08-06 22:04:37",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "天翼云科技有限公司贵州分公司",
-      "moneyWan": 279.6642,
-      "professions": [
-        "软件开发",
-        "系统集成",
-        "其他",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 102,
-      "stars": 3,
-      "starScore": 50,
-      "starReasons": [
-        "已结束或结果公示，参考价值低",
-        "标题强软件/信息化信号",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模适中（约 280 万）",
-        "重点采购主体相关"
-      ],
-      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=4849792805549305856&type=7&docTypeCode=ResultAnnounc&securityViewCode=cbea0c3e03bb2e21630eafc4f1b43e57",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70280784006284",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "约 280 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": []
-    },
-    {
-      "id": "70319301480388",
-      "title": "智赋管理，慧育未来—— 人工智能 赋能中小学管理队伍培训项目竞争性磋商公告(采购公告)",
-      "tenderType": "招采",
-      "date": "2026-08-13",
-      "publishTime": "2026-08-13 19:10:47",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵阳市南明区教师学习与资源中心",
-      "moneyWan": 28.5,
-      "professions": [
-        "成人教育",
-        "其他"
-      ],
-      "matchedQuals": [],
-      "score": 70,
-      "stars": 2,
-      "starScore": 46,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "规模较小",
-        "投标截止：2026-08-20"
-      ],
-      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=923451",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70319301480388",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-08-20",
-      "fileGetDeadline": "",
-      "scaleText": "预算约 28.5 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "1.一般资格要求： （ 1）具有独立承担民事责任的能力：提供法人或者其他组织的营业执照等证明文件，自然人投标的提供身份证明。（提供有效的证明文件）。 （ 2）具有良好的商业信誉和健全的财务会计制度：供应商是法人的，提供经审计的2024年度（或2025年度）的财务报告，或银行出具的2026年的资信证明；部分其他组织、自然人或成立时间未满一年的，没有经审计的财务报告，提供银行出具的2026年的资信证明。 （ 3）具有履行合同所必需的设备和专业技术能力：供应商承诺具备履行合同所必需的设备和专业技术能力（承诺函自拟）。 （ 4）具有依法缴纳税收的良好记录：提供2026年任意一个月缴纳税收的凭据或证明材料（依法免税的，提供有效的证明文件）。 （ 5）具有依法缴纳社会保障资金的良好记录：提供2026年任意一个月社会保障资金缴纳证明材料（不需要缴纳社保资金的，提供有效的证明文件）。 （ 6）参加本次采购活动前三年内，在经营活动中没有重大违法记录：提供参加本次采购活动前三年内未因违法经营受到刑事处罚或者责令停产停业、吊销许可证或者执照、较大数额罚款等行政处罚的书面声明（声明函自拟）。 （ 7）供应商自行承诺不存在下述情形：①单位负责人为同一人或者存在直接控股、管理关系的不同供应商，不得参加同一合同项下的采购活动。②为项目提供整体设计、规范编制或项目管理、监理、检测等服务的供应商，不得再参加该项目的",
-      "qualHits": []
-    },
-    {
-      "id": "70318275934164",
-      "title": "2026中国国际 大数据 产业博览会展台搭建服务项目(采购公告)",
-      "tenderType": "招采",
-      "date": "2026-08-13",
-      "publishTime": "2026-08-13 16:46:37",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵州数安汇大数据产业发展有限公司",
-      "moneyWan": 16.39,
-      "professions": [
-        "展览服务",
-        "其他"
-      ],
-      "matchedQuals": [],
-      "score": 69,
-      "stars": 2,
-      "starScore": 46,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "规模较小",
-        "投标截止：2026-08-18"
-      ],
-      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=922982",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70318275934164",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-08-18",
-      "fileGetDeadline": "",
-      "scaleText": "约 16.39 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "1、一般资格要求 a.供应商应具有独立承担民事责任的能力（提供营业执照等注册登记证明文件） b.具有良好的商业信誉和健全的财务会计制度（提供2024年度或2025年度财务报表或经第三方审计的财务报告；2026年以后依法登记注册的企业，提供响应文件递交截止日前银行出具的有效的资信证明即可）； c . 具有依法缴纳税收良好记录：提供 2025年1月1日至今任意一个月依法缴纳税收（非纳税组织或纳税零申报的供应商提供相关佐证证明材料）和依法缴纳社会保障资金的证明材料； d供应商具有履行合同所必备的设备和技术能力（供应商自行承诺）； e . 参加本次采购活动前三年内，在经营活动中没有违法执业行为且未受到司法行政机关、律师协会的处罚、没有重大违法记录：； f . 法律、行政法规规定的其他条件：供应商须承诺：在 “信用中国”网站（www.creditchina.gov.cn）、中国政府采购网（www.ccgp.gov.cn）等渠道查询中未被列入失信被执行人名单、重大税收违法失信主体名单、政府采购严重违法失信行为记录名单中，如被列入失信被执行人、重大税收违法失信主体名单、政府采购严重违法失信行为记录名单中的供应商取消其投标资格，并承担由此造成的一切法律责任及后果。 2、法定代表人为同一个人的两个及两个以上法人，母公司及其全资子公司、控股公司，不得同时参加本询比项目； 3、本次询比不接受联合体申请；",
-      "qualHits": []
-    },
-    {
-      "id": "70313315475416",
-      "title": "2026中国国际 大数据 产业博览会展台搭建服务项目(采购公告)",
-      "tenderType": "招采",
-      "date": "2026-08-12",
-      "publishTime": "2026-08-12 19:13:21",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵阳经济开发区欣业数安产业投资控股有限公司",
-      "moneyWan": 16.5,
-      "professions": [
-        "展览服务",
-        "其他"
-      ],
-      "matchedQuals": [],
-      "score": 69,
-      "stars": 2,
-      "starScore": 46,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "规模较小",
-        "投标截止：2026-08-17"
-      ],
-      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=922720",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70313315475416",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-08-17",
-      "fileGetDeadline": "",
-      "scaleText": "约 16.50 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "1、一般资格要求 a.供应商应具有独立承担民事责任的能力（提供营业执照等注册登记证明文件） b.具有良好的商业信誉和健全的财务会计制度（提供2024年度或2025年度财务报表或经第三方审计的财务报告；2026年以后依法登记注册的企业，提供响应文件递交截止日前银行出具的有效的资信证明即可）； c . 具有依法缴纳税收良好记录：提供 2026年1月1日至今任意一个月依法缴纳税收（非纳税组织或纳税零申报的供应商提供相关佐证证明材料）和依法缴纳社会保障资金的证明材料； d供应商具有履行合同所必备的设备和技术能力（供应商自行承诺）； e . 参加本次采购活动前三年内，在经营活动中没有违法执业行为且未受到司法行政机关、律师协会的处罚、没有重大违法记录：； f . 法律、行政法规规定的其他条件：供应商须承诺：在 “信用中国”网站（www.creditchina.gov.cn）、中国政府采购网（www.ccgp.gov.cn）等渠道查询中未被列入失信被执行人名单、重大税收违法失信主体名单、政府采购严重违法失信行为记录名单中，如被列入失信被执行人、重大税收违法失信主体名单、政府采购严重违法失信行为记录名单中的供应商取消其投标资格，并承担由此造成的一切法律责任及后果。 2、法定代表人为同一个人的两个及两个以上法人，母公司及其全资子公司、控股公司，不得同时参加本询比项目； 3、本次询比不接受联合体申请；",
-      "qualHits": []
-    },
-    {
-      "id": "70323635826256",
-      "title": "[采购意向]独山县 智慧 林业建设项目",
-      "tenderType": "招采",
-      "date": "2026-08-14",
-      "publishTime": "2026-08-14 16:04:52",
-      "province": "贵州省",
-      "city": "黔南布依族苗族自治州",
-      "buyer": "独山县林业局",
-      "moneyWan": 650400,
-      "professions": [
-        "电子电工",
-        "电力设备",
-        "通信设备",
-        "航空设备",
-        "金属材料",
-        "结构用料",
-        "事业单位用房",
-        "智慧政务",
-        "软件开发",
-        "电信服务",
-        "网络工程",
-        "运营商网络集成",
-        "运营商物联网",
-        "运营商低空经济"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        }
-      ],
-      "score": 96,
-      "stars": 2,
-      "starScore": 44,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配"
-      ],
-      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=5OxBhgzkqTAQUvpnYSxrIw==",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70323635826256",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "预算约 650400 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": []
-    },
-    {
-      "id": "70261594419276",
-      "title": "贵州水投贵阳市水务环境集团有限公司2026年 信息安全 等级保护测评服务采购项目询比采购公告[采购出让公告]",
-      "tenderType": "招采",
-      "date": "2026-08-03",
-      "publishTime": "2026-08-03 10:49:05",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵州水投贵阳市水务环境集团有限公司",
-      "moneyWan": 0,
-      "professions": [
-        "网络安全",
-        "其他"
-      ],
-      "matchedQuals": [
-        {
-          "id": "iso27001",
-          "name": "ISO27001",
-          "domain": "安全"
-        }
-      ],
-      "score": 95,
-      "stars": 2,
-      "starScore": 43,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "投标截止：2026-08-12 09:30",
-        "需购买文件（金额见原文）"
-      ],
-      "sourceUrl": "https://ggzy.guizhou.gov.cn/tradeInfo/detailHtml?metaId=1244078795019915264",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70261594419276",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-08-12 09:30",
-      "fileGetDeadline": "",
-      "scaleText": "规模未披露",
-      "docFeeRequired": true,
-      "docFeeText": "需购买文件（金额见原文）",
-      "bondText": "",
-      "qualSection": "1、供应商具有独立承担民事责任的能力：提供具有统一社会信用代码的营业执照、法定代表人授权委托书、法定代表人和授权代表身份证，制作成加盖电子公章的 PDF 扫描件上传至交易平台； 2、参加本次采购活动前三年内，在经营活动中没有重大违法记录（供应商须提供承诺，格式自拟，并对真实性负责），承诺文件为加盖电子公章的 PDF 扫描件上传至交易平台； 3、提供经第三方合法审计机构出具的 2025年度财务审计报告，对于新成立不满一年的公司，应提供开户银行出具的资信证明，文件为加盖电子公章的 PDF 扫描件上传至交易平台； 4、有依法缴纳税收和社会保障资金的良好记录：提供 2025年任意 3 个月依法缴纳税收和社会保障资金的相关材料，文件为加盖电子公章的 PDF 扫描件上传至交易平台； 5、具有履行合同所必须的设备和专业技术、售后保障等能力（供应商自行承诺，格式自拟）； 6、提供在《信用中国》网站（www.creditchina.gov.cn）信用信息栏中无任何不良记录的查询截图，截图加盖电子公章形成 PDF 扫描件上传至交易平台； 7、本项目不接受联合体投标（承诺，格式自拟） 8、信息安全等级保护测评资质 4.6 其他事项： 4.7 是否接受联合体投标： 否",
-      "qualHits": []
-    },
-    {
-      "id": "70310724377992",
-      "title": "2026年中国电信贵州公司互联网暴露面改造项目web和移动应用动态防御系统软件容量扩容项目 软件开发 服务采购--直接采购公示",
-      "tenderType": "中标",
-      "date": "2026-08-12",
-      "publishTime": "2026-08-12 08:03:09",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "中国电信股份有限公司贵州分公司",
-      "moneyWan": 48,
-      "professions": [
-        "通信管线",
-        "数据中心",
-        "软件开发",
-        "系统集成",
-        "网络安全",
-        "其他",
-        "运营商IDC",
-        "运营商网络集成",
-        "运营商系统集成",
-        "运营商专线"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 98,
-      "stars": 2,
-      "starScore": 42,
-      "starReasons": [
-        "已结束或结果公示，参考价值低",
-        "标题强软件/信息化信号",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模较小",
-        "重点采购主体相关"
-      ],
-      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=184093817567881&type=2&docTypeCode=PurchaseAnnounceBasic&securityViewCode=4899687be308db6294b5481e3ccf9cd3",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70310724377992",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "约 48.00 万元",
       "docFeeRequired": null,
       "docFeeText": "原文未写明",
       "bondText": "",

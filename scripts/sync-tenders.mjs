@@ -145,9 +145,26 @@ const EXTRA_KEYWORDS = (process.env.BXND_EXTRA_KEYWORDS || "")
   .map((s) => s.trim())
   .filter(Boolean);
 
-/** 重点采购人/主体（正文命中时抬升星级；站点仍不展示机构称谓，只体现在排序） */
+/**
+ * 全国检索词（不按贵州省过滤）。中电信人工智能科技主体在北京，标讯常不挂 520000。
+ * 可用 BXND_FOCUS_KEYWORDS 覆盖；默认覆盖「中电信人工智能」系。
+ */
+const FOCUS_KEYWORDS = (
+  process.env.BXND_FOCUS_KEYWORDS ||
+  "中电信人工智能科技有限公司,中电信人工智能科技,中电信人工智能科技（北京）有限公司,中电信人工智能"
+)
+  .split(/[,，]/)
+  .map((s) => s.trim())
+  .filter(Boolean);
+const FOCUS_MAX_PAGES = Number(process.env.BXND_FOCUS_MAX_PAGES || 8);
+
+/** 重点采购人/主体（正文命中时抬升星级；并打 focusTags 供页面筛选） */
 const FOCUS_BUYER_RE =
   /中电信人工智能科技|中电信人工智能|电信人工智能科技|中电信数智科技|中电信数智|中国电信贵州/;
+
+/** 专项：中电信人工智能科技有限公司（含北京主体） */
+const FOCUS_CTA_AI_RE =
+  /中电信人工智能科技|中电信人工智能科技有限公司|中电信人工智能科技（北京）/;
 
 const SOFTWARE_RE =
   /软件开发|应用软件|软件系统|信息系统|系统集成|信息化|数字化|智慧|大数据|人工智能|\bAI\b|数据平台|业务系统|管理平台|运维服务|信息运维|ITO|云服务|云计算|等保|网络安全|信息安全|数据治理|平台建设|平台开发|软件/;
@@ -855,15 +872,26 @@ async function deepAnalyzeFiveStar(item, detail, keys) {
   };
 }
 
-async function fetchKeyword(keyword) {
+/**
+ * @param {string} keyword
+ * @param {{ provinceCodes?: number[] | null, maxPages?: number }} [opts]
+ * provinceCodes=null/[] → 全国检索（不传省码，避免把北京主体过滤掉）
+ */
+async function fetchKeyword(keyword, opts = {}) {
+  const maxPages = opts.maxPages ?? MAX_PAGES;
+  const provinceCodes =
+    opts.provinceCodes === undefined ? PROVINCE_CODES : opts.provinceCodes;
   const collected = [];
-  for (let page = 1; page <= MAX_PAGES; page += 1) {
-    const json = await apiPost("/api/admin/ProjectLibrary/ListByPage", {
+  for (let page = 1; page <= maxPages; page += 1) {
+    const body = {
       pageIndex: page,
       pageSize: PAGE_SIZE,
       keyword,
-      provinceCodes: PROVINCE_CODES,
-    });
+    };
+    if (Array.isArray(provinceCodes) && provinceCodes.length > 0) {
+      body.provinceCodes = provinceCodes;
+    }
+    const json = await apiPost("/api/admin/ProjectLibrary/ListByPage", body);
     if (!json?.success) {
       console.warn(`  ! ${keyword} p${page}:`, json?.message || "failed");
       break;
@@ -873,6 +901,16 @@ async function fetchKeyword(keyword) {
     if (items.length < PAGE_SIZE) break;
   }
   return collected;
+}
+
+function focusTagsFor(title, buyer, blob = "") {
+  const text = `${title} ${buyer} ${blob}`;
+  const tags = [];
+  if (FOCUS_CTA_AI_RE.test(text)) tags.push("cta-ai");
+  if (/中电信数智|中国电信贵州|中国电信股份有限公司贵州/.test(text)) {
+    tags.push("telecom-gz");
+  }
+  return tags;
 }
 
 async function maybeDetail(id) {
@@ -900,13 +938,36 @@ const authed = await ensureToken();
 
 const byId = new Map();
 for (const kw of ALL_KEYWORDS) {
-  process.stdout.write(`  · ${kw} ... `);
+  process.stdout.write(`  · [黔] ${kw} ... `);
   const items = await fetchKeyword(kw);
   let added = 0;
   for (const it of items) {
     if (!byId.has(it.id)) {
       byId.set(it.id, it);
       added += 1;
+    }
+  }
+  console.log(`${items.length} 条, +${added}`);
+  await new Promise((r) => setTimeout(r, 200));
+}
+
+// 全国：中电信人工智能科技（北京主体标讯常不挂贵州省码）
+console.log(
+  `全国重点检索: ${FOCUS_KEYWORDS.join(" · ")} pages<=${FOCUS_MAX_PAGES}`,
+);
+for (const kw of FOCUS_KEYWORDS) {
+  process.stdout.write(`  · [全国] ${kw} ... `);
+  const items = await fetchKeyword(kw, {
+    provinceCodes: null,
+    maxPages: FOCUS_MAX_PAGES,
+  });
+  let added = 0;
+  for (const it of items) {
+    if (!byId.has(it.id)) {
+      byId.set(it.id, { ...it, _focusNational: true });
+      added += 1;
+    } else {
+      byId.get(it.id)._focusNational = true;
     }
   }
   console.log(`${items.length} 条, +${added}`);
@@ -920,9 +981,13 @@ const cut = raw.filter((it) => {
   const title = stripHtml(it.name);
   const professions = it.professionNames || [];
   const buyer = stripHtml(it.zhaoBiao || it.customerName || "");
-  // 重点采购人相关公告优先入池（再经软件类/排除规则）
-  if (FOCUS_BUYER_RE.test(`${title} ${buyer}`)) {
+  // 重点采购人相关公告优先入池（含全国检索命中）
+  if (FOCUS_BUYER_RE.test(`${title} ${buyer}`) || it._focusNational) {
     if (EXCLUDE_RE.test(title)) return false;
+    // 工服/装饰等弱相关仍排除
+    if (/工服|装饰施工|绿化|绿植/.test(title) && !SOFTWARE_RE.test(title)) {
+      return false;
+    }
     return true;
   }
   return isSoftwareProject(title, professions);
@@ -978,13 +1043,19 @@ for (const it of ordered) {
 
   const tenderType = it.tenderType || "";
   const money = keys.moneyWan || Number(it.zhaoBiaoMoney || 0) || 0;
+  const buyerName = stripHtml(
+    it.zhaoBiao || it.customerName || detail?.zhaoBiao || "",
+  );
   let score = scoreItem(title, professions, matchedQuals, tenderType, money);
   if (keys.bidDeadline) score += 8;
   if (keys.docFeeRequired !== null) score += 4;
   if (keys.qualHits.length || keys.qualSection) score += 6;
   if (money > 0) score += 4;
 
-  if (matchedQuals.length === 0 && score < 35) continue;
+  const isFocusHit =
+    FOCUS_BUYER_RE.test(`${title} ${buyerName}`) || it._focusNational;
+  // 重点采购人入池放宽；通用池仍要求最低分
+  if (!isFocusHit && matchedQuals.length === 0 && score < 35) continue;
 
   const sourceUrl =
     detail?.sourceUrl ||
@@ -1001,15 +1072,17 @@ for (const it of ordered) {
     detailText,
   });
 
+  const tags = focusTagsFor(title, buyerName, fullBlob);
+
   tenders.push({
     id: String(it.id),
     title,
     tenderType,
     date: it.date || (it.publishDate || "").slice(0, 10) || "",
     publishTime: it.publishTime || it.createdOn || "",
-    province: it.province || "贵州省",
+    province: it.province || (it._focusNational ? "" : "贵州省"),
     city: it.city || "",
-    buyer: stripHtml(it.zhaoBiao || it.customerName || detail?.zhaoBiao || ""),
+    buyer: buyerName,
     moneyWan: money || 0,
     professions,
     matchedQuals,
@@ -1017,6 +1090,7 @@ for (const it of ordered) {
     stars: rating.stars,
     starScore: rating.starScore,
     starReasons: rating.starReasons,
+    focusTags: tags,
     sourceUrl,
     platformUrl: `https://dgdata.bxnd.com.cn/project-lib/detail2/${it.id}`,
     stageName: it.stageName || "",
@@ -1097,8 +1171,11 @@ for (const t of deepPool) {
     };
   }
 }
-// 深挖后按星级重排
+// 深挖后按星级重排；中电信人工智能专项优先入窗（避免被贵州通用池挤掉）
 tenders.sort((a, b) => {
+  const aFocus = (a.focusTags || []).includes("cta-ai") ? 1 : 0;
+  const bFocus = (b.focusTags || []).includes("cta-ai") ? 1 : 0;
+  if (bFocus !== aFocus) return bFocus - aFocus;
   if ((b.stars || 0) !== (a.stars || 0)) return (b.stars || 0) - (a.stars || 0);
   if ((b.starScore || 0) !== (a.starScore || 0)) {
     return (b.starScore || 0) - (a.starScore || 0);
@@ -1106,10 +1183,13 @@ tenders.sort((a, b) => {
   return (b.date || "").localeCompare(a.date || "");
 });
 
-const top = tenders.slice(0, 80).map((t) => {
+const TOP_LIMIT = Number(process.env.BXND_TOP_LIMIT || 100);
+const top = tenders.slice(0, TOP_LIMIT).map((t) => {
   const { _detail, _keys, ...pub } = t;
   return pub;
 });
+const ctaAiCount = top.filter((t) => (t.focusTags || []).includes("cta-ai")).length;
+console.log(`专项入窗：中电信人工智能 ${ctaAiCount} 条（上限 ${TOP_LIMIT}）`);
 
 const starDist = [1, 2, 3, 4, 5].map(
   (s) => `${s}★:${top.filter((t) => t.stars === s).length}`,
@@ -1122,14 +1202,18 @@ const out = {
   authenticated: authed,
   provinceCodes: PROVINCE_CODES,
   since,
-  queryCount: SEARCH_KEYWORDS.length,
+  queryCount: ALL_KEYWORDS.length + FOCUS_KEYWORDS.length,
   rawCount: raw.length,
   softwareCount: cut.length,
   matchedCount: top.length,
   fiveStarCount: top.filter((t) => t.stars === 5).length,
+  ctaAiCount: top.filter((t) => (t.focusTags || []).includes("cta-ai")).length,
+  telecomGzCount: top.filter((t) =>
+    (t.focusTags || []).includes("telecom-gz"),
+  ).length,
   deepAnalyzed: deepDone,
   note:
-    "匹配星级综合「软件相关度 / 公开标准关键词 / 在投状态 / 规模 / 截止信息」。5 星会尝试下载公开附件并做资格摘录。不等于可中标判断。账号密码勿入库。",
+    "匹配星级综合「软件相关度 / 公开标准关键词 / 在投状态 / 规模 / 截止信息」。含全国检索「中电信人工智能科技」专项。5 星会尝试下载公开附件并做资格摘录。不等于可中标判断。账号密码勿入库。",
   items: top,
 };
 
