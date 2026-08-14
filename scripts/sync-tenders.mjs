@@ -14,6 +14,8 @@
  *   BXND_DAYS=14
  *   BXND_MAX_PAGES=3
  *   BXND_PAGE_SIZE=30
+ *   BXND_EXTRA_KEYWORDS=中电信人工智能,中电信人工智能科技有限公司
+ *     # 额外检索词（逗号分隔），并入 SEARCH_KEYWORDS，用于重点采购人/主题
  *
  * 说明: 账号密码勿写入仓库；页面/产物勿出现敏感机构称谓。
  */
@@ -136,6 +138,16 @@ const SEARCH_KEYWORDS = [
   "信息安全",
   "云服务",
 ];
+
+/** 环境变量追加的重点检索词（采购人/主题），去重后并入搜索列表 */
+const EXTRA_KEYWORDS = (process.env.BXND_EXTRA_KEYWORDS || "")
+  .split(/[,，]/)
+  .map((s) => s.trim())
+  .filter(Boolean);
+
+/** 重点采购人/主体（正文命中时抬升星级；站点仍不展示机构称谓，只体现在排序） */
+const FOCUS_BUYER_RE =
+  /中电信人工智能科技|中电信人工智能|电信人工智能科技|中电信数智科技|中电信数智|中国电信贵州/;
 
 const SOFTWARE_RE =
   /软件开发|应用软件|软件系统|信息系统|系统集成|信息化|数字化|智慧|大数据|人工智能|\bAI\b|数据平台|业务系统|管理平台|运维服务|信息运维|ITO|云服务|云计算|等保|网络安全|信息安全|数据治理|平台建设|平台开发|软件/;
@@ -542,6 +554,13 @@ function rateStars(ctx) {
     reasons.push(keys.docFeeText || "需购文件");
   }
 
+  // 重点采购人（电信 AI 等）抬升排序；展示文案不写机构全称
+  const focusBlob = `${title} ${detailText || ""} ${keys.qualSection || ""} ${(keys.qualHits || []).join(" ")}`;
+  if (FOCUS_BUYER_RE.test(focusBlob)) {
+    pts += 25;
+    reasons.push("重点采购主体相关");
+  }
+
   // 扣分：明显非软件主业
   if (/绿化|绿植|课桌|药品|校服|土建主体|道路施工/.test(title)) {
     pts -= 30;
@@ -867,13 +886,20 @@ async function maybeDetail(id) {
 }
 
 const since = daysAgoIso(DAYS);
+const ALL_KEYWORDS = [
+  ...SEARCH_KEYWORDS,
+  ...EXTRA_KEYWORDS.filter((k) => !SEARCH_KEYWORDS.includes(k)),
+];
 console.log(
-  `同步标讯: province=${PROVINCE_CODES.join(",")} days=${DAYS} since>=${since} pages<=${MAX_PAGES}`,
+  `同步标讯: province=${PROVINCE_CODES.join(",")} days=${DAYS} since>=${since} pages<=${MAX_PAGES} keywords=${ALL_KEYWORDS.length}`,
 );
+if (EXTRA_KEYWORDS.length) {
+  console.log(`  重点词: ${EXTRA_KEYWORDS.join(" · ")}`);
+}
 const authed = await ensureToken();
 
 const byId = new Map();
-for (const kw of SEARCH_KEYWORDS) {
+for (const kw of ALL_KEYWORDS) {
   process.stdout.write(`  · ${kw} ... `);
   const items = await fetchKeyword(kw);
   let added = 0;
@@ -893,6 +919,12 @@ const cut = raw.filter((it) => {
   if (date && date < since) return false;
   const title = stripHtml(it.name);
   const professions = it.professionNames || [];
+  const buyer = stripHtml(it.zhaoBiao || it.customerName || "");
+  // 重点采购人相关公告优先入池（再经软件类/排除规则）
+  if (FOCUS_BUYER_RE.test(`${title} ${buyer}`)) {
+    if (EXCLUDE_RE.test(title)) return false;
+    return true;
+  }
   return isSoftwareProject(title, professions);
 });
 
