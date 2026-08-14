@@ -66,6 +66,10 @@ function cardHighlight(item: TenderItem): { label: string; value: string } {
   };
 }
 
+function itemId(item: TenderItem): string {
+  return String(item.id);
+}
+
 function TenderCard({
   item,
   focus,
@@ -82,11 +86,19 @@ function TenderCard({
   const title = shortTitle(item.title, focus);
 
   return (
-    <button
-      type="button"
+    <div
+      role="button"
+      tabIndex={0}
       className={`tender-card${active ? " tender-card-active" : ""}${award ? " tender-card-award" : ""}`}
       onClick={onSelect}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onSelect();
+        }
+      }}
       aria-pressed={active}
+      aria-haspopup="dialog"
     >
       <div className="tender-card-top">
         <span className={`star-pill ${starClass(item.stars || 0)}`} title={`分 ${item.starScore ?? item.score}`}>
@@ -116,7 +128,8 @@ function TenderCard({
           ))}
         </div>
       ) : null}
-    </button>
+      <span className="tender-card-open-hint">点击查看详情</span>
+    </div>
   );
 }
 
@@ -384,17 +397,37 @@ export function TenderBoard({ initial }: Props) {
     return list;
   }, [stage, openItems, awardItems, focused, highOnly]);
 
-  const selected = useMemo(
-    () => items.find((i) => i.id === selectedId) || null,
-    [items, selectedId],
-  );
+  // 在全池中找选中项（避免仅当前筛选列表 id 类型/过滤导致“点了没反应”）
+  const selected = useMemo(() => {
+    if (!selectedId) return null;
+    return (
+      focused.find((i) => itemId(i) === selectedId) ||
+      allItems.find((i) => itemId(i) === selectedId) ||
+      null
+    );
+  }, [allItems, focused, selectedId]);
 
-  // 列表变化时若选中项不在当前列表则清空
+  const openDetail = useCallback((id: string) => {
+    setSelectedId((cur) => (cur === id ? null : id));
+  }, []);
+
+  const closeDetail = useCallback(() => setSelectedId(null), []);
+
+  // Esc 关闭详情
   useEffect(() => {
-    if (selectedId && !items.some((i) => i.id === selectedId)) {
-      setSelectedId(null);
-    }
-  }, [items, selectedId]);
+    if (!selectedId) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeDetail();
+    };
+    window.addEventListener("keydown", onKey);
+    // 打开时锁滚动，避免误以为没打开
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [selectedId, closeDetail]);
 
   const fiveStar = focused.filter((i) => (i.stars || 0) >= 5).length;
   const ctaAiN =
@@ -521,41 +554,52 @@ export function TenderBoard({ initial }: Props) {
           </p>
         </article>
       ) : (
-        <>
-          <div className="tender-card-grid">
-            {items.map((item) => (
+        <div className="tender-card-grid">
+          {items.map((item) => {
+            const id = itemId(item);
+            return (
               <TenderCard
-                key={item.id}
+                key={id}
                 item={item}
                 focus={focus}
-                active={selectedId === item.id}
-                onSelect={() =>
-                  setSelectedId((cur) => (cur === item.id ? null : item.id))
-                }
+                active={selectedId === id}
+                onSelect={() => openDetail(id)}
               />
-            ))}
-          </div>
+            );
+          })}
+        </div>
+      )}
 
-          {selected ? (
-            <div className="tender-detail-wrap">
-              <div className="tender-detail-bar">
-                <span className="tender-keylabel">详情</span>
-                <button
-                  type="button"
-                  className="btn btn-ghost"
-                  style={{ padding: "2px 8px", fontSize: "0.75rem" }}
-                  onClick={() => setSelectedId(null)}
-                >
-                  收起
-                </button>
-              </div>
+      {selected ? (
+        <div
+          className="tender-drawer-root"
+          role="presentation"
+          onClick={closeDetail}
+        >
+          <div
+            className="tender-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label="标讯详情"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="tender-drawer-head">
+              <span className="tender-keylabel">标讯详情</span>
+              <button
+                type="button"
+                className="btn btn-ghost"
+                style={{ padding: "4px 10px", fontSize: "0.8125rem" }}
+                onClick={closeDetail}
+              >
+                关闭
+              </button>
+            </div>
+            <div className="tender-drawer-body">
               <TenderDetail item={selected} focus={focus} />
             </div>
-          ) : (
-            <p className="tender-hint tender-hint-muted">点击卡片展开详情</p>
-          )}
-        </>
-      )}
+          </div>
+        </div>
+      ) : null}
     </>
   );
 }

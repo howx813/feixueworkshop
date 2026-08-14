@@ -614,6 +614,12 @@ textarea {
   transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
   color: inherit;
   font: inherit;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
 }
 
 .tender-card:hover {
@@ -621,10 +627,22 @@ textarea {
   background: var(--bg-2);
 }
 
+.tender-card:focus-visible {
+  border-color: var(--accent, #2563eb);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.35);
+}
+
 .tender-card-active {
   border-color: var(--accent, #2563eb);
   box-shadow: 0 0 0 1px var(--accent, #2563eb);
   background: var(--bg-2);
+}
+
+.tender-card-open-hint {
+  margin-top: 2px;
+  font-size: 0.6875rem;
+  color: var(--text-2);
+  opacity: 0.75;
 }
 
 .tender-card-award {
@@ -698,15 +716,66 @@ textarea {
   padding: 1px 6px;
 }
 
-.tender-detail-wrap {
-  margin-top: 14px;
+/* 详情抽屉：点卡片后居中弹出，避免滚到列表底部才看见 */
+.tender-drawer-root {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
 }
 
-.tender-detail-bar {
+@media (min-width: 720px) {
+  .tender-drawer-root {
+    align-items: center;
+    padding: 24px;
+  }
+}
+
+.tender-drawer {
+  width: min(720px, 100%);
+  max-height: min(88vh, 900px);
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px 14px 0 0;
+  border: 1px solid var(--border);
+  background: var(--bg-1);
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+}
+
+@media (min-width: 720px) {
+  .tender-drawer {
+    border-radius: 14px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.32);
+  }
+}
+
+.tender-drawer-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 6px;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-soft);
+  flex-shrink: 0;
+  background: var(--surface-0);
+}
+
+.tender-drawer-body {
+  overflow-y: auto;
+  padding: 12px 14px 18px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tender-drawer-body .tender-detail {
+  border: none;
+  background: transparent;
+  padding: 0;
 }
 
 .tender-detail {
