@@ -33,22 +33,23 @@ export default async function HomePage() {
 
   return (
     <div className="page">
-      {/* —— 展厅首屏：人设 + 三入口（对标 Magic Portfolio 气质，不大改栈） —— */}
-      <header className="home-hero">
-        <p className="page-kicker">{site.nameEn}</p>
-        <h1 className="page-title home-hero-title">{site.heroGreeting}</h1>
-        <p className="page-desc home-hero-lead">{site.heroLead}</p>
-        <p className="home-hero-tag">{site.slogan}</p>
+      <p className="page-kicker">{site.nameEn}</p>
+      <h1 className="page-title">{site.name}</h1>
+      <p className="page-desc" style={{ marginBottom: 16 }}>
+        {site.slogan} · {site.heroLead}
+      </p>
 
-        <nav className="home-doors" aria-label="主要入口">
-          {homeDoors.map((door) => (
-            <Link key={door.id} href={door.href} className="home-door">
-              <span className="home-door-label">{door.label}</span>
-              <span className="home-door-hint">{door.hint}</span>
-            </Link>
-          ))}
-        </nav>
-      </header>
+      {/* 行业热点置顶：每日最显眼 */}
+      <AihotSelected limit={8} initialItems={aihotItems} />
+
+      <nav className="home-doors" aria-label="主要入口" style={{ marginTop: 20 }}>
+        {homeDoors.map((door) => (
+          <Link key={door.id} href={door.href} className="home-door">
+            <span className="home-door-label">{door.label}</span>
+            <span className="home-door-hint">{door.hint}</span>
+          </Link>
+        ))}
+      </nav>
 
       <section className="section">
         <div className="section-head">
@@ -144,14 +145,6 @@ export default async function HomePage() {
             </article>
           ))}
         </div>
-      </section>
-
-      <section className="section">
-        <div className="section-head">
-          <h2 className="section-title">行业热点（精选）</h2>
-          <span className="section-meta">可折叠关注 · 不挡展厅</span>
-        </div>
-        <AihotSelected limit={6} initialItems={aihotItems} />
       </section>
 
       <section className="section" id="contact">
