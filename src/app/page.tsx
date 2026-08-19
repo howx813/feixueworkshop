@@ -3,6 +3,7 @@ import { AihotSelected } from "@/components/AihotSelected";
 import { ContactForm } from "@/components/ContactForm";
 import {
   capabilities,
+  homeDoors,
   insights,
   principles,
   showcases,
@@ -28,16 +29,30 @@ async function prefetchAihot() {
 
 export default async function HomePage() {
   const aihotItems = await prefetchAihot();
+  const featuredShowcases = showcases.filter((s) => s.href).slice(0, 3);
 
   return (
     <div className="page">
-      <h1 className="page-title">{site.name}</h1>
+      {/* —— 展厅首屏：人设 + 三入口（对标 Magic Portfolio 气质，不大改栈） —— */}
+      <header className="home-hero">
+        <p className="page-kicker">{site.nameEn}</p>
+        <h1 className="page-title home-hero-title">{site.heroGreeting}</h1>
+        <p className="page-desc home-hero-lead">{site.heroLead}</p>
+        <p className="home-hero-tag">{site.slogan}</p>
 
-      <AihotSelected limit={8} initialItems={aihotItems} />
+        <nav className="home-doors" aria-label="主要入口">
+          {homeDoors.map((door) => (
+            <Link key={door.id} href={door.href} className="home-door">
+              <span className="home-door-label">{door.label}</span>
+              <span className="home-door-hint">{door.hint}</span>
+            </Link>
+          ))}
+        </nav>
+      </header>
 
       <section className="section">
         <div className="section-head">
-          <h2 className="section-title">核心能力 TOP {capabilities.length}</h2>
+          <h2 className="section-title">核心能力</h2>
           <Link href="/showcase/" className="link-accent">
             全部展厅 →
           </Link>
@@ -46,7 +61,6 @@ export default async function HomePage() {
           {capabilities.map((cap, i) => (
             <article key={cap.id} className="card card-pad">
               <div className="meta-row">
-                <span className="score-pill score-high">{90 - i * 4}</span>
                 <span className="chip chip-accent">{cap.status}</span>
                 <span>{cap.tags[0]}</span>
               </div>
@@ -65,11 +79,13 @@ export default async function HomePage() {
 
       <section className="section">
         <div className="section-head">
-          <h2 className="section-title">作品切片</h2>
-          <span className="section-meta">点开就能玩 · 手搓宝匣</span>
+          <h2 className="section-title">手搓切片</h2>
+          <Link href="/lab/" className="link-accent">
+            打开宝匣 →
+          </Link>
         </div>
         <div className="list-stack">
-          {showcases.map((item) => (
+          {featuredShowcases.map((item) => (
             <article key={item.id} className="card card-pad">
               <div className="meta-row">
                 <span className="chip">{item.role}</span>
@@ -85,13 +101,6 @@ export default async function HomePage() {
                 )}
               </h3>
               <p className="item-body">{item.summary}</p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 10 }}>
-                {item.stack.map((s) => (
-                  <span key={s} className="tag">
-                    {s}
-                  </span>
-                ))}
-              </div>
             </article>
           ))}
         </div>
@@ -104,7 +113,10 @@ export default async function HomePage() {
         <div className="grid-3">
           {principles.map((p) => (
             <div key={p.title} className="card-quiet card-pad">
-              <h3 className="item-title" style={{ marginTop: 0, fontSize: "0.9375rem" }}>
+              <h3
+                className="item-title"
+                style={{ marginTop: 0, fontSize: "0.9375rem" }}
+              >
                 {p.title}
               </h3>
               <p className="item-body">{p.desc}</p>
@@ -121,24 +133,25 @@ export default async function HomePage() {
           </Link>
         </div>
         <div className="list-stack">
-          {insights.map((item, i) => (
+          {insights.slice(0, 2).map((item) => (
             <article key={item.id} className="card card-pad">
               <div className="meta-row">
-                <span className={`score-pill ${i < 2 ? "score-high" : "score-mid"}`}>
-                  {88 - i * 3}
-                </span>
                 <span className="chip chip-amber">{item.category}</span>
                 <span>{item.date}</span>
               </div>
               <h3 className="item-title">{item.title}</h3>
               <p className="item-body">{item.summary}</p>
-              <div className="note">
-                <strong style={{ fontWeight: 650 }}>推荐理由：</strong>
-                {item.takeaway}
-              </div>
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2 className="section-title">行业热点（精选）</h2>
+          <span className="section-meta">可折叠关注 · 不挡展厅</span>
+        </div>
+        <AihotSelected limit={6} initialItems={aihotItems} />
       </section>
 
       <section className="section" id="contact">
@@ -148,7 +161,9 @@ export default async function HomePage() {
         </div>
         <div className="list-stack" style={{ marginBottom: 12 }}>
           <div className="card-quiet card-pad">
-            <div className="bullet">适合：AI 提效咨询、数据看板原型、材料方法交流</div>
+            <div className="bullet">
+              适合：AI 提效咨询、数据看板原型、材料方法交流
+            </div>
             <div className="bullet" style={{ marginTop: 6 }}>
               不适合：免费代写长篇公文、无边界驻场
             </div>

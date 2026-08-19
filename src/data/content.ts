@@ -6,7 +6,33 @@ export const site = {
     "飞雪的个人 AI 能力展厅：数据智能、智能体提效、科创方法与可演示作品。",
   owner: "飞雪",
   emailPlaceholder: "hello@feixue.workshop",
+  /** 首页人设（展厅气质：5 秒说清是谁） */
+  heroGreeting: "你好，我是飞雪",
+  heroLead:
+    "用 AI 重做工作流。这里是能力展厅、可玩实验，以及真实办公链路里的工具。",
 };
+
+/** 首页三入口：看人 / 看作品 / 看工具 */
+export const homeDoors = [
+  {
+    id: "showcase",
+    href: "/showcase/",
+    label: "能力展厅",
+    hint: "数据智能 · 智能体 · 科创方法",
+  },
+  {
+    id: "lab",
+    href: "/lab/",
+    label: "手搓宝匣",
+    hint: "点开就能玩的实验",
+  },
+  {
+    id: "tools",
+    href: "/tenders/",
+    label: "工作台",
+    hint: "每日标讯 · 工作周报",
+  },
+] as const;
 
 export type Capability = {
   id: string;
