@@ -24,7 +24,8 @@ export type LabItem = {
     | "life"
     | "fourier"
     | "spectrum"
-    | "particle-life";
+    | "particle-life"
+    | "time-illusion";
   summary: string;
   href: string;
   status: "可玩" | "实验中" | "搁置";
@@ -33,6 +34,17 @@ export type LabItem = {
 };
 
 export const labItems: LabItem[] = [
+  {
+    id: "time-illusion",
+    title: "时间幻觉",
+    icon: "time-illusion",
+    summary:
+      "爱因斯坦名言叠在星空上，半透明晶体缓缓旋转、连续形变。过去、现在与未来之间的分别，不过是一种顽固的幻觉。",
+    href: "/lab/time-illusion/",
+    status: "可玩",
+    tags: ["Canvas", "3D", "视觉玩具"],
+    updated: "2026-08-19",
+  },
   {
     id: "particle-life",
     title: "粒子生命",

@@ -10,7 +10,8 @@ export type LabIconKey =
   | "life"
   | "fourier"
   | "spectrum"
-  | "particle-life";
+  | "particle-life"
+  | "time-illusion";
 
 type Props = {
   id: LabIconKey;
@@ -77,6 +78,15 @@ export function LabIcon({ id, size = 20, className }: Props) {
           <circle cx="6" cy="15" r="1.2" fill="currentColor" stroke="none" />
           <path d="M8 9c2 1 4 2 5 4" opacity={0.7} />
           <path d="M15 8c1 2 2 3 2 5" opacity={0.7} />
+        </svg>
+      );
+    case "time-illusion":
+      return (
+        <svg {...svgProps}>
+          <path d="M12 3l6.5 4.2v5.6L12 17l-6.5-4.2V7.2L12 3z" />
+          <path d="M12 8.5l3.2 2.1v2.8L12 15.5l-3.2-2.1v-2.8L12 8.5z" opacity={0.55} />
+          <circle cx="18.5" cy="5.5" r="1" fill="currentColor" stroke="none" />
+          <circle cx="5.2" cy="16.5" r="0.8" fill="currentColor" stroke="none" />
         </svg>
       );
     case "graphic":

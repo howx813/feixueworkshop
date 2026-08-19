@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.35",
+    date: "2026-08-19",
+    title: "手搓宝匣新增「时间幻觉」晶体变形视觉玩具",
+    summary:
+      "/lab/time-illusion：复刻星空 + 半透明晶体连续形变短视频；爱因斯坦中英名言叠层，细分八面体径向位移，可调形变强度与转速。",
+    items: [
+      { tag: "新增", text: "/lab/time-illusion：星空背景 + 半透明晶体旋转形变 + 名言叠层" },
+      { tag: "新增", text: "crystal-morph-core：细分八面体网格、径向噪声位移、投影与面光照" },
+      { tag: "新增", text: "宝匣清单、LabIcon、首页 showcase 注册 time-illusion 条目" },
+    ],
+  },
+  {
     version: "0.2.34",
     date: "2026-08-09",
     title: "访问分析同步改增量版，API 消耗降到 ≈1 次/天",

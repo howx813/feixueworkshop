@@ -103,6 +103,17 @@ export type ShowcaseItem = {
 
 export const showcases: ShowcaseItem[] = [
   {
+    id: "time-illusion",
+    title: "时间幻觉",
+    role: "视觉玩具 / 短视频复刻",
+    summary:
+      "爱因斯坦名言叠在星空上，半透明晶体缓缓旋转、连续形变。过去、现在与未来之间的分别，不过是一种顽固的幻觉。",
+    highlights: ["细分八面体 + 径向形变", "半透明切面光照", "可调形变强度与转速"],
+    stack: ["Canvas", "TypeScript"],
+    stage: "可玩",
+    href: "/lab/time-illusion/",
+  },
+  {
     id: "particle-life",
     title: "粒子生命",
     role: "涌现模拟 / 玩具",
