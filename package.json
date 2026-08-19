@@ -18,6 +18,7 @@
     "tenders:weekly-site": "node scripts/weekly-site-report.mjs",
     "tenders:daily": "bash scripts/tenders-daily.sh",
     "analytics:sync": "node scripts/sync-analytics.mjs",
+    "wechat:sync": "node scripts/sync-wechat-mp.mjs",
     "tenders:install-cron": "bash scripts/install-tenders-launchd.sh",
     "snowflake:export": "node scripts/export-snowflake-svg.mjs",
     "test": "npm run test:unit && npm run test:predeploy",
