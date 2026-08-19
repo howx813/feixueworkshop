@@ -1,23 +1,24 @@
 /**
- * 同步微信公众号「已发布图文」到静态站快照。
+ * 同步微信公众号「已证实发布」的文章到静态站。
  *
  * 用法: npm run wechat:sync
  *
  * 环境变量（.env.local，勿提交）:
- *   WECHAT_MP_APPID=
- *   WECHAT_MP_APPSECRET=
- *   WECHAT_MP_NAME=朝诗夕文
+ *   WECHAT_MP_APPID / WECHAT_MP_APPSECRET / WECHAT_MP_NAME
  *   WECHAT_MP_MAX_ITEMS=30
+ *   WECHAT_MP_ALLOW_DRAFT=1  # 仅调试；默认关闭，不上草稿
  *
- * 前置: 公众平台 IP 白名单须包含本机公网出口 IP。
- * 注意: 2025-07 起个人主体等账号可能被回收 freepublish 接口权限。
+ * 个人号常无 freepublish 权限。此时请把「发表记录」里的永久链接写入:
+ *   data/wechat-mp-published-urls.txt
  */
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import crypto from "node:crypto";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
+const URLS_FILE = path.join(root, "data/wechat-mp-published-urls.txt");
 
 function loadEnvLocal() {
   const envPath = path.join(root, ".env.local");
@@ -39,26 +40,46 @@ const APPID = process.env.WECHAT_MP_APPID || "";
 const SECRET = process.env.WECHAT_MP_APPSECRET || "";
 const MP_NAME = process.env.WECHAT_MP_NAME || "公众号";
 const MAX_ITEMS = Number(process.env.WECHAT_MP_MAX_ITEMS || 30);
+const ALLOW_DRAFT = process.env.WECHAT_MP_ALLOW_DRAFT === "1";
 
-function stripHtml(html = "") {
-  return String(html)
-    .replace(/<script[\s\S]*?<\/script>/gi, "")
-    .replace(/<style[\s\S]*?<\/style>/gi, "")
-    .replace(/<[^>]+>/g, " ")
+function decodeEntities(s = "") {
+  return String(s)
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
-    .replace(/\s+/g, " ")
-    .trim();
+    .replace(/&#39;/g, "'")
+    .replace(/&ldquo;/g, "“")
+    .replace(/&rdquo;/g, "”");
+}
+
+function stripHtml(html = "") {
+  return decodeEntities(
+    String(html)
+      .replace(/<script[\s\S]*?<\/script>/gi, "")
+      .replace(/<style[\s\S]*?<\/style>/gi, "")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim(),
+  );
 }
 
 function digestOf(item) {
   const d = (item.digest || "").trim();
-  if (d) return d.slice(0, 160);
-  const plain = stripHtml(item.content || "");
-  return plain.slice(0, 160);
+  if (d && d !== "t") return d.slice(0, 160);
+  return stripHtml(item.content || "").slice(0, 160);
+}
+
+function isPreviewUrl(url = "") {
+  return /tempkey=|preview_id=|__biz=.*tempkey/i.test(url);
+}
+
+function isPermanentMpUrl(url = "") {
+  if (!/^https?:\/\/mp\.weixin\.qq\.com\//i.test(url)) return false;
+  if (isPreviewUrl(url)) return false;
+  // /s/xxx 或 带 sn= 的经典永久链
+  return /\/s\/[A-Za-z0-9_-]+/.test(url) || /[?&]sn=[a-f0-9]+/i.test(url);
 }
 
 async function getAccessToken() {
@@ -71,7 +92,7 @@ async function getAccessToken() {
   if (!json.access_token) {
     const hint =
       json.errcode === 40164
-        ? " → 请到公众平台把本机公网 IP 加入「IP白名单」"
+        ? " → 请把本机访问微信的出口 IP 加入白名单（Clash 开着时多为代理出口 IP）"
         : "";
     throw new Error(
       `获取 access_token 失败: ${json.errcode || "?"} ${json.errmsg || ""}${hint}`,
@@ -100,13 +121,14 @@ function mapNewsRows(batch, idKey) {
     news.forEach((n, idx) => {
       const title = (n.title || "").trim();
       if (!title) return;
+      const url = n.url || n.content_source_url || "";
       items.push({
         id: `${articleId || "art"}-${idx}`,
         articleId: String(articleId),
         title,
         author: n.author || MP_NAME,
         digest: digestOf(n),
-        url: n.url || n.content_source_url || "",
+        url,
         thumbUrl: n.thumb_url || "",
         publishedAt: row.update_time
           ? new Date(Number(row.update_time) * 1000).toISOString()
@@ -147,11 +169,109 @@ async function fetchBatch(token, pathname, bodyBase, idKey) {
   return { total, items: items.slice(0, MAX_ITEMS) };
 }
 
-/**
- * 优先已发表列表；个人主体常无 freepublish 权限，则回退草稿箱。
- * 草稿箱可能含未发表稿，且部分链接带 tempkey，站点以标题索引 + 尽量外链为准。
- */
+function readUrlFile() {
+  if (!fs.existsSync(URLS_FILE)) return [];
+  return fs
+    .readFileSync(URLS_FILE, "utf8")
+    .split("\n")
+    .map((l) => l.trim())
+    .filter((l) => l && !l.startsWith("#"));
+}
+
+function pickMeta(html, prop) {
+  const re = new RegExp(
+    `<meta[^>]+(?:property|name)=["']${prop}["'][^>]+content=["']([^"']+)["']`,
+    "i",
+  );
+  const re2 = new RegExp(
+    `<meta[^>]+content=["']([^"']+)["'][^>]+(?:property|name)=["']${prop}["']`,
+    "i",
+  );
+  return decodeEntities(html.match(re)?.[1] || html.match(re2)?.[1] || "");
+}
+
+async function fetchArticleMeta(url) {
+  const res = await fetch(url, {
+    redirect: "follow",
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      Accept: "text/html,application/xhtml+xml",
+    },
+  });
+  if (!res.ok) {
+    throw new Error(`打开文章失败 HTTP ${res.status}: ${url}`);
+  }
+  const finalUrl = res.url || url;
+  if (isPreviewUrl(finalUrl)) {
+    throw new Error(`仍是预览链（tempkey），不是发表记录永久链: ${url}`);
+  }
+  const html = await res.text();
+  const title =
+    pickMeta(html, "og:title") ||
+    pickMeta(html, "twitter:title") ||
+    decodeEntities(html.match(/<title>([^<]+)<\/title>/i)?.[1] || "").replace(
+      /\s*-\s*微信公众平台\s*$/,
+      "",
+    );
+  const digest =
+    pickMeta(html, "og:description") ||
+    pickMeta(html, "description") ||
+    "";
+  const thumbUrl = pickMeta(html, "og:image") || "";
+  const publishUnix =
+    html.match(/var\s+createTime\s*=\s*['"](\d+)['"]/)?.[1] ||
+    html.match(/publish_time['"]?\s*[:=]\s*['"]?(\d{10})/)?.[1] ||
+    "";
+  if (!title) throw new Error(`未能解析标题: ${url}`);
+  const id = crypto.createHash("sha1").update(finalUrl).digest("hex").slice(0, 16);
+  return {
+    id,
+    articleId: id,
+    title: title.trim(),
+    author: MP_NAME,
+    digest: digest.slice(0, 160),
+    url: finalUrl.startsWith("http") ? finalUrl : url,
+    thumbUrl,
+    publishedAt: publishUnix
+      ? new Date(Number(publishUnix) * 1000).toISOString()
+      : "",
+    showCover: Boolean(thumbUrl),
+  };
+}
+
+async function fetchFromUrlFile() {
+  const urls = readUrlFile();
+  const permanent = urls.filter(isPermanentMpUrl);
+  const skipped = urls.length - permanent.length;
+  if (skipped > 0) {
+    console.warn(`跳过 ${skipped} 条非永久/非法链接（含 tempkey 预览链）`);
+  }
+  if (!permanent.length) {
+    return { total: 0, items: [], source: "wechat-mp-url-file", mode: "url-file" };
+  }
+  const items = [];
+  for (const url of permanent.slice(0, MAX_ITEMS)) {
+    process.stdout.write(`  · 拉取 ${url.slice(0, 48)}... `);
+    try {
+      const meta = await fetchArticleMeta(url);
+      items.push(meta);
+      console.log("ok", meta.title.slice(0, 24));
+    } catch (e) {
+      console.log("失败", e.message);
+    }
+    await new Promise((r) => setTimeout(r, 400));
+  }
+  return {
+    total: items.length,
+    items,
+    source: "wechat-mp-url-file",
+    mode: "url-file",
+  };
+}
+
 async function fetchArticles(token) {
+  // 1) 官方已发表列表（企业认证号等）
   try {
     const published = await fetchBatch(
       token,
@@ -159,20 +279,44 @@ async function fetchArticles(token) {
       { no_content: 0 },
       "article_id",
     );
-    return { ...published, source: "wechat-mp-freepublish", mode: "published" };
+    const items = published.items.filter(
+      (it) => it.url && !isPreviewUrl(it.url),
+    );
+    return {
+      total: published.total,
+      items: items.slice(0, MAX_ITEMS),
+      source: "wechat-mp-freepublish",
+      mode: "published",
+    };
   } catch (e) {
     if (e.code !== 48001 && e.code !== 61004) throw e;
     console.warn(
-      `已发表列表不可用（${e.code}），回退草稿箱接口。个人号常见限制。`,
+      `已发表列表 API 不可用（${e.code}）。个人号常见。改走「发表记录永久链接」文件。`,
     );
+  }
+
+  // 2) 永久链接清单（证实已发布）
+  const fromFile = await fetchFromUrlFile();
+  if (fromFile.items.length) return fromFile;
+
+  // 3) 调试才允许草稿（默认不上站）
+  if (ALLOW_DRAFT) {
+    console.warn("WECHAT_MP_ALLOW_DRAFT=1，使用草稿箱（不能证明已发表）");
     const drafts = await fetchBatch(
       token,
       "/cgi-bin/draft/batchget",
       { no_content: 0 },
       "media_id",
     );
-    return { ...drafts, source: "wechat-mp-draft", mode: "draft-fallback" };
+    return { ...drafts, source: "wechat-mp-draft", mode: "draft-debug" };
   }
+
+  return {
+    total: 0,
+    items: [],
+    source: "wechat-mp-none",
+    mode: "need-urls",
+  };
 }
 
 const token = await getAccessToken();
@@ -182,6 +326,16 @@ console.log(
   `模式=${mode} total≈${total}，本次写入 ${items.length} 条（source=${source}）`,
 );
 
+const noteByMode = {
+  published: "来自微信「已发表」接口；本站展示标题/摘要并链到原文。密钥勿入库。",
+  "url-file":
+    "个人号无已发表接口权限。本站仅收录 data/wechat-mp-published-urls.txt 中的永久链接（发表记录复制），可证实已发布。",
+  "need-urls":
+    "尚未配置已发表永久链接。请打开公众平台 → 内容管理 → 发表记录，复制文章链接到 data/wechat-mp-published-urls.txt 后重跑 npm run wechat:sync。",
+  "draft-debug":
+    "调试模式：草稿箱内容，不能证明已发表，请勿用于生产展示。",
+};
+
 const payload = {
   syncedAt: new Date().toISOString(),
   source,
@@ -190,10 +344,7 @@ const payload = {
   appIdMasked: APPID ? `${APPID.slice(0, 6)}…${APPID.slice(-4)}` : "",
   totalCount: total,
   itemCount: items.length,
-  note:
-    mode === "draft-fallback"
-      ? "个人号无「已发表列表」权限，已从草稿箱接口同步标题/链接（可能含未发表稿；部分链接为预览链）。密钥勿入库。"
-      : "正文以微信原文链接为准；本站仅同步标题/摘要/封面/链接。密钥勿入库。",
+  note: noteByMode[mode] || noteByMode["need-urls"],
   items,
 };
 
@@ -203,3 +354,8 @@ fs.mkdirSync(path.dirname(outPub), { recursive: true });
 fs.writeFileSync(outSrc, JSON.stringify(payload, null, 2) + "\n");
 fs.writeFileSync(outPub, JSON.stringify(payload, null, 2) + "\n");
 console.log(`已写入 ${path.relative(root, outSrc)} 与 public/data/wechat-mp.json`);
+
+if (mode === "need-urls") {
+  console.log(`\n请编辑: ${path.relative(root, URLS_FILE)}`);
+  process.exitCode = 2;
+}

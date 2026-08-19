@@ -18,7 +18,7 @@ export default function InsightsPage() {
       <p className="page-kicker">Insights</p>
       <h1 className="page-title">观点精选</h1>
       <p className="page-desc">
-        站内短判断 + 公众号「朝诗夕文」已发文章同步。公众号以微信原文为准；本站展示标题与摘要，方便沉淀与导流。
+        站内短判断 + 公众号「朝诗夕文」已发表文章。仅收录可证实已发布的条目（官方已发表接口，或发表记录里的永久链接）；草稿不上站。
       </p>
 
       <WechatMpBoard initial={wechatInitial} />
@@ -60,11 +60,11 @@ export default function InsightsPage() {
           同步说明
         </h2>
         <p className="item-body">
-          运行{" "}
-          <code className="inline-code">npm run wechat:sync</code>{" "}
-          拉取已发布图文。须配置{" "}
-          <code className="inline-code">.env.local</code> 中的 AppID/AppSecret，
-          并把出口 IP 加入公众平台白名单。AppSecret 勿提交仓库。
+          个人号常无「已发表列表」API。请到公众平台{" "}
+          <strong>内容管理 → 发表记录</strong> 复制永久链接，写入{" "}
+          <code className="inline-code">data/wechat-mp-published-urls.txt</code>
+          ，再执行 <code className="inline-code">npm run wechat:sync</code>
+          。勿使用带 tempkey 的预览链。AppSecret 仅存 .env.local。
         </p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 14 }}>
           <Link href="/showcase/" className="btn btn-ghost">

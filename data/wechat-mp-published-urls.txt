@@ -1,0 +1,7 @@
+# 朝诗夕文 · 已发表文章永久链接（每行一条）
+# 获取方式：公众平台 → 内容管理 → 发表记录 → 打开文章 → 复制链接
+# 要求：链接形如 https://mp.weixin.qq.com/s/xxxx 或带 sn=/mid= 的永久链
+# 不要用带 tempkey= 的预览链接
+#
+# 示例（请删掉示例、换成你的真链接）：
+# https://mp.weixin.qq.com/s/xxxxxxxxxxxxxxxx
