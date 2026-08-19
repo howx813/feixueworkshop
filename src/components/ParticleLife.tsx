@@ -69,9 +69,9 @@ export default function ParticleLife() {
     const ctx = canvas.getContext("2d", { alpha: false });
     if (!ctx) return;
 
-    let particleTarget = count;
+    let particleTarget = DEFAULT_COUNT;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      particleTarget = Math.min(count, 220);
+      particleTarget = Math.min(DEFAULT_COUNT, 220);
       setCount(particleTarget);
     }
 
