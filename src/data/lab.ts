@@ -14,7 +14,17 @@ export type LabItem = {
   id: string;
   title: string;
   /** 应用名称前的 SVG 图标标识 */
-  icon: "gravity" | "fluid" | "particles" | "graphic" | "marble" | "snowflake" | "life" | "fourier" | "spectrum";
+  icon:
+    | "gravity"
+    | "fluid"
+    | "particles"
+    | "graphic"
+    | "marble"
+    | "snowflake"
+    | "life"
+    | "fourier"
+    | "spectrum"
+    | "particle-life";
   summary: string;
   href: string;
   status: "可玩" | "实验中" | "搁置";
@@ -23,6 +33,17 @@ export type LabItem = {
 };
 
 export const labItems: LabItem[] = [
+  {
+    id: "particle-life",
+    title: "粒子生命",
+    icon: "particle-life",
+    summary:
+      "多色粒子按「谁吸引谁」互动，涌现丝状、团块与轨道。随机规则换一局宇宙——规则极简，好玩在涌现。",
+    href: "/lab/particle-life/",
+    status: "可玩",
+    tags: ["Canvas", "涌现", "物理玩具"],
+    updated: "2026-08-19",
+  },
   {
     id: "spectrum",
     title: "频谱显微镜",

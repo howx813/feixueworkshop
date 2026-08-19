@@ -103,6 +103,17 @@ export type ShowcaseItem = {
 
 export const showcases: ShowcaseItem[] = [
   {
+    id: "particle-life",
+    title: "粒子生命",
+    role: "涌现模拟 / 玩具",
+    summary:
+      "多色粒子按随机吸引/排斥规则互动，自己长出丝、团与轨道。点随机规则换一局宇宙。",
+    highlights: ["规则极简", "图案涌现", "可调力与半径"],
+    stack: ["Canvas", "TypeScript"],
+    stage: "可玩",
+    href: "/lab/particle-life/",
+  },
+  {
     id: "marble",
     title: "碎砖弹珠 · Anthropic 打签名墙",
     role: "街机游戏 / 热点二创",
