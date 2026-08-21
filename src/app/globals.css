@@ -2450,6 +2450,92 @@ textarea {
   }
 }
 
+/* 体素宝塔花园 */
+.pagoda-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.pagoda-stage {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.pagoda-canvas {
+  display: block;
+  width: 100%;
+  height: 560px;
+  touch-action: none;
+  cursor: grab;
+}
+
+.pagoda-canvas:active {
+  cursor: grabbing;
+}
+
+.pagoda-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 5px 12px;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(10, 14, 20, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  font-variant-numeric: tabular-nums;
+}
+
+.pagoda-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pagoda-btn {
+  padding: 9px 20px;
+  font-size: 0.85rem;
+  color: var(--text-0);
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 120ms;
+}
+
+.pagoda-btn:hover {
+  background: var(--surface-3);
+}
+
+.pagoda-btn-primary {
+  background: #3d5a3e;
+  border-color: #55803f;
+  color: #f0f7ec;
+}
+
+.pagoda-btn-primary:hover {
+  background: #55803f;
+}
+
+.pagoda-hint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-2);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .pagoda-canvas {
+    height: 400px;
+  }
+}
+
 @media (max-width: 640px) {
   .fluid-lab {
     height: 420px;

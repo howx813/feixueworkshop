@@ -26,7 +26,8 @@ export type LabItem = {
     | "spectrum"
     | "particle-life"
     | "time-illusion"
-    | "ai-2048";
+    | "ai-2048"
+    | "pagoda";
   summary: string;
   href: string;
   status: "可玩" | "实验中" | "搁置";
@@ -35,6 +36,17 @@ export type LabItem = {
 };
 
 export const labItems: LabItem[] = [
+  {
+    id: "pagoda",
+    title: "体素宝塔花园",
+    icon: "pagoda",
+    summary:
+      "一座完全可探索的悬浮花园岛：五重塔、樱花、竹林、石灯笼与池塘，全部由种子程序生成。轨道环绕、滚轮推近，零资源加载——每个方块都是一次成形的纯色体素。",
+    href: "/lab/pagoda/",
+    status: "可玩",
+    tags: ["体素", "程序生成", "3D"],
+    updated: "2026-08-21",
+  },
   {
     id: "ai-2048",
     title: "AI 解 2048",

@@ -103,6 +103,17 @@ export type ShowcaseItem = {
 
 export const showcases: ShowcaseItem[] = [
   {
+    id: "pagoda",
+    title: "体素宝塔花园",
+    role: "程序生成 / 体素世界",
+    summary:
+      "种子进、花园出：五重塔与樱花庭院完全由程序生成，轨道相机自由环绕。隐藏面剔除 + 逐帧深度排序，零资源加载跑在任意标签页里。",
+    highlights: ["种子确定性生成", "隐藏面剔除渲染", "轨道相机交互"],
+    stack: ["Canvas", "TypeScript"],
+    stage: "可玩",
+    href: "/lab/pagoda/",
+  },
+  {
     id: "ai-2048",
     title: "AI 解 2048",
     role: "游戏 AI / 算法演示",

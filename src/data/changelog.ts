@@ -17,6 +17,19 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.38",
+    date: "2026-08-21",
+    title: "手搓宝匣新增「体素宝塔花园」程序生成体素世界",
+    summary:
+      "/lab/pagoda：完全可探索的悬浮花园岛——五重塔、樱花、竹林、石灯笼与池塘，全部由种子程序生成。轨道相机环绕缩放，隐藏面剔除 + 逐帧深度排序，零资源加载。",
+    items: [
+      { tag: "新增", text: "/lab/pagoda：种子确定性生成，换一颗种子就是另一座花园" },
+      { tag: "新增", text: "轨道相机：拖拽环绕、滚轮缩放、自动缓转可开关" },
+      { tag: "新增", text: "手写 3D 管线：背面剔除 + painter's algorithm 深度排序 + Lambert 面光照" },
+      { tag: "文档", text: "世界生成器单测 9 项（确定性/无重复/结构完整）纳入 test:unit" },
+    ],
+  },
+  {
     version: "0.2.37",
     date: "2026-08-21",
     title: "手搓宝匣新增「AI 解 2048」游戏 AI 演示",
