@@ -103,6 +103,17 @@ export type ShowcaseItem = {
 
 export const showcases: ShowcaseItem[] = [
   {
+    id: "ai-2048",
+    title: "AI 解 2048",
+    role: "游戏 AI / 算法演示",
+    summary:
+      "expectimax 搜索 + 四项启发式评估（空格/单调性/平滑度/压角），AI 自动打穿 2048。种子局实测稳定通关，可随时接管手动玩。",
+    highlights: ["expectimax 深度自适应", "启发式评估函数", "人机随时接盘"],
+    stack: ["TypeScript", "Expectimax"],
+    stage: "可玩",
+    href: "/lab/ai2048/",
+  },
+  {
     id: "time-illusion",
     title: "时间幻觉",
     role: "视觉玩具 / 短视频复刻",

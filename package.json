@@ -1,6 +1,6 @@
 {
   "name": "feixue-workshop",
-  "version": "0.2.35",
+  "version": "0.2.36",
   "private": true,
   "scripts": {
     "dev": "next dev -p ${PORT:-3456}",
@@ -22,7 +22,7 @@
     "tenders:install-cron": "bash scripts/install-tenders-launchd.sh",
     "snowflake:export": "node scripts/export-snowflake-svg.mjs",
     "test": "npm run test:unit && npm run test:predeploy",
-    "test:unit": "node scripts/test-marble.mjs && node scripts/test-aihot.mjs && node scripts/test-gravity.mjs && node scripts/test-pitch.mjs && node scripts/test-tender-history.mjs && node scripts/test-tender-aggregate.mjs && node scripts/test-weekly-report.mjs",
+    "test:unit": "node scripts/test-marble.mjs && node scripts/test-aihot.mjs && node scripts/test-gravity.mjs && node scripts/test-pitch.mjs && node scripts/test-tender-history.mjs && node scripts/test-tender-aggregate.mjs && node scripts/test-weekly-report.mjs && node scripts/test-ai2048.mjs",
     "test:smoke": "node scripts/smoke-out.mjs",
     "test:predeploy": "node scripts/predeploy-check.mjs",
     "deploy": "node scripts/deploy.mjs",

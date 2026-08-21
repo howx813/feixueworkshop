@@ -25,7 +25,8 @@ export type LabItem = {
     | "fourier"
     | "spectrum"
     | "particle-life"
-    | "time-illusion";
+    | "time-illusion"
+    | "ai-2048";
   summary: string;
   href: string;
   status: "可玩" | "实验中" | "搁置";
@@ -34,6 +35,17 @@ export type LabItem = {
 };
 
 export const labItems: LabItem[] = [
+  {
+    id: "ai-2048",
+    title: "AI 解 2048",
+    icon: "ai-2048",
+    summary:
+      "expectimax 搜索自动打 2048：空格、单调性、平滑度、大数压角四项启发式。看 AI 把散乱牌面盘成一条蛇，也可以自己玩一半交给它。",
+    href: "/lab/ai2048/",
+    status: "可玩",
+    tags: ["算法", "expectimax", "游戏 AI"],
+    updated: "2026-08-21",
+  },
   {
     id: "time-illusion",
     title: "时间幻觉",

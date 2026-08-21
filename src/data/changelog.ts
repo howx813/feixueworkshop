@@ -17,6 +17,19 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.37",
+    date: "2026-08-21",
+    title: "手搓宝匣新增「AI 解 2048」游戏 AI 演示",
+    summary:
+      "/lab/ai2048：expectimax 搜索 + 四项启发式评估（空格/单调性/平滑度/大数压角），AI 自动打穿 2048，种子局实测稳定通关。可调速度观战，也可自己玩一半交给 AI 接盘。",
+    items: [
+      { tag: "新增", text: "/lab/ai2048：expectimax 游戏 AI，深度随局面自适应" },
+      { tag: "新增", text: "四档速度观战 + 分数/步数/最大块实时统计" },
+      { tag: "新增", text: "方向键手动模式，随时让 AI 接管或收回" },
+      { tag: "文档", text: "引擎与 AI 单测 13 项（含种子局通关验证）纳入 test:unit" },
+    ],
+  },
+  {
     version: "0.2.36",
     date: "2026-08-21",
     title: "流体实验室升级：CPU 求解器换 GPU 着色器渲染",
