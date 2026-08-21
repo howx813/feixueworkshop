@@ -17,6 +17,16 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.40",
+    date: "2026-08-21",
+    title: "修复体素花园上下颠倒",
+    summary:
+      "/lab/pagoda 相机 right 向量叉乘方向写反，导致 up 朝下、整个世界倒挂。已修正为 fwd × worldUp，像素级验证草地沉底、塔尖朝上。",
+    items: [
+      { tag: "修复", text: "体素花园世界上下颠倒（相机 up 向量方向错误）" },
+    ],
+  },
+  {
     version: "0.2.39",
     date: "2026-08-21",
     title: "手搓宝匣新增「3D 客厅」Three.js 光照场景",
