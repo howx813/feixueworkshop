@@ -27,8 +27,9 @@ export type LabItem = {
     | "particle-life"
     | "time-illusion"
     | "ai-2048"
-    | "pagoda";
-  summary: string;
+    | "pagoda"
+    | "living-room";
+    summary: string;
   href: string;
   status: "可玩" | "实验中" | "搁置";
   tags: string[];
@@ -36,6 +37,17 @@ export type LabItem = {
 };
 
 export const labItems: LabItem[] = [
+  {
+    id: "living-room",
+    title: "3D 客厅",
+    icon: "living-room",
+    summary:
+      "Three.js 搭的客厅：柔和全局光照、真实软阴影、程序生成橡木地板。壁挂电视里，一只猫正永远追不上那只老鼠。",
+    href: "/lab/living-room/",
+    status: "可玩",
+    tags: ["Three.js", "光照", "3D"],
+    updated: "2026-08-21",
+  },
   {
     id: "pagoda",
     title: "体素宝塔花园",

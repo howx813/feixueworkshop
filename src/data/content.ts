@@ -103,6 +103,17 @@ export type ShowcaseItem = {
 
 export const showcases: ShowcaseItem[] = [
   {
+    id: "living-room",
+    title: "3D 客厅",
+    role: "Three.js 场景 / 光照演示",
+    summary:
+      "柔和全局光照 + PCF 软阴影，橡木地板由 Canvas 程序绘制，壁挂电视用 CanvasTexture 实时播放猫鼠追逐动画。",
+    highlights: ["PCF 软阴影", "程序化木纹纹理", "动态屏幕内容"],
+    stack: ["Three.js", "TypeScript"],
+    stage: "可玩",
+    href: "/lab/living-room/",
+  },
+  {
     id: "pagoda",
     title: "体素宝塔花园",
     role: "程序生成 / 体素世界",

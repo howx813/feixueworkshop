@@ -1,6 +1,6 @@
 {
   "name": "feixue-workshop",
-  "version": "0.2.37",
+  "version": "0.2.38",
   "private": true,
   "scripts": {
     "dev": "next dev -p ${PORT:-3456}",
@@ -37,12 +37,14 @@
   "dependencies": {
     "next": "14.2.35",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "three": "^0.185.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/three": "^0.185.4",
     "autoprefixer": "^10.5.4",
     "eslint": "^8",
     "eslint-config-next": "14.2.35",

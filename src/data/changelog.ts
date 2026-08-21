@@ -17,6 +17,19 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.39",
+    date: "2026-08-21",
+    title: "手搓宝匣新增「3D 客厅」Three.js 光照场景",
+    summary:
+      "/lab/living-room：Three.js 打造的客厅——柔和全局光照、PCF 软阴影、Canvas 程序绘制的橡木地板，壁挂电视用 CanvasTexture 实时播放猫鼠追逐动画。",
+    items: [
+      { tag: "新增", text: "/lab/living-room：沙发/茶几/电视柜/落地灯/绿植全套家具" },
+      { tag: "新增", text: "程序化橡木地板（板条+木纹+错缝拼花，零贴图资源）" },
+      { tag: "新增", text: "电视屏幕实时动画：猫追老鼠绕屋狂奔 + 扫描线质感" },
+      { tag: "新增", text: "PCF 软阴影 + 三光源布光（日光/落地灯/电视辉光）" },
+    ],
+  },
+  {
     version: "0.2.38",
     date: "2026-08-21",
     title: "手搓宝匣新增「体素宝塔花园」程序生成体素世界",

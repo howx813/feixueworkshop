@@ -13,7 +13,8 @@ export type LabIconKey =
   | "particle-life"
   | "time-illusion"
   | "ai-2048"
-  | "pagoda";
+  | "pagoda"
+  | "living-room";
 
 type Props = {
   id: LabIconKey;
@@ -109,6 +110,14 @@ export function LabIcon({ id, size = 20, className }: Props) {
           <path d="M4 15l8-2.5 8 2.5" />
           <path d="M7 16h10v4H7z" opacity={0.75} />
           <path d="M11 20h2v2h-2z" />
+        </svg>
+      );
+    case "living-room":
+      return (
+        <svg {...svgProps}>
+          <rect x="4" y="6" width="16" height="9" rx="1" />
+          <rect x="7" y="8.4" width="10" height="4.2" rx="0.6" fill="currentColor" stroke="none" opacity={0.85} />
+          <path d="M6 18h12M9 15v3M15 15v3" />
         </svg>
       );
     case "graphic":
