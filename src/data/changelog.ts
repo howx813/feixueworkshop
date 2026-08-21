@@ -17,6 +17,19 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.36",
+    date: "2026-08-21",
+    title: "流体实验室升级：CPU 求解器换 GPU 着色器渲染",
+    summary:
+      "/lab/fluid 从 128 网格 CPU 模拟升级为 WebGL GPU 加速的 Navier-Stokes 求解器（基于 Pavel Dobryakov 的 MIT 开源实现改造），高清染料、实时涡旋，新增笔刷/残留/旋度/变色四项实时调参与随机泼溅。",
+    items: [
+      { tag: "优化", text: "流体实验室核心换 WebGL 着色器渲染，画质与流畅度提升一个量级" },
+      { tag: "新增", text: "笔刷大小、染料残留、涡旋强度、色彩流速四项实时参数调节" },
+      { tag: "新增", text: "随机泼溅按钮与空格键快捷泼溅、P 键暂停" },
+      { tag: "优化", text: "WebGL 不可用时自动降级提示" },
+    ],
+  },
+  {
     version: "0.2.35",
     date: "2026-08-19",
     title: "手搓宝匣新增「时间幻觉」晶体变形视觉玩具",

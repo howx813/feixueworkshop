@@ -16,11 +16,11 @@ export default function FluidPage() {
         <Link href="/lab/" className="link-accent">
           {labMeta.name}
         </Link>
-        {" · "}Canvas 物理模拟
+        {" · "}WebGL 物理模拟
       </p>
       <h1 className="page-title">流体实验室</h1>
       <p className="page-desc">
-        实时 Navier-Stokes 流体求解器。鼠标划过注入染料，观察扩散、涡旋与对流。可调整粘度与扩散系数。
+        GPU 加速的 Navier-Stokes 流体求解器。拖动注入高速染料，观察涡旋、对流与扩散——着色器实时渲染，手机上也流畅。
       </p>
 
       <FluidSimulation />

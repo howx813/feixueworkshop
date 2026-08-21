@@ -2249,6 +2249,23 @@ textarea {
   image-rendering: pixelated;
 }
 
+.fluid-canvas-gl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  display: block;
+}
+
+.fluid-lab-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-2);
+  font-size: 0.9rem;
+}
+
 .fluid-hint {
   margin: 0;
   font-size: 0.75rem;
