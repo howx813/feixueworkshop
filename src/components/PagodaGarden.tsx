@@ -132,13 +132,11 @@ export default function PagodaGarden() {
       const fx = fwdX / fl;
       const fy = fwdY / fl;
       const fz = fwdZ / fl;
-      // right = normalize(cross(fwd, up))
-      let rx = fz;
+      // right = normalize(fwd × worldUp) — points to camera's right
+      const rl = Math.hypot(fz, fx) || 1;
+      const rx = -fz / rl;
       const ry = 0;
-      let rz = -fx;
-      const rl = Math.hypot(rx, ry, rz) || 1;
-      rx /= rl;
-      rz /= rl;
+      const rz = fx / rl;
       // up = cross(right, fwd)
       const ux = ry * fz - rz * fy;
       const uy = rz * fx - rx * fz;
