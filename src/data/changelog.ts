@@ -17,6 +17,17 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.42",
+    date: "2026-08-22",
+    title: "一字千钧新增「引爆成粒子」",
+    summary:
+      "/lab/text-drop 落好的字堆一键引爆：每个字碎成 7 枚继承配色的粒子四散飞溅（重力+弹地+淡出），配双重冲击波环与全屏闪光帧。",
+    items: [
+      { tag: "新增", text: "💥 引爆按钮：字堆炸裂为粒子雨" },
+      { tag: "新增", text: "冲击波双环扩散 + 爆炸闪光帧" },
+    ],
+  },
+  {
     version: "0.2.41",
     date: "2026-08-21",
     title: "手搓宝匣新增「一字千钧」文字物理沙盒",
