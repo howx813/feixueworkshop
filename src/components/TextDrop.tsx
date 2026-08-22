@@ -31,6 +31,8 @@ export default function TextDrop() {
   const ringsRef = useRef<{ x: number; y: number; r: number; maxR: number; alpha: number }[]>([]);
   const flashRef = useRef(0);
   const sizeRef = useRef({ w: 800, h: 520 });
+  const autoBombAtRef = useRef<number | null>(null);
+  const explodeRef = useRef<() => void>(() => {});
   const [input, setInput] = useState("落霞与孤鹜齐飞，秋水共长天一色。The quick brown fox jumps over the lazy dog. 2026！");
   const [count, setCount] = useState(0);
   const [flipped, setFlipped] = useState(false);
@@ -125,6 +127,21 @@ export default function TextDrop() {
         }
         step(world, DT);
         acc -= DT;
+      }
+
+      // auto-detonate: once every character has settled, hold for a beat, then BOOM
+      const queueEmpty = queueRef.current.chars.length === 0;
+      const allSettled =
+        world.bodies.length >= 3 && world.bodies.every((b) => b.sleeping);
+      if (queueEmpty && allSettled) {
+        if (autoBombAtRef.current === null) {
+          autoBombAtRef.current = now + 1300; // let the pile sit for a beat
+        } else if (now >= autoBombAtRef.current) {
+          autoBombAtRef.current = null;
+          explodeRef.current();
+        }
+      } else {
+        autoBombAtRef.current = null;
       }
 
       // render
@@ -303,6 +320,10 @@ export default function TextDrop() {
     setCount(0);
   }, []);
 
+  useEffect(() => {
+    explodeRef.current = explode;
+  }, [explode]);
+
   return (
     <div className="textdrop-wrap">
       <div className="textdrop-input-row">
@@ -318,7 +339,7 @@ export default function TextDrop() {
             让它们落下 ↓
           </button>
           <button onClick={explode} className="pagoda-btn textdrop-explode">
-            💥 引爆成粒子
+            💥 提前引爆
           </button>
           <button onClick={flipGravity} className="pagoda-btn">
             {flipped ? "恢复重力" : "反转重力"}
@@ -334,7 +355,7 @@ export default function TextDrop() {
         <div className="pagoda-badge">{count} 个字在场</div>
       </div>
       <p className="pagoda-hint">
-        自由落体 · 圆形刚体碰撞 · 可拖拽抛掷 · 反转重力让它们飞上天 · 💥 引爆后每个字碎成 7 枚粒子 · 上限 200 字
+        自由落体 · 刚体碰撞 · 拖拽抛掷 · 字全部落定后自动引爆成粒子 · 手动按钮可提前引爆 · 上限 200 字
       </p>
     </div>
   );

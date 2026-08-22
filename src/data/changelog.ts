@@ -17,6 +17,17 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.43",
+    date: "2026-08-22",
+    title: "一字千钧：字全部落定后自动引爆",
+    summary:
+      "/lab/text-drop 所有字落定休眠 1.3 秒后自动引爆成粒子雨，形成「落字 → 看它堆好 → 轰」的循环；手动按钮保留为提前引爆。",
+    items: [
+      { tag: "新增", text: "落定后 1.3s 自动引爆（≥3 字触发）" },
+      { tag: "优化", text: "手动按钮改为提前引爆，随时打断等待" },
+    ],
+  },
+  {
     version: "0.2.42",
     date: "2026-08-22",
     title: "一字千钧新增「引爆成粒子」",
