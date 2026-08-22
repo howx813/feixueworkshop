@@ -25,6 +25,12 @@ export default function TextDrop() {
   const worldRef = useRef<ReturnType<typeof createWorld> | null>(null);
   const grabbedRef = useRef<ReturnType<typeof pickBody> | null>(null);
   const queueRef = useRef<{ chars: string[]; nextAt: number }>({ chars: [], nextAt: 0 });
+  const particlesRef = useRef<
+    { x: number; y: number; vx: number; vy: number; life: number; size: number; color: string }[]
+  >([]);
+  const ringsRef = useRef<{ x: number; y: number; r: number; maxR: number; alpha: number }[]>([]);
+  const flashRef = useRef(0);
+  const sizeRef = useRef({ w: 800, h: 520 });
   const [input, setInput] = useState("落霞与孤鹜齐飞，秋水共长天一色。The quick brown fox jumps over the lazy dog. 2026！");
   const [count, setCount] = useState(0);
   const [flipped, setFlipped] = useState(false);
@@ -41,6 +47,7 @@ export default function TextDrop() {
     canvas.width = W * dpr;
     canvas.height = H * dpr;
     ctx.scale(dpr, dpr);
+    sizeRef.current = { w: W, h: H };
 
     const world = createWorld(W, H);
     worldRef.current = world;
@@ -121,10 +128,20 @@ export default function TextDrop() {
       }
 
       // render
+      const rdt = Math.min(frame, 0.05);
+
       ctx.clearRect(0, 0, W, H);
-      const bg = ctx.createLinearGradient(0, 0, 0, H);
-      bg.addColorStop(0, "#0d1017");
-      bg.addColorStop(1, "#161b26");
+      let bg;
+      if (flashRef.current > 0) {
+        bg = ctx.createLinearGradient(0, 0, 0, H);
+        bg.addColorStop(0, "#3a3020");
+        bg.addColorStop(1, "#1c1626");
+        flashRef.current = Math.max(0, flashRef.current - rdt * 3);
+      } else {
+        bg = ctx.createLinearGradient(0, 0, 0, H);
+        bg.addColorStop(0, "#0d1017");
+        bg.addColorStop(1, "#161b26");
+      }
       ctx.fillStyle = bg;
       ctx.fillRect(0, 0, W, H);
       // floor line
@@ -134,6 +151,47 @@ export default function TextDrop() {
       ctx.moveTo(0, H - 6);
       ctx.lineTo(W, H - 6);
       ctx.stroke();
+
+      // shockwave rings
+      for (let i = ringsRef.current.length - 1; i >= 0; i--) {
+        const ring = ringsRef.current[i];
+        ring.r += (ring.maxR - ring.r) * Math.min(1, rdt * 5.5);
+        ring.alpha -= rdt * 1.4;
+        if (ring.alpha <= 0) {
+          ringsRef.current.splice(i, 1);
+          continue;
+        }
+        ctx.strokeStyle = `rgba(251,191,36,${ring.alpha})`;
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(ring.x, ring.y, ring.r, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      // particles: gravity + floor bounce + fade
+      const parts = particlesRef.current;
+      for (let i = parts.length - 1; i >= 0; i--) {
+        const p = parts[i];
+        p.vy += 1500 * rdt;
+        p.x += p.vx * rdt;
+        p.y += p.vy * rdt;
+        if (p.y > H - 8) {
+          p.y = H - 8;
+          p.vy *= -0.45;
+          p.vx *= 0.85;
+        }
+        p.life -= rdt * 0.55;
+        if (p.life <= 0) {
+          parts.splice(i, 1);
+          continue;
+        }
+        ctx.globalAlpha = Math.min(1, p.life);
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
 
       for (const b of world.bodies) {
         ctx.save();
@@ -193,6 +251,58 @@ export default function TextDrop() {
     setFlipped((f) => !f);
   }, []);
 
+  const explode = useCallback(() => {
+    const world = worldRef.current;
+    if (!world || world.bodies.length === 0) return;
+
+    // centroid of all bodies
+    let cx = 0;
+    let cy = 0;
+    for (const b of world.bodies) {
+      cx += b.x;
+      cy += b.y;
+    }
+    cx /= world.bodies.length;
+    cy /= world.bodies.length;
+
+    // each character shatters into a shard burst, flying away from the centroid
+    for (const b of world.bodies) {
+      let dx = b.x - cx;
+      let dy = b.y - cy;
+      let d = Math.hypot(dx, dy);
+      if (d < 1) {
+        dx = Math.random() - 0.5;
+        dy = Math.random() - 0.5;
+        d = Math.hypot(dx, dy);
+      }
+      const nx = dx / d;
+      const ny = dy / d;
+      for (let s = 0; s < 7; s++) {
+        const spread = 0.55;
+        const ang = Math.atan2(ny, nx) + (Math.random() - 0.5) * spread;
+        const speed = 260 + Math.random() * 420;
+        particlesRef.current.push({
+          x: b.x,
+          y: b.y,
+          vx: Math.cos(ang) * speed,
+          vy: Math.sin(ang) * speed - 120,
+          life: 1 + Math.random() * 0.6,
+          size: 2.2 + Math.random() * 3,
+          color: b.color,
+        });
+      }
+    }
+
+    // double shockwave from the centroid + white flash
+    const { w: cw, h: chh } = sizeRef.current;
+    ringsRef.current.push({ x: cx, y: cy, r: 8, maxR: Math.max(cw, chh) * 0.7, alpha: 0.9 });
+    ringsRef.current.push({ x: cx, y: cy, r: 4, maxR: cw * 0.45, alpha: 0.7 });
+    flashRef.current = 1;
+
+    world.bodies.length = 0;
+    setCount(0);
+  }, []);
+
   return (
     <div className="textdrop-wrap">
       <div className="textdrop-input-row">
@@ -206,6 +316,9 @@ export default function TextDrop() {
         <div className="textdrop-actions">
           <button onClick={drop} className="pagoda-btn pagoda-btn-primary">
             让它们落下 ↓
+          </button>
+          <button onClick={explode} className="pagoda-btn textdrop-explode">
+            💥 引爆成粒子
           </button>
           <button onClick={flipGravity} className="pagoda-btn">
             {flipped ? "恢复重力" : "反转重力"}
@@ -221,7 +334,7 @@ export default function TextDrop() {
         <div className="pagoda-badge">{count} 个字在场</div>
       </div>
       <p className="pagoda-hint">
-        自由落体 · 圆形刚体碰撞 · 可拖拽抛掷 · 反转重力让它们飞上天 · 上限 200 字
+        自由落体 · 圆形刚体碰撞 · 可拖拽抛掷 · 反转重力让它们飞上天 · 💥 引爆后每个字碎成 7 枚粒子 · 上限 200 字
       </p>
     </div>
   );

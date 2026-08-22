@@ -2580,6 +2580,15 @@ textarea {
   white-space: nowrap;
 }
 
+.textdrop-explode {
+  color: #fca5a5;
+  border-color: #b45454;
+}
+
+.textdrop-explode:hover {
+  background: #7a2e2e !important;
+}
+
 .textdrop-canvas {
   display: block;
   width: 100%;
