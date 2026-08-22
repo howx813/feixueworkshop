@@ -2536,6 +2536,72 @@ textarea {
   }
 }
 
+/* 一字千钧 · 文字物理沙盒 */
+.textdrop-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.textdrop-input-row {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.textdrop-textarea {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  color: var(--text-0);
+  background: var(--surface-1);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  resize: vertical;
+  min-height: 64px;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.textdrop-textarea:focus {
+  outline: none;
+  border-color: #d97706;
+}
+
+.textdrop-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+
+.textdrop-actions .pagoda-btn {
+  white-space: nowrap;
+}
+
+.textdrop-canvas {
+  display: block;
+  width: 100%;
+  height: 520px;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+@media (max-width: 640px) {
+  .textdrop-input-row {
+    flex-direction: column;
+  }
+
+  .textdrop-actions {
+    flex-direction: row;
+  }
+
+  .textdrop-canvas {
+    height: 400px;
+  }
+}
+
 @media (max-width: 640px) {
   .fluid-lab {
     height: 420px;

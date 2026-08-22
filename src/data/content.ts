@@ -103,6 +103,17 @@ export type ShowcaseItem = {
 
 export const showcases: ShowcaseItem[] = [
   {
+    id: "text-drop",
+    title: "一字千钧 · 文字物理沙盒",
+    role: "物理引擎 / 互动玩具",
+    summary:
+      "手写 2D 刚体物理（空间哈希 + 迭代求解 + 沉降休眠）：输入的文字逐字落下，碰撞堆叠，可抓取抛掷，重力可反转。",
+    highlights: ["零依赖物理引擎", "拖拽抛掷", "重力反转"],
+    stack: ["Canvas", "TypeScript"],
+    stage: "可玩",
+    href: "/lab/text-drop/",
+  },
+  {
     id: "living-room",
     title: "3D 客厅",
     role: "Three.js 场景 / 光照演示",

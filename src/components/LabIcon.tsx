@@ -14,7 +14,8 @@ export type LabIconKey =
   | "time-illusion"
   | "ai-2048"
   | "pagoda"
-  | "living-room";
+  | "living-room"
+  | "text-drop";
 
 type Props = {
   id: LabIconKey;
@@ -118,6 +119,15 @@ export function LabIcon({ id, size = 20, className }: Props) {
           <rect x="4" y="6" width="16" height="9" rx="1" />
           <rect x="7" y="8.4" width="10" height="4.2" rx="0.6" fill="currentColor" stroke="none" opacity={0.85} />
           <path d="M6 18h12M9 15v3M15 15v3" />
+        </svg>
+      );
+    case "text-drop":
+      return (
+        <svg {...svgProps}>
+          <text x="5" y="10" fontSize="8" fontWeight="bold" fill="currentColor" stroke="none">字</text>
+          <text x="14" y="18" fontSize="7" fontWeight="bold" fill="currentColor" stroke="none" opacity={0.7}>落</text>
+          <path d="M6 20 L12 13" strokeWidth="1.2" opacity={0.6} />
+          <path d="M4 21h16" strokeLinecap="round" />
         </svg>
       );
     case "graphic":

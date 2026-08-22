@@ -17,6 +17,19 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.41",
+    date: "2026-08-21",
+    title: "手搓宝匣新增「一字千钧」文字物理沙盒",
+    summary:
+      "/lab/text-drop：输入一段文字，每个字都变成有重量的刚体——自由落体、碰撞翻滚、堆成小山。零依赖手写 2D 物理引擎（空间哈希 + 迭代求解 + 沉降休眠），支持拖拽抛掷与重力反转。",
+    items: [
+      { tag: "新增", text: "/lab/text-drop：逐字落下 + 刚体碰撞堆叠，上限 200 字" },
+      { tag: "新增", text: "抓取抛掷交互：甩出去的字带真实惯性" },
+      { tag: "新增", text: "重力反转：让整段话飞上天再落回来" },
+      { tag: "文档", text: "物理引擎单测 9 项（穿隧/堆叠/沉降/越界）纳入 test:unit" },
+    ],
+  },
+  {
     version: "0.2.40",
     date: "2026-08-21",
     title: "修复体素花园上下颠倒",

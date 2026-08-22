@@ -28,8 +28,9 @@ export type LabItem = {
     | "time-illusion"
     | "ai-2048"
     | "pagoda"
-    | "living-room";
-    summary: string;
+    | "living-room"
+    | "text-drop";
+  summary: string;
   href: string;
   status: "可玩" | "实验中" | "搁置";
   tags: string[];
@@ -37,6 +38,17 @@ export type LabItem = {
 };
 
 export const labItems: LabItem[] = [
+  {
+    id: "text-drop",
+    title: "一字千钧",
+    icon: "text-drop",
+    summary:
+      "输入一段文字，每个字都变成有重量的刚体：自由落体、碰撞翻滚、堆成小山。抓起来扔出去，或反转重力让整段话飞上天。",
+    href: "/lab/text-drop/",
+    status: "可玩",
+    tags: ["物理引擎", "文字", "互动"],
+    updated: "2026-08-21",
+  },
   {
     id: "living-room",
     title: "3D 客厅",
