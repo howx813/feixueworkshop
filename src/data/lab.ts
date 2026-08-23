@@ -29,7 +29,8 @@ export type LabItem = {
     | "ai-2048"
     | "pagoda"
     | "living-room"
-    | "text-drop";
+    | "text-drop"
+    | "tender-galaxy";
   summary: string;
   href: string;
   status: "可玩" | "实验中" | "搁置";
@@ -38,6 +39,17 @@ export type LabItem = {
 };
 
 export const labItems: LabItem[] = [
+  {
+    id: "tender-galaxy",
+    title: "标讯星图",
+    icon: "tender-galaxy",
+    summary:
+      "每颗星是一条真实标讯：行业聚成星团，金额点亮亮度，星级染成颜色。来自商机雷达的每日扫描——拖拽漫游你的商机宇宙。",
+    href: "/lab/tender-galaxy/",
+    status: "可玩",
+    tags: ["Three.js", "数据可视化", "真实数据"],
+    updated: "2026-08-22",
+  },
   {
     id: "text-drop",
     title: "一字千钧",

@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.44",
+    date: "2026-08-22",
+    title: "手搓宝匣新增「标讯星图」——商机数据 3D 宇宙",
+    summary:
+      "/lab/tender-galaxy：把商机雷达的真实标讯渲染成可漫游的 3D 星系。行业聚成星团，金额点亮亮度，星级染成颜色；自定义 shader 点精灵 + 加性混合，Raycast 悬停看详情、点击跳原文。",
+    items: [
+      { tag: "新增", text: "/lab/tender-galaxy：真实标讯数据驱动的 3D 星图" },
+      { tag: "新增", text: "行业星团布局 + 悬停详情卡 + 点击跳转原文" },
+      { tag: "新增", text: "自定义 GLSL 点精灵（径向光晕）+ 加性混合星云背景" },
+    ],
+  },
+  {
     version: "0.2.43",
     date: "2026-08-22",
     title: "一字千钧：字全部落定后自动引爆",

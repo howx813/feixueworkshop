@@ -2611,6 +2611,54 @@ textarea {
   }
 }
 
+/* 标讯星图 */
+.galaxy-tooltip {
+  position: absolute;
+  z-index: 10;
+  width: 300px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(8, 11, 18, 0.92);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+}
+
+.galaxy-tooltip-title {
+  margin: 0 0 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #f3e8c8;
+  line-height: 1.5;
+}
+
+.galaxy-tooltip-row {
+  margin: 2px 0;
+  font-size: 0.75rem;
+  color: #b9c2d4;
+}
+
+.galaxy-tooltip-link {
+  color: #fbbf24 !important;
+  margin-top: 6px;
+}
+
+.galaxy-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-1);
+}
+
+.galaxy-legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
 @media (max-width: 640px) {
   .fluid-lab {
     height: 420px;

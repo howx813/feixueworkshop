@@ -114,6 +114,17 @@ export const showcases: ShowcaseItem[] = [
     href: "/lab/text-drop/",
   },
   {
+    id: "tender-galaxy",
+    title: "标讯星图 · 商机宇宙",
+    role: "数据可视化 / Three.js",
+    summary:
+      "把商机雷达的真实标讯数据渲染成可漫游的 3D 星系：行业星团、金额亮度、星级配色。自定义 shader 点精灵 + 加性混合 + Raycast 悬停。",
+    highlights: ["真实业务数据驱动", "自定义 GPU 点精灵", "Raycast 悬停跳转"],
+    stack: ["Three.js", "TypeScript"],
+    stage: "可玩",
+    href: "/lab/tender-galaxy/",
+  },
+  {
     id: "living-room",
     title: "3D 客厅",
     role: "Three.js 场景 / 光照演示",

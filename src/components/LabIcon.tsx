@@ -15,7 +15,8 @@ export type LabIconKey =
   | "ai-2048"
   | "pagoda"
   | "living-room"
-  | "text-drop";
+  | "text-drop"
+  | "tender-galaxy";
 
 type Props = {
   id: LabIconKey;
@@ -128,6 +129,15 @@ export function LabIcon({ id, size = 20, className }: Props) {
           <text x="14" y="18" fontSize="7" fontWeight="bold" fill="currentColor" stroke="none" opacity={0.7}>落</text>
           <path d="M6 20 L12 13" strokeWidth="1.2" opacity={0.6} />
           <path d="M4 21h16" strokeLinecap="round" />
+        </svg>
+      );
+    case "tender-galaxy":
+      return (
+        <svg {...svgProps}>
+          <circle cx="8" cy="9" r="2.4" />
+          <circle cx="17" cy="7" r="1.6" opacity={0.75} />
+          <circle cx="14" cy="15" r="1.3" opacity={0.55} />
+          <path d="M8 9 L17 7 M8 9 L14 15" strokeWidth="0.8" opacity={0.45} />
         </svg>
       );
     case "graphic":
