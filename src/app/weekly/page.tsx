@@ -3,7 +3,6 @@ import { site } from "@/data/content";
 import { WeeklyReport } from "@/components/WeeklyReport";
 import { KeyWorkCard } from "@/components/KeyWork";
 import { KpiDashboardCard } from "@/components/KpiDashboard";
-import { DailyWorkCard } from "@/components/DailyWork";
 
 export const metadata: Metadata = {
   title: "工作周报",
@@ -20,9 +19,6 @@ export default function WeeklyPage() {
       <WeeklyReport />
       <div style={{ marginTop: 24 }}>
         <KeyWorkCard />
-      </div>
-      <div style={{ marginTop: 24 }}>
-        <DailyWorkCard />
       </div>
       <div style={{ marginTop: 24 }}>
         <KpiDashboardCard />

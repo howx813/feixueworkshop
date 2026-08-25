@@ -25,8 +25,8 @@ function SectionBlock({ s }: { s: KeyWorkSection }) {
         <strong style={{ fontSize: "0.9375rem" }}>
           {s.icon} {s.name}
         </strong>
-        {s.weight ? (
-          <span style={{ fontSize: "0.75rem", opacity: 0.55 }}>{s.weight}</span>
+        {(s.anchor || s.weight) ? (
+          <span style={{ fontSize: "0.75rem", opacity: 0.55 }}>{s.anchor || s.weight}</span>
         ) : null}
       </div>
 
@@ -190,6 +190,32 @@ export function KeyWorkCard() {
               📌 {data.meeting.rule}
             </p>
           </div>
+          {data.kpiAnchors && data.kpiAnchors.length > 0 ? (
+            <div style={{ display: "grid", gap: 6, margin: "8px 0 4px" }}>
+              {data.kpiAnchors.map((k) => (
+                <div
+                  key={k.name}
+                  style={{
+                    padding: "8px 12px",
+                    borderRadius: 10,
+                    border: "1px solid var(--border-soft)",
+                    background: "var(--surface-1)",
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 4, alignItems: "baseline" }}>
+                    <strong style={{ fontSize: "0.8125rem" }}>🎯 {k.name}</strong>
+                    <span style={{ fontSize: "0.6875rem", opacity: 0.5 }}>{k.weight}</span>
+                  </div>
+                  <p style={{ margin: "3px 0 0", fontSize: "0.75rem", opacity: 0.65, lineHeight: 1.5 }}>
+                    目标：{k.target}
+                  </p>
+                  <p style={{ margin: "2px 0 0", fontSize: "0.75rem", color: "#fbbf24", lineHeight: 1.5 }}>
+                    现状：{k.current}
+                  </p>
+                </div>
+              ))}
+            </div>
+          ) : null}
           <div style={{ display: "grid", gap: 16, marginTop: 8 }}>
             {data.sections.map((s) => (
               <SectionBlock key={s.name} s={s} />

@@ -14,8 +14,16 @@ export type WorkItem = {
 export type KeyWorkSection = {
   name: string;
   icon: string;
+  anchor?: string;
   weight?: string;
   items: WorkItem[];
+};
+
+export type KpiAnchor = {
+  name: string;
+  target: string;
+  current: string;
+  weight: string;
 };
 
 export type KeyWorkFile = {
@@ -24,6 +32,7 @@ export type KeyWorkFile = {
   owner: string;
   note: string;
   meeting: { name: string; host: string; time: string; rule: string };
+  kpiAnchors?: KpiAnchor[];
   sections: KeyWorkSection[];
 };
 
