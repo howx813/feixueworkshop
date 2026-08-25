@@ -17,6 +17,17 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.46",
+    date: "2026-08-25",
+    title: "考核看板改为独立密码卡片，周报密码恢复",
+    summary:
+      "/weekly 的副职考核看板从周报组件中拆出，成为自带密码门的独立卡片（与周报解锁状态互不依赖）；周报访问密码恢复为原 9822。",
+    items: [
+      { tag: "优化", text: "考核看板独立卡片化：自带密码门，独立于周报解锁" },
+      { tag: "修复", text: "周报密码恢复 9822" },
+    ],
+  },
+  {
     version: "0.2.45",
     date: "2026-08-25",
     title: "副职考核指标看板上线 /weekly",
