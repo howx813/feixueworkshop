@@ -1,10 +1,10 @@
 /**
- * 副职考核指标看板（/weekly 密码门后，完整版含金额）
- * schemaVersion 1：飞雪2026副职业绩考核（合同3000万/权重60 + 收款2200万/权重40）
+ * 指标看板（/weekly 密码门后，三板块：集客经营 / 科创 / 纪检）
+ * schemaVersion 2：统一指标看板，飞雪分管条线
  * 数据源 public/data/kpi-dashboard.json（客户端加载，可热刷更新）
  */
 
-export type KpiMetric = {
+export type BusinessMetric = {
   key: string;
   name: string;
   weight: number;
@@ -13,8 +13,8 @@ export type KpiMetric = {
   quarterlyNodes: number[];
   currentCumulative: number;
   currentMonth: string;
-  currentRate: number; // 年度口径完成率 0-1
-  quarterRate: number; // 序时（对应当前季度节点）完成率 0-1
+  currentRate: number;
+  quarterRate: number;
   quarterNode: string;
   augTarget: number;
   scoring: { deductPer1pct: number; bonusPer1pct: number; bonusCap: number };
@@ -22,29 +22,63 @@ export type KpiMetric = {
   note: string;
 };
 
-export type KpiScenario = {
+export type InnovationKpi = {
+  key: string;
   name: string;
-  contractRate: number;
-  receiptRate: number;
-  total: number;
-  contractNeed?: number;
-  receiptNeed?: number;
-  contractMonthly?: number;
-  receiptMonthly?: number;
+  type: string;
+  rule: string;
+  status?: string;
+  progressNote?: string;
+};
+
+export type DisciplineIndicator = {
+  criterion: string;
+  max: number;
+  prev: number;
+  isBonus?: boolean;
+  isDeduct?: boolean;
+};
+
+export type DisciplineTask = {
+  content: string;
+  deadline: string;
+  status: string;
+  progress?: string;
 };
 
 export type KpiDashboardFile = {
   schemaVersion: number;
   generatedAt: string;
-  updatedNote: string;
   owner: string;
   role: string;
-  metrics: KpiMetric[];
-  scoreNow: number;
-  scoreFull: number;
-  scenarios: KpiScenario[];
-  otherIndicators: { name: string; status: string; desc: string }[];
-  warnings: string[];
+  note: string;
+  sections: {
+    business: {
+      name: string;
+      icon: string;
+      metrics: BusinessMetric[];
+      scoreNow: number;
+      scoreFull: number;
+      scenarios: { name: string; total: number; contractNeed?: number; receiptNeed?: number; contractMonthly?: number; receiptMonthly?: number }[];
+      warnings: string[];
+    };
+    innovation: {
+      name: string;
+      icon: string;
+      kpi: InnovationKpi[];
+      kciFramework: { note: string; reviewCycle: string };
+      warnings: string[];
+    };
+    discipline: {
+      name: string;
+      icon: string;
+      yearPrev: string;
+      prevScore: number;
+      fullScore: number;
+      indicatorGroups: { group: string; items: DisciplineIndicator[] }[];
+      tasks: DisciplineTask[];
+    };
+  };
 };
 
 export const KPI_DASHBOARD_PATH = "/data/kpi-dashboard.json";
