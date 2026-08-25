@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { WeeklyReport } from "@/components/WeeklyReport";
 import { KeyWorkCard } from "@/components/KeyWork";
 import { KpiDashboardCard } from "@/components/KpiDashboard";
@@ -23,7 +24,8 @@ function isTab(v: string): v is TabKey {
   return TABS.some((t) => t.key === v);
 }
 
-export default function WeeklyPage() {
+function WeeklyPageInner() {
+  const searchParams = useSearchParams();
   const [unlocked, setUnlocked] = useState(false);
   const [ready, setReady] = useState(false);
   const [tab, setTab] = useState<TabKey | null>(null);
@@ -38,8 +40,18 @@ export default function WeeklyPage() {
     } catch {
       // ignore
     }
+    // URL ?tab=xxx 直达板块（飞书卡片链接用），优先于 sessionStorage
+    const q = searchParams?.get("tab");
+    if (q && isTab(q)) {
+      setTab(q);
+      try {
+        sessionStorage.setItem(TAB_KEY, q);
+      } catch {
+        // ignore
+      }
+    }
     setReady(true);
-  }, []);
+  }, [searchParams]);
 
   const tryUnlock = useCallback(() => {
     if (input.trim() === PASSWORD) {
@@ -183,5 +195,13 @@ export default function WeeklyPage() {
         ))}
       </div>
     </div>
+  );
+}
+
+export default function WeeklyPage() {
+  return (
+    <Suspense fallback={null}>
+      <WeeklyPageInner />
+    </Suspense>
   );
 }
