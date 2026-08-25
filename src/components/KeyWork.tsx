@@ -30,53 +30,58 @@ function SectionBlock({ s }: { s: KeyWorkSection }) {
         ) : null}
       </div>
 
-      <div style={{ display: "grid", gap: 5 }}>
+      <div style={{ display: "grid", gap: 8 }}>
         {s.items.map((it, i) => (
           <div
             key={i}
             style={{
-              display: "flex",
-              gap: 10,
-              alignItems: "baseline",
-              padding: "7px 10px",
+              padding: "8px 10px",
               borderRadius: 8,
               background: "var(--surface-1)",
               border: "1px solid var(--border-soft)",
               fontSize: "0.8125rem",
             }}
           >
-            <span style={{ flex: 1, lineHeight: 1.5, opacity: 0.85 }}>
+            <div style={{ lineHeight: 1.6, opacity: 0.88, wordBreak: "break-word" }}>
               {it.task}
               {it.source ? (
                 <span style={{ opacity: 0.5, fontSize: "0.75rem" }}>（{it.source}）</span>
               ) : null}
-            </span>
-            <span
+            </div>
+            <div
               style={{
-                flexShrink: 0,
-                fontSize: "0.75rem",
-                padding: "2px 10px",
-                borderRadius: 99,
-                background: "rgba(96,165,250,0.12)",
-                color: "#93c5fd",
-                border: "1px solid rgba(96,165,250,0.25)",
+                display: "flex",
+                gap: 6,
+                flexWrap: "wrap",
+                alignItems: "center",
+                marginTop: 5,
               }}
             >
-              {it.owner}
-            </span>
-            <span
-              style={{
-                flexShrink: 0,
-                fontSize: "0.75rem",
-                padding: "2px 10px",
-                borderRadius: 99,
-                background: "rgba(234,179,8,0.12)",
-                color: "#fbbf24",
-                border: "1px solid rgba(234,179,8,0.25)",
-              }}
-            >
-              ⏱ {it.deadline}
-            </span>
+              <span
+                style={{
+                  fontSize: "0.75rem",
+                  padding: "2px 10px",
+                  borderRadius: 99,
+                  background: "rgba(96,165,250,0.12)",
+                  color: "#93c5fd",
+                  border: "1px solid rgba(96,165,250,0.25)",
+                }}
+              >
+                {it.owner}
+              </span>
+              <span
+                style={{
+                  fontSize: "0.75rem",
+                  padding: "2px 10px",
+                  borderRadius: 99,
+                  background: "rgba(234,179,8,0.12)",
+                  color: "#fbbf24",
+                  border: "1px solid rgba(234,179,8,0.25)",
+                }}
+              >
+                ⏱ {it.deadline}
+              </span>
+            </div>
           </div>
         ))}
       </div>
