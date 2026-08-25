@@ -244,7 +244,7 @@ function AnalyticsSection({ data }: { data: SiteAnalyticsFile }) {
 }
 
 export function WeeklyReport() {
-  const [unlocked, setUnlocked] = useState(false);
+  const [unlocked, setUnlocked] = useState(true);
   const [input, setInput] = useState("");
   const [wrong, setWrong] = useState(false);
   const [data, setData] = useState<WeeklyReportFile | null>(null);

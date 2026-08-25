@@ -397,7 +397,7 @@ function Gate({ onUnlock }: { onUnlock: () => void }) {
 }
 
 export function KpiDashboardCard() {
-  const [unlocked, setUnlocked] = useState(false);
+  const [unlocked, setUnlocked] = useState(true);
   const [data, setData] = useState<KpiDashboardFile | null>(null);
   const [error, setError] = useState("");
 

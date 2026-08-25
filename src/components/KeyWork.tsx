@@ -85,7 +85,7 @@ function SectionBlock({ s }: { s: KeyWorkSection }) {
 }
 
 export function KeyWorkCard() {
-  const [unlocked, setUnlocked] = useState(false);
+  const [unlocked, setUnlocked] = useState(true);
   const [data, setData] = useState<KeyWorkFile | null>(null);
   const [error, setError] = useState("");
   const [input, setInput] = useState("");

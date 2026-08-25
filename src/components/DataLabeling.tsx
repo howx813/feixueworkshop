@@ -21,7 +21,7 @@ const PASSWORD = "9822";
 const STORE_KEY = "feixue-labeling-unlocked";
 
 export function DataLabelingCard() {
-  const [unlocked, setUnlocked] = useState(false);
+  const [unlocked, setUnlocked] = useState(true);
   const [data, setData] = useState<LabelingFile | null>(null);
   const [error, setError] = useState("");
   const [input, setInput] = useState("");
