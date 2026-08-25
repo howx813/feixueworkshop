@@ -177,7 +177,7 @@ export function MobileNav() {
     { href: "/", label: "首页" },
     { href: "/tenders/", label: "标讯" },
     { href: "/lab/", label: "手搓" },
-    { href: "/weekly/", label: "周报" },
+    { href: "/weekly/", label: "工作" },
     { href: "/changelog/", label: "日志" },
   ];
 
