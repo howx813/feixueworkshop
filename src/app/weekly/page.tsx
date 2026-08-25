@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { site } from "@/data/content";
 import { WeeklyReport } from "@/components/WeeklyReport";
+import { KeyWorkCard } from "@/components/KeyWork";
 import { KpiDashboardCard } from "@/components/KpiDashboard";
 import { DailyWorkCard } from "@/components/DailyWork";
 
@@ -17,6 +18,9 @@ export default function WeeklyPage() {
       <h1 className="page-title">工作周报</h1>
       <p className="page-desc">每周五 18:00 更新 · 一周工作概览 · 简单明了版</p>
       <WeeklyReport />
+      <div style={{ marginTop: 24 }}>
+        <KeyWorkCard />
+      </div>
       <div style={{ marginTop: 24 }}>
         <DailyWorkCard />
       </div>
