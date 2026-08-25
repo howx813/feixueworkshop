@@ -9,8 +9,9 @@ import {
   type SiteAnalyticsFile,
   fetchSiteAnalytics,
 } from "@/lib/site-analytics";
+import { KpiDashboard } from "@/components/KpiDashboard";
 
-const PASSWORD = "9822";
+const PASSWORD = "Kpi@2026-GzTf!Xh";
 const STORE_KEY = "feixue-weekly-unlocked";
 
 /** markdown-lite 渲染：##/### 标题、- 列表、> 引用、其余为段落（周报正文够用即可） */
@@ -394,6 +395,10 @@ export function WeeklyReport() {
           {data.health.line}
         </p>
       ) : null}
+
+      <div style={{ marginTop: 24 }}>
+        <KpiDashboard />
+      </div>
     </>
   );
 }

@@ -1,6 +1,6 @@
 {
   "name": "feixue-workshop",
-  "version": "0.2.43",
+  "version": "0.2.45",
   "private": true,
   "scripts": {
     "dev": "next dev -p ${PORT:-3456}",

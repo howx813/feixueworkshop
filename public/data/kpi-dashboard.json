@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-25T06:00:00.000Z",
+  "updatedNote": "数据来源：2026年7月绩效会（全院累计，按集客占比67%折算到副职考核线）；季度节点来自《2026年创新研究院领导班子副职业绩考核指标》",
+  "owner": "徐昊",
+  "role": "创新研究院副院长（分管集客）",
+  "metrics": [
+    {
+      "key": "contract",
+      "name": "新签服务合同",
+      "weight": 60,
+      "annualTarget": 3000,
+      "unit": "万元",
+      "quarterlyNodes": [667, 1333, 2133, 3000],
+      "currentCumulative": 1227,
+      "currentMonth": "7月",
+      "currentRate": 0.409,
+      "quarterRate": 0.92,
+      "quarterNode": "Q2",
+      "augTarget": 1867,
+      "scoring": { "deductPer1pct": 1, "bonusPer1pct": 0.3, "bonusCap": 6 },
+      "score": 0.9,
+      "note": "折算自全院1840.34万×67%；序时完成率92%（Q2节点1333万）"
+    },
+    {
+      "key": "receipt",
+      "name": "主营业务收款",
+      "weight": 40,
+      "annualTarget": 2200,
+      "unit": "万元",
+      "quarterlyNodes": [440, 1000, 1540, 2200],
+      "currentCumulative": 718,
+      "currentMonth": "7月",
+      "currentRate": 0.326,
+      "quarterRate": 0.72,
+      "quarterNode": "Q2",
+      "augTarget": 1369,
+      "scoring": { "deductPer1pct": 0.667, "bonusPer1pct": 0.6, "bonusCap": 6 },
+      "score": 0,
+      "note": "折算自全院1077.26万×67%；序时完成率72%（Q2节点1000万）"
+    }
+  ],
+  "scoreNow": 0.9,
+  "scoreFull": 100,
+  "scenarios": [
+    { "name": "当前节奏", "contractRate": 0.41, "receiptRate": 0.33, "total": 1 },
+    { "name": "80分保底", "contractRate": 0.8, "receiptRate": 0.8, "total": 66.7, "contractNeed": 1173, "receiptNeed": 1042, "contractMonthly": 235, "receiptMonthly": 208 },
+    { "name": "90分优秀", "contractRate": 0.94, "receiptRate": 0.94, "total": 90, "contractNeed": 1593, "receiptNeed": 1350, "contractMonthly": 319, "receiptMonthly": 270 }
+  ],
+  "otherIndicators": [
+    { "name": "科创工作", "status": "tracking", "desc": "研发投入按季归集；发明专利受理占比≥85%；总部产品库推广合同额" },
+    { "name": "安全生产", "status": "ok", "desc": "无重大事件；按省公司安全生产考核办法执行" },
+    { "name": "全口径分包费", "status": "tracking", "desc": "增速≤收入增速，每高1%扣0.2分（上限2分）" },
+    { "name": "三年以上项目关闭率", "status": "tracking", "desc": "管控98%，每低1pp扣0.05分（上限1分）；复开率管控8.9%" },
+    { "name": "基础管理", "status": "tracking", "desc": "季汇总最多扣10分/加5分，0.1分步长" }
+  ],
+  "warnings": [
+    "时间已过58%，全年盘子只完成合同41%/收款33%——序时得分（约73分）有欺骗性",
+    "收款缺口282万（Q2节点）比合同缺口106万更疼，且集团外收款占比低",
+    "数据标注中心资金结余-32.62万、外包预算归零，欠薪风险直接威胁基础管理/安全生产条线"
+  ]
+}
