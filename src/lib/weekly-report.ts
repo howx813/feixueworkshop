@@ -10,7 +10,7 @@ export type WeeklyReportFile = {
   range: { from: string; to: string };
   hasWork: boolean;
   workText: string;
-  health: { agentRuns: number; agentOk: number; line: string };
+  health?: { agentRuns: number; agentOk: number; line: string } | null;
   copyText: string;
 };
 

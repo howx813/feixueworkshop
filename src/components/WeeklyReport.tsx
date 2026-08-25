@@ -389,7 +389,7 @@ export function WeeklyReport() {
 
       {analytics ? <AnalyticsSection data={analytics} /> : null}
 
-      {data.health.line ? (
+      {data.health?.line ? (
         <p className="item-body" style={{ fontSize: "0.8125rem", opacity: 0.6, marginTop: 18 }}>
           {data.health.line}
         </p>
