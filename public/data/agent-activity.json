@@ -1,7 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-01T02:00:41.764Z",
+  "generatedAt": "2026-09-02T02:00:41.714Z",
   "entries": [
+    {
+      "ts": "2026-09-02T02:00:41.535Z",
+      "agent": "tenders-sync",
+      "ok": true,
+      "newCount": 41,
+      "activeCount": 100,
+      "artifacts": [
+        "data/tenders-history/2026-09.jsonl",
+        "public/data/tenders.json"
+      ],
+      "note": ""
+    },
     {
       "ts": "2026-09-01T02:00:41.551Z",
       "agent": "tenders-sync",
@@ -331,18 +343,6 @@
       "agent": "tenders-sync",
       "ok": true,
       "newCount": 0,
-      "activeCount": 80,
-      "artifacts": [
-        "data/tenders-history/2026-08.jsonl",
-        "public/data/tenders.json"
-      ],
-      "note": ""
-    },
-    {
-      "ts": "2026-08-12T01:05:30.222Z",
-      "agent": "tenders-sync",
-      "ok": true,
-      "newCount": 27,
       "activeCount": 80,
       "artifacts": [
         "data/tenders-history/2026-08.jsonl",
