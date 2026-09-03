@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-25T13:30:00.000Z",
+  "generatedAt": "2026-09-03T01:00:00.000Z",
   "owner": "徐昊",
   "role": "创新研究院副院长（分管：集客经营 / 科创 / 纪检）",
-  "note": "数据来源：①经营=2026年副职业绩考核指标表+7月绩效会（全院×67%折算）；②科创=副职考核科创条线+KCI框架；③纪检=纪检工作指标看板（23条细则+20条重点工作）",
+  "note": "数据来源：①经营=2026年8月全院考核表（全院合同4500万/收款3300万口径）×67%折算；②科创=融合率2025-2026实绩（2025:102%达标/2026:截至8月68%）+副职考核科创条线+KCI框架；③纪检=纪检工作指标看板（23条细则+20条重点工作）",
   "sections": {
     "business": {
       "name": "集客经营",
@@ -15,16 +15,25 @@
           "weight": 60,
           "annualTarget": 3000,
           "unit": "万元",
-          "quarterlyNodes": [667, 1333, 2133, 3000],
-          "currentCumulative": 1227,
-          "currentMonth": "7月",
-          "currentRate": 0.409,
-          "quarterRate": 0.92,
-          "quarterNode": "Q2",
-          "augTarget": 1867,
-          "scoring": { "deductPer1pct": 1, "bonusPer1pct": 0.3, "bonusCap": 6 },
-          "score": 0.9,
-          "note": "折算自全院1840.34万×67%"
+          "quarterlyNodes": [
+            667,
+            1333,
+            2133,
+            3000
+          ],
+          "currentCumulative": 1331,
+          "currentMonth": "8月",
+          "currentRate": 0.444,
+          "quarterRate": 0.624,
+          "quarterNode": "Q3",
+          "augTarget": 2000,
+          "scoring": {
+            "deductPer1pct": 1,
+            "bonusPer1pct": 0.3,
+            "bonusCap": 6
+          },
+          "score": 4.4,
+          "note": "折算自全院8月累计1986.29万×67%"
         },
         {
           "key": "receipt",
@@ -32,39 +41,99 @@
           "weight": 40,
           "annualTarget": 2200,
           "unit": "万元",
-          "quarterlyNodes": [440, 1000, 1540, 2200],
-          "currentCumulative": 718,
-          "currentMonth": "7月",
-          "currentRate": 0.326,
-          "quarterRate": 0.72,
-          "quarterNode": "Q2",
-          "augTarget": 1369,
-          "scoring": { "deductPer1pct": 0.667, "bonusPer1pct": 0.6, "bonusCap": 6 },
-          "score": 0,
-          "note": "折算自全院1077.26万×67%"
+          "quarterlyNodes": [
+            440,
+            1000,
+            1540,
+            2200
+          ],
+          "currentCumulative": 727,
+          "currentMonth": "8月",
+          "currentRate": 0.33,
+          "quarterRate": 0.472,
+          "quarterNode": "Q3",
+          "augTarget": 1467,
+          "scoring": {
+            "deductPer1pct": 0.667,
+            "bonusPer1pct": 0.6,
+            "bonusCap": 6
+          },
+          "score": 0.0,
+          "note": "折算自全院8月累计1084.76万×67%"
         }
       ],
-      "scoreNow": 0.9,
+      "scoreNow": 4.4,
       "scoreFull": 100,
       "scenarios": [
-        { "name": "当前节奏", "total": 1 },
-        { "name": "80分保底", "contractNeed": 1173, "receiptNeed": 1042, "contractMonthly": 235, "receiptMonthly": 208, "total": 66.7 },
-        { "name": "90分优秀", "contractNeed": 1593, "receiptNeed": 1350, "contractMonthly": 319, "receiptMonthly": 270, "total": 90 }
+        {
+          "name": "当前节奏",
+          "total": 4.4
+        },
+        {
+          "name": "80分保底",
+          "contractNeed": 1069,
+          "receiptNeed": 1033,
+          "contractMonthly": 267,
+          "receiptMonthly": 258,
+          "total": 80
+        },
+        {
+          "name": "90分优秀",
+          "contractNeed": 1369,
+          "receiptNeed": 1253,
+          "contractMonthly": 342,
+          "receiptMonthly": 313,
+          "total": 90
+        }
       ],
       "warnings": [
-        "时间已过58%，全年盘子只完成合同41%/收款33%",
-        "收款缺口282万（Q2节点）比合同缺口106万更疼，且集团外收款占比低",
-        "数据标注中心资金结余-32.62万、外包预算归零，欠薪风险威胁基础管理条线"
+        "时间已过67%，分管盘子全年只完成合同44%/收款33%，两项均落后序时",
+        "8月收款几乎零增量（全院7月累计1077万→8月1085万，单月约+8万），回款停滞是最痛点",
+        "距年底剩4个月：合同缺口约1669万（月均417万）、收款缺口约1473万（月均368万），需前8个月均速的2.5-4倍",
+        "Q3节点考核口径：合同应到2133万（实1331万）、收款应到1540万（实727万），全年得分预测4.4/100"
       ]
     },
     "innovation": {
       "name": "科创工作",
       "icon": "🔬",
       "kpi": [
-        { "key": "rd_input_q", "name": "研发投入按季归集", "type": "扣分制", "rule": "未按季度目标归集扣1分/次；年度预算未完成再扣1分", "status": "tracking", "progressNote": "季度考核项" },
-        { "key": "sysint_sw_rev", "name": "系统集成+软件开发收入", "type": "扣分制", "rule": "每低于目标1%扣0.1分，最高扣1分（季度+年度）", "status": "tracking" },
-        { "key": "patents", "name": "发明专利", "type": "扣分制+结构", "rule": "授权/受理评审未达标每少1件扣0.5分；当年受理占受理总数<85%扣1分（年度）", "status": "tracking" },
-        { "key": "product_library", "name": "总部两级产品库推广合同额", "type": "扣分制", "rule": "每低于目标1%扣0.1分，最高扣1分（年度）", "status": "tracking" }
+        {
+          "key": "fusion_rate",
+          "name": "融合率（金额口径）",
+          "type": "目标考核",
+          "rule": "2025年目标3877万→实绩3966万（102%达标）；2026年目标4885万，截至8月完成3340万（68%），与序时进度（67%）基本持平",
+          "status": "tracking",
+          "progressNote": "2025年起考核"
+        },
+        {
+          "key": "rd_input_q",
+          "name": "研发投入按季归集",
+          "type": "扣分制",
+          "rule": "未按季度目标归集扣1分/次；年度预算未完成再扣1分",
+          "status": "tracking",
+          "progressNote": "季度考核项"
+        },
+        {
+          "key": "sysint_sw_rev",
+          "name": "系统集成+软件开发收入",
+          "type": "扣分制",
+          "rule": "每低于目标1%扣0.1分，最高扣1分（季度+年度）",
+          "status": "tracking"
+        },
+        {
+          "key": "patents",
+          "name": "发明专利",
+          "type": "扣分制+结构",
+          "rule": "授权/受理评审未达标每少1件扣0.5分；当年受理占受理总数<85%扣1分（年度）",
+          "status": "tracking"
+        },
+        {
+          "key": "product_library",
+          "name": "总部两级产品库推广合同额",
+          "type": "扣分制",
+          "rule": "每低于目标1%扣0.1分，最高扣1分（年度）",
+          "status": "tracking"
+        }
       ],
       "kciFramework": {
         "note": "院内KCI考核6项 + 重点任务12项台账（逐月对账机制已建立）",
@@ -79,57 +148,244 @@
       "prevScore": 78.5,
       "fullScore": 114,
       "indicatorGroups": [
-        { "group": "政治监督（63分）", "items": [
-          { "criterion": "健全重要指示批示闭环落实机制", "max": 2, "prev": 2 },
-          { "criterion": "开展本单位政治监督", "max": 19, "prev": 15 },
-          { "criterion": "精准纠偏正向（第一种形态追责）", "max": 4, "prev": 4 },
-          { "criterion": "\"一把手\"和领导班子监督", "max": 4, "prev": 4 },
-          { "criterion": "全面从严治党主体责任清单", "max": 2, "prev": 2 },
-          { "criterion": "党内政治生活和党内监督", "max": 4, "prev": 4 },
-          { "criterion": "《重大事项决策监督工作指引》执行检查", "max": 3, "prev": 3 },
-          { "criterion": "政治生态分析研判机制", "max": 2, "prev": 2 },
-          { "criterion": "班子成员\"画像\"", "max": 3, "prev": 3 },
-          { "criterion": "党风廉政协调小组会（季度）", "max": 4, "prev": 4 },
-          { "criterion": "监督函单落实闭环", "max": 4, "prev": 4 },
-          { "criterion": "\"一岗双责\"督促", "max": 4, "prev": 4 },
-          { "criterion": "职能部门移交线索", "max": 10, "prev": 8 }
-        ]},
-        { "group": "正风肃纪反腐（20分）", "items": [
-          { "criterion": "\"四风八规\"问题整治", "max": 6, "prev": 6 },
-          { "criterion": "通报案例学习与警示教育", "max": 2, "prev": 2 },
-          { "criterion": "廉洁监督员监督发现问题", "max": 6, "prev": 6 },
-          { "criterion": "整治群众身边不正之风", "max": 4, "prev": 4 },
-          { "criterion": "纪检干部人人讲纪律", "max": 4, "prev": 4 }
-        ]},
-        { "group": "规范化法治化正规化（17分+加减分）", "items": [
-          { "criterion": "数智监督系统使用率", "max": 8, "prev": 8 },
-          { "criterion": "纪检干部谈心谈话", "max": 3, "prev": 3 },
-          { "criterion": "信息报送与宣传报道", "max": 6, "prev": 6 },
-          { "criterion": "正面清单加分", "max": 12, "prev": 0.5, "isBonus": true },
-          { "criterion": "负面清单扣分", "max": 0, "prev": 0, "isDeduct": true }
-        ]}
+        {
+          "group": "政治监督（63分）",
+          "items": [
+            {
+              "criterion": "健全重要指示批示闭环落实机制",
+              "max": 2,
+              "prev": 2
+            },
+            {
+              "criterion": "开展本单位政治监督",
+              "max": 19,
+              "prev": 15
+            },
+            {
+              "criterion": "精准纠偏正向（第一种形态追责）",
+              "max": 4,
+              "prev": 4
+            },
+            {
+              "criterion": "\"一把手\"和领导班子监督",
+              "max": 4,
+              "prev": 4
+            },
+            {
+              "criterion": "全面从严治党主体责任清单",
+              "max": 2,
+              "prev": 2
+            },
+            {
+              "criterion": "党内政治生活和党内监督",
+              "max": 4,
+              "prev": 4
+            },
+            {
+              "criterion": "《重大事项决策监督工作指引》执行检查",
+              "max": 3,
+              "prev": 3
+            },
+            {
+              "criterion": "政治生态分析研判机制",
+              "max": 2,
+              "prev": 2
+            },
+            {
+              "criterion": "班子成员\"画像\"",
+              "max": 3,
+              "prev": 3
+            },
+            {
+              "criterion": "党风廉政协调小组会（季度）",
+              "max": 4,
+              "prev": 4
+            },
+            {
+              "criterion": "监督函单落实闭环",
+              "max": 4,
+              "prev": 4
+            },
+            {
+              "criterion": "\"一岗双责\"督促",
+              "max": 4,
+              "prev": 4
+            },
+            {
+              "criterion": "职能部门移交线索",
+              "max": 10,
+              "prev": 8
+            }
+          ]
+        },
+        {
+          "group": "正风肃纪反腐（20分）",
+          "items": [
+            {
+              "criterion": "\"四风八规\"问题整治",
+              "max": 6,
+              "prev": 6
+            },
+            {
+              "criterion": "通报案例学习与警示教育",
+              "max": 2,
+              "prev": 2
+            },
+            {
+              "criterion": "廉洁监督员监督发现问题",
+              "max": 6,
+              "prev": 6
+            },
+            {
+              "criterion": "整治群众身边不正之风",
+              "max": 4,
+              "prev": 4
+            },
+            {
+              "criterion": "纪检干部人人讲纪律",
+              "max": 4,
+              "prev": 4
+            }
+          ]
+        },
+        {
+          "group": "规范化法治化正规化（17分+加减分）",
+          "items": [
+            {
+              "criterion": "数智监督系统使用率",
+              "max": 8,
+              "prev": 8
+            },
+            {
+              "criterion": "纪检干部谈心谈话",
+              "max": 3,
+              "prev": 3
+            },
+            {
+              "criterion": "信息报送与宣传报道",
+              "max": 6,
+              "prev": 6
+            },
+            {
+              "criterion": "正面清单加分",
+              "max": 12,
+              "prev": 0.5,
+              "isBonus": true
+            },
+            {
+              "criterion": "负面清单扣分",
+              "max": 0,
+              "prev": 0,
+              "isDeduct": true
+            }
+          ]
+        }
       ],
       "tasks": [
-        { "content": "专业公司内部纪检学习（每月一次集中学习）", "deadline": "每月", "status": "进行中", "progress": "1-7月已完成" },
-        { "content": "纪检干部主动约谈（班子/部门主任/关键岗位）", "deadline": "上半年、下半年各1次", "status": "进行中" },
-        { "content": "纪检干部基层调研", "deadline": "上半年、下半年各1次", "status": "进行中" },
-        { "content": "数监系统活跃度100%+每月1次云巡查", "deadline": "每月", "status": "进行中" },
-        { "content": "纪检新闻稿（每季度≥1篇）", "deadline": "季度", "status": "进行中", "progress": "截止7月已报送5篇" },
-        { "content": "党风廉政建设专题会议（3月/12月）", "deadline": "3月、12月", "status": "进行中" },
-        { "content": "协助召开警示教育大会（每年≥1次）", "deadline": "年度", "status": "进行中" },
-        { "content": "廉洁教育宣讲（每年≥1次）", "deadline": "年度", "status": "进行中" },
-        { "content": "监督责任书+廉洁承诺书签订", "deadline": "年初", "status": "已完成" },
-        { "content": "党风廉政协调小组会", "deadline": "季度", "status": "进行中" },
-        { "content": "制发监督函单（每年≥2次）", "deadline": "年度", "status": "进行中", "progress": "1月已制发1次" },
-        { "content": "本单位政治监督（年初定内容/年底查完成）", "deadline": "全年", "status": "进行中" },
-        { "content": "重大节假日专项监督", "deadline": "节假日", "status": "进行中" },
-        { "content": "企业廉洁文化建设（讲纪律每人每年≥2次）", "deadline": "年度", "status": "进行中" },
-        { "content": "享乐主义奢靡之风监督（差旅/招待/公车）", "deadline": "季度报送", "status": "进行中", "progress": "一季度已报送" },
-        { "content": "监督四新量劳动竞赛", "deadline": "日常", "status": "进行中" },
-        { "content": "年度监督计划（网信安大检11月/应急演练季度/科创季度数据）", "deadline": "年度", "status": "进行中" },
-        { "content": "政治监督计划（网信安/科创转化/预算执行/政绩观）", "deadline": "年底", "status": "进行中" },
-        { "content": "廉洁防控举措表监督", "deadline": "日常", "status": "进行中" },
-        { "content": "\"靠企吃企\"专项监督（党群牵头/纪检监督）", "deadline": "日常", "status": "进行中" }
+        {
+          "content": "专业公司内部纪检学习（每月一次集中学习）",
+          "deadline": "每月",
+          "status": "进行中",
+          "progress": "1-7月已完成"
+        },
+        {
+          "content": "纪检干部主动约谈（班子/部门主任/关键岗位）",
+          "deadline": "上半年、下半年各1次",
+          "status": "进行中"
+        },
+        {
+          "content": "纪检干部基层调研",
+          "deadline": "上半年、下半年各1次",
+          "status": "进行中"
+        },
+        {
+          "content": "数监系统活跃度100%+每月1次云巡查",
+          "deadline": "每月",
+          "status": "进行中"
+        },
+        {
+          "content": "纪检新闻稿（每季度≥1篇）",
+          "deadline": "季度",
+          "status": "进行中",
+          "progress": "截止7月已报送5篇"
+        },
+        {
+          "content": "党风廉政建设专题会议（3月/12月）",
+          "deadline": "3月、12月",
+          "status": "进行中"
+        },
+        {
+          "content": "协助召开警示教育大会（每年≥1次）",
+          "deadline": "年度",
+          "status": "进行中"
+        },
+        {
+          "content": "廉洁教育宣讲（每年≥1次）",
+          "deadline": "年度",
+          "status": "进行中"
+        },
+        {
+          "content": "监督责任书+廉洁承诺书签订",
+          "deadline": "年初",
+          "status": "已完成"
+        },
+        {
+          "content": "党风廉政协调小组会",
+          "deadline": "季度",
+          "status": "进行中"
+        },
+        {
+          "content": "制发监督函单（每年≥2次）",
+          "deadline": "年度",
+          "status": "进行中",
+          "progress": "1月已制发1次"
+        },
+        {
+          "content": "本单位政治监督（年初定内容/年底查完成）",
+          "deadline": "全年",
+          "status": "进行中"
+        },
+        {
+          "content": "重大节假日专项监督",
+          "deadline": "节假日",
+          "status": "进行中"
+        },
+        {
+          "content": "企业廉洁文化建设（讲纪律每人每年≥2次）",
+          "deadline": "年度",
+          "status": "进行中"
+        },
+        {
+          "content": "享乐主义奢靡之风监督（差旅/招待/公车）",
+          "deadline": "季度报送",
+          "status": "进行中",
+          "progress": "一季度已报送"
+        },
+        {
+          "content": "监督四新量劳动竞赛",
+          "deadline": "日常",
+          "status": "进行中"
+        },
+        {
+          "content": "年度监督计划（网信安大检11月/应急演练季度/科创季度数据）",
+          "deadline": "年度",
+          "status": "进行中"
+        },
+        {
+          "content": "政治监督计划（网信安/科创转化/预算执行/政绩观）",
+          "deadline": "年底",
+          "status": "进行中"
+        },
+        {
+          "content": "廉洁防控举措表监督",
+          "deadline": "日常",
+          "status": "进行中"
+        },
+        {
+          "content": "\"靠企吃企\"专项监督（党群牵头/纪检监督）",
+          "deadline": "日常",
+          "status": "进行中"
+        }
       ]
     }
   }
