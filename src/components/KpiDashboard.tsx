@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import {
   type KpiDashboardFile,
   type BusinessMetric,
+  type OrgMetric,
   type DisciplineIndicator,
   fetchKpiDashboard,
 } from "@/lib/kpi-dashboard";
@@ -194,6 +195,84 @@ function BusinessSection({ data }: { data: KpiDashboardFile["sections"]["busines
           {data.warnings.map((w, i) => (
             <p key={i} style={{ margin: 0, fontSize: "0.8125rem", color: "#f87171", lineHeight: 1.5 }}>
               ⚠ {w}
+            </p>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+/* ───────── 全院考核板块 ───────── */
+
+function OrgMetricRow({ m }: { m: OrgMetric }) {
+  const unit = m.unit ?? "万";
+  const rateColor = (r: number | null) =>
+    r == null ? "#f87171" : r >= 0.95 ? "#4ade80" : r >= 0.8 ? "#eab308" : "#f87171";
+  const barW = (r: number | null) => (r == null ? 0 : Math.min(100, r * 100));
+  return (
+    <div style={{ padding: "10px 12px", borderRadius: 10, background: "var(--surface-1)", border: "1px solid var(--border-soft)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8, flexWrap: "wrap" }}>
+        <strong style={{ fontSize: "0.9rem" }}>{m.name}</strong>
+        <span style={{ fontSize: "0.6875rem", opacity: 0.6 }}>权重 {m.weight} 分</span>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginTop: 4 }}>
+        <div style={{ fontSize: "1.3rem", fontWeight: 700, lineHeight: 1.1 }}>
+          {m.currentCumulative}
+          <span style={{ fontSize: "0.75rem", fontWeight: 400, opacity: 0.6, marginLeft: 3 }}>{unit}</span>
+        </div>
+        <div style={{ textAlign: "right", fontSize: "0.72rem", opacity: 0.65, lineHeight: 1.5 }}>
+          <div>全年预算 {m.annualTarget}{unit}</div>
+          <div>8月节点 {m.monthBudget}{unit}</div>
+        </div>
+      </div>
+      <div style={{ position: "relative", height: 8, borderRadius: 4, background: "var(--surface-2)", overflow: "hidden", margin: "6px 0 3px" }}>
+        <div style={{ width: `${barW(m.yearRate)}%`, height: "100%", borderRadius: 4, background: rateColor(m.yearRate) }} />
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.75rem", flexWrap: "wrap", gap: 4, alignItems: "baseline" }}>
+        <span style={{ color: rateColor(m.monthRate), fontWeight: 600 }}>
+          节点完成率 {m.monthRate == null ? "—" : `${Math.round(m.monthRate * 100)}%`}
+        </span>
+        <span style={{ opacity: 0.75 }}>
+          得分 {m.score.toFixed(2)} / 扣 {m.deduct.toFixed(2)}
+        </span>
+        <span style={{ opacity: 0.6 }}>年进度 {m.yearRate == null ? "—" : `${Math.round(m.yearRate * 100)}%`}</span>
+      </div>
+      {m.note ? (
+        <p className="item-body" style={{ margin: "4px 0 0", fontSize: "0.72rem", opacity: 0.55, lineHeight: 1.5 }}>
+          {m.note}
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
+function OrgSection({ data }: { data: KpiDashboardFile["sections"]["org"] }) {
+  return (
+    <div style={{ display: "grid", gap: 8 }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "8px 12px",
+          borderRadius: 10,
+          background: "var(--surface-1)",
+          border: "1px solid var(--border-soft)",
+        }}
+      >
+        <span style={{ fontSize: "0.8125rem", opacity: 0.7 }}>{data.monthLabel} · 盈利/资金/合同三组</span>
+        <div style={{ textAlign: "right" }}>
+          <span style={{ fontSize: "1.35rem", fontWeight: 700, color: "#f87171" }}>{data.scoreNow.toFixed(2)}</span>
+          <span style={{ fontSize: "0.75rem", opacity: 0.6, marginLeft: 3 }}>/ {data.scoreFull} 分</span>
+        </div>
+      </div>
+      <div style={{ display: "grid", gap: 8 }}>{data.metrics.map((m) => <OrgMetricRow key={m.key} m={m} />)}</div>
+      {data.warnings.length > 0 ? (
+        <div style={{ display: "grid", gap: 6, padding: "10px 12px", borderRadius: 10, background: "rgba(248,113,113,0.08)", border: "1px solid rgba(248,113,113,0.3)" }}>
+          {data.warnings.map((w, i) => (
+            <p key={i} style={{ margin: 0, fontSize: "0.8125rem", opacity: 0.88, lineHeight: 1.5 }}>
+              ⚠️ {w}
             </p>
           ))}
         </div>
@@ -459,6 +538,9 @@ export function KpiDashboardCard() {
         <p className="item-body">加载中…</p>
       ) : (
         <>
+          {sectionHeader(data.sections.org.icon, data.sections.org.name)}
+          <OrgSection data={data.sections.org} />
+
           {sectionHeader(data.sections.business.icon, data.sections.business.name)}
           <BusinessSection data={data.sections.business} />
 

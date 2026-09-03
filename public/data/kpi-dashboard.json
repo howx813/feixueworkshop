@@ -1,13 +1,126 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-03T01:00:00.000Z",
+  "generatedAt": "2026-09-03T02:00:00.000Z",
   "owner": "徐昊",
   "role": "创新研究院副院长（分管：集客经营 / 科创 / 纪检）",
-  "note": "数据来源：①经营=2026年8月全院考核表（全院合同4500万/收款3300万口径）×67%折算；②科创=融合率2025-2026实绩（2025:102%达标/2026:截至8月68%）+副职考核科创条线+KCI框架；③纪检=纪检工作指标看板（23条细则+20条重点工作）",
+  "note": "数据来源：①全院考核=2026年8月全院月度考核表（8项指标/权重100）；②徐昊考核=副职KPI（合同3000万60分+收款2200万40分）×全院67%折算；③科创=融合率实绩+副职考核科创条线+KCI框架；④纪检=纪检工作指标看板",
   "sections": {
+    "org": {
+      "name": "全院考核",
+      "icon": "🏢",
+      "monthLabel": "截至8月",
+      "metrics": [
+        {
+          "key": "income",
+          "name": "收入",
+          "weight": 10,
+          "annualTarget": 3250,
+          "monthBudget": 2150,
+          "currentCumulative": 2180.93,
+          "yearRate": 0.67,
+          "monthRate": 1.01,
+          "score": 10.0,
+          "deduct": 0.0
+        },
+        {
+          "key": "profit",
+          "name": "利润",
+          "weight": 30,
+          "annualTarget": 175,
+          "monthBudget": 115,
+          "currentCumulative": 115,
+          "yearRate": 0.66,
+          "monthRate": 1.0,
+          "score": 30.0,
+          "deduct": 0.0
+        },
+        {
+          "key": "gross_margin",
+          "name": "毛利率",
+          "weight": 5,
+          "annualTarget": 23.5,
+          "monthBudget": 23,
+          "currentCumulative": 28,
+          "yearRate": 1.2,
+          "monthRate": 1.22,
+          "score": 5.0,
+          "deduct": 0.0,
+          "unit": "%"
+        },
+        {
+          "key": "cash_gap",
+          "name": "收支差",
+          "weight": 10,
+          "annualTarget": 149,
+          "monthBudget": -16,
+          "currentCumulative": -53.36,
+          "yearRate": null,
+          "monthRate": null,
+          "score": 0.0,
+          "deduct": 10.0,
+          "note": "截至8月累计收支差-53.36万（8月节点预算-16万，恶化约37万）；全年目标+149万承压，扣分全扣"
+        },
+        {
+          "key": "receipt",
+          "name": "收款",
+          "weight": 10,
+          "annualTarget": 3300,
+          "monthBudget": 2053,
+          "currentCumulative": 1084.76,
+          "yearRate": 0.33,
+          "monthRate": 0.53,
+          "score": 2.12,
+          "deduct": 7.88
+        },
+        {
+          "key": "ext_receipt",
+          "name": "集团外收款",
+          "weight": 5,
+          "annualTarget": 2800,
+          "monthBudget": 1850,
+          "currentCumulative": 833.07,
+          "yearRate": 0.3,
+          "monthRate": 0.45,
+          "score": 0.44,
+          "deduct": 4.56
+        },
+        {
+          "key": "contract",
+          "name": "合同",
+          "weight": 20,
+          "annualTarget": 4500,
+          "monthBudget": 2800,
+          "currentCumulative": 1986.29,
+          "yearRate": 0.44,
+          "monthRate": 0.71,
+          "score": 10.41,
+          "deduct": 9.59
+        },
+        {
+          "key": "ext_contract",
+          "name": "集团外合同",
+          "weight": 10,
+          "annualTarget": 4000,
+          "monthBudget": 2500,
+          "currentCumulative": 1526.77,
+          "yearRate": 0.38,
+          "monthRate": 0.61,
+          "score": 3.38,
+          "deduct": 6.62
+        }
+      ],
+      "scoreNow": 61.35,
+      "scoreFull": 100,
+      "warnings": [
+        "盈利组（收入/利润/毛利率）按序时达标——账面基本盘稳",
+        "资金组扣22.44分：收款全年33%、集团外30%，回款严重滞后，收支差-53.36万",
+        "合同组扣16.21分：合同全年44%、集团外38%，新签断档",
+        "收入2180.93万 vs 收款1084.76万，收现比约50%——收入靠存量结转，真金白银没跟上"
+      ]
+    },
     "business": {
-      "name": "集客经营",
-      "icon": "📊",
+      "name": "徐昊考核",
+      "icon": "👤",
       "metrics": [
         {
           "key": "contract",
