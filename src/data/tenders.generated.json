@@ -1,18 +1,18 @@
 {
-  "syncedAt": "2026-09-03T02:00:44.145Z",
+  "syncedAt": "2026-09-04T02:00:47.916Z",
   "source": "public tender list + detail",
   "authenticated": true,
   "provinceCodes": [
     520000
   ],
-  "since": "2026-08-20",
+  "since": "2026-08-21",
   "queryCount": 21,
-  "rawCount": 247,
-  "softwareCount": 188,
+  "rawCount": 250,
+  "softwareCount": 189,
   "matchedCount": 100,
-  "fiveStarCount": 9,
-  "ctaAiCount": 28,
-  "telecomGzCount": 10,
+  "fiveStarCount": 8,
+  "ctaAiCount": 26,
+  "telecomGzCount": 11,
   "deepAnalyzed": 5,
   "note": "匹配星级综合「软件相关度 / 公开标准关键词 / 在投状态 / 规模 / 截止信息」。含全国检索「中电信人工智能科技」专项。5 星会尝试下载公开附件并做资格摘录。不等于可中标判断。账号密码勿入库。",
   "items": [
@@ -91,7 +91,7 @@
       "candidates": [],
       "awardNoticeKind": "",
       "deepAnalysis": {
-        "analyzedAt": "2026-09-03T02:00:44.143Z",
+        "analyzedAt": "2026-09-04T02:00:47.911Z",
         "summary": "匹配星级 5（综合分 100）；截止 2026-09-15 09:30:00；约 458 万元；与能力清单重合点较少，需人工看资格专章；未获取到可下载招标文件附件（可能仅有来源链接）。",
         "matchedStandards": [],
         "mustRequirements": [],
@@ -103,7 +103,7 @@
     },
     {
       "id": "70391112706260",
-      "title": "中电信人工智能科技 （北京）有限公司2026年渠道管理及佣金结算系统建设工程",
+      "title": "中电信人工智能科技（北京）有限公司 2026年渠道管理及佣金结算系统建设工程",
       "tenderType": "招采",
       "date": "2026-08-26",
       "publishTime": "2026-08-26 20:51:31",
@@ -232,21 +232,24 @@
       "awardNoticeKind": ""
     },
     {
-      "id": "70357627437060",
-      "title": "中电信人工智能科技（北京）有限公司 2026年业务监控预警系统建设工程项目询比公告",
+      "id": "70434348935504",
+      "title": "中电信人工智能科技有限公司 2026年某地智慧园区AI升级虚拟化平台软件项目招标公告",
       "tenderType": "招采",
-      "date": "2026-08-20",
-      "publishTime": "2026-08-20 19:37:31",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 16:34:11",
       "province": "北京市",
       "city": "北京市",
       "buyer": "中电信人工智能科技（北京）有限公司",
-      "moneyWan": 360.24,
+      "moneyWan": 39.85,
       "professions": [
-        "智慧政务",
+        "智慧园区",
+        "软件开发",
         "系统集成",
-        "网络安全",
-        "运营商视频监控",
-        "运营商系统集成"
+        "智慧市政",
+        "运营商大数据",
+        "运营商系统集成",
+        "运营商云计算",
+        "云服务"
       ],
       "matchedQuals": [
         {
@@ -263,35 +266,45 @@
           "id": "sysint",
           "name": "系统集成资质/等级",
           "domain": "集成"
+        },
+        {
+          "id": "secret",
+          "name": "涉密相关",
+          "domain": "安全"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务许可",
+          "domain": "通用"
         }
       ],
-      "score": 130,
+      "score": 131,
       "stars": 3,
-      "starScore": 100,
+      "starScore": 92,
       "starReasons": [
         "在投/采购公告阶段",
         "标题含信息化相关词",
         "专业标签匹配",
         "业态相关，但未见明确证书门槛词",
-        "规模适中（约 360 万）",
-        "投标截止：2026-08-28 09:30:00",
+        "规模较小",
+        "投标截止：2026-09-24 09:30:00",
         "不收取文件费",
         "重点采购主体相关"
       ],
       "focusTags": [
         "cta-ai"
       ],
-      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=185598630929344&type=3&docTypeCode=CompareSelect&securityViewCode=7df1b305cd40229cd71b9ff9ff25e497",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70357627437060",
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=187343023679723&type=1&docTypeCode=TenderAnnouncement&securityViewCode=cee5d97cc72ab94422b369c3ca0ceec4",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434348935504",
       "stageName": "",
       "purchaseTypeName": "",
-      "bidDeadline": "2026-08-28 09:30:00",
+      "bidDeadline": "2026-09-24 09:30:00",
       "fileGetDeadline": "",
-      "scaleText": "约 360 万元",
+      "scaleText": "约 39.85 万元",
       "docFeeRequired": false,
       "docFeeText": "不收取文件费用",
       "bondText": "",
-      "qualSection": "",
+      "qualSection": "2.3.1 投标产品 应是来自中华人民共和国 的 成熟稳定的产品 。 2.3. 2 投标产品所涉知识产权应保证不存在权利瑕疵，不侵害第三方专利权、商标权、著作权或其他任何形式的合法权益，并提供《知识产权不侵权承诺函》 。 2.3. 3 投标人具有合法有效的响应产品软件著作权登记证书 。 2. 4 法律法规规定的其他要求。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见招标文件第三章“评标办法”，凡未通过资格后审的投标人，其投标将被否决。 4.招标文件的获取 4.1招标文件获取时间: 2026年09月04日 09时00分00秒 至 2026年09月09日 17时00分00秒 （北京时间，下同）。 4.2招标文件获取方式：凡有意参与投标的潜在投标人，请按以下步骤顺序进行操作，获取招标文件： 4.2.1登录“中国电信阳光采购网（https://caigou.chinatelecom.com.cn）”后，通过“招投标-采购文件领取”模块或通过“电子采购入口”跳转中国电信电子采购系统，进入本项目进行招标文件登记申领。未在系统注册的投标人须先进行注册，注册方法详见本公告“ 6 投标人注册”。 4.3招标文件费用： 获取本招标文件不收取费用。 5.",
       "qualHits": [],
       "winner": "",
       "awardMoneyWan": 0,
@@ -599,25 +612,97 @@
       "awardNoticeKind": ""
     },
     {
-      "id": "70357632313100",
-      "title": "中电信人工智能科技有限公司 2026年某地智慧园区AI升级定制化开发服务项目中标候选人公示",
+      "id": "70433792575312",
+      "title": "中电信人工智能科技 （北京）有限公司2026年业务监控预警系统建设工程项目成交候选人公示",
       "tenderType": "中标",
-      "date": "2026-08-20",
-      "publishTime": "2026-08-20 19:38:37",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 14:01:41",
       "province": "北京市",
       "city": "市辖区",
-      "buyer": "中电信人工智能科技（北京）有限公司",
-      "moneyWan": 336.04,
+      "buyer": "中国电信集团公司",
+      "moneyWan": 344.61,
       "professions": [
-        "智慧园区",
-        "其他",
-        "智慧市政",
+        "智慧政务",
+        "系统集成",
+        "网络安全",
         "运营商大数据",
+        "运营商视频监控",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 97,
+      "stars": 2,
+      "starScore": 42,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 345 万）",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70433792575312",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70433792575312",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "中标约 345 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "被否决2.广州优亿信息科技有限公司，因不满足询比文件的业绩要求资格要求被否决公示期：2026年09月04日至2026年09月07日。公示期间，供应商或其他利害关系人对成交候选人有异议的，可向采购",
+      "qualHits": [],
+      "winner": "浙江省公众信息产业有限公司",
+      "awardMoneyWan": 344.61,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "浙江省公众信息产业有限公司",
+          "moneyWan": 344.606
+        }
+      ],
+      "awardNoticeKind": "成交候选人公示"
+    },
+    {
+      "id": "70434326613508",
+      "title": "中电信人工智能科技有限公司 2026年云平台集群专用设备采购项目（软件定制开发服务）直接采购公示",
+      "tenderType": "中标",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 16:30:54",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "软件开发",
+        "系统集成",
+        "批发服务",
+        "其他",
         "运营商系统集成",
         "运营商云计算",
         "云服务"
       ],
       "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
         {
           "id": "cs2",
           "name": "CS / 信息系统建设服务",
@@ -634,42 +719,101 @@
           "domain": "通用"
         }
       ],
-      "score": 103,
-      "stars": 2,
-      "starScore": 42,
+      "score": 86,
+      "stars": 1,
+      "starScore": 30,
       "starReasons": [
         "已结束或结果公示，参考价值低",
         "标题含信息化相关词",
         "专业标签匹配",
         "业态相关，但未见明确证书门槛词",
-        "规模适中（约 336 万）",
         "重点采购主体相关"
       ],
       "focusTags": [
         "cta-ai"
       ],
-      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70357632313100",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70357632313100",
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434326613508",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434326613508",
       "stageName": "",
       "purchaseTypeName": "",
       "bidDeadline": "",
       "fileGetDeadline": "",
-      "scaleText": "约 336 万元",
+      "scaleText": "规模未披露",
       "docFeeRequired": null,
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "",
       "qualHits": [],
-      "winner": "达观数据有限公司",
-      "awardMoneyWan": 336.04,
+      "winner": "软通动力信息技术（集团）股份有限公司",
+      "awardMoneyWan": 0,
       "candidates": [
         {
           "rank": 1,
-          "name": "达观数据有限公司",
+          "name": "软通动力信息技术（集团）股份有限公司",
           "moneyWan": 0
         }
       ],
-      "awardNoticeKind": "中标候选人公示"
+      "awardNoticeKind": "直接采购公示"
+    },
+    {
+      "id": "70434220897996",
+      "title": "中电信人工智能科技 （北京）有限公司2026年业务监控预警系统建设工程项目成交候选人公示",
+      "tenderType": "中标",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 15:55:13",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "",
+      "moneyWan": 0,
+      "professions": [
+        "智慧政务",
+        "系统集成",
+        "网络安全",
+        "运营商大数据",
+        "运营商视频监控",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 74,
+      "stars": 1,
+      "starScore": 30,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434220897996",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434220897996",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": "成交候选人公示"
     },
     {
       "id": "70416298952004",
@@ -741,7 +885,7 @@
     },
     {
       "id": "70394257946444",
-      "title": "中电信人工智能科技 （北京）有限公司视联网平台智能化技术支撑服务项目询比结果公示",
+      "title": "中电信人工智能科技（北京）有限公司 视联网平台智能化技术支撑服务项目询比结果公示",
       "tenderType": "中标",
       "date": "2026-08-27",
       "publishTime": "2026-08-27 10:36:41",
@@ -863,232 +1007,6 @@
       "awardNoticeKind": "询比/结果公示"
     },
     {
-      "id": "70357582134024",
-      "title": "中电信人工智能科技有限公司 2026年网络与信息安全支撑服务项目（标包一：攻防演练服务）成交候选人公示",
-      "tenderType": "中标",
-      "date": "2026-08-20",
-      "publishTime": "2026-08-20 19:25:31",
-      "province": "北京市",
-      "city": "市辖区",
-      "buyer": "中国电信集团公司",
-      "moneyWan": 115.12,
-      "professions": [
-        "网络安全",
-        "其他",
-        "运营商专线"
-      ],
-      "matchedQuals": [
-        {
-          "id": "iso27001",
-          "name": "ISO27001",
-          "domain": "安全"
-        }
-      ],
-      "score": 82,
-      "stars": 1,
-      "starScore": 24,
-      "starReasons": [
-        "已结束或结果公示，参考价值低",
-        "标题含信息化相关词",
-        "规模适中（约 115 万）",
-        "重点采购主体相关"
-      ],
-      "focusTags": [
-        "cta-ai"
-      ],
-      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70357582134024",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70357582134024",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "中标约 115 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "被否决响应公示期：2026年08月21日至2026年08月24日。公示期间，供应商或其他利害关系人对成交候选人有异议的，可向采购人提出。依据《中华人民共和",
-      "qualHits": [],
-      "winner": "北京长亭科技有限公司",
-      "awardMoneyWan": 115.12,
-      "candidates": [
-        {
-          "rank": 1,
-          "name": "北京长亭科技有限公司",
-          "moneyWan": 115.116
-        }
-      ],
-      "awardNoticeKind": "成交候选人公示"
-    },
-    {
-      "id": "70357578455056",
-      "title": "中电信人工智能科技有限公司 2026年网络与信息安全支撑服务项目（标包三：个人信息保护影响评估）成交候选人公示",
-      "tenderType": "中标",
-      "date": "2026-08-20",
-      "publishTime": "2026-08-20 19:24:50",
-      "province": "北京市",
-      "city": "市辖区",
-      "buyer": "中电信人工智能科技（北京）有限公司",
-      "moneyWan": 55,
-      "professions": [
-        "数据处理",
-        "网络安全",
-        "其他",
-        "运营商专线"
-      ],
-      "matchedQuals": [
-        {
-          "id": "iso27001",
-          "name": "ISO27001",
-          "domain": "安全"
-        }
-      ],
-      "score": 81,
-      "stars": 1,
-      "starScore": 24,
-      "starReasons": [
-        "已结束或结果公示，参考价值低",
-        "标题含信息化相关词",
-        "规模适中（约 55 万）",
-        "重点采购主体相关"
-      ],
-      "focusTags": [
-        "cta-ai"
-      ],
-      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70357578455056",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70357578455056",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "约 55.00 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "被否决响应公示期：2026年08月21日至2026年08月24日。公示期间，供应商或其他利害关系人对成交候选人有异议的，可向",
-      "qualHits": [],
-      "winner": "中国信息通信研究院",
-      "awardMoneyWan": 51.8,
-      "candidates": [
-        {
-          "rank": 1,
-          "name": "中国信息通信研究院",
-          "moneyWan": 51.8
-        },
-        {
-          "rank": 1,
-          "name": "成都思维世纪科技有限责任公司",
-          "moneyWan": 51.8007
-        }
-      ],
-      "awardNoticeKind": "成交候选人公示"
-    },
-    {
-      "id": "70357579899912",
-      "title": "中电信人工智能科技有限公司 2026年网络与信息安全支撑服务项目（标包二：日常深度漏洞挖掘）成交候选人公示",
-      "tenderType": "中标",
-      "date": "2026-08-20",
-      "publishTime": "2026-08-20 19:24:59",
-      "province": "北京市",
-      "city": "市辖区",
-      "buyer": "中国电信集团公司",
-      "moneyWan": 78.5,
-      "professions": [
-        "网络安全",
-        "其他",
-        "运营商专线"
-      ],
-      "matchedQuals": [
-        {
-          "id": "iso27001",
-          "name": "ISO27001",
-          "domain": "安全"
-        }
-      ],
-      "score": 76,
-      "stars": 1,
-      "starScore": 24,
-      "starReasons": [
-        "已结束或结果公示，参考价值低",
-        "标题含信息化相关词",
-        "规模适中（约 79 万）",
-        "重点采购主体相关"
-      ],
-      "focusTags": [
-        "cta-ai"
-      ],
-      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70357579899912",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70357579899912",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "中标约 78.50 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "中国信息通信研究院",
-      "awardMoneyWan": 78.5,
-      "candidates": [
-        {
-          "rank": 1,
-          "name": "中国信息通信研究院",
-          "moneyWan": 78.5028
-        }
-      ],
-      "awardNoticeKind": "成交候选人公示"
-    },
-    {
-      "id": "70355434259344",
-      "title": "中电信人工智能科技（北京）有限公司 2026年咨询服务采购项目（第二次）（重新采购）成交候选人公示",
-      "tenderType": "中标",
-      "date": "2026-08-20",
-      "publishTime": "2026-08-20 10:06:28",
-      "province": "北京市",
-      "city": "北京市",
-      "buyer": "中电信人工智能科技（北京）有限公司",
-      "moneyWan": 343.43,
-      "professions": [
-        "其他"
-      ],
-      "matchedQuals": [],
-      "score": 47,
-      "stars": 1,
-      "starScore": 24,
-      "starReasons": [
-        "已结束或结果公示，参考价值低",
-        "标题含信息化相关词",
-        "规模适中（约 343 万）",
-        "重点采购主体相关"
-      ],
-      "focusTags": [
-        "cta-ai"
-      ],
-      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70355434259344",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70355434259344",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "中标约 343 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "中国信息通信研究院",
-      "awardMoneyWan": 343.43,
-      "candidates": [
-        {
-          "rank": 1,
-          "name": "中国信息通信研究院",
-          "moneyWan": 343.4294
-        }
-      ],
-      "awardNoticeKind": "成交候选人公示"
-    },
-    {
       "id": "70427305621320",
       "title": "中电信人工智能科技 （北京）有限公司2026年北京办公区装修工程设计服务采购项目成交候选人公示",
       "tenderType": "中标",
@@ -1190,6 +1108,57 @@
         }
       ],
       "awardNoticeKind": "成交候选人公示"
+    },
+    {
+      "id": "70434374984516",
+      "title": "中电信人工智能科技 (北京)有限公司视觉理解研发中心2026年上海临港资源池存储服务扩容改造项目直接采购公示",
+      "tenderType": "中标",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 16:43:29",
+      "province": "北京市",
+      "city": "北京市",
+      "buyer": "中电信人工智能科技（北京）有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "通信管线",
+        "数据中心",
+        "银行服务",
+        "运营商IDC"
+      ],
+      "matchedQuals": [],
+      "score": 30,
+      "stars": 1,
+      "starScore": 12,
+      "starReasons": [
+        "已结束或结果公示，参考价值低",
+        "标题含信息化相关词",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "cta-ai"
+      ],
+      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434374984516",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434374984516",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "临港算力（上海）科技有限公司",
+      "awardMoneyWan": 0,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "临港算力（上海）科技有限公司",
+          "moneyWan": 0
+        }
+      ],
+      "awardNoticeKind": "直接采购公示"
     },
     {
       "id": "70427725249044",
@@ -1444,7 +1413,7 @@
     },
     {
       "id": "70399654110472",
-      "title": "中电信人工智能科技 （北京）有限公司2026年原北京办公区存量办公家具采购项目",
+      "title": "中电信人工智能科技（北京）有限公司 2026年原北京办公区存量办公家具采购项目",
       "tenderType": "中标",
       "date": "2026-08-28",
       "publishTime": "2026-08-28 10:01:48",
@@ -1491,52 +1460,6 @@
         }
       ],
       "awardNoticeKind": "中标/结果公示"
-    },
-    {
-      "id": "70396892968068",
-      "title": "中电信人工智能科技 (北京)有限公司问答分析助手项目直接采购公示",
-      "tenderType": "中标",
-      "date": "2026-08-27",
-      "publishTime": "2026-08-27 22:02:40",
-      "province": "北京市",
-      "city": "北京市",
-      "buyer": "中电信人工智能科技（北京）有限公司",
-      "moneyWan": 0,
-      "professions": [],
-      "matchedQuals": [],
-      "score": 30,
-      "stars": 1,
-      "starScore": 12,
-      "starReasons": [
-        "已结束或结果公示，参考价值低",
-        "标题含信息化相关词",
-        "重点采购主体相关"
-      ],
-      "focusTags": [
-        "cta-ai"
-      ],
-      "sourceUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70396892968068",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70396892968068",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "规模未披露",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "上海共联通信信息发展有限公司",
-      "awardMoneyWan": 0,
-      "candidates": [
-        {
-          "rank": 1,
-          "name": "上海共联通信信息发展有限公司",
-          "moneyWan": 0
-        }
-      ],
-      "awardNoticeKind": "直接采购公示"
     },
     {
       "id": "70390796220900",
@@ -1717,7 +1640,17 @@
       "winner": "",
       "awardMoneyWan": 0,
       "candidates": [],
-      "awardNoticeKind": ""
+      "awardNoticeKind": "",
+      "deepAnalysis": {
+        "analyzedAt": "2026-09-04T02:00:47.913Z",
+        "summary": "匹配星级 5（综合分 100）；截止 2026-09-15 09:30:00；约 132 万元；与能力清单重合点较少，需人工看资格专章；未获取到可下载招标文件附件（可能仅有来源链接）。",
+        "matchedStandards": [],
+        "mustRequirements": [],
+        "mentionedInDoc": [],
+        "gaps": [],
+        "files": [],
+        "hasLocalDocs": false
+      }
     },
     {
       "id": "70422012922180",
@@ -1792,7 +1725,7 @@
       "candidates": [],
       "awardNoticeKind": "",
       "deepAnalysis": {
-        "analyzedAt": "2026-09-03T02:00:40.646Z",
+        "analyzedAt": "2026-09-04T02:00:41.569Z",
         "summary": "匹配星级 5（综合分 86）；截止 2026-09-07；约 3.90 万元；与能力清单重合：CCRC 信息安全服务、质量管理体系；已下载附件 2 个。",
         "matchedStandards": [
           "CCRC 信息安全服务",
@@ -1809,7 +1742,7 @@
           },
           {
             "fileName": "道真自治县中医医院信息系统网络安全等级保护测评服务采购项目询价公告>",
-            "size": 35195,
+            "size": 35196,
             "error": null
           }
         ],
@@ -2019,7 +1952,7 @@
       "candidates": [],
       "awardNoticeKind": "",
       "deepAnalysis": {
-        "analyzedAt": "2026-09-03T02:00:41.768Z",
+        "analyzedAt": "2026-09-04T02:00:46.275Z",
         "summary": "匹配星级 5（综合分 80）；截止 2026-09-23 09:30；约 156 万元；与能力清单重合点较少，需人工看资格专章；已下载附件 1 个。",
         "matchedStandards": [],
         "mustRequirements": [
@@ -2162,7 +2095,7 @@
       "candidates": [],
       "awardNoticeKind": "",
       "deepAnalysis": {
-        "analyzedAt": "2026-09-03T02:00:42.976Z",
+        "analyzedAt": "2026-09-04T02:00:47.909Z",
         "summary": "匹配星级 5（综合分 80）；截止 2026-09-04；约 76.00 万元；与能力清单重合点较少，需人工看资格专章；已下载附件 3 个。",
         "matchedStandards": [],
         "mustRequirements": [
@@ -2191,98 +2124,6 @@
           {
             "fileName": "采购公告.pdf",
             "size": 96308,
-            "error": null
-          }
-        ],
-        "hasLocalDocs": true
-      }
-    },
-    {
-      "id": "70395508332560",
-      "title": "交通事故处理“一件事”全链条 信息系统 存储设备项目竞争性谈判公告(采购公告)",
-      "tenderType": "招采",
-      "date": "2026-08-27",
-      "publishTime": "2026-08-27 16:02:05",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵州省公安厅",
-      "moneyWan": 185.77,
-      "professions": [
-        "电子计算机",
-        "通信管线",
-        "智慧交通",
-        "数据中心",
-        "系统集成",
-        "银行服务",
-        "运营商IDC",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 118,
-      "stars": 5,
-      "starScore": 80,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题强软件/信息化信号",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模适中（约 186 万）",
-        "投标截止：2026-09-02"
-      ],
-      "focusTags": [],
-      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=4vV1TbdKsfgojlzlqBk37g==",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70395508332560",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-09-02",
-      "fileGetDeadline": "",
-      "scaleText": "约 186 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "： 1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 3.本项目的特定资格要求： 标项1：不允许联合投标，需满足如下的特定资格要求：无。",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": "",
-      "deepAnalysis": {
-        "analyzedAt": "2026-09-03T02:00:44.142Z",
-        "summary": "匹配星级 5（综合分 80）；截止 2026-09-02；约 186 万元；与能力清单重合点较少，需人工看资格专章；已下载附件 3 个。",
-        "matchedStandards": [],
-        "mustRequirements": [
-          "资格要求： 3.本项目的特定资格要求： 标项1：不允许联合投标，需满足如下的特定资格要求：无",
-          "资格要求： 1.满足《中华人民共和国政府采购法》第二十二条规定",
-          "资格要求： 处 交 符合政府采购法第二十二条规定，提供政府采购法实施条例第十七条规定 资料",
-          "特定资格要求： 标项1：不允许联合投标，需满足如下的特定资格要求：无"
-        ],
-        "mentionedInDoc": [],
-        "gaps": [],
-        "files": [
-          {
-            "fileName": "招标文件.pdf",
-            "size": 2066387,
-            "error": null
-          },
-          {
-            "fileName": "采购公告.pdf",
-            "size": 147698,
-            "error": null
-          },
-          {
-            "fileName": "采购公告.pdf",
-            "size": 92216,
             "error": null
           }
         ],
@@ -2726,67 +2567,6 @@
       "awardNoticeKind": ""
     },
     {
-      "id": "70358561714700",
-      "title": "贵州银行应用 软件开发 服务采购项目（理财资金投资管理系统XC改造项目）供应商二次征集公告",
-      "tenderType": "招采",
-      "date": "2026-08-20",
-      "publishTime": "2026-08-20 23:39:57",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵州银行股份有限公司",
-      "moneyWan": 0,
-      "professions": [
-        "软件开发",
-        "系统集成",
-        "其他",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 109,
-      "stars": 4,
-      "starScore": 68,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题强软件/信息化信号",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "投标截止：2026-08-27"
-      ],
-      "focusTags": [],
-      "sourceUrl": "https://pms.bgzchina.com:8080/cms/channel/1ywgg1/90011995.htm",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70358561714700",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-08-27",
-      "fileGetDeadline": "",
-      "scaleText": "规模未披露",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
       "id": "70423634598372",
       "title": "[采购意向]贵阳市第十五中学2026年9月政府采购意向- 应用软件 使用详细情况",
       "tenderType": "招采",
@@ -2897,148 +2677,6 @@
       "scaleText": "规模未披露",
       "docFeeRequired": null,
       "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70421315810064",
-      "title": "2026年中国电信贵州公司云网运营第四届（工匠杯） 数字化 转型技能大赛赛前技术支撑服务采购_询比公告",
-      "tenderType": "招采",
-      "date": "2026-09-01",
-      "publishTime": "2026-09-01 08:02:57",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "中国电信股份有限公司贵州分公司",
-      "moneyWan": 44.02,
-      "professions": [
-        "软件开发",
-        "系统集成",
-        "文化,体育,娱乐服务",
-        "运营商系统集成",
-        "运营商云计算",
-        "云服务"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        },
-        {
-          "id": "vas",
-          "name": "增值电信业务许可",
-          "domain": "通用"
-        }
-      ],
-      "score": 125,
-      "stars": 3,
-      "starScore": 92,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模较小",
-        "投标截止：2026-09-08 10:00:00",
-        "不收取文件费",
-        "重点采购主体相关"
-      ],
-      "focusTags": [
-        "telecom-gz"
-      ],
-      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=187342128383460&type=3&docTypeCode=CompareSelect&securityViewCode=39dad0a710275fdd04255e31c4b05e6f",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70421315810064",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-09-08 10:00:00",
-      "fileGetDeadline": "",
-      "scaleText": "约 44.02 万元",
-      "docFeeRequired": false,
-      "docFeeText": "不收取文件费用",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70421806567184",
-      "title": "2027年-2028年中国电信贵州公司5G 数字化 运营系统IT维保服务框架采购询比公告",
-      "tenderType": "招采",
-      "date": "2026-09-01",
-      "publishTime": "2026-09-01 10:10:42",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "中国电信股份有限公司贵州分公司",
-      "moneyWan": 29.6,
-      "professions": [
-        "脚手架工程",
-        "系统集成",
-        "其他",
-        "网络工程",
-        "运营商系统集成",
-        "运营商移网",
-        "湖南移网"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 124,
-      "stars": 3,
-      "starScore": 92,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模较小",
-        "投标截止：2026-09-08 09:30:00",
-        "不收取文件费",
-        "重点采购主体相关"
-      ],
-      "focusTags": [
-        "telecom-gz"
-      ],
-      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=187342857182787&type=3&docTypeCode=CompareSelect&securityViewCode=0637866e1756ab094730ccb250e3db90",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70421806567184",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-09-08 09:30:00",
-      "fileGetDeadline": "",
-      "scaleText": "约 29.60 万元",
-      "docFeeRequired": false,
-      "docFeeText": "不收取文件费用",
       "bondText": "",
       "qualSection": "",
       "qualHits": [],
@@ -3431,28 +3069,91 @@
       "awardNoticeKind": ""
     },
     {
-      "id": "70429405168648",
-      "title": "贵州省公路建设养护集团有限公司公路数智化转型发展研究—建设项目管理、公路 智慧 养护业务系统国产GIS平台采购招标采购公告(采购公告)",
+      "id": "70435180326924",
+      "title": "遵义市大数据发展管理局关于2026年遵义市级基础网络、共性系统运维及市级政务 信息化 项目─共性系统运维的公开招标公告(采购公告)",
       "tenderType": "招采",
-      "date": "2026-09-02",
-      "publishTime": "2026-09-02 19:08:24",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 20:01:23",
       "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵州省公路建设养护集团有限公司",
-      "moneyWan": 120,
+      "city": "遵义市",
+      "buyer": "遵义市大数据发展管理局",
+      "moneyWan": 233.49,
       "professions": [
-        "事业单位用房",
-        "公共设施",
-        "软件开发",
+        "智慧政务",
         "系统集成",
-        "运营商系统集成"
+        "信息运维",
+        "运营商ITO运维",
+        "运营商系统集成",
+        "运营商专线",
+        "广电双线"
       ],
       "matchedQuals": [
         {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
         },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "domain": "安全"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS",
+          "domain": "运维"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 131,
+      "stars": 3,
+      "starScore": 72,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 233 万）",
+        "投标截止：2026-09-24"
+      ],
+      "focusTags": [],
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=TX30TIAnnITkvLct4XQkyg==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70435180326924",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-24",
+      "fileGetDeadline": "",
+      "scaleText": "约 233 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 标项1、2、3、4：供应商应为残疾人福利企业,供应商为节能产品、环境标志产品企业,供应商应为监狱企业,供应商为中小企业/小微企业 3.本项目的特定资格要求： 【标项1、2、3、4】 A包：供应商具有公安部第三研究所颁发并在有效期内的《网络安全等级测评与检测评估机构服务认证证书》。 B包：供应商须在国家密码管理局发布的《商用密码检测机构（商用密码应用安全性评估业务）目录》国家密码管理局公告（第53号）内，提供证明文件）。 C包：/ D包：/",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70434373503492",
+      "title": "2026年-2027年中国联通贵州省分公司 数字化 线生产运营系统（CBSS贵州专区及公众中台贵州专区）维保服务（二次）询比采购公告",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 16:43:13",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国联合网络通信有限公司贵州省分公司",
+      "moneyWan": 140,
+      "professions": [
+        "系统集成",
+        "其他",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
         {
           "id": "cs2",
           "name": "CS / 信息系统建设服务",
@@ -3462,37 +3163,146 @@
           "id": "sysint",
           "name": "系统集成资质/等级",
           "domain": "集成"
-        },
-        {
-          "id": "dcmm2",
-          "name": "DCMM",
-          "domain": "数据"
         }
       ],
-      "score": 133,
+      "score": 118,
       "stars": 3,
-      "starScore": 73,
+      "starScore": 72,
       "starReasons": [
         "在投/采购公告阶段",
         "标题含信息化相关词",
         "专业标签匹配",
         "业态相关，但未见明确证书门槛词",
-        "规模适中（约 120 万）",
-        "投标截止：2026-09-15 13:00",
-        "需购买文件（金额见原文）"
+        "规模适中（约 140 万）",
+        "投标截止：2026-09-10 10:00"
       ],
       "focusTags": [],
-      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=934411",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70429405168648",
+      "sourceUrl": "https://www.chinaunicombidding.cn/bidInformation/detail?id=2095414256234549248",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434373503492",
       "stageName": "",
       "purchaseTypeName": "",
-      "bidDeadline": "2026-09-15 13:00",
+      "bidDeadline": "2026-09-10 10:00",
       "fileGetDeadline": "",
-      "scaleText": "约 120 万元",
-      "docFeeRequired": true,
-      "docFeeText": "需购买文件（金额见原文）",
+      "scaleText": "最高限价 133.00 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
       "bondText": "",
-      "qualSection": "3.1 投标人应依法设立且满足如下要求： （1）资质要求：具有独立承担民事责任的能力：提供法人或其他组织的营业执照等证明文件（提供扫描件并加盖投标人公章） 。 （2）财务要求：具有良好的商业信誉和健全的财务会计制度：提供2025年度由会计师事务所出具的财务审计报告（提供完整的审计报告复印件或扫描件并加盖投标人公章），2026年新成立的企业，提供基本户开户银行出具的资信证明（提供开户许可证及开户银行出具的资信证明，复印件或扫描件并加盖投标人公章） 。 （3）业绩要求：本项目无 。 （4）信誉要求： ①投标人、投标人法定代表人、拟投入本项目的项目负责人近三年（2023年1月1日至响应截止时间）内无行贿记录（提供承诺书）； ②在国家企业信用信息公示系统（http://www.gsxt.gov.cn/）中未被列入严重违法失信名单（提供网页截图）； ③在“信用中国”网站中未被列入严重失信主体名单、重大税收违法失信主体名单（提供网页截图）。 （5）本项目无 （6）其他要求：具有履行合同所必须的设备和专业技术能力（提供承诺书）。 3.2 投标人不得存在下列情形之一： （1）处于被责令停产停业、暂扣或者吊销执照、暂扣或者吊销许可证、吊销资质证书状态（提供承诺书）； （2）进入清算程序，或被宣告破产，或其他丧失履约能力的情形（提供承诺书）； （3）其他：①与招标人存在利害关系可能影响采购公正性的法人",
+      "qualSection": "2.1具有独立民事责任能力且在法律和财务上独立的法人或其他组织，具备有效期内的合法企业工商营业执照或其他合法注册证件。 2.2承诺开具增值税专用发票。（提供承诺） 2.3具有良好的财务状况、良好的商业信誉： （1） ）2023年1月1日至今，在经营活动中无涉及商业贿赂、弄虚作假违规违法行为；（提供声明） （2） 未处于“国家企业信用信息公示系统”（www.gsxt.gov.cn）“列入经营异常名录信息”或“列入严重违法失信名单（黑名单）信息”禁入期内；（需同时提供两项信息查询截图） （3） 未被“信用中国”网站（www.creditchina.gov.cn）列入“失信被执行人”和列入“重大税收违法失信主体”。（需同时提供两项信息查询截图） 2.4本项目不接受联合体应答。 2.5单位负责人为同一人或者存在控股、管理关系的不同单位，不得参加同一采购包应答或者未划分采购包的同一项目应答。 2.6应答人不在中国联通集团或贵州联通禁入型供应商黑名单业务禁入期内。 3. 资格审查方法 本项目将进行资格后审，资格审查标准和内容见询比采购文件第三章“评审办法”，凡未通过资格后审的应答人，其应答文件将被否决。 4. 询比采购文件获取 4.1 询比采购文件获取时间： 2026年 9 月 3 日1 7 时00分至2026年 9 月 7 日17时00分 。 4.2 询比采购文件获取地点：请有意向的潜在应答",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70434471268548",
+      "title": "贵州数科N9226N04WI0238医院 信息化 建设项目包2询比采购公告",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 17:07:54",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "联通数字科技有限公司贵州省分公司",
+      "moneyWan": 122,
+      "professions": [
+        "事业单位用房",
+        "智慧医疗",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 117,
+      "stars": 3,
+      "starScore": 72,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 122 万）",
+        "投标截止：2026-09-09 09:00"
+      ],
+      "focusTags": [],
+      "sourceUrl": "https://www.chinaunicombidding.cn/bidInformation/detail?id=2095073780832010240",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434471268548",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-09 09:00",
+      "fileGetDeadline": "",
+      "scaleText": "最高限价 112.20 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "2.2.1 本项目不得出让（受让）或出租（租借）资质参与应答，也不允许分包、转包（提供承诺）。 2.2.2 其他要求：无。 3. 资格审查方法 本项目将进行资格后审，资格审查标准和内容见询比采购文件第三章“评审办法”，凡未通过资格后审的应答人，其应答文件将被否决。 4. 询比采购文件获取 4.1 询比采购文件获取时间： 2026 年 09 月 02 日 19 时 00 分 至 2026 年 09 月 0 7 日 09 时 00 分 。 4.2 询比采购文件获取地点：请有意向的潜在应答人进入网站 中国联通合作方门户 （ https://www.cuecp.cn ），登录后点击“电子招标投标-寻找商机--我要参与”购买询比采购文件。 4.3 询比采购文件获取方式： （1）应答人须在中国联通合作方门户平台注册成为“中国联通供应商”，并拥有“沃支付”付款后且下载询比采购文件才可参与应答。 （2）下载的 询比采购 文件为“megp”格式，须使用客户端工具“",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70435180553868",
+      "title": "贵州航天职业技术学院关于贵州航天职业技术学院 智慧 图书馆建设（一期）的竞争性磋商公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 20:02:04",
+      "province": "贵州省",
+      "city": "遵义市",
+      "buyer": "贵州航天职业技术学院",
+      "moneyWan": 80.68,
+      "professions": [
+        "图书",
+        "商业和服务业用房",
+        "居住用房",
+        "智慧教育",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 117,
+      "stars": 3,
+      "starScore": 72,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 81 万）",
+        "投标截止：2026-09-11"
+      ],
+      "focusTags": [],
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=fTUskfvHHPdTQuJhA7sSxg==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70435180553868",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-11",
+      "fileGetDeadline": "",
+      "scaleText": "约 80.68 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "： 1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 无 3.本项目的特定资格要求： 【标项1】 无",
       "qualHits": [],
       "winner": "",
       "awardMoneyWan": 0,
@@ -3562,186 +3372,6 @@
       "winner": "",
       "awardMoneyWan": 0,
       "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70428388863888",
-      "title": "铜仁市住房公积金管理中心电子档案管理 信息化 服务项目[采购公告]",
-      "tenderType": "招采",
-      "date": "2026-09-02",
-      "publishTime": "2026-09-02 14:40:57",
-      "province": "贵州省",
-      "city": "铜仁市",
-      "buyer": "铜仁市住房公积金管理中心",
-      "moneyWan": 148,
-      "professions": [
-        "档案",
-        "软件开发",
-        "系统集成",
-        "其他",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 130,
-      "stars": 3,
-      "starScore": 72,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模适中（约 148 万）",
-        "投标截止：2026-09-29 09:30"
-      ],
-      "focusTags": [],
-      "sourceUrl": "https://ggzy.guizhou.gov.cn/tradeInfo/detailHtml?metaId=1255012376583999488",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70428388863888",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-09-29 09:30",
-      "fileGetDeadline": "",
-      "scaleText": "约 148 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "1.满足《中华人民共和国政府采购法》第二十二条规定 2.落实政府采购政策需满足的资格要求：落实政府采购政策需满足的资格要求（根据项目实际情况）： 按财库〔2014〕68号、财库〔2017〕141号、财库〔2019〕9号、财库〔2020〕46号、财库〔2022〕19号、国办发〔2025〕34号等文件执行。 3.本项目的特定资格要求:1.本项目是专门面向中小企业采购，若服务的承接企业是中小企业，请投标人按照《政府采购促进中小企业发展管理办法》（财库〔2020〕46号）出具规定的《中小企业声明函》（如有）。 2.其他特殊资格要求：无",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70430028498260",
-      "title": "[采购公告]镇远县“ 智慧 矫正中心”项目",
-      "tenderType": "招采",
-      "date": "2026-09-02",
-      "publishTime": "2026-09-02 21:47:58",
-      "province": "贵州省",
-      "city": "黔东南苗族侗族自治州",
-      "buyer": "镇远县司法局",
-      "moneyWan": 125,
-      "professions": [
-        "智慧市政",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 118,
-      "stars": 3,
-      "starScore": 72,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模适中（约 125 万）",
-        "投标截止：2026-09-23 10:30"
-      ],
-      "focusTags": [],
-      "sourceUrl": "https://www.ggzy.gov.cn/information/deal/html/a/520000/0201/20260902/005265efbca1065b4a998f35a4da691bd7e3.html",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70430028498260",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-09-23 10:30",
-      "fileGetDeadline": "",
-      "scaleText": "约 125 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "（一）.满足《中华人民共和国政府采购法》第二十二条规定 （二）.落实政府采购政策需满足的资格要求： 1.具有独立承担民事责任的能力：提供有效的法人或其他组织的营业执照等证明文件，或自然人身份证明（注：银行、保险、石油石化、电力、电信等因其行业特殊性，取得营业执照的分支机构可以以分公司名义参与本项目投标，由分支机构提供总公司出具授权书，但总公司和分支机构不能同时参加同一项目的招投标活动，招标文件中涉及的“法定代表人”在前述特殊行业中即对应为“分支机构负责人”）； 2.具有良好的商业信誉和健全的财务会计制度：提供2024年度或2025年度经合法审计机构出具的财务审计报告或新成立未满一年的公司需提供基本开户银行出具的有效的资信证明； 3.具备履行合同所必需的设备和专业技术能力（承诺函自拟）：提供具备履行合同所必需的设备和专业技术能力的书面承诺函； 4.具有依法缴纳税收和社会保障资金的良好记录：提供 2026年1月至今任意 1个月完税证明和社会保障资金的相关证明材料（如依法免税和依法不需要缴纳社会保障资金的，提供相应证明文件）； 5.参加本次政府采购活动前三年内，在经营活动中没有违法违规记录：参加政府采购活动前三年内在经营活动中没有重大违法记录的书面声明； 6.法律、行政法规规定的其他条件：供应商须承诺：在“信用中国”网站（www.creditchina.gov.cn）、中国政府采购网（w",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70429718786632",
-      "title": "普安县教育局关于普安县2026年义务教育学校采购项目（ 智慧 黑板）的竞争性谈判公告(采购公告)",
-      "tenderType": "招采",
-      "date": "2026-09-02",
-      "publishTime": "2026-09-02 20:27:21",
-      "province": "贵州省",
-      "city": "黔西南布依族苗族自治州",
-      "buyer": "普安县教育局",
-      "moneyWan": 105,
-      "professions": [
-        "教育设备",
-        "智慧教育",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 117,
-      "stars": 3,
-      "starScore": 72,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模适中（约 105 万）",
-        "投标截止：2026-09-09"
-      ],
-      "focusTags": [],
-      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=DgD/H9l5vLBpgFFNoyZ8Sw==",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70429718786632",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-09-09",
-      "fileGetDeadline": "",
-      "scaleText": "约 105 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "： 1.满足《中华人民共和国政府采购法》第二十二条规定； 2.落实政府采购政策需满足的资格要求： 标项1：供应商应为残疾人福利企业,供应商应为监狱企业,供应商为中小企业/小微企业 3.本项目的特定资格要求： 【标项1】 无",
-      "qualHits": [],
-      "winner": "贵州鑫顺发篷业有限公司",
-      "awardMoneyWan": 128.656,
-      "candidates": [
-        {
-          "rank": 1,
-          "name": "贵州鑫顺发篷业有限公司",
-          "moneyWan": 128.656
-        }
-      ],
       "awardNoticeKind": ""
     },
     {
@@ -3868,21 +3498,19 @@
       "awardNoticeKind": ""
     },
     {
-      "id": "70428390558860",
-      "title": "遵义市公安局2026年 信息化 系统、机房及安全运维采购公告[采购公告]",
+      "id": "70434216816964",
+      "title": "观山湖中学采购 信息化 设备运维服务竞价公告",
       "tenderType": "招采",
-      "date": "2026-09-02",
-      "publishTime": "2026-09-02 14:42:30",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 16:01:21",
       "province": "贵州省",
-      "city": "遵义市",
-      "buyer": "遵义市公安局",
-      "moneyWan": 2299.17,
+      "city": "贵阳市",
+      "buyer": "贵阳市观山湖中学",
+      "moneyWan": 9.56,
       "professions": [
-        "通信管线",
-        "数据中心",
         "系统集成",
-        "网络安全",
-        "运营商IDC",
+        "信息运维",
+        "运营商ITO运维",
         "运营商系统集成"
       ],
       "matchedQuals": [
@@ -3902,53 +3530,53 @@
           "domain": "集成"
         }
       ],
-      "score": 134,
+      "score": 124,
       "stars": 3,
       "starScore": 68,
       "starReasons": [
         "在投/采购公告阶段",
         "标题含信息化相关词",
         "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模偏大，需评估交付能力",
-        "投标截止：2026-09-24 09:30"
+        "硬门槛标准命中：ITSS",
+        "规模较小",
+        "投标截止：2026-09-04",
+        "证书级重合：ITSS"
       ],
       "focusTags": [],
-      "sourceUrl": "https://ggzy.guizhou.gov.cn/tradeInfo/detailHtml?metaId=1254976837726113792",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70428390558860",
+      "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=WTINQzUopAXRwOYdKl3EhITwhJI3yMqKEmeFXDD+K4I=&district=52",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434216816964",
       "stageName": "",
       "purchaseTypeName": "",
-      "bidDeadline": "2026-09-24 09:30",
+      "bidDeadline": "2026-09-04",
       "fileGetDeadline": "",
-      "scaleText": "约 2299 万元",
+      "scaleText": "约 9.56 万元",
       "docFeeRequired": null,
       "docFeeText": "原文未写明",
       "bondText": "",
-      "qualSection": "1.满足《中华人民共和国政府采购法》第二十二条规定 2.落实政府采购政策需满足的资格要求： 满足《中华人民共和国政府采购法》第二十二条规定 3.本项目的特定资格要求： 无 五、",
-      "qualHits": [],
+      "qualSection": "",
+      "qualHits": [
+        "ITSS项目服务经理证书",
+        "近一年内的类似业绩"
+      ],
       "winner": "",
       "awardMoneyWan": 0,
       "candidates": [],
       "awardNoticeKind": ""
     },
     {
-      "id": "70423151872196",
-      "title": "一键式报警及人脸识别 运维服务 采购（锦沐分园）竞价公告",
+      "id": "70435104537860",
+      "title": "2026年中国电信遵义分公司 信息化 建设（三级等保、密码测评）采购（标包B）询比公告",
       "tenderType": "招采",
-      "date": "2026-09-01",
-      "publishTime": "2026-09-01 16:00:44",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 19:51:35",
       "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵阳市第十三幼儿园",
-      "moneyWan": 3,
+      "city": "遵义市",
+      "buyer": "中国电信股份有限公司遵义分公司",
+      "moneyWan": 4.13,
       "professions": [
-        "智慧政务",
-        "信息运维",
-        "安防监控",
-        "网络工程",
-        "运营商ITO运维",
-        "运营商视频监控",
-        "运营商物联网"
+        "系统集成",
+        "网络安全",
+        "运营商系统集成"
       ],
       "matchedQuals": [
         {
@@ -3957,9 +3585,66 @@
           "domain": "集成"
         },
         {
-          "id": "iso20000",
-          "name": "ISO20000",
-          "domain": "运维"
+          "id": "iso27001",
+          "name": "ISO27001",
+          "domain": "安全"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 121,
+      "stars": 3,
+      "starScore": 67,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模较小",
+        "投标截止：2026-09-14 09:00:00",
+        "不收取文件费"
+      ],
+      "focusTags": [],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=187343226301713&type=3&docTypeCode=CompareSelect&securityViewCode=822cf84ebde8865624070928a3c32314",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70435104537860",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-14 09:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 4.13 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70435104778884",
+      "title": "026年中国电信遵义分公司 信息化 建设（三级等保、密码测评）采购（标包A）询比公告",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 19:52:00",
+      "province": "贵州省",
+      "city": "遵义市",
+      "buyer": "中国电信股份有限公司遵义分公司",
+      "moneyWan": 2.36,
+      "professions": [
+        "系统集成",
+        "网络安全",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
         },
         {
           "id": "iso27001",
@@ -3967,9 +3652,186 @@
           "domain": "安全"
         },
         {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 120,
+      "stars": 3,
+      "starScore": 67,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模较小",
+        "投标截止：2026-09-14 09:00:00",
+        "不收取文件费"
+      ],
+      "focusTags": [],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=187343192733371&type=3&docTypeCode=CompareSelect&securityViewCode=b541d932661bea7a640bb3ae23e7e09e",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70435104778884",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-14 09:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 2.36 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70438215200196",
+      "title": "《贵州现代枢纽物流运营集团有限公司物流园一期 智慧 仓库货物财产一切险》询比采购公告",
+      "tenderType": "招采",
+      "date": "2026-09-04",
+      "publishTime": "2026-09-04 09:23:33",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州现代枢纽物流运营集团有限公司",
+      "moneyWan": 10,
+      "professions": [
+        "生产用房",
+        "物资采购",
+        "保险服务",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 116,
+      "stars": 3,
+      "starScore": 65,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模较小",
+        "投标截止：2026-09-11 09:30",
+        "需购买文件（金额见原文）"
+      ],
+      "focusTags": [],
+      "sourceUrl": "https://ggzy.guizhou.gov.cn/tradeInfo/detailHtml?metaId=1255657258763816960",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70438215200196",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-11 09:30",
+      "fileGetDeadline": "",
+      "scaleText": "约 10.00 万元",
+      "docFeeRequired": true,
+      "docFeeText": "需购买文件（金额见原文）",
+      "bondText": "",
+      "qualSection": "1 .注册资本40亿元人民币及以上。2. 综合赔付能力综合率在2025年第四季度达到205%以上。3.信誉要求：2025年第四季度风险综合评级在BB以上。4.本项目不接受联合体投标。供应商为同一人或者存在控股、管理关系的不同单位，不得参加同一项目询价，法定代表人为同一个人的两个及两个以上的母公司、全资子公司及其控股公司，不得同时参加本项目询价。 4.6 其他事项： 在限时询比时间内一次性次报价。询比截止后，按最低价成交原则，以参与询价出价最低者为成交投标商（若有报价相同的，综合实力强者为成交供应商）。 4.7 是否接受联合体投标： 否",
+      "qualHits": [
+        "注册资本40亿元人民币及以上"
+      ],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70434946580748",
+      "title": "安顺市“贵政通”移动办公系统 运维服务 竞争性磋商公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 19:11:08",
+      "province": "贵州省",
+      "city": "安顺市",
+      "buyer": "安顺市人民政府办公室",
+      "moneyWan": 38.7,
+      "professions": [
+        "智慧政务",
+        "软件开发",
+        "信息运维",
+        "运营商ITO运维",
+        "运营商云计算"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
+        {
           "id": "itss3",
           "name": "ITSS",
           "domain": "运维"
+        },
+        {
+          "id": "vas",
+          "name": "增值电信业务许可",
+          "domain": "通用"
+        }
+      ],
+      "score": 131,
+      "stars": 3,
+      "starScore": 65,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模较小",
+        "投标截止：2026-09-15",
+        "需购买，约 400 元/套"
+      ],
+      "focusTags": [],
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=934966",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434946580748",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-15",
+      "fileGetDeadline": "",
+      "scaleText": "预算约 12.9 万元",
+      "docFeeRequired": true,
+      "docFeeText": "需购买，约 400 元/套",
+      "bondText": "",
+      "qualSection": "： （ 1）法定代表人或投资人为同一人或者存在直接控股、参与管理的投标人，均不得参与本项目的投标。 （ 2）通过业主单位资质审查合格、已成功报名并获取本竞争性磋商文件。 （ 3）被“信用中国”网站、“中国政府采购网”网站列入失信被执行人、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单的，不得参与本项目的活动。 （ 4）投标人报名时提供资格审查资料： ①持有效的三证合一营业执照副本； ②法定代表人（负责人）投标的，提交本人身份证原件及复印件；授权代表投标的，提供法定代表人（负责人）授权委托书原件、法定代表人（负责人）身份证复印件、授权代表本人身份证原件及复印件； ③提供会计师事务所出具的2025年度财务审计报告或提供2026年3月至今任一月的财务报表（距开标前三个月内成立的公司可提供基本开户银行出具的资信证明； ④提供2026年3月至今任一月依法缴纳税收的相关材料一份（依法纳税凭证或由企业所在地税务局出具的完税证明；距开标前三个月内成立的新公司或零申报的企业提供申报材料）； ⑤提供2026年3月至今任一月依法缴纳社会保障资金的相关材料一份（距开标前三个月内成立的新公司提供申请办理社会保险登记证明材料）； ⑥提供未被列入失信被执行人、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单的信用承诺书。 备注：本项目不接受联合体投标，提供以上材料 ①-⑥项复印件（加盖",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70434985918488",
+      "title": "遵义市第一初级中学（银河校区）多功能报告厅 信息化 改造项目采购公告(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 19:18:42",
+      "province": "贵州省",
+      "city": "遵义市",
+      "buyer": "遵义市第一初级中学",
+      "moneyWan": 15.5,
+      "professions": [
+        "图书",
+        "智能化安装工程",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
         },
         {
           "id": "sysint",
@@ -3977,40 +3839,97 @@
           "domain": "集成"
         },
         {
-          "id": "vas",
-          "name": "增值电信业务许可",
-          "domain": "通用"
-        },
-        {
           "id": "ei-1",
           "name": "电子与智能化",
           "domain": "集成"
         }
       ],
-      "score": 116,
+      "score": 129,
       "stars": 3,
-      "starScore": 68,
+      "starScore": 65,
       "starReasons": [
         "在投/采购公告阶段",
         "标题含信息化相关词",
         "专业标签匹配",
-        "硬门槛标准命中：增值电信业务许可",
+        "业态相关，但未见明确证书门槛词",
         "规模较小",
-        "投标截止：2026-09-02",
-        "证书级重合：增值电信业务许可"
+        "投标截止：2026-09-14",
+        "需购买，约 500 元/套"
       ],
       "focusTags": [],
-      "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=QWszCinCaNxLCUvN4/HuboTwhJI3yMqKEmeFXDD+K4I=&district=52",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70423151872196",
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=934978",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434985918488",
       "stageName": "",
       "purchaseTypeName": "",
-      "bidDeadline": "2026-09-02",
+      "bidDeadline": "2026-09-14",
       "fileGetDeadline": "",
-      "scaleText": "约 3.00 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
+      "scaleText": "约 15.50 万元",
+      "docFeeRequired": true,
+      "docFeeText": "需购买，约 500 元/套",
       "bondText": "",
-      "qualSection": "",
+      "qualSection": "本项目供应商资格条件要求如下： 1.具有独立承担民事责任的能力 2.具有良好的商业信誉和健全的财务会计制度： 3.具有履行合同所必需的设备和专业技术能力： 4.具有依法缴纳税收和社会保障资金的良好记录： 5.参加本次采购活动前三年内，在经营活动中没有违法违规记录： 6.其他条件： 参加本次采购活动前没有被列入失信被执行人、重大税收违法案件当事人名单或执行期已结束。各潜在投标人需附截图在投标文件中（代理机构在投标截止时间后登陆 “信用中国”查询，查询起止时间：投标截止时间前三年内） （三）本项目不接受联合体投标 8、获取采购文件信息: （ 1）购买采购文件时间:2026年9月3日09:00:00至2026年9月10日17:00:00（节假日除外） （ 2）购买采购文件地点:贵州志来工程项目管理咨询服务有限公司（遵义市新蒲新区林达阳光城14栋8楼8-4） （ 3）采购文件获取方式:①法定代表人获取采购文件的，提供法人身份证明、身份证复印件及营业执照复印件（以上资料须加盖投标供应商公章）到贵州志来工程项目管理咨询服务有限公司（遵义市新蒲新区林达阳光城14栋8楼8-4）获取采购文件； ②授权人代表获取采购文件的，提供授权委托书原件、法人身份证复印件、授权人身份证复印件、营业执照复印件（以上资料需加盖投标供应商公章）到贵州志来工程项目管理咨询服务有限公司（遵义市新蒲新区林达阳光城14栋8楼8",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70434219464964",
+      "title": "贵州轻工职业大学服装 数字化 3D全链路实训室建设项目采购需求公示(采购需求公示)",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 16:01:39",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州轻工职业大学",
+      "moneyWan": 155,
+      "professions": [
+        "成衣被具",
+        "事业单位用房",
+        "通信管线",
+        "智慧教育",
+        "系统集成",
+        "运营商系统集成",
+        "运营商专线",
+        "广电双线",
+        "湖南双线"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 114,
+      "stars": 3,
+      "starScore": 65,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 155 万）",
+        "需购买文件（金额见原文）"
+      ],
+      "focusTags": [],
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=GVpzVNGIG6/w3E+TjAkQ+A==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434219464964",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "约 155 万元",
+      "docFeeRequired": true,
+      "docFeeText": "需购买文件（金额见原文）",
+      "bondText": "",
+      "qualSection": "：1.满足《中华人民共和国政府采购法》第二十二条规定；2.落实政府采购政策需满足的资格要求：标项1：/3.申请人的一般资格要求：3.1具有独立承担民事责任的能力；3.2具有良好的商业信誉和健全的财务会计制度；3.3具有履行合同所必需的设备和专业技术能力；第 6 页 共 92 页贵州泰禾云工程咨询有限公司3.4有依法缴纳税收和社会保障资金的良好记录；3.5参加政府采购活动前三年内，在经营活动中没有重大违法记录；3.6法律、行政法规规定的其他条件。4.本项目的特定资格要求：/",
       "qualHits": [],
       "winner": "",
       "awardMoneyWan": 0,
@@ -4159,62 +4078,6 @@
       "awardNoticeKind": ""
     },
     {
-      "id": "70428006018504",
-      "title": "贵州医科大学附属医院一期病房 信息化 配套设备采购项目采购公告(采购公告)",
-      "tenderType": "招采",
-      "date": "2026-09-02",
-      "publishTime": "2026-09-02 13:03:47",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵州医科大学附属医院",
-      "moneyWan": 23.5,
-      "professions": [
-        "系统集成",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 112,
-      "stars": 3,
-      "starScore": 65,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模较小",
-        "投标截止：2026-09-15",
-        "需购买文件（金额见原文）"
-      ],
-      "focusTags": [],
-      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=934117",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70428006018504",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-09-15",
-      "fileGetDeadline": "",
-      "scaleText": "预算约 23.5 万元",
-      "docFeeRequired": true,
-      "docFeeText": "需购买文件（金额见原文）",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
       "id": "70396221764548",
       "title": "国家乡村振兴重点帮扶县 人工智能 赋能教育试点学校建设项目监理（二次）竞争性谈判公告(采购公告)",
       "tenderType": "招采",
@@ -4271,6 +4134,206 @@
       "winner": "",
       "awardMoneyWan": 0,
       "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70436077984772",
+      "title": "[采购意向] 智慧 航道监控服务项目",
+      "tenderType": "招采",
+      "date": "2026-09-04",
+      "publishTime": "2026-09-04 00:02:36",
+      "province": "贵州省",
+      "city": "六盘水市",
+      "buyer": "贵州省六盘水市地方海事局",
+      "moneyWan": 191.42,
+      "professions": [
+        "智能化安装工程",
+        "水上运输",
+        "其他",
+        "安防监控",
+        "网络工程",
+        "运营商视频监控",
+        "运营商物联网",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化",
+          "domain": "集成"
+        }
+      ],
+      "score": 116,
+      "stars": 3,
+      "starScore": 64,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 191 万）"
+      ],
+      "focusTags": [],
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=baNuwj9vrhlLwq6ASLRo8g==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70436077984772",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "预算约 191.41816 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70435868828292",
+      "title": "[采购意向]织金县教育局2026年9月政府采购意向-织金县2026年度粤黔东西部协作资金提升农村基本公共服务水平织金县第三中学录播教室、心理咨询室、研学室改造、 智慧 校园设备购置等教育教学设施设备建设项目详细情况",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 23:12:09",
+      "province": "贵州省",
+      "city": "毕节市",
+      "buyer": "织金县教育局",
+      "moneyWan": 211,
+      "professions": [
+        "教育设备",
+        "事业单位用房",
+        "公共设施",
+        "装修工程",
+        "其他",
+        "安防监控",
+        "运营商视频监控",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "ei-1",
+          "name": "电子与智能化",
+          "domain": "集成"
+        }
+      ],
+      "score": 117,
+      "stars": 3,
+      "starScore": 64,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 211 万）"
+      ],
+      "focusTags": [],
+      "sourceUrl": "http://cgyx.ccgp.gov.cn/cgyx/pub/details?groupId=c2b13cc1-8aa0-457d-9770-61ea35ab08ec",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70435868828292",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "预算约 211 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70434949275780",
+      "title": "智慧 爽得宝消费场景交易链优化-核心业务系统项目单一来源采购征求意见公示(采购公告)",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 19:12:55",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵阳银行股份有限公司",
+      "moneyWan": 100,
+      "professions": [
+        "软件开发",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "software-ent",
+          "name": "软件企业/软件产品",
+          "domain": "研发"
+        }
+      ],
+      "score": 115,
+      "stars": 3,
+      "starScore": 64,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 100 万）"
+      ],
+      "focusTags": [],
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=934918",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434949275780",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "预算约 100 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "中电金信软件有限公司",
+      "awardMoneyWan": 0,
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "中电金信软件有限公司",
+          "moneyWan": 0
+        }
+      ],
       "awardNoticeKind": ""
     },
     {
@@ -4333,8 +4396,177 @@
       "awardNoticeKind": ""
     },
     {
+      "id": "70434253005008",
+      "title": "关岭二中触控一体机 智慧 黑板采购竞价公告",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 16:01:22",
+      "province": "贵州省",
+      "city": "安顺市",
+      "buyer": "关岭布依族苗族自治县教育局",
+      "moneyWan": 10,
+      "professions": [
+        "教育设备",
+        "机械设备",
+        "智慧教育",
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 112,
+      "stars": 3,
+      "starScore": 64,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模较小",
+        "投标截止：2026-09-08"
+      ],
+      "focusTags": [],
+      "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=JlE26b3Yck5iydisPpmkKoTwhJI3yMqKEmeFXDD+K4I=&district=52",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434253005008",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-08",
+      "fileGetDeadline": "",
+      "scaleText": "约 10.00 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "- 二、采购需求清单 商品名称 参数要求 购买数量 控制金额（元） 需求品牌 触控一体机 核心参数要求: 商品类目: 触控一体机; 采购人需求描述:-; 次要参数要求:文香、百牧、信尚:整机外观尺寸长度4200mm,高度不低于1200mm。 内存:16G+512G。 屏幕尺寸86英寸。; 5套 100000.00 - 买家留言：- 附件： 关岭二中触控一体机智慧黑板配置需求清单.xlsx 三、收货信息 送货方式: 送货上门 送货时间: 工作日09:00-17:00 送货期限: 竞价成交后7个工作日内 送货地址： 贵州省 安顺市 关岭布依族苗族自治县 关岭自治县第二中学 送货备注： - 四、商务要求 商务项目 商务要求 报价提供资料 1. 营业执照：有效的营业执照复印件，加盖投标人公章。 2. 法定代表人身份证明：法定代表人身份证复印件，加盖投标人公章；若为授权代表参加投标，须同步提供法定代表人授权委托书。 3. 报价单：按招标文件给定格式编制完整货物报价明细表，报价表所有页面均须加盖投标人公章。 4. 质检报告：项目核心技术参数对应的产品，须提供国家认可第三方检测机构出具的有效质检报告复印件，报告内容须能对应响应项目核心技术指标，质检报告复印件须加盖投标人公章。 5. 制造商授权书及售后服务承诺：提供本项目所投主要产品的制造商合法有效授权文件；同时提供正式售后服务承诺函，明确质保期",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70433423756240",
+      "title": "260902 信息化 维修及耗材竞价公告",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 12:27:19",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵阳市特殊教育学校",
+      "moneyWan": 1.53,
+      "professions": [
+        "系统集成",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 109,
+      "stars": 3,
+      "starScore": 64,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模较小",
+        "投标截止：2026-09-04"
+      ],
+      "focusTags": [],
+      "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=EmqCjXVRwkvzpci4Ki0stoTwhJI3yMqKEmeFXDD+K4I=&district=52",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70433423756240",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-04",
+      "fileGetDeadline": "",
+      "scaleText": "约 1.53 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "- 二、采购需求清单 商品名称 参数要求 购买数量 控制金额（元） 需求品牌 260902信息化维修及耗材 核心参数要求: 商品类目: 硒鼓; 采购人需求描述:联系人刘老师 18286030830 完全响应学校采购文件需求，合理报价。我校将严格按照《贵州省政府采购电子卖场管理暂行办法》第六章监督管理规定执行。; 次要参数要求:教学处信息化耗材:详见附件; 1项 15280.00 - 买家留言：联系人刘老师 18286030830 附件： 20260902信息化耗材集中采购请购表（含维修）15280.xlsx 三、收货信息 送货方式: 送货上门 送货时间: 工作日09:00-16:00 送货期限: 竞价成交后3个工作日内 送货地址： 贵州省 贵阳市 观山湖区 其他街道 贵州省贵阳市观山湖区金清大道368号贵阳市特殊教育学校 送货备注： - 四、商务要求 商务项目 商务要求",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70434685916372",
+      "title": "黔西南广播电视台全媒 智慧 广播建设项目需求公示(采购需求公示)",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 18:02:29",
+      "province": "贵州省",
+      "city": "黔西南布依族苗族自治州",
+      "buyer": "黔西南州融媒体中心",
+      "moneyWan": 50,
+      "professions": [
+        "电器设备",
+        "广播摄像系统",
+        "事业单位用房",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 102,
+      "stars": 3,
+      "starScore": 64,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模适中（约 50 万）"
+      ],
+      "focusTags": [],
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=7gRE2rNjaoSZjthbGX1dWA==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434685916372",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "约 50.00 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
       "id": "70427883218324",
-      "title": "[采购意向]遵义市大数据发展管理局2026年9月政府采购意向-2026年市级基础网络、共性系统运维及市级政务 信息化 项目——市共性基础平台及网络运维详细情况",
+      "title": "[采购意向]遵义市 大数据 发展管理局2026年9月政府采购意向-2026年市级基础网络、共性系统运维及市级政务信息化项目——市共性基础平台及网络运维详细情况",
       "tenderType": "招采",
       "date": "2026-09-02",
       "publishTime": "2026-09-02 12:31:33",
@@ -4478,85 +4710,6 @@
       "awardNoticeKind": ""
     },
     {
-      "id": "70428785042884",
-      "title": "[采购意向]遵义市公共资源交易中心2026年 信息化 系统运维项目",
-      "tenderType": "招采",
-      "date": "2026-09-02",
-      "publishTime": "2026-09-02 16:27:40",
-      "province": "贵州省",
-      "city": "遵义市",
-      "buyer": "遵义市公共资源交易中心",
-      "moneyWan": 202.36,
-      "professions": [
-        "智能化安装工程",
-        "软件开发",
-        "系统集成",
-        "网络安全",
-        "信息运维",
-        "其他",
-        "运营商ITO运维"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "iso27001",
-          "name": "ISO27001",
-          "domain": "安全"
-        },
-        {
-          "id": "itss3",
-          "name": "ITSS",
-          "domain": "运维"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        },
-        {
-          "id": "ei-1",
-          "name": "电子与智能化",
-          "domain": "集成"
-        }
-      ],
-      "score": 117,
-      "stars": 3,
-      "starScore": 64,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模适中（约 202 万）"
-      ],
-      "focusTags": [],
-      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=ilzGOtt7hcJ+dZZIpq2xVg==",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70428785042884",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "预算约 202.3588 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
       "id": "70427407948680",
       "title": "[采购意向]黔西市人民法院新增案件无纸化办公办案 数字化 服务",
       "tenderType": "招采",
@@ -4618,7 +4771,7 @@
     },
     {
       "id": "70427810436932",
-      "title": "[采购意向]国家计算机网络与信息安全管理中心贵州分中心2026年9月政府采购意向-政务 信息化 软件应用服务项目详细情况",
+      "title": "[采购意向]国家计算机网络与 信息安全 管理中心贵州分中心2026年9月政府采购意向-政务信息化软件应用服务项目详细情况",
       "tenderType": "招采",
       "date": "2026-09-02",
       "publishTime": "2026-09-02 12:11:11",
@@ -4675,71 +4828,6 @@
       "bidDeadline": "",
       "fileGetDeadline": "",
       "scaleText": "预算约 170 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70430470198036",
-      "title": "[采购意向]贵州省六盘水市地方海事局2026年9月至10月政府采购意向- 智慧 航道监控服务项目详细情况",
-      "tenderType": "招采",
-      "date": "2026-09-02",
-      "publishTime": "2026-09-02 23:43:55",
-      "province": "贵州省",
-      "city": "六盘水市",
-      "buyer": "贵州省六盘水市地方海事局",
-      "moneyWan": 191.42,
-      "professions": [
-        "智能化安装工程",
-        "水上运输",
-        "其他",
-        "安防监控",
-        "网络工程",
-        "运营商视频监控",
-        "运营商物联网",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        },
-        {
-          "id": "ei-1",
-          "name": "电子与智能化",
-          "domain": "集成"
-        }
-      ],
-      "score": 116,
-      "stars": 3,
-      "starScore": 64,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模适中（约 191 万）"
-      ],
-      "focusTags": [],
-      "sourceUrl": "http://cgyx.ccgp.gov.cn/cgyx/pub/details?groupId=0c5103f0-52da-4809-81b8-7a46cba1e20d",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70430470198036",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "预算约 191.41816 万元",
       "docFeeRequired": null,
       "docFeeText": "原文未写明",
       "bondText": "",
@@ -4920,63 +5008,6 @@
       "bidDeadline": "",
       "fileGetDeadline": "",
       "scaleText": "预算约 220 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70427884569368",
-      "title": "第二十批 信息化 设备(第二次)竞价公告",
-      "tenderType": "招采",
-      "date": "2026-09-02",
-      "publishTime": "2026-09-02 12:26:14",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵州省人民医院",
-      "moneyWan": 0.25,
-      "professions": [
-        "办公设备",
-        "专用仪器",
-        "系统集成",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 101,
-      "stars": 3,
-      "starScore": 64,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模较小",
-        "投标截止：2026-09-03"
-      ],
-      "focusTags": [],
-      "sourceUrl": "https://gggs.guizhou.zcygov.cn/luban/announcement/detail?encryptId=F74xSxqbG2eY5k0aHMNrvITwhJI3yMqKEmeFXDD+K4I=&district=52",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70427884569368",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-09-03",
-      "fileGetDeadline": "",
-      "scaleText": "约 0.25 万元",
       "docFeeRequired": null,
       "docFeeText": "原文未写明",
       "bondText": "",
@@ -5233,131 +5264,6 @@
       "awardNoticeKind": ""
     },
     {
-      "id": "70424867883916",
-      "title": "[采购意向]贵州民族大学图书馆 大数据 综合管理平台项目",
-      "tenderType": "招采",
-      "date": "2026-09-01",
-      "publishTime": "2026-09-01 23:27:26",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵州民族大学",
-      "moneyWan": 57.9,
-      "professions": [
-        "图书",
-        "食品材料",
-        "商业和服务业用房",
-        "基础工程",
-        "软件开发",
-        "数据处理",
-        "照明设备",
-        "运营商大数据",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        },
-        {
-          "id": "dcmm2",
-          "name": "DCMM",
-          "domain": "数据"
-        }
-      ],
-      "score": 114,
-      "stars": 3,
-      "starScore": 64,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模适中（约 58 万）"
-      ],
-      "focusTags": [],
-      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=9eOPKJ5cYKdw3rM+5QcKuw==",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70424867883916",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "预算约 57.9 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70423362787588",
-      "title": "2026年中国联通贵州共享 大数据 平台5G感知分析系统升级改造项目询比采购公告",
-      "tenderType": "招采",
-      "date": "2026-09-01",
-      "publishTime": "2026-09-01 16:53:01",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "中国联合网络通信有限公司贵州省分公司",
-      "moneyWan": 121,
-      "professions": [
-        "装修工程",
-        "软件开发",
-        "数据处理",
-        "网络工程",
-        "运营商大数据",
-        "运营商移网",
-        "湖南移网"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        }
-      ],
-      "score": 105,
-      "stars": 3,
-      "starScore": 64,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "规模适中（约 121 万）",
-        "投标截止：2026-09-08"
-      ],
-      "focusTags": [],
-      "sourceUrl": "https://www.chinaunicombidding.cn/bidInformation/detail?id=2094642136739106816",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70423362787588",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-09-08",
-      "fileGetDeadline": "",
-      "scaleText": "最高限价 114.95 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "2.1. 具有独立民事责任能力且在法律和财务上独立的法人或其他组织，具备有效期内的合法企业工商营业执照或其他合法注册证件。 2.2. 承诺开具增值税专用发票。（提供承诺） 2.3具有良好的财务状况、良好的商业信誉： （1）2023年1月1日至今，在经营活动中无涉及商业贿赂、弄虚作假违规违法行为；（提供声明） （2）未处于“国家企业信用信息公示系统”（www.gsxt.gov.cn）“列入经营异常名录信息”或“列入严重违法失信名单（黑名单）信息”禁入期内；（需同时提供两项信息查询截图） （3）未被“信用中国”网站（www.creditchina.gov.cn）列入“失信被执行人”和列入“重大税收违法失信主体”。（需同时提供两项信息查询截图） 2.4.本项目不接受联合体应答。 2.5.单位负责人为同一人或者存在控股、管理关系的不同单位，不得参加同一采购包应答或者未划分采购包的同一项目应答。 2.6.应答人不在中国联通集团或贵州联通禁入型供应商黑名单业务禁入期内。 3.资格审查方法 本项目将进行资格后审，资格审查标准和内容见询比采购文件第三章“评审办法”，凡未通过资格后审的应答人，其应答文件将被否决。 4.询比采购文件获取 4.1询比采购文件获取时间 ： 202 6 年 9 月 1 日1 7 时00分至202 6 年 9 月 3 日1 7 时00分（北京时间、下同）。 4.2询比采购文件",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
       "id": "70416409249424",
       "title": "2026-2027年贵州联通数字化线网络与 信息安全 支撑维护服务（二次）询比采购公告",
       "tenderType": "招采",
@@ -5488,6 +5394,188 @@
       "awardNoticeKind": ""
     },
     {
+      "id": "70433312304268",
+      "title": "2026年 中国电信贵州 公司产品运营部天翼高清两级平台服务支撑采购（二次）询比公告",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 12:03:06",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国电信股份有限公司贵州分公司",
+      "moneyWan": 33.5,
+      "professions": [
+        "通信运营支撑",
+        "运营商视频监控"
+      ],
+      "matchedQuals": [],
+      "score": 39,
+      "stars": 3,
+      "starScore": 62,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "规模较小",
+        "投标截止：2026-09-11 09:00:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "telecom-gz"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=187342339115055&type=3&docTypeCode=CompareSelect&securityViewCode=ed44c192835d26dc13b09c036a1115ea",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70433312304268",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-11 09:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "最高限价 33.50 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70433313300296",
+      "title": "2026年 中国电信贵州 公司产品运营部自维系统、办公设备技术服务项目框架采购（二次）询比公告",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 12:02:49",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国电信股份有限公司贵州分公司",
+      "moneyWan": 32,
+      "professions": [
+        "办公设备",
+        "脚手架工程",
+        "技术测试和分析",
+        "其他"
+      ],
+      "matchedQuals": [],
+      "score": 39,
+      "stars": 3,
+      "starScore": 62,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "规模较小",
+        "投标截止：2026-09-10 09:00:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "telecom-gz"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=187342339114848&type=3&docTypeCode=CompareSelect&securityViewCode=30667c279cfa3179110ce70b34a9a023",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70433313300296",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-10 09:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "最高限价 32.00 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70435101064900",
+      "title": "2026年 中国电信贵州 公司应急保障常态化演(拉）练活动服务框架采购二次--询比公告",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 19:51:02",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国电信股份有限公司贵州分公司",
+      "moneyWan": 11.15,
+      "professions": [
+        "脚手架工程",
+        "其他"
+      ],
+      "matchedQuals": [],
+      "score": 36,
+      "stars": 3,
+      "starScore": 62,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "规模较小",
+        "投标截止：2026-09-11 09:00:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "telecom-gz"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=187343170713854&type=3&docTypeCode=CompareSelect&securityViewCode=7a44c34fef6193435fb1e9207ca536c3",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70435101064900",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-11 09:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 11.15 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70435119410892",
+      "title": "2026年 中国电信贵州 公司西南区应急专业比武活动服务框架采购二次--询比公告",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 19:50:45",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "中国电信股份有限公司贵州分公司",
+      "moneyWan": 9.22,
+      "professions": [
+        "脚手架工程",
+        "其他"
+      ],
+      "matchedQuals": [],
+      "score": 36,
+      "stars": 3,
+      "starScore": 62,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "规模较小",
+        "投标截止：2026-09-11 09:00:00",
+        "不收取文件费",
+        "重点采购主体相关"
+      ],
+      "focusTags": [
+        "telecom-gz"
+      ],
+      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=187343159168951&type=3&docTypeCode=CompareSelect&securityViewCode=b64f7e8548518f1ff76254efb89a93e4",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70435119410892",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-11 09:00:00",
+      "fileGetDeadline": "",
+      "scaleText": "约 9.22 万元",
+      "docFeeRequired": false,
+      "docFeeText": "不收取文件费用",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
       "id": "70428957723912",
       "title": "贵州数科N9226N10WO0235 数字化 转型项目（二次）询比采购公告",
       "tenderType": "招采",
@@ -5542,71 +5630,6 @@
       "docFeeText": "原文未写明",
       "bondText": "",
       "qualSection": "2.2.1 本项目不得出让（受让）或出租（租借）资质参与 应答 ，也不允许分包、转包（提供承诺）。 3. 资格审查方法 本项目将进行资格后审，资格审查标准和内容见询比采购文件第三章“评审办法”，凡未通过资格后审的应答人，其应答文件将被否决。 4. 询比采购文件获取 4.1 询比采购文件获取时间： 2026 年 9 月 1 日 19 时 00 分 至 2026 年 9 月 4 日 17 时 00 分 。 4.2 询比采购文件获取地点：请有意向的潜在应答人进入网站 中国联通合作方门户 （ https://www.cuecp.cn ），登录后点击“电子招标投标-寻找商机--我要参与”购买询比采购文件。 4.3 询比采购文件获取方式： （1）应答人须在中国联通合作方门户平台注册成为“中国联通供应商”，并拥有“沃支付”付款后且下载询比采购文件才可参与应答。 （2）下载的 询比采购 文件为“megp”格式，须使用客户端工具“",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70422886690440",
-      "title": "2026年省界ETC门架车型车种图像识别辅助系统试点工程 运维服务 项目(二次)询比采购公告[采购出让公告]",
-      "tenderType": "招采",
-      "date": "2026-09-01",
-      "publishTime": "2026-09-01 14:51:44",
-      "province": "贵州省",
-      "city": "黔东南苗族侗族自治州",
-      "buyer": "贵州黔通智联科技股份有限公司",
-      "moneyWan": 0,
-      "professions": [
-        "智能化安装工程",
-        "信息运维",
-        "其他",
-        "网络工程",
-        "运营商ITO运维",
-        "运营商物联网",
-        "深智城业务相关"
-      ],
-      "matchedQuals": [
-        {
-          "id": "itss3",
-          "name": "ITSS",
-          "domain": "运维"
-        },
-        {
-          "id": "vas",
-          "name": "增值电信业务许可",
-          "domain": "通用"
-        },
-        {
-          "id": "ei-1",
-          "name": "电子与智能化",
-          "domain": "集成"
-        }
-      ],
-      "score": 113,
-      "stars": 3,
-      "starScore": 61,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "投标截止：2026-09-09 09:30",
-        "需购买文件（金额见原文）"
-      ],
-      "focusTags": [],
-      "sourceUrl": "https://ggzy.guizhou.gov.cn/tradeInfo/detailHtml?metaId=1254640119877603328",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70422886690440",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-09-09 09:30",
-      "fileGetDeadline": "",
-      "scaleText": "规模未披露",
-      "docFeeRequired": true,
-      "docFeeText": "需购买文件（金额见原文）",
-      "bondText": "",
-      "qualSection": "",
       "qualHits": [],
       "winner": "",
       "awardMoneyWan": 0,
@@ -5742,72 +5765,11 @@
       "awardNoticeKind": ""
     },
     {
-      "id": "70430310498060",
-      "title": "贵州茅台双龙 智慧 物流园建筑物雷电防护装置检测技术服务项目(二次)询比采购邀请函",
+      "id": "70436123684116",
+      "title": "[采购意向][采购计划]都匀市第十中学 智慧 黑板",
       "tenderType": "招采",
-      "date": "2026-09-02",
-      "publishTime": "2026-09-02 23:01:30",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵州双龙飞天供应链管理有限公司",
-      "moneyWan": 0,
-      "professions": [
-        "安全设备",
-        "专用仪器",
-        "生产用房",
-        "商业和服务业用房",
-        "智慧园区",
-        "技术测试和分析",
-        "其他",
-        "其他智慧城市项目",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 103,
-      "stars": 3,
-      "starScore": 60,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "投标截止：2026-09-08"
-      ],
-      "focusTags": [],
-      "sourceUrl": "https://www.e-qyzc.com/#/trade-info-detail?id=1544754675971936257&noticeType=15&publishStatus=1",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70430310498060",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-09-08",
-      "fileGetDeadline": "",
-      "scaleText": "规模未披露",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "详见采购文件 是否接受联合体投标： 否 公告PDF： 邀请函签章文件.pdf 其他附件： / 邀请供应商信息 邀请供应商名称： 贵州中电瑞华科技有限公司 邀请供应商主体代码： 915201026884097511 邀请供应商名称： 贵州泰济源防雷检测有限公司 邀请供应商主体代码： 91520102MA6DMUTH5K 邀请供应商名称： 贵州大西南检验检测集团有限公司 邀请供应商主体代码： 91520000556622307R 邀请供应商名称： 贵州雷电防护科技服务有限公司 邀请供应商主体代码： 91520103745720002C 邀请供应商名称： 贵州林东电气设备检测检验有限责任公司 邀请供应商主体代码： 91520115675423896L 邀请供应商名称： 贵州鑫达建设工程质量检测有限公司 邀请供应商主体代码： 91522728587265314P 邀请供应商名称： 贵州南源雷安工程检测有限公司 邀请供应商主体代码： 91520181MA6E7JQA8W 邀请供应商名称： 贵州省气象服务中心 邀请供应商主体代码： 12520000429204778M 邀请供应商名称： 贵州盘江防雷研究所有限公司 邀请供应商主体代码： 91520222MA6E12JW4M 邀请供应商名称： 贵州嘉安检测有限公司 邀请供应商主体代码： 91520181MA6DQF520B 7 天 10 时 我要",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70430447273228",
-      "title": "[采购意向]都匀市第十中学2026年9月政府采购意向- 智慧 黑板详细情况",
-      "tenderType": "招采",
-      "date": "2026-09-02",
-      "publishTime": "2026-09-02 23:40:08",
+      "date": "2026-09-04",
+      "publishTime": "2026-09-04 00:02:36",
       "province": "贵州省",
       "city": "黔南布依族苗族自治州",
       "buyer": "都匀市第十中学",
@@ -5840,13 +5802,198 @@
         "规模较小"
       ],
       "focusTags": [],
-      "sourceUrl": "http://cgyx.ccgp.gov.cn/cgyx/pub/details?groupId=5e8608ce-c776-44b3-a956-128bd73e24de",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70430447273228",
+      "sourceUrl": "http://www.ccgp-guizhou.gov.cn/site/detail?parentId=190013&articleId=q6nE4ooQBMhrZKl0MEOY6w==",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70436123684116",
       "stageName": "",
       "purchaseTypeName": "",
       "bidDeadline": "",
       "fileGetDeadline": "",
       "scaleText": "预算约 7.89 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70433099858448",
+      "title": "贵州省人民医院中科恒业体检系统 运维服务 项目院内比选公告",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 11:11:04",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州省人民医院",
+      "moneyWan": 4,
+      "professions": [
+        "系统集成",
+        "信息运维",
+        "医疗卫生服务",
+        "其他",
+        "运营商ITO运维"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "iso27001",
+          "name": "ISO27001",
+          "domain": "安全"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS",
+          "domain": "运维"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        },
+        {
+          "id": "secret",
+          "name": "涉密相关",
+          "domain": "安全"
+        }
+      ],
+      "score": 108,
+      "stars": 3,
+      "starScore": 56,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模较小"
+      ],
+      "focusTags": [],
+      "sourceUrl": "https://www.gz5055.com/gz5055_gzb/zbgg/UiOHsSpe.html",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70433099858448",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "约 4.00 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70434737897552",
+      "title": "贵州中医药大学第一附属医院【医疗数据查询平台 运维服务 】自行采购-谈价公告",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 18:15:17",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "buyer": "贵州中医药大学第一附属医院",
+      "moneyWan": 37,
+      "professions": [
+        "软件开发",
+        "数据处理",
+        "信息运维",
+        "运营商ITO运维"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cmmi3",
+          "name": "CMMI（3级）",
+          "domain": "研发"
+        },
+        {
+          "id": "itss3",
+          "name": "ITSS",
+          "domain": "运维"
+        }
+      ],
+      "score": 101,
+      "stars": 3,
+      "starScore": 56,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模较小"
+      ],
+      "focusTags": [],
+      "sourceUrl": "https://ecp.vhepro.com/annDetail/74334?templateCode=eproTemplate&hName=epro",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434737897552",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "约 37.00 万元",
+      "docFeeRequired": null,
+      "docFeeText": "原文未写明",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70435876439376",
+      "title": "册亨县 智慧 消防安装工程建设项目",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 23:13:25",
+      "province": "贵州省",
+      "city": "黔西南布依族苗族自治州",
+      "buyer": "册亨县应急管理局",
+      "moneyWan": 3.3,
+      "professions": [
+        "事业单位用房",
+        "消防工程",
+        "装修工程",
+        "其他智慧城市项目",
+        "运营商系统集成"
+      ],
+      "matchedQuals": [
+        {
+          "id": "cs2",
+          "name": "CS / 信息系统建设服务",
+          "domain": "集成"
+        },
+        {
+          "id": "sysint",
+          "name": "系统集成资质/等级",
+          "domain": "集成"
+        }
+      ],
+      "score": 96,
+      "stars": 3,
+      "starScore": 56,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "业态相关，但未见明确证书门槛词",
+        "规模较小"
+      ],
+      "focusTags": [],
+      "sourceUrl": "https://www.qxnzjfwcs.com/door/menhu_more/gonggao_caigou_info.html?id=ZBVADL2026090004M9AD6A1",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70435876439376",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "",
+      "fileGetDeadline": "",
+      "scaleText": "约 3.30 万元",
       "docFeeRequired": null,
       "docFeeText": "原文未写明",
       "bondText": "",
@@ -5908,17 +6055,17 @@
       "awardNoticeKind": ""
     },
     {
-      "id": "70423875712596",
-      "title": "西南地区重点优势学科（生殖医学）男科专病临床研究平台（前列腺增生）建设项目及 运维服务 竞争性磋商公告(采购公告)",
+      "id": "70434979960340",
+      "title": "2026年度办公电子设备维修 运维服务 (三次)询比公告(采购公告)",
       "tenderType": "招采",
-      "date": "2026-09-01",
-      "publishTime": "2026-09-01 19:07:52",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 19:18:13",
       "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "中山大学附属第一医院贵州医院",
-      "moneyWan": 32,
+      "city": "遵义市",
+      "buyer": "贵州茅台酒股份有限公司",
+      "moneyWan": 0,
       "professions": [
-        "事业单位用房",
+        "电子电工",
         "信息运维",
         "运营商ITO运维"
       ],
@@ -5929,136 +6076,82 @@
           "domain": "运维"
         }
       ],
-      "score": 103,
+      "score": 89,
       "stars": 3,
-      "starScore": 56,
+      "starScore": 53,
       "starReasons": [
         "在投/采购公告阶段",
         "标题含信息化相关词",
         "专业标签匹配",
-        "规模较小",
-        "投标截止：2026-09-14"
+        "投标截止：2026-09-15",
+        "需购买文件（金额见原文）"
       ],
       "focusTags": [],
-      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=933878",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70423875712596",
+      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=934990",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70434979960340",
       "stageName": "",
       "purchaseTypeName": "",
-      "bidDeadline": "2026-09-14",
+      "bidDeadline": "2026-09-15",
       "fileGetDeadline": "",
-      "scaleText": "预算约 32 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "1.具有独立法人资格，具有独立承担民事责任的能力：提供法人或其他组织的营业执照等证明文件，或自然人身份证明； 2.具有良好的商业信誉和健全的财务会计制度： 提供经审计的 2025年度财务审计报告或提供递交响应文件截止时间前三个月内开户银行出具的资信证明 ； 3.具有履行合同所必需的设备和专业技术能力：提供履行合同所必需的设备和专业技术能力相关证明材料或书面承诺；（格式详见文件范本） 4.具有依法缴纳税收和社会保障资金的良好记录： 提供 2026年1月至今任意1个月依法缴纳税收和社会保障资金的证明材料（依法免税或不需要缴纳社会保障资金的，应提供相应文件作为证明材料） ； 5.参加本次采购活动前三年内，在经营活动中没有重大违法记录：提供参加采购活动前3年内在经营活动中没有重大违法记录的书面声明；（格式详见文件范本） 6.法律、行政法规规定的其他条件：供应商须承诺：在“信用中国”网站（www.creditchina.gov.cn）、中国政府采购网（www.ccgp.gov.cn）等渠道查询中未被列入失信被执行人名单、重大税收违法失信主体、政府采购严重违法失信行为记录名单中，如被列入失信被执行人、重大税收违法失信主体、政府采购严重违法失信行为记录名单中的供应商取消其投标资格，并承担由此造成的一切法律责任及后果。（格式详见文件范本） 7.特殊资格要求： /。 8.本项目 不接受 联合体投标。",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70423881884696",
-      "title": "西南地区重点优势学科（生殖医学）男科专病临床研究平台（精索静脉曲张）建设项目及 运维服务 竞争性磋商公告(采购公告)",
-      "tenderType": "招采",
-      "date": "2026-09-01",
-      "publishTime": "2026-09-01 19:08:49",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "中山大学附属第一医院贵州医院",
-      "moneyWan": 29,
-      "professions": [
-        "事业单位用房",
-        "信息运维",
-        "运营商ITO运维"
-      ],
-      "matchedQuals": [
-        {
-          "id": "itss3",
-          "name": "ITSS",
-          "domain": "运维"
-        }
-      ],
-      "score": 102,
-      "stars": 3,
-      "starScore": 56,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "规模较小",
-        "投标截止：2026-09-14"
-      ],
-      "focusTags": [],
-      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=933868",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70423881884696",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-09-14",
-      "fileGetDeadline": "",
-      "scaleText": "预算约 29 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "1.具有独立法人资格，具有独立承担民事责任的能力：提供法人或其他组织的营业执照等证明文件，或自然人身份证明； 2.具有良好的商业信誉和健全的财务会计制度：提供经审计的 2025年度 财务审计报告或提供 递交响应文件截止时间前三个月内银行出具的资信证明 ； 3.具有履行合同所必需的设备和专业技术能力：提供履行合同所必需的设备和专业技术能力相关证明材料或书面承诺；（格式详见文件范本） 4.具有依法缴纳税收和社会保障资金的良好记录： 提供 202 6 年 1 月至今 任意 1个月依法缴纳税收和社会保障资金的证明材料（依法免税或不需要缴纳社会保障资金的，应提供相应文件作为证明材料） ； 5.参加本次采购活动前三年内，在经营活动中没有重大违法记录：提供参加采购活动前3年内在经营活动中没有重大违法记录的书面声明；（格式详见文件范本） 6.法律、行政法规规定的其他条件：供应商须承诺：在“信用中国”网站（www.creditchina.gov.cn）、中国政府采购网（www.ccgp.gov.cn）等渠道查询中未被列入失信被执行人名单、重大税收违法失信主体、政府采购严重违法失信行为记录名单中，如被列入失信被执行人、重大税收违法失信主体、政府采购严重违法失信行为记录名单中的供应商取消其投标资格，并承担由此造成的一切法律责任及后果。（格式详见文件范本） 7.特殊资格要求： /。 8.本项目 不接受 联",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70357205600412",
-      "title": "贵州数科 云服务 租用项目-安全部分（包3）询比采购公告",
-      "tenderType": "招采",
-      "date": "2026-08-20",
-      "publishTime": "2026-08-20 17:18:45",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "联通数字科技有限公司贵州省分公司",
-      "moneyWan": 71.97,
-      "professions": [
-        "运营商云计算",
-        "云服务"
-      ],
-      "matchedQuals": [
-        {
-          "id": "vas",
-          "name": "增值电信业务许可",
-          "domain": "通用"
-        }
-      ],
-      "score": 98,
-      "stars": 3,
-      "starScore": 54,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "规模适中（约 72 万）",
-        "投标截止：2026-08-26"
-      ],
-      "focusTags": [],
-      "sourceUrl": "https://ctbpsp.com/#/bulletinDetail?uuid=f702fa0cf5dc414896232d2aa7acd588&inpvalue=&dataSource=1&tenderAgency=",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70357205600412",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "2026-08-26",
-      "fileGetDeadline": "",
-      "scaleText": "约 71.97 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
+      "scaleText": "规模未披露",
+      "docFeeRequired": true,
+      "docFeeText": "需购买文件（金额见原文）",
       "bondText": "",
       "qualSection": "",
       "qualHits": [],
-      "winner": "北京国信网联科技有限公司",
+      "winner": "",
       "awardMoneyWan": 0,
-      "candidates": [
+      "candidates": [],
+      "awardNoticeKind": ""
+    },
+    {
+      "id": "70433967205064",
+      "title": "2026年度办公电子设备维修 运维服务 (三次)询比公告[采购出让公告]",
+      "tenderType": "招采",
+      "date": "2026-09-03",
+      "publishTime": "2026-09-03 14:50:53",
+      "province": "贵州省",
+      "city": "遵义市",
+      "buyer": "贵州茅台酒股份有限公司",
+      "moneyWan": 0,
+      "professions": [
+        "电子电工",
+        "信息运维",
+        "运营商ITO运维"
+      ],
+      "matchedQuals": [
         {
-          "rank": 1,
-          "name": "北京国信网联科技有限公司",
-          "moneyWan": 0
+          "id": "itss3",
+          "name": "ITSS",
+          "domain": "运维"
         }
       ],
+      "score": 89,
+      "stars": 3,
+      "starScore": 53,
+      "starReasons": [
+        "在投/采购公告阶段",
+        "标题含信息化相关词",
+        "专业标签匹配",
+        "投标截止：2026-09-15 09:30",
+        "需购买文件（金额见原文）"
+      ],
+      "focusTags": [],
+      "sourceUrl": "https://ggzy.guizhou.gov.cn/tradeInfo/detailHtml?metaId=1255332418974519296",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70433967205064",
+      "stageName": "",
+      "purchaseTypeName": "",
+      "bidDeadline": "2026-09-15 09:30",
+      "fileGetDeadline": "",
+      "scaleText": "规模未披露",
+      "docFeeRequired": true,
+      "docFeeText": "需购买文件（金额见原文）",
+      "bondText": "",
+      "qualSection": "",
+      "qualHits": [],
+      "winner": "",
+      "awardMoneyWan": 0,
+      "candidates": [],
       "awardNoticeKind": ""
     },
     {
@@ -6126,39 +6219,36 @@
       "awardNoticeKind": ""
     },
     {
-      "id": "70430577847628",
-      "title": "岑巩县农业农村局关于岑巩县国家级水稻制种大县水稻 智慧 制种管理平台体系升级建设（四次）的更正公告",
+      "id": "70435460370836",
+      "title": "遵义市纪委市监委2026年政务 信息化 系统运维项目（三次）更正公告",
       "tenderType": "招采",
       "date": "2026-09-03",
-      "publishTime": "2026-09-03 00:12:41",
+      "publishTime": "2026-09-03 21:24:16",
       "province": "贵州省",
-      "city": "黔东南苗族侗族自治州",
-      "buyer": "岑巩县农业农村局",
+      "city": "遵义市",
+      "buyer": "中国共产党遵义市纪律检查委员会",
       "moneyWan": 0,
       "professions": [
-        "智能化安装工程",
-        "软件开发",
+        "智慧政务",
+        "系统集成",
+        "信息运维",
+        "运营商ITO运维",
         "运营商系统集成"
       ],
       "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
         {
           "id": "cs2",
           "name": "CS / 信息系统建设服务",
           "domain": "集成"
         },
         {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
+          "id": "itss3",
+          "name": "ITSS",
+          "domain": "运维"
         },
         {
-          "id": "ei-1",
-          "name": "电子与智能化",
+          "id": "sysint",
+          "name": "系统集成资质/等级",
           "domain": "集成"
         }
       ],
@@ -6172,8 +6262,8 @@
         "业态相关，但未见明确证书门槛词"
       ],
       "focusTags": [],
-      "sourceUrl": "https://www.ggzy.gov.cn/information/deal/html/a/520000/0201/20260902/c33381194cdfb7980b3f9a6c962942c2.html",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70430577847628",
+      "sourceUrl": "https://ggzy.guizhou.gov.cn/tradeInfo/detailHtml?metaId=1255414051916353536",
+      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70435460370836",
       "stageName": "",
       "purchaseTypeName": "",
       "bidDeadline": "",
@@ -6188,195 +6278,6 @@
       "awardMoneyWan": 0,
       "candidates": [],
       "awardNoticeKind": ""
-    },
-    {
-      "id": "70429448170212",
-      "title": "中国建设银行贵州省分行 智慧 柜员机维保服务项目供应商征集公告(采购公告)",
-      "tenderType": "招采",
-      "date": "2026-09-02",
-      "publishTime": "2026-09-02 19:14:20",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "中国建设银行贵州省分行",
-      "moneyWan": 0,
-      "professions": [
-        "其他",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 89,
-      "stars": 3,
-      "starScore": 52,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词"
-      ],
-      "focusTags": [],
-      "sourceUrl": "http://ztb.guizhou.gov.cn/trade/bulletin/?id=934462",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70429448170212",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "规模未披露",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70423142480708",
-      "title": "贵州烟叶复烤有限责任公司2026年度档案整理及 数字化 采购项目询价(只询不采)公告(询价公告)",
-      "tenderType": "招采",
-      "date": "2026-09-01",
-      "publishTime": "2026-09-01 15:58:12",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "贵州烟叶复烤有限责任公司",
-      "moneyWan": 0,
-      "professions": [
-        "档案",
-        "系统集成",
-        "运营商系统集成",
-        "深智城业务相关"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 89,
-      "stars": 3,
-      "starScore": 52,
-      "starReasons": [
-        "在投/采购公告阶段",
-        "标题含信息化相关词",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词"
-      ],
-      "focusTags": [],
-      "sourceUrl": "https://www.e-qyzc.com/#/trade-info-detail?id=1544373885589147648&noticeType=6&publishStatus=1",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70423142480708",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "规模未披露",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "",
-      "awardMoneyWan": 0,
-      "candidates": [],
-      "awardNoticeKind": ""
-    },
-    {
-      "id": "70429458930008",
-      "title": "2026年中国电信贵州公司网站信息安全防护管理系统扩容工程 软件开发 服务采购--直接采购公示",
-      "tenderType": "中标",
-      "date": "2026-09-02",
-      "publishTime": "2026-09-02 19:20:31",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "buyer": "中国电信股份有限公司贵州分公司",
-      "moneyWan": 72,
-      "professions": [
-        "安全设备",
-        "通信管线",
-        "数据中心",
-        "软件开发",
-        "系统集成",
-        "网络安全",
-        "电信服务",
-        "其他",
-        "运营商IDC",
-        "运营商系统集成"
-      ],
-      "matchedQuals": [
-        {
-          "id": "cmmi3",
-          "name": "CMMI（3级）",
-          "domain": "研发"
-        },
-        {
-          "id": "cs2",
-          "name": "CS / 信息系统建设服务",
-          "domain": "集成"
-        },
-        {
-          "id": "iso27001",
-          "name": "ISO27001",
-          "domain": "安全"
-        },
-        {
-          "id": "sysint",
-          "name": "系统集成资质/等级",
-          "domain": "集成"
-        }
-      ],
-      "score": 99,
-      "stars": 3,
-      "starScore": 50,
-      "starReasons": [
-        "已结束或结果公示，参考价值低",
-        "标题强软件/信息化信号",
-        "专业标签匹配",
-        "业态相关，但未见明确证书门槛词",
-        "规模适中（约 72 万）",
-        "重点采购主体相关"
-      ],
-      "focusTags": [
-        "telecom-gz"
-      ],
-      "sourceUrl": "https://caigou.chinatelecom.com.cn/DeclareDetails?id=187342194467818&type=2&docTypeCode=PurchaseAnnounceBasic&securityViewCode=8bc021eee8ece7372a3e0a930bcf4c82",
-      "platformUrl": "https://dgdata.bxnd.com.cn/project-lib/detail2/70429458930008",
-      "stageName": "",
-      "purchaseTypeName": "",
-      "bidDeadline": "",
-      "fileGetDeadline": "",
-      "scaleText": "约 72.00 万元",
-      "docFeeRequired": null,
-      "docFeeText": "原文未写明",
-      "bondText": "",
-      "qualSection": "",
-      "qualHits": [],
-      "winner": "中电福富信息科技有限公司",
-      "awardMoneyWan": 72,
-      "candidates": [
-        {
-          "rank": 1,
-          "name": "中电福富信息科技有限公司",
-          "moneyWan": 72
-        }
-      ],
-      "awardNoticeKind": "直接采购公示"
     }
   ]
 }
