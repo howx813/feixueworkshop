@@ -17,6 +17,17 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.53",
+    date: "2026-09-06",
+    title: "工作周报新增「下周的工作安排」区块（一键复制）",
+    summary:
+      "/weekly 工作周报卡在本周周报下方新增独立「下周的工作安排」区块，与周报同样支持一键复制（完整/精简两版）。数据字段 nextText/nextCopyText，无内容时不渲染区块。",
+    items: [
+      { tag: "新增", text: "工作周报下方新增「下周的工作安排」独立区块 + 一键复制按钮" },
+      { tag: "优化", text: "weekly-report.json 支持 nextText/nextCopyText 可空字段，旧数据不受影响" },
+    ],
+  },
+  {
     version: "0.2.52",
     date: "2026-08-25",
     title: "周报改版为工作看板（四卡片）",

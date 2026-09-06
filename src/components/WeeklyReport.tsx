@@ -251,6 +251,7 @@ export function WeeklyReport() {
   const [analytics, setAnalytics] = useState<SiteAnalyticsFile | null>(null);
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
+  const [nextCopied, setNextCopied] = useState(false);
 
   useEffect(() => {
     try {
@@ -304,6 +305,23 @@ export function WeeklyReport() {
     }
     setCopied(true);
     window.setTimeout(() => setCopied(false), 2000);
+  }, [data]);
+
+  const copyNext = useCallback(async () => {
+    const text = data?.nextCopyText ?? data?.nextText;
+    if (!text) return;
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+    setNextCopied(true);
+    window.setTimeout(() => setNextCopied(false), 2000);
   }, [data]);
 
   if (!unlocked) {
@@ -386,6 +404,31 @@ export function WeeklyReport() {
           后重新生成即合并）。
         </div>
       )}
+
+      {data.nextText ? (
+        <div style={{ marginTop: 16 }}>
+          <div
+            className="day-bar"
+            style={{ marginBottom: 0, borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }}
+          >
+            <strong>📋 下周的工作安排</strong>
+            <button
+              type="button"
+              className="btn btn-primary"
+              style={{ padding: "6px 14px", fontSize: "0.875rem" }}
+              onClick={() => void copyNext()}
+            >
+              {nextCopied ? "✓ 已复制" : "一键复制下周安排"}
+            </button>
+          </div>
+          <div
+            className="card-quiet card-pad"
+            style={{ borderTopLeftRadius: 0, borderTopRightRadius: 0 }}
+          >
+            <WorkBody text={data.nextText} />
+          </div>
+        </div>
+      ) : null}
 
       {analytics ? <AnalyticsSection data={analytics} /> : null}
 

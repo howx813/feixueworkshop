@@ -12,6 +12,9 @@ export type WeeklyReportFile = {
   workText: string;
   health?: { agentRuns: number; agentOk: number; line: string } | null;
   copyText: string;
+  /** 下周的工作安排（独立区块，一键复制） */
+  nextText?: string | null;
+  nextCopyText?: string | null;
 };
 
 export const WEEKLY_REPORT_PATH = "/data/weekly-report.json";
