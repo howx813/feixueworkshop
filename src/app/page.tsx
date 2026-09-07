@@ -51,6 +51,20 @@ export default async function HomePage() {
         ))}
       </nav>
 
+      {/* 高一数学：给家里娃的动手数学实验室 */}
+      <Link
+        href="/youjie-math/"
+        className="math-banner"
+        aria-label="打开高一数学实验室"
+      >
+        <span className="math-banner-mark">∑</span>
+        <span className="math-banner-text">
+          <strong>高一数学 · 有解实验室</strong>
+          <small>均值不等式 · 柯西不等式 · 抽屉原理 — 亲手拖出来，才是真的懂</small>
+        </span>
+        <span className="math-banner-go">打开 →</span>
+      </Link>
+
       <section className="section">
         <div className="section-head">
           <h2 className="section-title">核心能力</h2>

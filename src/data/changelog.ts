@@ -17,6 +17,18 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.54",
+    date: "2026-09-07",
+    title: "新增「高一数学 · 有解实验室」板块（均值/柯西/抽屉三课互动）",
+    summary:
+      "首页与侧栏新增高一数学入口，指向 /youjie-math/ 有解数学实验室：均值不等式、柯西不等式、抽屉原理三课，含探索实验、分步证明与闯关练习。纯静态零依赖，学习进度保存在浏览器本地。",
+    items: [
+      { tag: "新增", text: "首页新增「高一数学 · 有解实验室」入口横幅" },
+      { tag: "新增", text: "侧栏导航新增高一数学入口（/youjie-math/）" },
+      { tag: "文档", text: "静态部署数学实验包（三课互动 + 课程讲义 PDF）至 /youjie-math/" },
+    ],
+  },
+  {
     version: "0.2.53",
     date: "2026-09-06",
     title: "工作周报新增「下周的工作安排」区块（一键复制）",

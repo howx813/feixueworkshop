@@ -98,6 +98,17 @@ const nav = [
           </svg>
         ),
       },
+      {
+        href: "/youjie-math/",
+        label: "高一数学",
+        icon: (
+          <svg className="side-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M6.5 4.5h11" />
+            <path d="M8.4 9.6 5 13l3.4 3.4" />
+            <path d="M5 13h8.6a3.4 3.4 0 0 1 0 6.8H6.5" />
+          </svg>
+        ),
+      },
     ],
   },
   {

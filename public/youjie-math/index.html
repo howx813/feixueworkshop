@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fc">
+  <title>有解 · 高中奥数交互实验室</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23202e48'/%3E%3Ctext x='9' y='29' font-size='29' fill='white'%3E∑%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar" aria-label="课程目录">
+    <a class="brand" href="./index.html"><span class="brand-symbol">∑</span><span>有解<span class="brand-sub">数学，亲手发现。</span></span></a>
+    <div class="catalog-label">高中奥数 · 思维启蒙</div>
+    <div class="course-label">课程实验室 <span>3 课</span></div>
+    <nav id="course-nav"></nav>
+    <div class="sidebar-note"><span class="note-icon">✳</span><strong>让结论在你手中发生</strong><p>移动一个点，改变一个数，<br>从「好像是」走向「一定是」。</p></div>
+    <div class="progress-card"><div>我的学习进度 <strong id="progress-count">0 / 9</strong></div><progress id="progress" max="9" value="0"></progress><small>完成练习后自动保存在本机</small></div>
+    <button id="reset" class="text-button">↺ 重置学习记录</button>
+    <div class="sidebar-footer">YOUJIE MATH LAB <span>01 — 03</span></div>
+  </aside>
+  <main>
+    <header class="topbar"><div class="breadcrumb">课程实验室 <span>/</span> <strong id="crumb">均值不等式</strong></div><div class="toolbar"><span class="offline"><i></i> 离线可用</span><button id="print" class="icon-button" title="打印三课讲义">▤ <span>课程讲义</span></button><button id="present" class="icon-button">⛶ <span>课堂投屏</span></button></div></header>
+    <div class="content">
+      <section class="intro"><div><div class="eyebrow" id="eyebrow">LESSON 01 / INEQUALITIES</div><h1 id="lesson-title"></h1><p id="lesson-description"></p></div><button id="guide" class="guide-button">? <span>使用指南</span></button></section>
+      <div class="lesson-meta" id="lesson-meta"></div>
+      <div class="stage-bar"><div role="tablist" aria-label="学习环节" id="stage-tabs"></div><span class="stage-hint" id="stage-hint">每一个猜想，都从一次尝试开始</span></div>
+      <section id="lesson-body" aria-live="off"></section>
+      <footer class="lesson-footer"><span id="footer-copy"></span><button class="primary-button" id="next-stage">进入推导 <span>→</span></button></footer>
+      <div class="bottom-note"><span>有解 / 高中奥数交互实验室</span><span>观察只是起点，证明才是终点。</span></div>
+    </div>
+  </main>
+  <dialog id="guide-dialog"><button class="close-dialog icon-button" aria-label="关闭指南">×</button><div class="eyebrow">WELCOME TO THE LAB</div><h2>把数学，变成可以操作的事。</h2><p>面向高一至高二的竞赛启蒙。先掌握平方非负、平面向量与整数除法，即可开始。</p><ol><li><strong>探索实验</strong>：拖动滑块或图中圆点，观察数量如何变化。</li><li><strong>推导证明</strong>：逐步展开论证，同时检查适用条件与等号条件。</li><li><strong>闯关练习</strong>：每课 3 题，作答后即时获得解析，可重复练习。</li></ol><p>建议每课 20 分钟：探索 5 分钟，证明 7 分钟，练习 8 分钟。投屏模式可用 ← / → 切换环节，Esc 退出。滑块支持键盘方向键。</p><p class="muted">学习记录仅保存在当前浏览器。课程讲义可打印或另存为 PDF；学习报告可下载留存。</p><button class="primary-button close-dialog">开始发现 →</button></dialog>
+  <div id="toast" role="status"></div>
+  <article id="print-handout"></article>
+  <script src="app.js"></script>
+</body>
+</html>
