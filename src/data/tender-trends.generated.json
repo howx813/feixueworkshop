@@ -1,13 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-06T02:00:40.144Z",
+  "generatedAt": "2026-09-07T02:00:38.338Z",
   "historyFrom": "2026-08-01",
-  "dataAsOf": "2026-09-06",
+  "dataAsOf": "2026-09-07",
   "syncHealth": [
-    {
-      "date": "2026-08-14",
-      "ok": true
-    },
     {
       "date": "2026-08-14",
       "ok": true
@@ -123,12 +119,16 @@
     {
       "date": "2026-09-06",
       "ok": true
+    },
+    {
+      "date": "2026-09-07",
+      "ok": true
     }
   ],
   "totals": {
-    "tracked": 914,
+    "tracked": 918,
     "active": 100,
-    "expired": 814
+    "expired": 818
   },
   "weekly": [
     {
@@ -181,9 +181,18 @@
       "from": "2026-08-31",
       "newCount": 184,
       "activeCount": 283,
-      "expiredCount": 183,
+      "expiredCount": 187,
       "fiveStarCount": 14,
       "totalMoneyWan": 336912.60999999987
+    },
+    {
+      "week": "2026-W37",
+      "from": "2026-09-07",
+      "newCount": 4,
+      "activeCount": 100,
+      "expiredCount": 0,
+      "fiveStarCount": 7,
+      "totalMoneyWan": 8964.369999999999
     }
   ],
   "byCity": [
@@ -198,14 +207,14 @@
       "moneyWan": 15485.780000000002
     },
     {
+      "name": "黔南布依族苗族自治州",
+      "count": 53,
+      "moneyWan": 6483.670000000001
+    },
+    {
       "name": "北京市",
       "count": 52,
       "moneyWan": 4740.379999999999
-    },
-    {
-      "name": "黔南布依族苗族自治州",
-      "count": 51,
-      "moneyWan": 6085.670000000001
     },
     {
       "name": "六盘水市",
@@ -214,13 +223,13 @@
     },
     {
       "name": "黔东南苗族侗族自治州",
-      "count": 36,
-      "moneyWan": 7531.539999999999
+      "count": 37,
+      "moneyWan": 8296.539999999999
     },
     {
       "name": "毕节市",
-      "count": 33,
-      "moneyWan": 5987.020000000001
+      "count": 34,
+      "moneyWan": 6067.020000000001
     },
     {
       "name": "黔西南布依族苗族自治州",
@@ -261,7 +270,7 @@
   "byProfession": [
     {
       "name": "运营商系统集成",
-      "count": 613
+      "count": 616
     },
     {
       "name": "系统集成",
@@ -273,15 +282,15 @@
     },
     {
       "name": "软件开发",
-      "count": 223
+      "count": 224
     },
     {
       "name": "运营商ITO运维",
-      "count": 161
+      "count": 162
     },
     {
       "name": "信息运维",
-      "count": 147
+      "count": 148
     },
     {
       "name": "运营商大数据",
@@ -305,7 +314,7 @@
     },
     {
       "name": "网络工程",
-      "count": 69
+      "count": 71
     },
     {
       "name": "公共设施",
@@ -328,15 +337,15 @@
       "count": 54
     },
     {
+      "name": "运营商物联网",
+      "count": 54
+    },
+    {
       "name": "运营商云计算",
       "count": 53
     },
     {
       "name": "云服务",
-      "count": 52
-    },
-    {
-      "name": "运营商物联网",
       "count": 52
     },
     {
@@ -353,7 +362,7 @@
     },
     {
       "name": "安防监控",
-      "count": 42
+      "count": 44
     },
     {
       "name": "运营商IDC",
@@ -384,11 +393,11 @@
       "count": 30
     },
     {
-      "name": "教育设备",
-      "count": 29
+      "name": "智慧市政",
+      "count": 30
     },
     {
-      "name": "智慧市政",
+      "name": "教育设备",
       "count": 29
     },
     {
@@ -720,6 +729,10 @@
       "count": 3
     },
     {
+      "name": "景区管理",
+      "count": 3
+    },
+    {
       "name": "铁路工程",
       "count": 3
     },
@@ -769,10 +782,6 @@
     },
     {
       "name": "资料",
-      "count": 2
-    },
-    {
-      "name": "景区管理",
       "count": 2
     },
     {
@@ -1035,15 +1044,15 @@
     },
     {
       "bucket": "100万以下",
-      "count": 445
+      "count": 446
     },
     {
       "bucket": "100-500万",
-      "count": 217
+      "count": 219
     },
     {
       "bucket": "500-1000万",
-      "count": 34
+      "count": 35
     },
     {
       "bucket": "1000-5000万",
@@ -1102,8 +1111,8 @@
       "title": "铜仁市住房公积金管理中心关于铜仁市住房公积金管理中心电子档案管理 信息系统 购买资源服务项目的公开招标公告(采购公告)",
       "stars": 5,
       "firstSeenAt": "2026-09-06",
-      "lastSeenAt": "2026-09-06",
-      "seenCount": 1,
+      "lastSeenAt": "2026-09-07",
+      "seenCount": 2,
       "moneyWan": 156,
       "city": "铜仁市",
       "buyer": "铜仁市住房公积金管理中心",
@@ -1115,8 +1124,8 @@
       "title": "2026年贵阳联通贵州商学院 信息系统 建设项目（二次）询比采购公告",
       "stars": 5,
       "firstSeenAt": "2026-09-05",
-      "lastSeenAt": "2026-09-06",
-      "seenCount": 2,
+      "lastSeenAt": "2026-09-07",
+      "seenCount": 3,
       "moneyWan": 261.22,
       "city": "贵阳市",
       "buyer": "中国联合网络通信有限公司贵阳市分公司",
@@ -1141,8 +1150,8 @@
       "title": "道真自治县中医医院 信息系统 网络安全等级保护测评服务采购项目询价公告",
       "stars": 5,
       "firstSeenAt": "2026-09-02",
-      "lastSeenAt": "2026-09-06",
-      "seenCount": 5,
+      "lastSeenAt": "2026-09-07",
+      "seenCount": 6,
       "moneyWan": 3.9,
       "city": "遵义市",
       "buyer": "道真自治县中医医院",
@@ -1154,8 +1163,8 @@
       "title": "软件开发 服务采购项目招标公告(2026-JW25-F2001)",
       "stars": 5,
       "firstSeenAt": "2026-09-02",
-      "lastSeenAt": "2026-09-06",
-      "seenCount": 5,
+      "lastSeenAt": "2026-09-07",
+      "seenCount": 6,
       "moneyWan": 59.85,
       "city": "贵阳市",
       "buyer": "某部",
@@ -1167,8 +1176,8 @@
       "title": "2026年中国电信黔西南分公司兴义市中医医院临床、体检 信息系统 平台技术服务采购",
       "stars": 5,
       "firstSeenAt": "2026-09-02",
-      "lastSeenAt": "2026-09-06",
-      "seenCount": 5,
+      "lastSeenAt": "2026-09-07",
+      "seenCount": 6,
       "moneyWan": 85.66,
       "city": "黔西南布依族苗族自治州",
       "buyer": "中国电信股份有限公司黔西南分公司",
@@ -1206,8 +1215,8 @@
       "title": "贵州护理职业技术学院采购“大思政”虚拟仿真实践教学软硬件及 软件开发 服务（二次）公开招标公告(采购公告)",
       "stars": 5,
       "firstSeenAt": "2026-08-28",
-      "lastSeenAt": "2026-09-06",
-      "seenCount": 10,
+      "lastSeenAt": "2026-09-07",
+      "seenCount": 11,
       "moneyWan": 76,
       "city": "黔南布依族苗族自治州",
       "buyer": "贵州护理职业技术学院",
