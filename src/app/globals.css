@@ -439,11 +439,11 @@ textarea {
   margin-top: 14px;
   padding: 14px 16px;
   border-radius: var(--radius);
-  border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--border));
+  border: 1px solid var(--border);
   background: linear-gradient(
     135deg,
-    color-mix(in srgb, var(--accent) 9%, var(--bg-1)),
-    var(--bg-1) 55%
+    var(--accent-weak),
+    transparent 55%
   );
   text-decoration: none;
   color: inherit;
@@ -463,8 +463,8 @@ textarea {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  background: var(--accent-weak);
+  border: 1px solid var(--border);
   color: var(--accent);
   font-size: 1.4rem;
   font-weight: 700;

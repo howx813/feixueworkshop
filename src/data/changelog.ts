@@ -17,6 +17,16 @@ export type ChangelogEntry = {
  */
 export const changelog: ChangelogEntry[] = [
   {
+    version: "0.2.55",
+    date: "2026-09-07",
+    title: "修复高一数学横幅在旧浏览器内核的样式兼容",
+    summary:
+      "将横幅样式中的 color-mix() 换成 CSS 变量写法，兼容飞书内置浏览器等较老 WebView 内核（color-mix 需 Chrome 111+/Safari 16.2+，不支持时横幅背景/边框会失效）。",
+    items: [
+      { tag: "修复", text: "高一数学横幅改用 --accent-weak/--border 变量，去除 color-mix() 依赖" },
+    ],
+  },
+  {
     version: "0.2.54",
     date: "2026-09-07",
     title: "新增「高一数学 · 有解实验室」板块（均值/柯西/抽屉三课互动）",
