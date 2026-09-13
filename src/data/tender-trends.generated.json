@@ -1,13 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-12T02:00:39.256Z",
+  "generatedAt": "2026-09-13T02:00:53.998Z",
   "historyFrom": "2026-08-01",
-  "dataAsOf": "2026-09-12",
+  "dataAsOf": "2026-09-13",
   "syncHealth": [
-    {
-      "date": "2026-08-14",
-      "ok": true
-    },
     {
       "date": "2026-08-15",
       "ok": false
@@ -123,12 +119,16 @@
     {
       "date": "2026-09-12",
       "ok": true
+    },
+    {
+      "date": "2026-09-13",
+      "ok": true
     }
   ],
   "totals": {
-    "tracked": 1091,
+    "tracked": 1109,
     "active": 100,
-    "expired": 991
+    "expired": 1009
   },
   "weekly": [
     {
@@ -188,18 +188,18 @@
     {
       "week": "2026-W37",
       "from": "2026-09-07",
-      "newCount": 177,
-      "activeCount": 276,
-      "expiredCount": 176,
+      "newCount": 195,
+      "activeCount": 294,
+      "expiredCount": 194,
       "fiveStarCount": 11,
-      "totalMoneyWan": 35554.518
+      "totalMoneyWan": 38559.547999999995
     }
   ],
   "byCity": [
     {
       "name": "贵阳市",
-      "count": 583,
-      "moneyWan": 128426.42220000006
+      "count": 596,
+      "moneyWan": 130826.42220000004
     },
     {
       "name": "遵义市",
@@ -218,8 +218,8 @@
     },
     {
       "name": "六盘水市",
-      "count": 51,
-      "moneyWan": 194491.71
+      "count": 52,
+      "moneyWan": 194552.71
     },
     {
       "name": "黔东南苗族侗族自治州",
@@ -228,13 +228,13 @@
     },
     {
       "name": "毕节市",
-      "count": 40,
-      "moneyWan": 7069.120000000001
+      "count": 41,
+      "moneyWan": 7167.120000000001
     },
     {
       "name": "黔西南布依族苗族自治州",
-      "count": 38,
-      "moneyWan": 302354.47
+      "count": 39,
+      "moneyWan": 302371.5
     },
     {
       "name": "铜仁市",
@@ -243,8 +243,8 @@
     },
     {
       "name": "安顺市",
-      "count": 24,
-      "moneyWan": 11445.2
+      "count": 25,
+      "moneyWan": 11755.2
     },
     {
       "name": "市辖区",
@@ -253,8 +253,8 @@
     },
     {
       "name": "贵州省",
-      "count": 12,
-      "moneyWan": 474.41999999999996
+      "count": 13,
+      "moneyWan": 593.42
     },
     {
       "name": "未知",
@@ -275,27 +275,27 @@
   "byProfession": [
     {
       "name": "运营商系统集成",
-      "count": 725
+      "count": 738
     },
     {
       "name": "系统集成",
-      "count": 552
+      "count": 562
     },
     {
       "name": "其他",
-      "count": 293
+      "count": 298
     },
     {
       "name": "软件开发",
-      "count": 255
+      "count": 257
     },
     {
       "name": "运营商ITO运维",
-      "count": 194
+      "count": 199
     },
     {
       "name": "信息运维",
-      "count": 176
+      "count": 180
     },
     {
       "name": "运营商大数据",
@@ -303,15 +303,15 @@
     },
     {
       "name": "事业单位用房",
-      "count": 144
+      "count": 146
     },
     {
       "name": "网络安全",
-      "count": 139
+      "count": 141
     },
     {
       "name": "智慧教育",
-      "count": 110
+      "count": 113
     },
     {
       "name": "数据处理",
@@ -323,47 +323,47 @@
     },
     {
       "name": "网络工程",
-      "count": 82
+      "count": 83
+    },
+    {
+      "name": "智慧政务",
+      "count": 73
+    },
+    {
+      "name": "运营商云计算",
+      "count": 72
     },
     {
       "name": "基础工程",
       "count": 72
     },
     {
-      "name": "智慧政务",
-      "count": 71
-    },
-    {
-      "name": "运营商云计算",
+      "name": "云服务",
       "count": 70
     },
     {
-      "name": "云服务",
-      "count": 68
-    },
-    {
       "name": "运营商视频监控",
-      "count": 67
+      "count": 68
     },
     {
       "name": "工程设计",
       "count": 66
     },
     {
-      "name": "运营商物联网",
-      "count": 63
+      "name": "运营商网络集成",
+      "count": 65
     },
     {
-      "name": "运营商网络集成",
-      "count": 62
+      "name": "运营商物联网",
+      "count": 64
     },
     {
       "name": "运营商专线",
-      "count": 57
+      "count": 60
     },
     {
       "name": "安防监控",
-      "count": 53
+      "count": 54
     },
     {
       "name": "智能化安装工程",
@@ -375,10 +375,14 @@
     },
     {
       "name": "运营商IDC",
-      "count": 46
+      "count": 48
     },
     {
       "name": "商业和服务业用房",
+      "count": 44
+    },
+    {
+      "name": "通信管线",
       "count": 43
     },
     {
@@ -386,16 +390,12 @@
       "count": 42
     },
     {
-      "name": "通信管线",
-      "count": 41
-    },
-    {
       "name": "数据中心",
-      "count": 37
+      "count": 39
     },
     {
       "name": "教育设备",
-      "count": 35
+      "count": 36
     },
     {
       "name": "智慧市政",
@@ -411,15 +411,15 @@
     },
     {
       "name": "装修工程",
-      "count": 31
+      "count": 32
     },
     {
       "name": "电子计算机",
-      "count": 30
+      "count": 31
     },
     {
       "name": "医用器械",
-      "count": 28
+      "count": 29
     },
     {
       "name": "其他智慧城市项目",
@@ -435,11 +435,15 @@
     },
     {
       "name": "安全设备",
-      "count": 25
+      "count": 26
     },
     {
       "name": "智能中心",
       "count": 23
+    },
+    {
+      "name": "居住用房",
+      "count": 22
     },
     {
       "name": "运营商数字平台",
@@ -458,16 +462,16 @@
       "count": 21
     },
     {
-      "name": "居住用房",
-      "count": 21
-    },
-    {
       "name": "深智城业务相关",
       "count": 20
     },
     {
       "name": "医疗卫生服务",
       "count": 20
+    },
+    {
+      "name": "广电双线",
+      "count": 19
     },
     {
       "name": "电子电工",
@@ -487,10 +491,6 @@
     },
     {
       "name": "电器设备",
-      "count": 17
-    },
-    {
-      "name": "广电双线",
       "count": 17
     },
     {
@@ -526,19 +526,19 @@
       "count": 14
     },
     {
+      "name": "物资采购",
+      "count": 14
+    },
+    {
+      "name": "湖南双线",
+      "count": 13
+    },
+    {
       "name": "图书",
       "count": 13
     },
     {
-      "name": "物资采购",
-      "count": 13
-    },
-    {
       "name": "消防工程",
-      "count": 12
-    },
-    {
-      "name": "湖南双线",
       "count": 12
     },
     {
@@ -571,6 +571,10 @@
     },
     {
       "name": "公共卫生",
+      "count": 10
+    },
+    {
+      "name": "仪表仪器",
       "count": 10
     },
     {
@@ -631,10 +635,6 @@
     },
     {
       "name": "电信服务",
-      "count": 7
-    },
-    {
-      "name": "仪表仪器",
       "count": 7
     },
     {
@@ -751,6 +751,10 @@
     },
     {
       "name": "化学原料",
+      "count": 4
+    },
+    {
+      "name": "批发服务",
       "count": 4
     },
     {
@@ -891,6 +895,14 @@
     },
     {
       "name": "林业产品",
+      "count": 2
+    },
+    {
+      "name": "通风安装",
+      "count": 2
+    },
+    {
+      "name": "空调温控",
       "count": 2
     },
     {
@@ -1038,10 +1050,6 @@
       "count": 1
     },
     {
-      "name": "批发服务",
-      "count": 1
-    },
-    {
       "name": "燃气设备",
       "count": 1
     },
@@ -1052,28 +1060,20 @@
     {
       "name": "纸及纸制品",
       "count": 1
-    },
-    {
-      "name": "通风安装",
-      "count": 1
-    },
-    {
-      "name": "空调温控",
-      "count": 1
     }
   ],
   "moneyBuckets": [
     {
       "bucket": "未披露",
-      "count": 221
+      "count": 222
     },
     {
       "bucket": "100万以下",
-      "count": 543
+      "count": 550
     },
     {
       "bucket": "100-500万",
-      "count": 261
+      "count": 271
     },
     {
       "bucket": "500-1000万",
@@ -1091,7 +1091,7 @@
   "topBuyers": [
     {
       "buyer": "中国电信股份有限公司贵州分公司",
-      "count": 74
+      "count": 76
     },
     {
       "buyer": "中电信人工智能科技（北京）有限公司",
@@ -1103,7 +1103,7 @@
     },
     {
       "buyer": "贵州轻工职业大学",
-      "count": 28
+      "count": 29
     },
     {
       "buyer": "未披露",
@@ -1115,7 +1115,7 @@
     },
     {
       "buyer": "中电信数智科技有限公司贵州分公司",
-      "count": 15
+      "count": 16
     },
     {
       "buyer": "联通数字科技有限公司贵州省分公司",
@@ -1126,7 +1126,7 @@
       "count": 13
     },
     {
-      "buyer": "中国联合网络通信有限公司贵州省分公司",
+      "buyer": "贵州省工业和信息化厅",
       "count": 13
     }
   ],
@@ -1162,8 +1162,8 @@
       "title": "2026年中国电信贵州公司数据能力应用与共享平台指标开发、平台升级、政企客户视图数据开发财务专题等项目 软件开发 服务框架采购招标公告",
       "stars": 5,
       "firstSeenAt": "2026-09-09",
-      "lastSeenAt": "2026-09-12",
-      "seenCount": 4,
+      "lastSeenAt": "2026-09-13",
+      "seenCount": 5,
       "moneyWan": 236,
       "city": "贵阳市",
       "buyer": "中国电信股份有限公司贵州分公司",
@@ -1240,8 +1240,8 @@
       "title": "软件开发 服务采购项目招标公告(2026-JW25-F2001)",
       "stars": 5,
       "firstSeenAt": "2026-09-02",
-      "lastSeenAt": "2026-09-12",
-      "seenCount": 11,
+      "lastSeenAt": "2026-09-13",
+      "seenCount": 12,
       "moneyWan": 59.85,
       "city": "贵阳市",
       "buyer": "某部",
