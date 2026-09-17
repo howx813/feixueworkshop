@@ -33,6 +33,17 @@ type LabelingFile = {
     };
     monthly: LabelingFinanceMonth[];
     split: { name: string; rate: number; amount: number }[];
+    business?: {
+      unit: string;
+      scope: string;
+      expectedRevenue: number;
+      effectiveCollection: number;
+      costFebJul: number;
+      grossMarginRate: number;
+      grossMarginCaliber: string;
+      revenueMix: { name: string; amount: number; customer: string }[];
+      procurement: { total: number; components: number[]; note: string };
+    };
   };
   projects: { name: string; client: string; amount: string; status: string; next: string; owner: string }[];
   pipeline: { name: string; note: string }[];
@@ -41,6 +52,11 @@ type LabelingFile = {
 /** 金额格式化：元，千分位，固定两位小数（财务口径统一） */
 function fmtYuan(n: number): string {
   return n.toLocaleString("zh-CN", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+/** 金额格式化：万元，千分位，最多一位小数 */
+function fmtWan(n: number): string {
+  return n.toLocaleString("zh-CN", { minimumFractionDigits: 0, maximumFractionDigits: 1 });
 }
 
 const PASSWORD = "9822";
@@ -145,6 +161,78 @@ export function DataLabelingCard() {
               <p style={{ margin: "3px 0 0", fontSize: "0.75rem", color: "#fbbf24", lineHeight: 1.5 }}>{data.metrics.fundRisk}</p>
             </div>
           </div>
+
+          {/* 业务整体口径 */}
+          {data.finance?.business ? (
+            (() => {
+              const b = data.finance.business;
+              const kpis = [
+                { label: "预计收入", value: b.expectedRevenue, accent: false },
+                { label: "有效回款", value: b.effectiveCollection, accent: true },
+                { label: "2-7 月成本", value: b.costFebJul, accent: false },
+                { label: "毛利", value: null, accent: true, rate: b.grossMarginRate },
+              ];
+              return (
+                <>
+                  <p style={{ fontSize: "0.75rem", opacity: 0.5, margin: "12px 0 4px" }}>
+                    业务整体（{b.unit}）· {b.scope}
+                  </p>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6 }}>
+                    {kpis.map((k, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          padding: "8px 12px", borderRadius: 10,
+                          background: k.accent ? "rgba(147,197,253,0.06)" : "var(--surface-1)",
+                          border: `1px solid ${k.accent ? "rgba(147,197,253,0.3)" : "var(--border-soft)"}`,
+                        }}
+                      >
+                        <p style={{ margin: 0, fontSize: "0.75rem", opacity: 0.65 }}>{k.label}</p>
+                        <strong style={{ fontSize: "1.0625rem", color: k.accent ? "#93c5fd" : "inherit" }}>
+                          {k.value === null ? `${Math.round((k.rate ?? 0) * 100)}%` : fmtWan(k.value)}
+                        </strong>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p style={{ fontSize: "0.75rem", opacity: 0.5, margin: "10px 0 4px" }}>收入构成</p>
+                  <div style={{ display: "grid", gap: 4 }}>
+                    {b.revenueMix.map((r, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8,
+                          padding: "6px 10px", borderRadius: 8,
+                          background: "var(--surface-1)", border: "1px solid var(--border-soft)",
+                        }}
+                      >
+                        <span style={{ fontSize: "0.8125rem" }}>
+                          {r.name}
+                          <span style={{ display: "block", fontSize: "0.75rem", opacity: 0.55 }}>{r.customer}</span>
+                        </span>
+                        <strong style={{ fontSize: "0.8125rem", whiteSpace: "nowrap" }}>{fmtWan(r.amount)}</strong>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div
+                    style={{
+                      marginTop: 6, padding: "7px 10px", borderRadius: 8, fontSize: "0.8125rem",
+                      background: "var(--surface-1)", border: "1px solid var(--border-soft)",
+                      display: "flex", justifyContent: "space-between", gap: 8,
+                    }}
+                  >
+                    <span style={{ opacity: 0.8 }}>下游采购</span>
+                    <strong>{fmtWan(b.procurement.total)}</strong>
+                  </div>
+
+                  <p style={{ margin: "6px 0 0", fontSize: "0.75rem", opacity: 0.55, lineHeight: 1.5 }}>
+                    {b.grossMarginCaliber}
+                  </p>
+                </>
+              );
+            })()
+          ) : null}
 
           {/* 收入与成本（月度口径） */}
           {data.finance ? (
