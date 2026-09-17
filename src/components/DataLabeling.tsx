@@ -2,6 +2,13 @@
 
 import { useEffect, useState } from "react";
 
+type LabelingFinanceMonth = {
+  month: string;
+  collection: number;
+  subcontractCost: number;
+  surplus: number;
+};
+
 type LabelingFile = {
   schemaVersion: number;
   generatedAt: string;
@@ -13,9 +20,28 @@ type LabelingFile = {
     ytdSigned: { name: string; amount: number }[];
     fundRisk: string;
   };
+  finance?: {
+    range: string;
+    unit: string;
+    caliber: string;
+    totals: {
+      collection: number;
+      subcontractCost: number;
+      costPaid: number;
+      costUnpaid: number;
+      surplus: number;
+    };
+    monthly: LabelingFinanceMonth[];
+    split: { name: string; rate: number; amount: number }[];
+  };
   projects: { name: string; client: string; amount: string; status: string; next: string; owner: string }[];
   pipeline: { name: string; note: string }[];
 };
+
+/** 金额格式化：元，千分位，最多两位小数 */
+function fmtYuan(n: number): string {
+  return n.toLocaleString("zh-CN", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+}
 
 const PASSWORD = "9822";
 const STORE_KEY = "feixue-labeling-unlocked";
@@ -119,6 +145,81 @@ export function DataLabelingCard() {
               <p style={{ margin: "3px 0 0", fontSize: "0.75rem", color: "#fbbf24", lineHeight: 1.5 }}>{data.metrics.fundRisk}</p>
             </div>
           </div>
+
+          {/* 收入与成本（月度口径） */}
+          {data.finance ? (
+            <>
+              <p style={{ fontSize: "0.75rem", opacity: 0.5, margin: "12px 0 4px" }}>
+                收入与成本（{data.finance.unit}）· {data.finance.range}
+              </p>
+              <div style={{ display: "grid", gap: 4 }}>
+                {data.finance.monthly.map((m, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      padding: "6px 10px", borderRadius: 8,
+                      background: "var(--surface-1)", border: "1px solid var(--border-soft)",
+                    }}
+                  >
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8 }}>
+                      <strong style={{ fontSize: "0.8125rem" }}>{m.month}</strong>
+                      <strong style={{ fontSize: "0.8125rem", color: "#93c5fd" }}>{fmtYuan(m.surplus)}</strong>
+                    </div>
+                    <p style={{ margin: "2px 0 0", fontSize: "0.75rem", opacity: 0.6 }}>
+                      收款 {fmtYuan(m.collection)} · 下游采购 {fmtYuan(m.subcontractCost)}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* 汇总 */}
+              <div
+                style={{
+                  marginTop: 6, padding: "7px 10px", borderRadius: 8,
+                  background: "rgba(147,197,253,0.06)", border: "1px solid rgba(147,197,253,0.3)",
+                  display: "grid", gap: 3, fontSize: "0.8125rem",
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <span style={{ opacity: 0.8 }}>累计收款</span>
+                  <strong>{fmtYuan(data.finance.totals.collection)}</strong>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <span style={{ opacity: 0.8 }}>下游采购成本</span>
+                  <strong>{fmtYuan(data.finance.totals.subcontractCost)}</strong>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <span style={{ opacity: 0.8 }}>结余</span>
+                  <strong style={{ color: "#93c5fd" }}>{fmtYuan(data.finance.totals.surplus)}</strong>
+                </div>
+              </div>
+
+              {data.finance.totals.costUnpaid > 0 ? (
+                <p style={{ margin: "6px 0 0", fontSize: "0.75rem", color: "#fbbf24", lineHeight: 1.5 }}>
+                  ⚠️ 下游采购成本中 <strong>{fmtYuan(data.finance.totals.costUnpaid)}</strong> 元尚未支付，结余非全部为可用现金。
+                </p>
+              ) : null}
+
+              {/* 结余分摊口径 */}
+              <p style={{ fontSize: "0.75rem", opacity: 0.5, margin: "12px 0 4px" }}>结余分摊口径</p>
+              <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                {data.finance.split.map((s, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      fontSize: "0.75rem", padding: "3px 9px", borderRadius: 999,
+                      background: "var(--surface-1)", border: "1px solid var(--border-soft)",
+                    }}
+                  >
+                    {s.name} {Math.round(s.rate * 100)}% · {fmtYuan(s.amount)}
+                  </span>
+                ))}
+              </div>
+              <p style={{ margin: "6px 0 0", fontSize: "0.75rem", opacity: 0.55, lineHeight: 1.5 }}>
+                {data.finance.caliber}
+              </p>
+            </>
+          ) : null}
 
           {/* 年内已签 */}
           <p style={{ fontSize: "0.75rem", opacity: 0.5, margin: "12px 0 4px" }}>2026 年已签（万元）</p>
