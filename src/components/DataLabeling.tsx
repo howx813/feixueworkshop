@@ -38,9 +38,9 @@ type LabelingFile = {
   pipeline: { name: string; note: string }[];
 };
 
-/** 金额格式化：元，千分位，最多两位小数 */
+/** 金额格式化：元，千分位，固定两位小数（财务口径统一） */
 function fmtYuan(n: number): string {
-  return n.toLocaleString("zh-CN", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+  return n.toLocaleString("zh-CN", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 const PASSWORD = "9822";
@@ -150,7 +150,7 @@ export function DataLabelingCard() {
           {data.finance ? (
             <>
               <p style={{ fontSize: "0.75rem", opacity: 0.5, margin: "12px 0 4px" }}>
-                收入与成本（{data.finance.unit}）· {data.finance.range}
+                期间收入与成本（{data.finance.unit}）· {data.finance.range}
               </p>
               <div style={{ display: "grid", gap: 4 }}>
                 {data.finance.monthly.map((m, i) => (
